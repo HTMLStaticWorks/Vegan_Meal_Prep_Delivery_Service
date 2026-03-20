@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Veganova Vegan Meal Service</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532d',
+                        secondary: '#84cc16',
+                        accent: '#f5f5f4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased text-slate-900 transition-colors duration-300 bg-white dark:bg-slate-950 flex items-center justify-center min-h-screen p-6">
+
+    <div class="text-center max-w-xl">
+        <div class="relative inline-block mb-12">
+            <h1 class="text-[180px] font-black font-heading leading-none text-slate-100 dark:text-slate-900 select-none">404</h1>
+            <div class="absolute inset-x-0 bottom-4 flex flex-col items-center">
+                 <div class="bg-secondary p-4 rounded-3xl shadow-xl shadow-secondary/20 mb-6 rotate-12">
+                    <i data-lucide="leaf" class="text-white w-10 h-10"></i>
+                </div>
+                <h2 class="text-4xl font-black font-heading dark:text-white">Oops! This Sprouts Gone <span class="text-secondary italic">Missing.</span></h2>
+            </div>
+        </div>
+        <p class="text-lg text-slate-500 dark:text-slate-400 mb-12 leading-relaxed">It looks like the meal you're looking for was either devoured or never existed in the first place.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="index.html" class="btn-primary px-10 py-5 text-lg shadow-xl shadow-primary/20">Back to Home Hub</a>
+            <a href="meals.html" class="px-10 py-5 text-lg font-bold border-2 border-slate-100 dark:border-slate-800 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-all dark:text-white">Explore Menu</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
+
+
+

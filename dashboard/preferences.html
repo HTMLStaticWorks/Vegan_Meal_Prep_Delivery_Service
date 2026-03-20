@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferences | Veganova Vegan Meal Service</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-icon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root { --primary-bg: #f8fafc; --sidebar-bg: #ffffff; --accent-green: #14532d; --vibrant-lime: #84cc16; --text-main: #0f172a; --text-muted: #64748b; --card-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+        body { font-family: 'Inter', sans-serif; background-color: var(--primary-bg); color: var(--text-main); display: flex; }
+        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 800; }
+        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background-color: var(--sidebar-bg); border-right: 1px solid rgba(0,0,0,0.05); padding: 2rem; z-index: 1000; }
+        .sidebar-brand img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .sidebar-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 3rem; text-decoration: none; }
+        .brand-name { font-size: 1rem; font-weight: 700; color: var(--accent-green); text-transform: uppercase; }
+        .nav-menu { list-style: none; padding: 0; margin: 0; }
+        .nav-link { display: flex; align-items: center; gap: 12px; padding: 0.875rem 1.25rem; color: var(--text-muted); text-decoration: none; font-weight: 600; border-radius: 12px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { background-color: rgba(132, 204, 22, 0.1); color: var(--vibrant-lime); }
+        .main-content { margin-left: 280px; flex-grow: 1; padding: 2rem 3rem; }
+        .settings-card { background: white; border-radius: 32px; padding: 2.5rem; box-shadow: var(--card-shadow); }
+        @media (max-width: 992px) { .sidebar { transform: translateX(-100%); } .main-content { margin-left: 0; } }
+    </style>
+</head>
+<body class="light-mode">
+    <aside class="sidebar">
+        <a href="../index.html" class="sidebar-brand">
+            <img src="../assets/img/logo-icon.svg" class="v-logo-img" style="width: 32px; height: 32px;" alt="Veganova Icon">
+            <span class="brand-name">Veganova</span>
+        </a>
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="../index.html" class="nav-link"><i data-lucide="layout-dashboard"></i> Overview</a></li>
+            <li class="nav-item"><a href="weekly-plan.html" class="nav-link"><i data-lucide="calendar"></i> Weekly Plan</a></li>
+            <li class="nav-item"><a href="deliveries.html" class="nav-link"><i data-lucide="truck"></i> Deliveries</a></li>
+            <li class="nav-item"><a href="favorites.html" class="nav-link"><i data-lucide="heart"></i> Saved Meals</a></li>
+            <li class="nav-item"><a href="preferences.html" class="nav-link active"><i data-lucide="settings"></i> Account Settings</a></li>
+             <li class="nav-item mt-5 pt-5 border-t"><a href="../index.html" class="nav-link text-danger"><i data-lucide="log-out"></i> Logout</a></li>
+        </ul>
+    </aside>
+    <main class="main-content">
+        <h1 class="mb-5">Account Settings</h1>
+        <div class="settings-card">
+            <div class="row g-4">
+                <div class="col-md-6 border-end">
+                    <h5 class="mb-4">Dietary Preferences</h5>
+                    <div class="space-y-3">
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" checked id="nutfree">
+                            <label class="form-check-label font-bold" for="nutfree">Nut Free Dishes Only</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="glutenfree">
+                            <label class="form-check-label font-bold" for="glutenfree">Gluten Free Focus</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" checked id="soyafree">
+                            <label class="form-check-label font-bold" for="soyafree">Soya Free Options</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ps-md-5">
+                    <h5 class="mb-4">Subscription Plan</h5>
+                    <div class="bg-primary/5 rounded-3 p-4 mb-4">
+                        <span class="text-[10px] font-black uppercase text-muted tracking-widest">Active Plan</span>
+                        <h4 class="mb-0 text-success">Professional Weekly</h4>
+                        <p class="text-muted small mt-2">14 Meals / Week - $129.00</p>
+                    </div>
+                    <button class="btn btn-outline-dark rounded-pill px-4 font-bold">Manage Subscription</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>lucide.createIcons();
+
+        // Theme Toggle Logic for Dashboard
+        const themeBtn = document.querySelector('.theme-toggle');
+        const sunIcon = document.querySelector('.sun-icon');
+        const moonIcon = document.querySelector('.moon-icon');
+        const body = document.body;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('v-prep-theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark');
+            if(sunIcon) sunIcon.classList.remove('d-none');
+            if(moonIcon) moonIcon.classList.add('d-none');
+        }
+
+        if(themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                body.classList.toggle('dark');
+                const isDark = body.classList.contains('dark');
+                localStorage.setItem('v-prep-theme', isDark ? 'dark' : 'light');
+                
+                if (isDark) {
+                    if(sunIcon) sunIcon.classList.remove('d-none');
+                    if(moonIcon) moonIcon.classList.add('d-none');
+                } else {
+                    if(sunIcon) sunIcon.classList.remove('d-none'); // wait, should add d-none
+                    if(sunIcon) sunIcon.classList.add('d-none');
+                    if(moonIcon) moonIcon.classList.remove('d-none');
+                }
+            });
+        }</script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans | Veganova Vegan Meal Service</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532d',
+                        secondary: '#84cc16',
+                        accent: '#f5f5f4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased text-slate-900 transition-colors duration-300">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform" alt="Veganova Icon">
+                <span class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-10">
+                <a href="index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Home</a>
+                <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Meals</a>
+                <a href="pricing.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 text-secondary">Pricing</a>
+                <a href="dashboard/index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
+                <a href="blog.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
+                <a href="about.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
+                <a href="contact.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
+                    <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
+                </button>
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="auth/login.html" class="text-sm font-semibold hover:text-secondary dark:text-white">Login</a>
+                    <a href="auth/signup.html" class="btn-primary">Sign Up</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex items-center justify-between mb-12">
+                <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
+                <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20">
+                    <i data-lucide="x" class="dark:text-white"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-8">
+                <a href="index.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Home</a>
+                <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
+                <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white text-secondary">Pricing</a>
+                <a href="dashboard/index.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Dashboard</a>
+                <a href="blog.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Blog</a>
+                <a href="about.html" class="text-3xl font-bold hover:text-secondary dark:text-white">About</a>
+                <a href="contact.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Contact</a>
+            </nav>
+            <div class="mt-auto flex flex-col gap-4">
+                <a href="auth/login.html" class="text-center py-4 rounded-xl border font-bold dark:border-white/20 dark:text-white">Login</a>
+                <a href="auth/signup.html" class="btn-primary text-center py-4 rounded-xl">Get Started</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-32 pb-24 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header Section -->
+            <div class="text-center mb-20 reveal-on-scroll">
+                <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">Flexible Subscriptions</span>
+                <h1 class="text-5xl md:text-7xl font-black font-heading mb-6 dark:text-white">Choose Your <span class="text-secondary">Plan</span></h1>
+                <p class="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">No long-term contracts. Pause, skip, or cancel anytime from your dashboard.</p>
+                
+                <div class="mt-12 flex items-center justify-center gap-6 p-2 bg-slate-100 dark:bg-slate-800 rounded-2xl w-fit mx-auto">
+                    <span class="text-sm font-bold dark:text-white">Monthly</span>
+                    <button class="w-14 h-8 bg-primary rounded-full relative p-1">
+                        <div class="w-6 h-6 bg-white rounded-full absolute right-1 shadow-sm"></div>
+                    </button>
+                    <span class="text-sm font-bold text-slate-400">Yearly <span class="text-secondary ml-1 bg-secondary/10 px-2 py-0.5 rounded text-[10px]">SAVE 20%</span></span>
+                </div>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+                <!-- Basic Plan -->
+                <div class="bg-white dark:bg-slate-800 p-10 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-slate-50 dark:bg-slate-700 rounded-full transition-transform group-hover:scale-125 -z-0"></div>
+                    <div class="relative z-10">
+                        <i data-lucide="package" class="w-12 h-12 text-slate-400 mb-8"></i>
+                        <h3 class="text-2xl font-black font-heading mb-2 dark:text-white">Eco Starter</h3>
+                        <p class="text-slate-400 text-sm mb-8">Perfect for individuals or trying us out.</p>
+                        <div class="mb-10">
+                            <span class="text-4xl font-black dark:text-white">$79</span>
+                            <span class="text-slate-400 font-medium">/ week</span>
+                        </div>
+                        <ul class="space-y-6 mb-12">
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                <span class="text-sm font-medium dark:text-gray-300">5 Chef-crafted meals</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                <span class="text-sm font-medium dark:text-gray-300">Weekly delivery</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                <span class="text-sm font-medium dark:text-gray-300">Eco-friendly packaging</span>
+                            </li>
+                            <li class="flex items-center gap-3 opacity-30">
+                                <i data-lucide="x" class="w-5 h-5"></i>
+                                <span class="text-sm font-medium dark:text-gray-500">Dietary customization</span>
+                            </li>
+                        </ul>
+                        <a href="auth/signup.html" class="w-full flex items-center justify-center py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all dark:text-white">Choose Started</a>
+                    </div>
+                </div>
+
+                <!-- Premium Plan (Featured) -->
+                <div class="bg-primary p-1 rounded-[40px] shadow-2xl reveal-on-scroll reveal-delay-1 relative scale-105">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white text-[10px] font-black uppercase tracking-widest px-6 py-2 rounded-full shadow-lg">Most Popular</div>
+                    <div class="bg-white dark:bg-slate-800 p-10 rounded-[38px] h-full relative overflow-hidden group">
+                         <div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full transition-transform group-hover:scale-125 -z-0"></div>
+                        <div class="relative z-10">
+                            <i data-lucide="zap" class="w-12 h-12 text-secondary mb-8"></i>
+                            <h3 class="text-2xl font-black font-heading mb-2 dark:text-white">Green Growth</h3>
+                            <p class="text-slate-400 text-sm mb-8">The best balance for health enthusiasts.</p>
+                            <div class="mb-10">
+                                <span class="text-4xl font-black dark:text-white">$149</span>
+                                <span class="text-slate-400 font-medium">/ week</span>
+                            </div>
+                            <ul class="space-y-6 mb-12">
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">10 Daily meals (M-F)</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">Bi-weekly fresh delivery</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">Dietary & Allergy filters</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">Free Nutritionist chat</span>
+                                </li>
+                            </ul>
+                            <a href="auth/signup.html" class="w-full flex items-center justify-center py-4 rounded-2xl bg-primary text-white font-bold hover:bg-primary-light transition-all shadow-xl shadow-primary/20">Subscribe Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elite Plan -->
+                <div class="bg-white dark:bg-slate-800 p-10 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-2 relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-slate-50 dark:bg-slate-700 rounded-full transition-transform group-hover:scale-125 -z-0"></div>
+                    <div class="relative z-10">
+                        <i data-lucide="crown" class="w-12 h-12 text-yellow-500 mb-8"></i>
+                        <h3 class="text-2xl font-black font-heading mb-2 dark:text-white">Ultimate V-Life</h3>
+                        <p class="text-slate-400 text-sm mb-8">A complete lifestyle transformation.</p>
+                        <div class="mb-10">
+                            <span class="text-4xl font-black dark:text-white">$249</span>
+                            <span class="text-slate-400 font-medium">/ week</span>
+                        </div>
+                        <ul class="space-y-6 mb-12">
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                <span class="text-sm font-medium dark:text-gray-300">21 Meals (Full week)</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                <span class="text-sm font-medium dark:text-gray-300">Daily sunrise delivery</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                <span class="text-sm font-medium dark:text-gray-300">Unrestricted menu access</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
+                                <span class="text-sm font-medium dark:text-gray-300">Personal Health Coach</span>
+                            </li>
+                        </ul>
+                        <a href="auth/signup.html" class="w-full flex items-center justify-center py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all dark:text-white">Go Elite</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="reveal-on-scroll">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-black font-heading dark:text-white">Feature Comparison</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-4">Every detail counts. See what fits you best.</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[800px]">
+                        <thead>
+                            <tr class="border-b dark:border-slate-700">
+                                <th class="py-6 px-8 text-sm font-black uppercase text-slate-400">Features</th>
+                                <th class="py-6 px-8 text-xl font-black font-heading dark:text-white">Eco Starter</th>
+                                <th class="py-6 px-8 text-xl font-black font-heading text-secondary">Green Growth</th>
+                                <th class="py-6 px-8 text-xl font-black font-heading dark:text-white">Ultimate V-Life</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b dark:border-slate-800">
+                                <td class="py-6 px-8 text-sm font-bold dark:text-white">Meal Count</td>
+                                <td class="py-6 px-8 text-slate-500">5 / week</td>
+                                <td class="py-6 px-8 font-bold dark:text-white text-secondary">10 / week</td>
+                                <td class="py-6 px-8 text-slate-500">21 / week</td>
+                            </tr>
+                            <tr class="border-b dark:border-slate-800">
+                                <td class="py-6 px-8 text-sm font-bold dark:text-white">Delivery Frequency</td>
+                                <td class="py-6 px-8 text-slate-500">Once weekly</td>
+                                <td class="py-6 px-8 font-bold dark:text-white text-secondary">Twice weekly</td>
+                                <td class="py-6 px-8 text-slate-500">Daily</td>
+                            </tr>
+                            <tr class="border-b dark:border-slate-800">
+                                <td class="py-6 px-8 text-sm font-bold dark:text-white">Macro Tracking</td>
+                                <td class="py-6 px-8 text-secondary"><i data-lucide="check"></i></td>
+                                <td class="py-6 px-8 text-secondary"><i data-lucide="check"></i></td>
+                                <td class="py-6 px-8 text-secondary"><i data-lucide="check"></i></td>
+                            </tr>
+                            <tr class="border-b dark:border-slate-800">
+                                <td class="py-6 px-8 text-sm font-bold dark:text-white">Allergy Management</td>
+                                <td class="py-6 px-8 text-slate-300"><i data-lucide="minus"></i></td>
+                                <td class="py-6 px-8 text-secondary"><i data-lucide="check"></i></td>
+                                <td class="py-6 px-8 text-secondary"><i data-lucide="check"></i></td>
+                            </tr>
+                            <tr class="border-b dark:border-slate-800">
+                                <td class="py-6 px-8 text-sm font-bold dark:text-white">Menu Customization</td>
+                                <td class="py-6 px-8 text-slate-300"><i data-lucide="minus"></i></td>
+                                <td class="py-6 px-8 text-secondary font-bold">Limited</td>
+                                <td class="py-6 px-8 text-secondary font-bold">Unlimited</td>
+                            </tr>
+                            <tr class="border-b dark:border-slate-800">
+                                <td class="py-6 px-8 text-sm font-bold dark:text-white">Support</td>
+                                <td class="py-6 px-8 text-slate-500">Email</td>
+                                <td class="py-6 px-8 text-slate-500">Chat & Email</td>
+                                <td class="py-6 px-8 font-bold text-secondary">24/7 Priority</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="mt-24 text-center reveal-on-scroll">
+                <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Secure Payment with</p>
+                <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-8" alt="PayPal">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" class="h-8" alt="Stripe">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" class="h-6" alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" class="h-10" alt="Mastercard">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-4 gap-16 mb-20">
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-8">
+                        <img src="assets/img/logo-icon.svg" class="w-10 h-10" alt="Veganova Icon">
+                        <span class="text-2xl font-black font-heading tracking-tight uppercase">Veganova</span>
+                    </a>
+                    <p class="text-slate-400 text-lg max-w-md">Healthy, convenient, and ethical eating made simple.</p>
+                </div>
+                <div>
+                    <h5 class="text-xl font-bold font-heading mb-8">Links</h5>
+                    <ul class="space-y-4">
+                        <li><a href="index.html" class="text-slate-400 hover:text-secondary transition-colors">Home</a></li>
+                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors">Menu</a></li>
+                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xl font-bold font-heading mb-8">Help</h5>
+                    <ul class="space-y-4">
+                        <li><a href="contact.html" class="text-slate-400 hover:text-secondary transition-colors">Support</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-secondary transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 text-center text-sm text-slate-500">
+                <p>&copy; 2026 Veganova. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
+
+
+
+

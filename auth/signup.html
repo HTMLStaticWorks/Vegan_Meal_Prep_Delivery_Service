@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started | Veganova Vegan Meal Service</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-icon.svg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532d',
+                        secondary: '#84cc16',
+                        accent: '#f5f5f4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased text-slate-900 transition-colors duration-300 min-h-screen relative flex items-center justify-center p-6">
+
+    <!-- Premium Blurred Background (Same as Login) -->
+    <div class="fixed inset-0 z-[-1]">
+        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1600&fit=crop" class="w-full h-full object-cover scale-110 blur-xl brightness-50 dark:brightness-[0.3]" alt="Background">
+        <div class="absolute inset-0 bg-primary/20 dark:bg-black/40"></div>
+    </div>
+
+    <!-- Centered Glassmorphism Card (Same as Login) -->
+    <div class="w-full max-w-md bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl rounded-[3rem] shadow-2xl p-8 lg:p-10 relative overflow-hidden">
+        
+        <!-- Header Branding -->
+        <div class="flex flex-col items-center text-center mb-12">
+            <a href="../index.html" class="flex items-center gap-2 mb-8 group">
+                <img src="../assets/img/logo-icon.svg" class="w-12 h-12 group-hover:rotate-12 transition-transform" alt="Veganova Icon">
+                <span class="text-3xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
+            </a>
+            <h1 class="text-4xl font-black font-heading mb-4 dark:text-white">Start Your Journey</h1>
+            <p class="text-slate-500 dark:text-slate-400 font-medium">Join thousands of ethical eaters today.</p>
+        </div>
+
+        <!-- Signup Form -->
+        <form id="signup-form" action="../dashboard/index.html" class="space-y-8">
+            <div class="space-y-6">
+                <!-- Full Name -->
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3 ml-2">Full Name</label>
+                    <div class="relative group">
+                        <i data-lucide="user" class="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-secondary transition-colors"></i>
+                        <input type="text" required id="full-name" placeholder="John Doe" class="w-full bg-slate-50 dark:bg-slate-800 border-2 border-transparent focus:border-secondary rounded-2xl pl-16 pr-6 py-5 outline-none transition-all dark:text-white font-medium">
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3 ml-2">Email Address</label>
+                    <div class="relative group">
+                        <i data-lucide="mail" class="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-secondary transition-colors"></i>
+                        <input type="email" required id="signup-email" placeholder="name@example.com" class="w-full bg-slate-50 dark:bg-slate-800 border-2 border-transparent focus:border-secondary rounded-2xl pl-16 pr-6 py-5 outline-none transition-all dark:text-white font-medium">
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3 ml-2">Password</label>
+                    <div class="relative group">
+                        <i data-lucide="lock" class="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-secondary transition-colors"></i>
+                        <input type="password" required id="signup-password" placeholder="••••••••" class="w-full bg-slate-50 dark:bg-slate-800 border-2 border-transparent focus:border-secondary rounded-2xl pl-16 pr-6 py-5 outline-none transition-all dark:text-white font-medium">
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3 ml-2">Confirm</label>
+                    <div class="relative group">
+                        <i data-lucide="shield-check" class="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-secondary transition-colors"></i>
+                        <input type="password" required id="confirm-password" placeholder="••••••••" class="w-full bg-slate-50 dark:bg-slate-800 border-2 border-transparent focus:border-secondary rounded-2xl pl-16 pr-6 py-5 outline-none transition-all dark:text-white font-medium">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation Feedback -->
+            <div id="error-message" class="hidden text-rose-500 text-xs font-black uppercase tracking-widest text-center px-4"></div>
+
+            <button type="submit" class="w-full bg-primary hover:bg-secondary text-white py-6 rounded-3xl font-black text-lg transition-all shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-3">
+                Create Account <i data-lucide="sparkles" class="w-6 h-6"></i>
+            </button>
+
+            <div class="text-center">
+                <p class="text-slate-500 dark:text-slate-400 font-medium">Already have an account? <a href="login.html" class="text-secondary font-black hover:underline underline-offset-4">Login here</a></p>
+            </div>
+        </form>
+
+        <!-- Close/Back Button -->
+        <a href="../index.html" class="absolute top-8 right-8 p-3 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            <i data-lucide="x" class="w-6 h-6 text-slate-400"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Client-side validation
+        const form = document.querySelector('#signup-form');
+        const password = document.querySelector('#signup-password');
+        const confirm = document.querySelector('#confirm-password');
+        const errorMsg = document.querySelector('#error-message');
+
+        form.addEventListener('submit', (e) => {
+            errorMsg.classList.add('hidden');
+            
+            if (password.value !== confirm.value) {
+                e.preventDefault();
+                errorMsg.textContent = "Passwords do not match!";
+                errorMsg.classList.remove('hidden');
+                confirm.classList.add('border-rose-500');
+                confirm.classList.remove('focus:border-secondary');
+            } else if (password.value.length < 8) {
+                e.preventDefault();
+                errorMsg.textContent = "Password must be at least 8 characters.";
+                errorMsg.classList.remove('hidden');
+            }
+        });
+
+        // Reset error on input
+        confirm.addEventListener('input', () => {
+            confirm.classList.remove('border-rose-500');
+            confirm.classList.add('focus:border-secondary');
+            errorMsg.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
