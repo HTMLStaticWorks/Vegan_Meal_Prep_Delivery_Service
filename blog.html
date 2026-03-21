@@ -39,19 +39,27 @@
 <body class="antialiased text-slate-900 transition-colors duration-300 bg-slate-50 dark:bg-slate-950">
 
     <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-5 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
+        <div class="container flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2 group">
                 <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform" alt="Veganova Icon">
                 <span class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
             </a>
 
             <nav class="hidden lg:flex items-center gap-10">
-                <a href="index.html" class="nav-link text-sm font-semibold hover:text-secondary dark:text-gray-300 transition-colors">Home</a>
+                <div class="nav-item-dropdown">
+                    <a href="index.html" class="nav-link text-sm font-semibold hover:text-secondary dark:text-gray-300 flex items-center gap-1 transition-colors">
+                        Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2</a>
+                    </div>
+                </div>
                 <a href="meals.html" class="nav-link text-sm font-semibold hover:text-secondary dark:text-gray-300 transition-colors">Meals</a>
                 <a href="pricing.html" class="nav-link text-sm font-semibold hover:text-secondary dark:text-gray-300 transition-colors">Pricing</a>
                 <a href="dashboard/index.html" class="nav-link text-sm font-semibold hover:text-secondary dark:text-gray-300 transition-colors">Dashboard</a>
-                <a href="blog.html" class="nav-link text-sm font-semibold text-secondary transition-colors underline underline-offset-8">Blog</a>
+                <a href="blog.html" class="nav-link text-sm font-semibold hover:text-secondary dark:text-gray-300 transition-colors">Blog</a>
                 <a href="about.html" class="nav-link text-sm font-semibold hover:text-secondary dark:text-gray-300 transition-colors">About</a>
                 <a href="contact.html" class="nav-link text-sm font-semibold hover:text-secondary dark:text-gray-300 transition-colors">Contact</a>
             </nav>
@@ -81,12 +89,17 @@
                     <i data-lucide="x" class="dark:text-white"></i>
                 </button>
             </div>
-            <nav class="flex flex-col gap-8">
-                <a href="index.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Home</a>
+            <nav class="flex flex-col gap-6">
+                <!-- Home Mobile Options -->
+                <div class="flex flex-col gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Homepage Options</span>
+                    <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 1</a>
+                    <a href="home-2.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 2</a>
+                </div>
                 <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
                 <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Pricing</a>
                 <a href="dashboard/index.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Dashboard</a>
-                <a href="blog.html" class="text-3xl font-bold text-secondary">Blog</a>
+                <a href="blog.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Blog</a>
                 <a href="about.html" class="text-3xl font-bold hover:text-secondary dark:text-white">About</a>
                 <a href="contact.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Contact</a>
             </nav>
@@ -98,24 +111,22 @@
     </div>
 
     <!-- Featured Section (Hero) -->
-    <section class="pt-32 pb-16 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="relative group rounded-[3rem] overflow-hidden shadow-2xl reveal-on-scroll">
-                <img src="https://images.unsplash.com/photo-1543353071-873f17a7a088?w=1600&fit=crop" class="w-full h-[650px] object-cover transition-transform duration-1000 group-hover:scale-105" alt="Featured Article">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent flex flex-col justify-end p-8 lg:p-20">
-                    <div class="max-w-4xl">
-                        <div class="flex flex-wrap items-center gap-4 mb-8">
-                            <span class="bg-secondary text-white px-5 py-2 rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg">Featured Story</span>
-                            <span class="text-white/60 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i> March 19, 2026</span>
-                            <span class="text-white/60 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i> 12 Min Read</span>
-                        </div>
-                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black font-heading text-white mb-8 leading-[1.1]">The 2026 Vegan <span class="text-secondary underline decoration-8 underline-offset-8">Superfood</span> Revolution</h1>
-                        <p class="text-white/80 text-xl md:text-2xl mb-12 leading-relaxed max-w-2xl font-medium">Discover how ancient grains, sea-inspired proteins, and vertical farming are redefining the plant-based plate this year.</p>
-                        <div class="flex flex-col sm:flex-row gap-6">
-                            <a href="#single-preview" class="bg-white text-primary px-10 py-5 rounded-3xl font-black text-lg hover:bg-secondary hover:text-white transition-all shadow-xl inline-flex items-center gap-3 active:scale-95 group/btn">
-                                Read Full Article <i data-lucide="arrow-right" class="w-6 h-6 group-hover/btn:translate-x-2 transition-transform"></i>
-                            </a>
-                        </div>
+    <section class="pt-32 pb-16 px-6 text-center">
+        <div class="container max-w-5xl">
+            <div class="group rounded-[3rem] overflow-hidden shadow-2xl bg-slate-900 dark:bg-slate-800 reveal-on-scroll p-12 lg:p-24 flex flex-col items-center">
+                <!-- Content Section -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
+                        <span class="bg-secondary text-primary px-5 py-2 rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg">Featured Story</span>
+                        <span class="text-white/60 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4"></i> March 19, 2026</span>
+                        <span class="text-white/60 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4"></i> 12 Min Read</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-black font-heading text-white mb-8 leading-[1.1]">The 2026 Vegan <span class="text-secondary underline decoration-8 underline-offset-8">Superfood</span> Revolution</h1>
+                    <p class="text-white/80 text-xl md:text-2xl mb-12 leading-relaxed font-medium">Discover how ancient grains, sea-inspired proteins, and vertical farming are redefining the plant-based plate this year.</p>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <a href="#single-preview" class="bg-white text-primary px-8 py-4 rounded-2xl font-bold text-base hover:bg-secondary hover:text-primary transition-all shadow-xl inline-flex items-center gap-3 active:scale-95 group/btn">
+                            Read Full Article <i data-lucide="arrow-right" class="w-5 h-5 group-hover/btn:translate-x-2 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -124,15 +135,15 @@
 
     <!-- Main Content Grid -->
     <section class="pb-24 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16">
+        <div class="container flex flex-col lg:flex-row gap-16">
             
             <!-- Blog Posts (Left) -->
             <div class="lg:w-2/3">
                 <div class="flex items-center justify-between mb-12 pb-6 border-b dark:border-slate-800">
                     <h2 class="text-3xl font-black font-heading dark:text-white">Latest <span class="text-secondary">Insights</span></h2>
                     <div class="flex gap-2">
-                        <button class="p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:bg-secondary hover:text-white transition-all"><i data-lucide="layout-grid" class="w-5 h-5"></i></button>
-                        <button class="p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:bg-secondary hover:text-white transition-all"><i data-lucide="list" class="w-5 h-5"></i></button>
+                        <button class="p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:bg-secondary hover:text-primary transition-all"><i data-lucide="layout-grid" class="w-5 h-5"></i></button>
+                        <button class="p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:bg-secondary hover:text-primary transition-all"><i data-lucide="list" class="w-5 h-5"></i></button>
                     </div>
                 </div>
 
@@ -144,13 +155,13 @@
                             <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Nutrition</span>
                         </div>
                         <div class="px-2">
-                            <div class="flex items-center gap-4 mb-4 text-slate-400 text-[10px] font-black uppercase tracking-widest font-heading">
+                            <div class="flex items-center gap-4 mb-4 text-slate-600 text-[10px] font-black uppercase tracking-widest font-heading">
                                 <span>By Dr. Sarah Chen</span>
                                 <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                                 <span>Mar 18, 2026</span>
                             </div>
                             <h3 class="text-2xl font-black font-heading mb-4 dark:text-white group-hover:text-secondary transition-colors leading-snug">Why Gut Health is the Secret to Longevity</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">The science behind the microbiome is clearer than ever. Learn how plant-based fermentation can transform your health...</p>
+                            <p class="text-slate-600 dark:text-slate-600 text-sm leading-relaxed mb-8 line-clamp-3">The science behind the microbiome is clearer than ever. Learn how plant-based fermentation can transform your health...</p>
                             <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more">
                                 Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-2 transition-transform"></i>
                             </a>
@@ -164,13 +175,13 @@
                             <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Recipes</span>
                         </div>
                         <div class="px-2">
-                            <div class="flex items-center gap-4 mb-4 text-slate-400 text-[10px] font-black uppercase tracking-widest font-heading">
+                            <div class="flex items-center gap-4 mb-4 text-slate-600 text-[10px] font-black uppercase tracking-widest font-heading">
                                 <span>By Chef Marco</span>
                                 <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                                 <span>Mar 15, 2026</span>
                             </div>
                             <h3 class="text-2xl font-black font-heading mb-4 dark:text-white group-hover:text-secondary transition-colors leading-snug">The Ultimate 5-Minute Vegan Pesto</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">No cheese, no fuss. Just pure plant energy. This recipe uses cashews and nutritional yeast for a rich, creamy texture...</p>
+                            <p class="text-slate-600 dark:text-slate-600 text-sm leading-relaxed mb-8 line-clamp-3">No cheese, no fuss. Just pure plant energy. This recipe uses cashews and nutritional yeast for a rich, creamy texture...</p>
                             <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more">
                                 Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-2 transition-transform"></i>
                             </a>
@@ -184,13 +195,13 @@
                             <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Sustainability</span>
                         </div>
                         <div class="px-2">
-                            <div class="flex items-center gap-4 mb-4 text-slate-400 text-[10px] font-black uppercase tracking-widest font-heading">
+                            <div class="flex items-center gap-4 mb-4 text-slate-600 text-[10px] font-black uppercase tracking-widest font-heading">
                                 <span>By Maya Sterling</span>
                                 <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                                 <span>Mar 12, 2026</span>
                             </div>
                             <h3 class="text-2xl font-black font-heading mb-4 dark:text-white group-hover:text-secondary transition-colors leading-snug">Sustainable Eating: Reducing Footprints</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">How Veganova is pioneering a circular food economy with compostable packaging and hyper-local sourcing...</p>
+                            <p class="text-slate-600 dark:text-slate-600 text-sm leading-relaxed mb-8 line-clamp-3">How Veganova is pioneering a circular food economy with compostable packaging and hyper-local sourcing...</p>
                             <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more">
                                 Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-2 transition-transform"></i>
                             </a>
@@ -204,13 +215,13 @@
                             <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Fitness</span>
                         </div>
                         <div class="px-2">
-                            <div class="flex items-center gap-4 mb-4 text-slate-400 text-[10px] font-black uppercase tracking-widest font-heading">
+                            <div class="flex items-center gap-4 mb-4 text-slate-600 text-[10px] font-black uppercase tracking-widest font-heading">
                                 <span>By Coach Jax</span>
                                 <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                                 <span>Mar 10, 2026</span>
                             </div>
                             <h3 class="text-2xl font-black font-heading mb-4 dark:text-white group-hover:text-secondary transition-colors leading-snug">5 Plant Proteins for Elite Athletes</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">Breaking the muscle myth. From pea isolates to hemp hearts, these proteins fueling the world's top performers...</p>
+                            <p class="text-slate-600 dark:text-slate-600 text-sm leading-relaxed mb-8 line-clamp-3">Breaking the muscle myth. From pea isolates to hemp hearts, these proteins fueling the world's top performers...</p>
                             <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more">
                                 Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-2 transition-transform"></i>
                             </a>
@@ -224,13 +235,13 @@
                             <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Meal Prep</span>
                         </div>
                         <div class="px-2">
-                            <div class="flex items-center gap-4 mb-4 text-slate-400 text-[10px] font-black uppercase tracking-widest font-heading">
+                            <div class="flex items-center gap-4 mb-4 text-slate-600 text-[10px] font-black uppercase tracking-widest font-heading">
                                 <span>By Elena Vance</span>
                                 <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                                 <span>Mar 08, 2026</span>
                             </div>
                             <h3 class="text-2xl font-black font-heading mb-4 dark:text-white group-hover:text-secondary transition-colors leading-snug">The Ultimate Sunday Prep Guide</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-8 line-clamp-3">Reclaim your weekdays. A step-by-step masterclass on bulk cooking, storage hacks, and making vegan meals easy...</p>
+                            <p class="text-slate-600 dark:text-slate-600 text-sm leading-relaxed mb-8 line-clamp-3">Reclaim your weekdays. A step-by-step masterclass on bulk cooking, storage hacks, and making vegan meals easy...</p>
                             <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more">
                                 Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-2 transition-transform"></i>
                             </a>
@@ -244,7 +255,7 @@
                             <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Lifestyle</span>
                         </div>
                         <div class="px-2">
-                            <div class="flex items-center gap-4 mb-4 text-slate-400 text-[10px] font-black uppercase tracking-widest font-heading">
+                            <div class="flex items-center gap-4 mb-4 text-slate-600 text-[10px] font-black uppercase tracking-widest font-heading">
                                 <span>By Liam Thorne</span>
                                 <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
                                 <span>Mar 05, 2026</span>
@@ -311,19 +322,19 @@
                         <div class="flex flex-col gap-4">
                             <a href="#" class="flex justify-between items-center group">
                                 <span class="text-sm font-bold text-slate-500 group-hover:text-secondary transition-colors">Recipes</span>
-                                <span class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-white transition-all">24</span>
+                                <span class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-primary transition-all">24</span>
                             </a>
                             <a href="#" class="flex justify-between items-center group">
                                 <span class="text-sm font-bold text-slate-500 group-hover:text-secondary transition-colors">Nutrition</span>
-                                <span class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-white transition-all">18</span>
+                                <span class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-primary transition-all">18</span>
                             </a>
                             <a href="#" class="flex justify-between items-center group">
                                 <span class="text-sm font-bold text-slate-500 group-hover:text-secondary transition-colors">Fitness</span>
-                                <span class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-white transition-all">12</span>
+                                <span class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-primary transition-all">12</span>
                             </a>
                             <a href="#" class="flex justify-between items-center group">
                                 <span class="text-sm font-bold text-slate-500 group-hover:text-secondary transition-colors">Lifestyle</span>
-                                <span class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-white transition-all">31</span>
+                                <span class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-primary transition-all">31</span>
                             </a>
                         </div>
                     </div>
@@ -335,7 +346,7 @@
                         <p class="text-white/70 text-sm mb-8">Exclusive 2026 health insights and meal prep hacks.</p>
                         <form class="flex flex-col gap-4">
                             <input type="email" placeholder="Email address" class="w-full bg-white/10 border border-white/20 rounded-2xl px-6 py-4 outline-none focus:border-white transition-all text-white placeholder-white/40">
-                            <button class="bg-secondary text-white py-4 rounded-2xl font-black text-sm uppercase tracking-widest shadow-lg shadow-black/20 hover:scale-105 transition-transform active:scale-95">Subscribe</button>
+                            <button class="bg-secondary text-primary py-4 rounded-2xl font-black text-sm uppercase tracking-widest shadow-lg shadow-black/20 hover:scale-105 transition-transform active:scale-95">Subscribe</button>
                         </form>
                     </div>
 
@@ -343,11 +354,11 @@
                     <div class="bg-white dark:bg-slate-900 p-10 rounded-[40px] shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-50 dark:border-slate-800">
                         <h4 class="text-xl font-black font-heading mb-8 dark:text-white">Popular Tags</h4>
                         <div class="flex flex-wrap gap-3">
-                            <a href="#" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-white transition-all">#GlutenFree</a>
-                            <a href="#" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-white transition-all">#HighProtein</a>
-                            <a href="#" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-white transition-all">#SundayPrep</a>
-                            <a href="#" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-white transition-all">#ZeroWaste</a>
-                            <a href="#" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-white transition-all">#VeganAthlete</a>
+                            <a href="#" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">#GlutenFree</a>
+                            <a href="#" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">#HighProtein</a>
+                            <a href="#" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">#SundayPrep</a>
+                            <a href="#" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">#ZeroWaste</a>
+                            <a href="#" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">#VeganAthlete</a>
                         </div>
                     </div>
 
@@ -376,21 +387,21 @@
                     <h3 class="text-3xl font-black font-heading text-slate-900 dark:text-white mb-8">3 Core Shifts in 2026 Nutrition</h3>
                     <ul class="space-y-6 list-none pl-0">
                         <li class="flex items-start gap-6 group">
-                            <span class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-black shrink-0 group-hover:bg-secondary group-hover:text-white transition-all">1</span>
+                            <span class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-black shrink-0 group-hover:bg-secondary group-hover:text-primary transition-all">1</span>
                             <div>
                                 <strong class="text-slate-900 dark:text-white text-xl block mb-2">Mycelium-Based Proteins</strong>
                                 <p>Fungal networks are providing the texture and nutrient profile that lab-grown alternatives still struggle to match.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-6 group">
-                            <span class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-black shrink-0 group-hover:bg-secondary group-hover:text-white transition-all">2</span>
+                            <span class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-black shrink-0 group-hover:bg-secondary group-hover:text-primary transition-all">2</span>
                             <div>
                                 <strong class="text-slate-900 dark:text-white text-xl block mb-2">Macro-Algae Integration</strong>
                                 <p>Seaweed isn't just for nori. Kelp powders and dulse flakes are becoming the backbone of mineral-rich vegan diets.</p>
                             </div>
                         </li>
                         <li class="flex items-start gap-6 group">
-                            <span class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-black shrink-0 group-hover:bg-secondary group-hover:text-white transition-all">3</span>
+                            <span class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-black shrink-0 group-hover:bg-secondary group-hover:text-primary transition-all">3</span>
                             <div>
                                 <strong class="text-slate-900 dark:text-white text-xl block mb-2">Ancient Grain Resurgence</strong>
                                 <p>Teff, Kamut, and Amaranth are replacing modern wheat for their superior protein bioavailability and resilience.</p>
@@ -414,55 +425,63 @@
         </div>
     </section>
 
-    <!-- Final Footer -->
-    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white border-t border-white/5">
-        <div class="max-w-7xl mx-auto">
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white overflow-hidden">
+        <div class="container">
             <div class="grid lg:grid-cols-4 gap-16 mb-20">
                 <div class="lg:col-span-2">
                     <a href="index.html" class="flex items-center gap-2 mb-8">
                         <img src="assets/img/logo-icon.svg" class="w-10 h-10" alt="Veganova Icon">
                         <span class="text-2xl font-black font-heading tracking-tight uppercase">Veganova</span>
                     </a>
-                    <p class="text-slate-400 text-lg max-w-md mb-10 leading-relaxed">Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat better every single day.</p>
+                    <p class="text-slate-400 text-lg max-w-md mb-10 leading-relaxed">
+                        Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat better every single day.
+                    </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
                     </div>
                 </div>
+
                 <div>
-                    <h5 class="text-xl font-bold font-heading mb-8 tracking-wide">Quick Links</h5>
+                    <h5 class="text-xl font-bold font-heading mb-8">Quick Links</h5>
                     <ul class="space-y-4">
-                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors font-semibold">Weekly Menu</a></li>
-                        <li><a href="pricing.html" class="text-slate-400 hover:text-secondary transition-colors font-semibold">Pricing</a></li>
-                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors font-semibold">Our Story</a></li>
-                        <li><a href="contact.html" class="text-slate-400 hover:text-secondary transition-colors font-semibold">Get Help</a></li>
+                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors">Weekly Menu</a></li>
+                        <li><a href="pricing.html" class="text-slate-400 hover:text-secondary transition-colors">Subscription Plans</a></li>
+                        <li><a href="blog.html" class="text-slate-400 hover:text-secondary transition-colors">Healthy Blog</a></li>
+                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors">Our Mission</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-secondary transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
+
                 <div>
-                    <h5 class="text-xl font-bold font-heading mb-8 tracking-wide">Resources</h5>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="text-slate-400 hover:text-secondary transition-colors font-semibold">Terms of Service</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-secondary transition-colors font-semibold">Privacy Policy</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-secondary transition-colors font-semibold">FAQS</a></li>
-                    </ul>
+                    <h5 class="text-xl font-bold font-heading mb-8">Newsletter</h5>
+                    <p class="text-slate-400 text-sm mb-6">Stay updated with our weekly recipes and discounts.</p>
+                    <form action="#" class="relative">
+                        <input type="email" placeholder="Your email" class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 outline-none focus:border-secondary transition-colors">
+                        <button class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-full font-bold">Join</button>
+                    </form>
                 </div>
             </div>
-            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 text-sm text-slate-500 font-bold uppercase tracking-widest">
-                <p>&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
-                <div class="flex gap-8">
-                    <a href="#" class="hover:text-white transition-colors">Instagram</a>
-                    <a href="#" class="hover:text-white transition-colors">TikTok</a>
-                </div>
+
+            <div class="pt-12 border-t border-white/5 flex flex-col items-center gap-8 text-sm text-slate-400">
+                <p class="text-center">&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="assets/js/cart-system.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
         lucide.createIcons();
     </script>
 </body>
 </html>
-

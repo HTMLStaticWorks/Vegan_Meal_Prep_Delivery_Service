@@ -3,7 +3,7 @@
  */
 
 const meals = [
-    // BREAKFAST
+    // BREAKFAST (10 Items)
     {
         id: 1,
         name: "Avocado Toast with Chickpea Scramble",
@@ -50,28 +50,72 @@ const meals = [
     },
     {
         id: 5,
-        name: "Garden Tofu Scramble",
+        name: "Tofu Breakfast Wrap",
         category: "breakfast",
         tag: "high-protein",
-        kcal: 320,
+        kcal: 420,
         protein: "24g",
-        price: 10.50,
-        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&fit=crop",
-        desc: "Turmeric-seasoned crumbled tofu with sautéed baby spinach, cherry tomatoes, and bell peppers."
+        price: 11.50,
+        image: "https://images.unsplash.com/photo-1540713434306-58505cf1b6fc?w=800&fit=crop",
+        desc: "Savory tofu scramble, vegan sausage, and seasoned potatoes wrapped in a warm flour tortilla."
     },
     {
         id: 6,
-        name: "Tropical Mango Chia Jar",
+        name: "Berry Smoothie Bowl",
         category: "breakfast",
-        tag: "gluten-free",
+        tag: "detox",
         kcal: 290,
         protein: "8g",
         price: 8.50,
+        image: "https://images.unsplash.com/photo-1543362906-acfc16c67564?w=800&fit=crop",
+        desc: "A nutrient-rich blend of acai, fresh berries, and almond milk topped with granola and goji berries."
+    },
+    {
+        id: 23,
+        name: "Morning Power Parfait",
+        category: "breakfast",
+        tag: "high-protein",
+        kcal: 360,
+        protein: "16g",
+        price: 11.00,
+        image: "https://images.unsplash.com/photo-1481931098730-11816a92910d?w=800&fit=crop",
+        desc: "Double-strained almond yogurt layered with hemp seeds, goji berries, and home-made cluster granola."
+    },
+    {
+        id: 24,
+        name: "Savory Chickpea Crepes",
+        category: "breakfast",
+        tag: "gluten-free",
+        kcal: 340,
+        protein: "20g",
+        price: 12.50,
+        image: "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?w=800&fit=crop",
+        desc: "Lentil-based crepes stuffed with sautéed mushrooms, scallions, and a dash of nutritional yeast."
+    },
+    {
+        id: 25,
+        name: "Tempeh Breakfast Bagel",
+        category: "breakfast",
+        tag: "high-protein",
+        kcal: 450,
+        protein: "22g",
+        price: 13.00,
+        image: "https://images.unsplash.com/photo-1541518763029-438622122146?w=800&fit=crop",
+        desc: "Toasted sprouted grain bagel with smoky tempeh bacon, tomato slices, and vegan garden-herb 'cream cheese'."
+    },
+    {
+        id: 26,
+        name: "Blueberry Quinoa Porridge",
+        category: "breakfast",
+        tag: "detox",
+        kcal: 310,
+        protein: "12g",
+        price: 9.50,
         image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&fit=crop",
-        desc: "Coconut milk chia pudding layered with fresh mango puree and toasted coconut flakes."
+        desc: "Warm white quinoa cooked in soy milk with wild blueberries, walnuts, and a touch of cinnamon."
     },
 
-    // LUNCH
+    // LUNCH (12 Items)
     {
         id: 7,
         name: "Quinoa Buddha Bowl",
@@ -160,8 +204,52 @@ const meals = [
         image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&fit=crop",
         desc: "Seared organic tempeh with pickled carrots, daikon, fresh cilantro, and spicy mayo over rice."
     },
+    {
+        id: 27,
+        name: "Zucchini Pesto Zoodles",
+        category: "lunch",
+        tag: "detox",
+        kcal: 310,
+        protein: "10g",
+        price: 12.00,
+        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&fit=crop",
+        desc: "Hand-spiralized zucchini noodles with vibrant basil pesto, sun-dried tomatoes, and pine nuts."
+    },
+    {
+        id: 28,
+        name: "Miso Glazed Eggplant Bowl",
+        category: "lunch",
+        tag: "gluten-free",
+        kcal: 380,
+        protein: "14g",
+        price: 13.50,
+        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&fit=crop",
+        desc: "Oven-roasted baby eggplant with a umami miso glaze, served over edamame and brown rice."
+    },
+    {
+        id: 29,
+        name: "Rainbow Kale Salad",
+        category: "lunch",
+        tag: "detox",
+        kcal: 340,
+        protein: "12g",
+        price: 11.00,
+        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&fit=crop",
+        desc: "Finely shredded kale with colorful slaw, pumpkin seeds, and a zesty tahini-miso dressing."
+    },
+    {
+        id: 30,
+        name: "Spiced Sweet Potato Salad",
+        category: "lunch",
+        tag: "high-protein",
+        kcal: 410,
+        protein: "18g",
+        price: 12.50,
+        image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&fit=crop",
+        desc: "Cumin-roasted sweet potato cubes mixed with black beans, corn, and a cilantro-lime drizzle."
+    },
 
-    // DINNER
+    // DINNER (12 Items)
     {
         id: 15,
         name: "Vegan Chickpea Curry",
@@ -249,6 +337,50 @@ const meals = [
         price: 14.00,
         image: "https://images.unsplash.com/photo-1541518763029-438622122146?w=800&fit=crop",
         desc: "Slow-cooked carrots, sweet potatoes, and parsnips with apricots and aromatic Ras el Hanout."
+    },
+    {
+        id: 31,
+        name: "Vegan Lasagna with Cashew Ricotta",
+        category: "dinner",
+        tag: "high-protein",
+        kcal: 580,
+        protein: "26g",
+        price: 17.00,
+        image: "https://images.unsplash.com/photo-1473093226795-af9932fe5856?w=800&fit=crop",
+        desc: "Hearty lentil and vegetable ragu layered with silky cashew 'ricotta' and whole-wheat pasta."
+    },
+    {
+        id: 32,
+        name: "Kung Pao Cauliflower",
+        category: "dinner",
+        tag: "high-protein",
+        kcal: 420,
+        protein: "18g",
+        price: 15.50,
+        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&fit=crop",
+        desc: "Crispy cauliflower florets tossed in a spicy Szechuan sauce with roasted peanuts and scallions."
+    },
+    {
+        id: 33,
+        name: "Stuffed Bell Peppers",
+        category: "dinner",
+        tag: "gluten-free",
+        kcal: 440,
+        protein: "22g",
+        price: 14.50,
+        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&fit=crop",
+        desc: "Large bell peppers loaded with a mix of wild rice, black beans, corn, and vegan 'mozzarella'."
+    },
+    {
+        id: 34,
+        name: "Herb Crusted Tofu Steak",
+        category: "dinner",
+        tag: "high-protein",
+        kcal: 410,
+        protein: "30g",
+        price: 16.00,
+        image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&fit=crop",
+        desc: "Thick hand-cut tofu steaks breaded with almond flour and garden herbs, served with asparagus."
     }
 ];
 
@@ -310,6 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createMealCard(meal) {
         const card = document.createElement('div');
+        card.setAttribute('data-id', meal.id);
         card.className = 'meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700';
         card.innerHTML = `
             <div class="relative h-64 overflow-hidden">
@@ -343,64 +476,66 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="text-2xl font-black text-primary dark:text-secondary">$${meal.price.toFixed(2)}</span>
                         <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Per Serving</span>
                     </div>
-                    <button class="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-2xl transition-all shadow-xl shadow-primary/20 flex items-center gap-2 group/btn active:scale-95">
-                        <span class="text-sm font-bold">Add to Plan</span>
+                    <button class="btn-primary shadow-xl shadow-primary/20 group/btn active:scale-95 add-to-cart-btn" data-meal='${JSON.stringify(meal)}'>
+                        <span class="text-sm font-bold">Add to Cart</span>
                         <i data-lucide="plus" class="w-4 h-4 transition-transform group-hover/btn:rotate-90"></i>
                     </button>
                 </div>
             </div>
         `;
+        
+        // Add listener for add to cart
+        const addBtn = card.querySelector('.add-to-cart-btn');
+        addBtn.addEventListener('click', (e) => {
+            const mealData = JSON.parse(addBtn.dataset.meal);
+            if (window.Cart) {
+                window.Cart.addToCart(mealData.id, mealData);
+            }
+        });
+
         return card;
     }
 
     function filterMeals() {
-        const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
-        const activeTag = tagFilter.value;
-        const activeCalorie = calorieFilter.value;
-        const searchTerm = searchInput.value.toLowerCase();
-        const activeSort = sortFilter.value;
-
+        const activeCategory = document.querySelector('.filter-btn.active')?.dataset.category || 'all';
+        const searchTerm = searchInput?.value.toLowerCase() || '';
+        
         let filtered = meals.filter(meal => {
             const matchesCategory = activeCategory === 'all' || meal.category === activeCategory;
-            const matchesTag = activeTag === 'all' || meal.tag === activeTag;
             const matchesSearch = meal.name.toLowerCase().includes(searchTerm) || meal.desc.toLowerCase().includes(searchTerm);
-            
-            let matchesCalorie = true;
-            if (activeCalorie === 'low') matchesCalorie = meal.kcal < 400;
-            if (activeCalorie === 'mid') matchesCalorie = meal.kcal >= 400 && meal.kcal <= 500;
-            if (activeCalorie === 'high') matchesCalorie = meal.kcal > 500;
-
-            return matchesCategory && matchesTag && matchesSearch && matchesCalorie;
+            return matchesCategory && matchesSearch;
         });
 
-        // Sorting
-        if (activeSort === 'price-low') {
-            filtered.sort((a, b) => a.price - b.price);
-        } else if (activeSort === 'kcal-low') {
-            filtered.sort((a, b) => a.kcal - b.kcal);
-        }
-
-        renderMeals(filtered);
+        // Add a small fade-out effect
+        mealGrid.style.opacity = '0';
+        setTimeout(() => {
+            renderMeals(filtered);
+            mealGrid.style.opacity = '1';
+        }, 150);
     }
 
-    // Event Listeners
+    // Event Listeners for category buttons
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('bg-primary', 'text-white', 'active', 'shadow-lg', 'shadow-primary/20'));
-            filterBtns.forEach(b => b.classList.add('bg-white', 'text-slate-600', 'dark:bg-slate-700', 'dark:text-slate-300'));
+            filterBtns.forEach(b => {
+                b.classList.remove('bg-primary', 'text-white', 'active', 'shadow-xl', 'shadow-primary/20', 'border-primary');
+                b.classList.add('bg-white', 'text-slate-600', 'dark:bg-slate-700', 'dark:text-slate-300', 'border-transparent');
+            });
             
-            btn.classList.add('bg-primary', 'text-white', 'active', 'shadow-lg', 'shadow-primary/20');
-            btn.classList.remove('bg-white', 'text-slate-600', 'dark:bg-slate-700', 'dark:text-slate-300');
+            btn.classList.add('bg-primary', 'text-white', 'active', 'shadow-xl', 'shadow-primary/20', 'border-primary');
+            btn.classList.remove('bg-white', 'text-slate-600', 'dark:bg-slate-700', 'dark:text-slate-300', 'border-transparent');
             
             filterMeals();
         });
     });
 
-    tagFilter.addEventListener('change', filterMeals);
-    calorieFilter.addEventListener('change', filterMeals);
-    sortFilter.addEventListener('change', filterMeals);
-    searchInput.addEventListener('input', filterMeals);
+    if (searchInput) {
+        searchInput.addEventListener('input', filterMeals);
+    }
+
+    // Initialize the grid styles for smooth transition
+    mealGrid.style.transition = 'opacity 0.2s ease-in-out';
 
     // Initial render
-    renderMeals(meals);
+    filterMeals();
 });

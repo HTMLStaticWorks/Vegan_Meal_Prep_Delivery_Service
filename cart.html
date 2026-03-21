@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Veganova Vegan Meal Service</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532d',
+                        secondary: '#84cc16',
+                        accent: '#f5f5f4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased text-slate-900 transition-colors duration-300 bg-slate-50 dark:bg-slate-950 min-h-screen">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
+        <div class="container flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform" alt="Veganova Icon">
+                <span class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-10">
+                <div class="nav-item-dropdown">
+                    <a href="index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
+                        Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2</a>
+                    </div>
+                </div>
+                <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Meals</a>
+                <a href="pricing.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
+                <a href="dashboard/index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
+                <a href="blog.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
+                <a href="about.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
+                <a href="contact.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-4">
+                <!-- Cart Icon (active state) -->
+                <a href="cart.html" class="relative p-2 rounded-full bg-secondary/10 text-secondary transition-all group">
+                    <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                    <span class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
+                </a>
+
+                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
+                    <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
+                </button>
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="auth/login.html" class="text-sm font-semibold hover:text-secondary dark:text-white transition-colors">Login</a>
+                    <a href="auth/signup.html" class="btn-primary">Sign Up</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex items-center justify-between mb-12">
+                <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
+                <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20">
+                    <i data-lucide="x" class="dark:text-white"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <div class="flex flex-col gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Homepage Options</span>
+                    <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 1</a>
+                    <a href="home-2.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 2</a>
+                </div>
+                <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
+                <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Pricing</a>
+                <a href="dashboard/index.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Dashboard</a>
+                <a href="blog.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Blog</a>
+                <a href="about.html" class="text-3xl font-bold hover:text-secondary dark:text-white">About</a>
+                <a href="contact.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Contact</a>
+            </nav>
+            <div class="mt-auto flex flex-col gap-4">
+                <a href="auth/login.html" class="text-center py-4 rounded-xl border font-bold dark:border-white/20 dark:text-white">Login</a>
+                <a href="auth/signup.html" class="btn-primary w-full text-center">Get Started</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-32 pb-24 px-6">
+        <div class="container max-w-6xl mx-auto">
+            
+            <!-- Checkout Steps -->
+            <div id="checkout-steps" class="flex items-center justify-center gap-4 mb-16 reveal-on-scroll">
+                <div class="step-item active flex items-center gap-3" data-step="1">
+                    <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-lg shadow-primary/20">1</div>
+                    <span class="font-bold text-sm hidden md:block dark:text-white">Cart</span>
+                </div>
+                <div class="w-12 h-px bg-slate-200 dark:bg-slate-800"></div>
+                <div class="step-item flex items-center gap-3" data-step="2">
+                    <div class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 text-slate-400 flex items-center justify-center font-bold border-2 border-slate-100 dark:border-slate-800">2</div>
+                    <span class="font-bold text-sm text-slate-400 hidden md:block">Details</span>
+                </div>
+                <div class="w-12 h-px bg-slate-200 dark:bg-slate-800"></div>
+                <div class="step-item flex items-center gap-3" data-step="3">
+                    <div class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 text-slate-400 flex items-center justify-center font-bold border-2 border-slate-100 dark:border-slate-800">3</div>
+                    <span class="font-bold text-sm text-slate-400 hidden md:block">Payment</span>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-12">
+                
+                <!-- Left: Cart Items Content -->
+                <div class="lg:col-span-2">
+                    
+                    <!-- Step 1: Cart View -->
+                    <div id="step-content-1" class="step-content space-y-6">
+                        <h2 class="text-3xl font-black font-heading dark:text-white mb-8">Your Items</h2>
+                        <div id="cart-items-list" class="space-y-4">
+                            <!-- Items will be injected here -->
+                            <div class="text-center py-20 bg-white dark:bg-slate-800 rounded-[40px] border border-dashed border-slate-300 dark:border-slate-700">
+                                <i data-lucide="shopping-bag" class="w-16 h-16 text-slate-300 mx-auto mb-6"></i>
+                                <h3 class="text-xl font-bold dark:text-white mb-2">Cart is empty</h3>
+                                <p class="text-slate-500 mb-8 px-8">Looks like you haven't added any delicious vegan meals yet.</p>
+                                <a href="meals.html" class="btn-primary inline-flex">Go to Menu</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Delivery Details -->
+                    <div id="step-content-2" class="step-content hidden space-y-8">
+                        <h2 class="text-3xl font-black font-heading dark:text-white">Delivery Details</h2>
+                        <form id="delivery-form" class="bg-white dark:bg-slate-800 p-8 md:p-12 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Full Name</label>
+                                    <input type="text" id="cust-name" required placeholder="John Doe" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Phone Number</label>
+                                    <input type="tel" id="cust-phone" required placeholder="+1 (234) 567-890" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Delivery Address</label>
+                                <textarea id="cust-address" required rows="3" placeholder="Apartment, Street, City" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white resize-none"></textarea>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Landmark (Optional)</label>
+                                    <input type="text" id="cust-landmark" placeholder="Near Central Park" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Preferred Delivery Time</label>
+                                    <select id="cust-time" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white appearance-none">
+                                        <option>ASAP (Within 45 mins)</option>
+                                        <option>Evening (6 PM - 8 PM)</option>
+                                        <option>Morning (9 AM - 11 AM)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Payment UI -->
+                    <div id="step-content-3" class="step-content hidden space-y-8">
+                        <h2 class="text-3xl font-black font-heading dark:text-white">Payment Method</h2>
+
+                        <!-- Payment Option Tiles (List style) -->
+                        <div class="bg-white dark:bg-slate-800 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden divide-y divide-slate-50 dark:divide-slate-700/60">
+
+                            <!-- Credit / Debit Card -->
+                            <label class="flex items-center gap-5 px-8 py-6 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/40 transition-colors">
+                                <input type="radio" name="payment-method" value="card" class="sr-only peer" checked>
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center shrink-0">
+                                    <i data-lucide="credit-card" class="w-5 h-5 text-primary dark:text-secondary"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold dark:text-white">Credit / Debit Card</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Visa, Mastercard, RuPay accepted</p>
+                                </div>
+                                <div class="w-5 h-5 rounded-full border-2 border-slate-200 dark:border-slate-600 peer-checked:border-secondary peer-checked:bg-secondary flex items-center justify-center transition-all shrink-0">
+                                    <i data-lucide="check" class="w-3 h-3 text-white opacity-0 peer-checked:opacity-100"></i>
+                                </div>
+                            </label>
+
+                            <!-- UPI -->
+                            <label class="flex items-center gap-5 px-8 py-6 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/40 transition-colors">
+                                <input type="radio" name="payment-method" value="upi" class="sr-only peer">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/30 dark:to-blue-900/30 flex items-center justify-center shrink-0 font-black text-sm text-purple-600 dark:text-purple-400">UPI</div>
+                                <div class="flex-1">
+                                    <p class="font-bold dark:text-white">UPI Transfer</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">GPay, PhonePe, Paytm & more</p>
+                                </div>
+                                <div class="w-5 h-5 rounded-full border-2 border-slate-200 dark:border-slate-600 peer-checked:border-secondary peer-checked:bg-secondary flex items-center justify-center transition-all shrink-0"></div>
+                            </label>
+
+                            <!-- Net Banking -->
+                            <label class="flex items-center gap-5 px-8 py-6 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/40 transition-colors">
+                                <input type="radio" name="payment-method" value="netbanking" class="sr-only peer">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/30 dark:to-cyan-900/30 flex items-center justify-center shrink-0">
+                                    <i data-lucide="building-2" class="w-5 h-5 text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold dark:text-white">Net Banking</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Direct transfer from your bank</p>
+                                </div>
+                                <div class="w-5 h-5 rounded-full border-2 border-slate-200 dark:border-slate-600 peer-checked:border-secondary peer-checked:bg-secondary flex items-center justify-center transition-all shrink-0"></div>
+                            </label>
+
+                            <!-- Cash on Delivery -->
+                            <label class="flex items-center gap-5 px-8 py-6 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700/40 transition-colors">
+                                <input type="radio" name="payment-method" value="cod" class="sr-only peer">
+                                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/30 flex items-center justify-center shrink-0">
+                                    <i data-lucide="banknote" class="w-5 h-5 text-green-600 dark:text-green-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-bold dark:text-white">Cash on Delivery</p>
+                                    <p class="text-xs text-slate-400 mt-0.5">Pay when you receive your order</p>
+                                </div>
+                                <div class="w-5 h-5 rounded-full border-2 border-slate-200 dark:border-slate-600 peer-checked:border-secondary peer-checked:bg-secondary flex items-center justify-center transition-all shrink-0"></div>
+                            </label>
+                        </div>
+
+                        <!-- Dynamic Payment Fields -->
+                        <div id="payment-fields" class="bg-white dark:bg-slate-800 p-8 md:p-10 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 space-y-6">
+
+                            <!-- CARD FIELDS -->
+                            <div id="fields-card" class="space-y-6">
+                                <div class="flex items-center gap-2 mb-4">
+                                    <i data-lucide="lock" class="w-4 h-4 text-secondary"></i>
+                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Secure Card Details</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="card-number" class="text-xs font-bold uppercase tracking-widest text-slate-500">Card Number</label>
+                                    <input type="text" id="card-number" maxlength="19" placeholder="1234  5678  9012  3456"
+                                        class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white font-mono tracking-widest">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="card-name" class="text-xs font-bold uppercase tracking-widest text-slate-500">Card Holder Name</label>
+                                    <input type="text" id="card-name" placeholder="John Doe"
+                                        class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
+                                </div>
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label for="card-expiry" class="text-xs font-bold uppercase tracking-widest text-slate-500">Expiry Date</label>
+                                        <input type="text" id="card-expiry" maxlength="7" placeholder="MM / YY"
+                                            class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white font-mono">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label for="card-cvv" class="text-xs font-bold uppercase tracking-widest text-slate-500">CVV</label>
+                                        <input type="password" id="card-cvv" maxlength="4" placeholder="• • •"
+                                            class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white font-mono">
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2 text-[10px] text-slate-400 font-bold uppercase tracking-widest pt-2">
+                                    <i data-lucide="shield-check" class="w-3 h-3 text-secondary"></i>
+                                    256-bit SSL encrypted — your card details are safe
+                                </div>
+                            </div>
+
+                            <!-- UPI FIELDS -->
+                            <div id="fields-upi" class="space-y-6 hidden">
+                                <div class="flex items-center gap-2 mb-4">
+                                    <i data-lucide="zap" class="w-4 h-4 text-secondary"></i>
+                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">UPI Payment</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="upi-id" class="text-xs font-bold uppercase tracking-widest text-slate-500">Your UPI ID</label>
+                                    <input type="text" id="upi-id" placeholder="yourname@upi"
+                                        class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
+                                </div>
+                                <p class="text-xs text-slate-400 leading-relaxed">Enter your UPI ID. A payment request will be sent to your UPI app for confirmation.</p>
+                            </div>
+
+                            <!-- NET BANKING FIELDS -->
+                            <div id="fields-netbanking" class="space-y-6 hidden">
+                                <div class="flex items-center gap-2 mb-4">
+                                    <i data-lucide="building-2" class="w-4 h-4 text-secondary"></i>
+                                    <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Select Your Bank</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="net-bank" class="text-xs font-bold uppercase tracking-widest text-slate-500">Bank Name</label>
+                                    <select id="net-bank" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white appearance-none">
+                                        <option value="">— Select a Bank —</option>
+                                        <option>State Bank of India</option>
+                                        <option>HDFC Bank</option>
+                                        <option>ICICI Bank</option>
+                                        <option>Axis Bank</option>
+                                        <option>Kotak Mahindra Bank</option>
+                                        <option>Punjab National Bank</option>
+                                        <option>Bank of Baroda</option>
+                                    </select>
+                                </div>
+                                <p class="text-xs text-slate-400 leading-relaxed">You'll be redirected to your bank's secure portal to complete the payment.</p>
+                            </div>
+
+                            <!-- COD NOTE -->
+                            <div id="fields-cod" class="hidden">
+                                <div class="flex items-start gap-5 p-6 bg-secondary/5 border border-secondary/20 rounded-2xl">
+                                    <div class="w-12 h-12 rounded-2xl bg-secondary flex items-center justify-center shrink-0">
+                                        <i data-lucide="package-check" class="w-6 h-6 text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-base dark:text-white mb-1">Cash on Delivery Selected</h4>
+                                        <p class="text-sm text-slate-500 leading-relaxed">Keep exact change ready. Our delivery partner will collect payment at your door. No advance payment needed!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Inline Payment Toggle Script -->
+                        <script>
+                        (function() {
+                            var methods = ['card', 'upi', 'netbanking', 'cod'];
+                            function switchPayment(val) {
+                                methods.forEach(function(m) {
+                                    var el = document.getElementById('fields-' + m);
+                                    if (el) el.classList.toggle('hidden', m !== val);
+                                });
+                                if (typeof lucide !== 'undefined') lucide.createIcons();
+                            }
+                            document.querySelectorAll('input[name="payment-method"]').forEach(function(r) {
+                                r.addEventListener('change', function() { switchPayment(this.value); });
+                            });
+                            // Format card number with spaces every 4 digits
+                            var cn = document.getElementById('card-number');
+                            if (cn) cn.addEventListener('input', function(e) {
+                                var v = e.target.value.replace(/\D/g,'').substring(0,16);
+                                e.target.value = v.replace(/(.{4})/g,'$1  ').trim();
+                            });
+                            // Format expiry MM / YY
+                            var ex = document.getElementById('card-expiry');
+                            if (ex) ex.addEventListener('input', function(e) {
+                                var v = e.target.value.replace(/\D/g,'');
+                                if (v.length >= 2) v = v.substring(0,2) + ' / ' + v.substring(2,4);
+                                e.target.value = v;
+                            });
+                        })();
+                        </script>
+                    </div>
+                </div>
+
+                <!-- Right Side: Order Summary -->
+                <div class="lg:sticky lg:top-32 h-fit">
+                    <div class="bg-white dark:bg-slate-800 p-8 md:p-10 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700">
+                        <h3 class="text-2xl font-black font-heading mb-8 dark:text-white">Order Summary</h3>
+                        
+                        <!-- Delivery Info Preview -->
+                        <div class="mb-8 p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800">
+                            <div class="flex items-center gap-3 mb-2">
+                                <i data-lucide="truck" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Delivery Estimate</span>
+                            </div>
+                            <p class="text-sm font-bold dark:text-white">Today, 7:30 PM - 8:15 PM</p>
+                        </div>
+
+                        <div id="summary-items" class="space-y-4 mb-8">
+                            <!-- Summary rows will appear here -->
+                        </div>
+
+                        <!-- Coupon Section -->
+                        <div class="mb-8 pt-6 border-t border-slate-100 dark:border-slate-700">
+                            <label class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3 block">Have a coupon?</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="coupon-code" placeholder="VEGAN20" class="flex-1 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-xl px-4 py-3 text-sm outline-none focus:border-secondary transition-all dark:text-white uppercase">
+                                <button id="apply-coupon" class="bg-secondary text-primary px-4 py-3 rounded-xl font-bold text-sm hover:bg-primary hover:text-white transition-all">Apply</button>
+                            </div>
+                            <p id="coupon-message" class="text-[10px] mt-2 hidden font-bold"></p>
+                        </div>
+
+                        <div class="space-y-4 pt-6 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex justify-between text-slate-500 text-sm">
+                                <span>Subtotal</span>
+                                <span id="summary-subtotal">$0.00</span>
+                            </div>
+                            <div class="flex justify-between text-slate-500 text-sm">
+                                <span>Delivery Fee</span>
+                                <span class="text-secondary font-bold">FREE</span>
+                            </div>
+                            <div class="flex justify-between text-slate-500 text-sm">
+                                <span>Discount</span>
+                                <span id="summary-discount" class="text-secondary">-$0.00</span>
+                            </div>
+                            <div class="flex justify-between text-slate-500 text-sm">
+                                <span>Taxes (5%)</span>
+                                <span id="summary-tax">$0.00</span>
+                            </div>
+                            <div class="flex justify-between pt-4 text-2xl font-black dark:text-white">
+                                <span>Total</span>
+                                <span id="summary-total" class="text-secondary">$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-10 space-y-3">
+                            <button id="next-step-btn" class="btn-primary w-full py-5 text-xl rounded-3xl shadow-xl shadow-primary/20 flex items-center justify-center gap-3 active:scale-95 transition-transform">
+                                <span>Proceed to Checkout</span>
+                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                            </button>
+                            <a href="meals.html" id="continue-shopping" class="w-full py-4 text-slate-400 font-bold hover:text-primary transition-colors text-center block text-sm">Continue Shopping</a>
+                            <button id="prev-step-btn" class="hidden w-full py-4 text-slate-400 font-bold hover:text-primary transition-colors text-sm">Go Back</button>
+                        </div>
+
+                        <!-- Trust Badge -->
+                        <div class="mt-8 flex items-center justify-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-secondary"></i>
+                            Secure Checkout Powered by Stripe
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white overflow-hidden">
+        <div class="container">
+            <div class="grid lg:grid-cols-4 gap-16 mb-20">
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-8">
+                        <img src="assets/img/logo-icon.svg" class="w-10 h-10" alt="Veganova Icon">
+                        <span class="text-2xl font-black font-heading tracking-tight uppercase">Veganova</span>
+                    </a>
+                    <p class="text-slate-400 text-lg max-w-md mb-10 leading-relaxed">
+                        Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat better every single day.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-bold font-heading mb-8">Quick Links</h5>
+                    <ul class="space-y-4">
+                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors">Weekly Menu</a></li>
+                        <li><a href="pricing.html" class="text-slate-400 hover:text-secondary transition-colors">Subscription Plans</a></li>
+                        <li><a href="blog.html" class="text-slate-400 hover:text-secondary transition-colors">Healthy Blog</a></li>
+                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors">Our Mission</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-secondary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-bold font-heading mb-8">Newsletter</h5>
+                    <p class="text-slate-400 text-sm mb-6">Stay updated with our weekly recipes and discounts.</p>
+                    <form action="#" class="relative">
+                        <input type="email" placeholder="Your email" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-colors">
+                        <button class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-2xl font-bold text-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-white/5 text-center text-sm text-slate-400">
+                <p>&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Success Overlay -->
+    <div id="order-success-overlay" class="fixed inset-0 z-[2000] bg-white dark:bg-slate-950 flex items-center justify-center hidden opacity-0 transition-all duration-700 px-6">
+        <div class="text-center max-w-xl w-full">
+            
+            <!-- Animated Check -->
+            <div class="relative w-36 h-36 mx-auto mb-12">
+                <div class="absolute inset-0 rounded-full bg-secondary/20 animate-ping"></div>
+                <div class="absolute inset-2 rounded-full bg-secondary/10"></div>
+                <div class="relative w-full h-full bg-secondary rounded-full flex items-center justify-center shadow-2xl shadow-secondary/30">
+                    <i data-lucide="check" class="w-16 h-16 text-white scale-0 transition-transform duration-500" id="success-check"></i>
+                </div>
+            </div>
+
+            <h1 class="text-5xl md:text-6xl font-black font-heading dark:text-white mb-4">Order <span class="text-secondary">Confirmed!</span></h1>
+            <p class="text-slate-500 dark:text-slate-400 text-base mb-10 leading-relaxed max-w-md mx-auto">
+                Your plant-based feast is on its way! Our chefs are prepping your order with fresh, organic ingredients.
+            </p>
+
+            <!-- Order Details Grid -->
+            <div class="grid grid-cols-2 gap-3 mb-10">
+                <div class="p-5 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 text-left">
+                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-2 flex items-center gap-1.5">
+                        <i data-lucide="hash" class="w-3 h-3"></i> Order ID
+                    </p>
+                    <p class="font-black dark:text-white text-base font-mono" id="final-order-id">VN-2026-XXXX</p>
+                </div>
+                <div class="p-5 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 text-left">
+                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-2 flex items-center gap-1.5">
+                        <i data-lucide="truck" class="w-3 h-3"></i> Delivery
+                    </p>
+                    <p class="font-black dark:text-white text-base" id="final-delivery-date">Today</p>
+                </div>
+                <div class="p-5 bg-slate-50 dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 text-left">
+                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-2 flex items-center gap-1.5">
+                        <i data-lucide="shopping-bag" class="w-3 h-3"></i> Items
+                    </p>
+                    <p class="font-black dark:text-white text-base" id="final-item-count">—</p>
+                </div>
+                <div class="p-5 bg-secondary/5 border border-secondary/20 rounded-3xl text-left">
+                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest mb-2 flex items-center gap-1.5">
+                        <i data-lucide="shield-check" class="w-3 h-3 text-secondary"></i> Payment
+                    </p>
+                    <p class="font-black text-secondary text-base">Confirmed ✓</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html" class="btn-primary px-10 py-4 shadow-xl shadow-primary/20">Return to Homepage</a>
+                <a href="meals.html" class="px-10 py-4 border-2 border-slate-200 dark:border-slate-700 rounded-2xl font-bold dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">Order More Meals</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/cart-system.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart-page.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

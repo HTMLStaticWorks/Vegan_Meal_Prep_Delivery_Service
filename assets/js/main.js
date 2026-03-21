@@ -109,15 +109,37 @@ function initRevealAnimations() {
 }
 
 /* Highlight Active Nav Link */
+/* Highlight Active Nav Link */
 function initActiveLinks() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('nav a');
+    const path = window.location.pathname;
+    const page = path.split('/').pop() || 'index.html';
+    
+    // Select all potential navigation links including mobile menu and dropdowns
+    const navLinks = document.querySelectorAll('.nav-link, .dropdown-item, #mobile-menu nav a');
     
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href === currentPage) {
-            link.classList.add('text-secondary', 'font-bold');
-            link.classList.remove('text-primary');
+        if (!href) return;
+
+        // Reset states
+        link.classList.remove('text-secondary', 'font-bold', 'active');
+        
+        // Match logic for Home 1 and Home 2
+        let isMatch = (href === page);
+        
+        // Special case for root
+        if (page === 'index.html' && (href === 'index.html' || href === './')) isMatch = true;
+        
+        // Parent indicator for dropdowns
+        if (isMatch) {
+            link.classList.add('text-secondary', 'font-bold', 'active');
+            
+            // If it's a dropdown item, also highlight the parent nav-link
+            const parentDropdown = link.closest('.nav-item-dropdown');
+            if (parentDropdown) {
+                const parentLink = parentDropdown.querySelector('.nav-link');
+                if (parentLink) parentLink.classList.add('active', 'text-secondary');
+            }
         }
     });
 }

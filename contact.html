@@ -36,30 +36,44 @@
 <body class="antialiased text-slate-900 transition-colors duration-300">
 
     <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-5">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
+        <div class="container flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2 group">
                 <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform" alt="Veganova Icon">
                 <span class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
             </a>
 
             <nav class="hidden lg:flex items-center gap-10">
-                <a href="index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Home</a>
+                <div class="nav-item-dropdown">
+                    <a href="index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
+                        Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2</a>
+                    </div>
+                </div>
                 <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Meals</a>
                 <a href="pricing.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
                 <a href="dashboard/index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
                 <a href="blog.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
                 <a href="about.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
-                <a href="contact.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 text-secondary">Contact</a>
+                <a href="contact.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
             </nav>
 
             <div class="flex items-center gap-4">
-                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                <!-- Cart Icon -->
+                <a href="cart.html" class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
+                    <i data-lucide="shopping-cart" class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
+                    <span class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
+                </a>
+
+                <button class="theme-toggle p-2 rounded-2xl hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
                     <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
                     <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
                 </button>
                 <div class="hidden md:flex items-center gap-4">
-                    <a href="auth/login.html" class="text-sm font-semibold hover:text-secondary dark:text-white">Login</a>
+                    <a href="auth/login.html" class="text-sm font-semibold hover:text-secondary dark:text-white transition-colors">Login</a>
                     <a href="auth/signup.html" class="btn-primary">Sign Up</a>
                 </div>
                 <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
@@ -74,18 +88,23 @@
         <div class="flex flex-col h-full p-8">
             <div class="flex items-center justify-between mb-12">
                 <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
-                <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20">
+                <button id="mobile-menu-close" class="p-2 border rounded-2xl dark:border-white/20">
                     <i data-lucide="x" class="dark:text-white"></i>
                 </button>
             </div>
-            <nav class="flex flex-col gap-8">
-                <a href="index.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Home</a>
+            <nav class="flex flex-col gap-6">
+                <!-- Home Mobile Options -->
+                <div class="flex flex-col gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Homepage Options</span>
+                    <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 1</a>
+                    <a href="home-2.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 2</a>
+                </div>
                 <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
                 <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Pricing</a>
                 <a href="dashboard/index.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Dashboard</a>
                 <a href="blog.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Blog</a>
                 <a href="about.html" class="text-3xl font-bold hover:text-secondary dark:text-white">About</a>
-                <a href="contact.html" class="text-3xl font-bold hover:text-secondary dark:text-white text-secondary">Contact</a>
+                <a href="contact.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Contact</a>
             </nav>
             <div class="mt-auto flex flex-col gap-4">
                 <a href="auth/login.html" class="text-center py-4 rounded-xl border font-bold dark:border-white/20 dark:text-white">Login</a>
@@ -95,111 +114,164 @@
     </div>
 
     <main class="pt-32 pb-24 px-6 overflow-hidden">
-        <div class="max-w-7xl mx-auto">
+        <div class="container">
             <div class="text-center mb-16 reveal-on-scroll">
                 <h1 class="text-5xl md:text-7xl font-black font-heading mb-6 dark:text-white">Get in <span class="text-secondary">Touch</span></h1>
-                <p class="text-lg text-slate-500 dark:text-slate-400">Questions about our menu or delivery? Our team is live and ready to help.</p>
+                <p class="text-lg text-slate-700 dark:text-slate-300">Questions about our menu or delivery? Our team is live and ready to help.</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-20 items-start mb-24 reveal-on-scroll">
-                <!-- Contact Form -->
-                <div class="bg-white dark:bg-slate-800 p-12 rounded-[60px] shadow-sm border border-slate-100 dark:border-slate-700">
-                    <h2 class="text-3xl font-black font-heading mb-8 dark:text-white">Send a Message</h2>
-                    <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-6">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label for="first-name" class="text-xs font-bold uppercase tracking-widest text-slate-400">First Name</label>
-                                <input type="text" id="first-name" name="first-name" required placeholder="John" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
+            <!-- Modern 2-Column Split Layout -->
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-24 reveal-on-scroll">
+                
+                <!-- Left Side: Contact Details & Intro -->
+                <div class="space-y-10 lg:sticky lg:top-32">
+                    <div>
+                        <h2 class="text-4xl font-black font-heading mb-6 dark:text-white leading-tight">Get in Touch with our <br><span class="text-secondary">Vegan Kitchen</span></h2>
+                        <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
+                            Have questions about our seasonal menu or subscription plans? Our team is live and ready to help you on your plant-based journey.
+                        </p>
+                    </div>
+
+                    <div class="space-y-8">
+                        <!-- Address Card -->
+                        <div class="flex items-start gap-6 group hover:-translate-x-1 transition-transform">
+                            <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center shrink-0 border border-secondary/20">
+                                <i data-lucide="map-pin" class="text-secondary w-6 h-6"></i>
                             </div>
-                            <div class="space-y-2">
-                                <label for="last-name" class="text-xs font-bold uppercase tracking-widest text-slate-400">Last Name</label>
-                                <input type="text" id="last-name" name="last-name" required placeholder="Doe" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
+                            <div>
+                                <h4 class="text-xl font-bold dark:text-white mb-1">Our Studio</h4>
+                                <p class="text-slate-500">123 Green Way, Silicon Valley, CA 94043</p>
                             </div>
                         </div>
+
+                        <!-- Phone Card -->
+                        <div class="flex items-start gap-6 group hover:-translate-x-1 transition-transform">
+                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0 border border-primary/20">
+                                <i data-lucide="phone" class="text-primary dark:text-secondary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold dark:text-white mb-1">Call Us</h4>
+                                <a href="tel:+1234567890" class="text-slate-500 hover:text-secondary transition-colors font-medium">+1 (234) 567-890</a>
+                            </div>
+                        </div>
+
+                        <!-- Email Card -->
+                        <div class="flex items-start gap-6 group hover:-translate-x-1 transition-transform">
+                            <div class="w-14 h-14 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
+                                <i data-lucide="mail" class="text-slate-600 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold dark:text-white mb-1">Email Us</h4>
+                                <a href="mailto:hello@veganova.com" class="text-slate-500 hover:text-secondary transition-colors font-medium">hello@veganova.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 border-t border-slate-100 dark:border-slate-800">
+                        <p class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-6">Connect with us</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="w-12 h-12 bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 rounded-2xl flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                            <a href="#" class="w-12 h-12 bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 rounded-2xl flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                            <a href="#" class="w-12 h-12 bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 rounded-2xl flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Compact Contact Form Card -->
+                <div class="bg-white dark:bg-slate-800 p-8 lg:p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal">
+                    <h3 class="text-3xl font-black font-heading mb-8 dark:text-white">Send a Message</h3>
+                    <form action="#" class="space-y-6">
                         <div class="space-y-2">
-                            <label for="email" class="text-xs font-bold uppercase tracking-widest text-slate-400">Email Address</label>
+                            <label for="full-name" class="text-xs font-bold uppercase tracking-widest text-slate-500">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" required placeholder="John Doe" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="email" class="text-xs font-bold uppercase tracking-widest text-slate-500">Email Address</label>
                             <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
                         </div>
                         <div class="space-y-2">
-                            <label for="subject" class="text-xs font-bold uppercase tracking-widest text-slate-400">Subject</label>
-                            <select id="subject" name="subject" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white appearance-none">
-                                <option>General Inquiry</option>
-                                <option>Delivery Issue</option>
-                                <option>Allergy Concerns</option>
-                                <option>Subscription Change</option>
-                            </select>
+                            <label for="message" class="text-xs font-bold uppercase tracking-widest text-slate-500">Your Message</label>
+                            <textarea id="message" name="message" required rows="5" placeholder="Tell us about your preferences..." class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white resize-none"></textarea>
                         </div>
-                        <div class="space-y-2">
-                            <label for="message" class="text-xs font-bold uppercase tracking-widest text-slate-400">Your Message</label>
-                            <textarea id="message" name="message" required rows="5" placeholder="Tell us how we can help..." class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary w-full py-5 text-xl rounded-[20px] shadow-xl shadow-primary/20">Send Message</button>
+                        <button type="submit" class="btn-primary w-full py-5 text-xl rounded-3xl shadow-xl shadow-primary/20">Send Request</button>
                     </form>
                 </div>
+            </div>
 
-                <!-- Info and Map -->
-                <div class="space-y-12">
-                    <div class="grid grid-cols-2 gap-8">
-                        <div class="bg-secondary/5 p-10 rounded-[40px] border border-secondary/10">
-                            <i data-lucide="phone" class="text-secondary w-10 h-10 mb-6"></i>
-                            <h4 class="text-xl font-black font-heading mb-2 dark:text-white">Call Us</h4>
-                            <p class="text-slate-500 text-sm">Mon-Fri, 9am - 6pm</p>
-                            <a href="tel:+1234567890" class="block mt-4 font-black dark:text-secondary transition-colors text-primary">+1 (234) 567-890</a>
-                        </div>
-                        <div class="bg-primary/5 p-10 rounded-[40px] border border-primary/10">
-                            <i data-lucide="map-pin" class="text-primary dark:text-secondary w-10 h-10 mb-6"></i>
-                            <h4 class="text-xl font-black font-heading mb-2 dark:text-white">Visit Us</h4>
-                            <p class="text-slate-500 text-sm">Our 2026 Innovation Hub</p>
-                            <p class="mt-4 font-black dark:text-secondary text-primary">Silicon Valley, CA</p>
-                        </div>
-                    </div>
-
-                    <div class="bg-slate-100 dark:bg-slate-800 rounded-[60px] h-[400px] relative overflow-hidden flex items-center justify-center p-8 group">
-                        <div class="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-900 group-hover:scale-110 transition-transform duration-700"></div>
-                        <div class="relative z-10 text-center">
-                            <i data-lucide="map" class="w-16 h-16 text-slate-400 mx-auto mb-6"></i>
-                            <p class="text-slate-500 font-bold uppercase tracking-widest text-xs">Google Maps Placeholder</p>
-                            <p class="text-slate-400 text-sm mt-2 max-w-xs mx-auto">In a production environment, this would be an interactive Google Map component.</p>
-                        </div>
-                        <!-- UI Elements for detail -->
-                        <div class="absolute bottom-10 left-10 bg-white dark:bg-slate-900 p-4 rounded-3xl shadow-2xl flex items-center gap-4 z-20">
-                            <div class="bg-secondary w-10 h-10 rounded-xl flex items-center justify-center text-white"><i data-lucide="navigation"></i></div>
-                            <div>
-                                <span class="block text-[10px] font-black uppercase text-slate-400">Headquarters</span>
-                                <span class="text-sm font-bold dark:text-white">458 Silicon Green St, CA 94025</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center justify-between p-8 bg-white dark:bg-slate-800 rounded-[30px] shadow-sm border border-slate-100 dark:border-slate-700">
-                        <p class="text-sm font-bold uppercase tracking-widest text-slate-400">Follow Our Journey</p>
-                        <div class="flex gap-4">
-                            <a href="#" class="w-12 h-12 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="instagram"></i></a>
-                            <a href="#" class="w-12 h-12 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="facebook"></i></a>
-                            <a href="#" class="w-12 h-12 bg-slate-50 dark:bg-slate-900 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="twitter"></i></a>
-                        </div>
-                    </div>
+            <!-- Full-Width Map Section Below -->
+            <div class="reveal-on-scroll">
+                <div class="w-full h-[500px] rounded-[60px] overflow-hidden shadow-2xl shadow-primary/5 border-8 border-white dark:border-slate-800">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.639290620162!2d-122.083746884692!3d37.421999879825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580af45ac5b3b%3A0x6e9a8f4c28c68c1e!2sGoogleplex!5e0!3m2!1sen!2sus!4v1647854652391!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        class="grayscale hover:grayscale-0 transition-all duration-700"
+                    ></iframe>
                 </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white">
-        <div class="max-w-7xl mx-auto text-center">
-            <p>&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
+    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white overflow-hidden">
+        <div class="container">
+            <div class="grid lg:grid-cols-4 gap-16 mb-20">
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-8">
+                        <img src="assets/img/logo-icon.svg" class="w-10 h-10" alt="Veganova Icon">
+                        <span class="text-2xl font-black font-heading tracking-tight uppercase">Veganova</span>
+                    </a>
+                    <p class="text-slate-400 text-lg max-w-md mb-10 leading-relaxed">
+                        Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat better every single day.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-bold font-heading mb-8">Quick Links</h5>
+                    <ul class="space-y-4">
+                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors">Weekly Menu</a></li>
+                        <li><a href="pricing.html" class="text-slate-400 hover:text-secondary transition-colors">Subscription Plans</a></li>
+                        <li><a href="blog.html" class="text-slate-400 hover:text-secondary transition-colors">Healthy Blog</a></li>
+                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors">Our Mission</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-secondary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-bold font-heading mb-8">Newsletter</h5>
+                    <p class="text-slate-400 text-sm mb-6">Stay updated with our weekly recipes and discounts.</p>
+                    <form action="#" class="relative">
+                        <input type="email" placeholder="Your email" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-colors">
+                        <button class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-2xl font-bold">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-white/5 flex flex-col items-center gap-8 text-sm text-slate-400">
+                <p class="text-center">&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <!-- Scripts -->
+    <script src="assets/js/cart-system.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
         lucide.createIcons();
     </script>
 </body>
 </html>
-
-
-
-
-
