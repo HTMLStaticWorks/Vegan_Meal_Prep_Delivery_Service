@@ -10,7 +10,33 @@ document.addEventListener('DOMContentLoaded', () => {
     initStickyHeader();
     initRevealAnimations();
     initActiveLinks();
+    initCartButtons();
 });
+
+/* Global Add-to-Cart Button Handler (works on all pages) */
+function initCartButtons() {
+    // Use event delegation so it works for both static and dynamically rendered cards
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.add-to-cart-btn');
+        if (!btn) return;
+
+        const rawData = btn.dataset.meal;
+        if (!rawData) return;
+
+        try {
+            const mealData = JSON.parse(rawData);
+            if (window.Cart) {
+                window.Cart.addToCart(mealData.id, mealData);
+
+                // Visual feedback: briefly animate the button
+                btn.classList.add('scale-90');
+                setTimeout(() => btn.classList.remove('scale-90'), 150);
+            }
+        } catch (err) {
+            console.warn('Cart: Could not parse meal data', err);
+        }
+    });
+}
 
 /* Theme Management */
 function initTheme() {

@@ -65,6 +65,12 @@
             </nav>
 
             <div class="flex items-center gap-4">
+                <!-- Cart Icon -->
+                <a href="cart.html" class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
+                    <i data-lucide="shopping-cart" class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
+                    <span class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
+                </a>
+
                 <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
                     <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
                     <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>

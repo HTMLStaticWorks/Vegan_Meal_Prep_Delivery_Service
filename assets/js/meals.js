@@ -484,15 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         
-        // Add listener for add to cart
-        const addBtn = card.querySelector('.add-to-cart-btn');
-        addBtn.addEventListener('click', (e) => {
-            const mealData = JSON.parse(addBtn.dataset.meal);
-            if (window.Cart) {
-                window.Cart.addToCart(mealData.id, mealData);
-            }
-        });
-
+        // Cart button events handled globally by main.js initCartButtons()
         return card;
     }
 

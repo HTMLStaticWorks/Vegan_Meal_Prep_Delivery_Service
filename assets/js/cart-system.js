@@ -6,13 +6,14 @@
 class CartSystem {
     constructor() {
         this.cart = this.loadCart();
+        this._toastTimer = null;
         this.init();
     }
 
     init() {
         // Sync cart count on load
         this.updateCartBadge();
-        
+
         // Listen for storage changes (for multiple tabs)
         window.addEventListener('storage', (e) => {
             if (e.key === 'veganova-cart') {
@@ -24,8 +25,12 @@ class CartSystem {
     }
 
     loadCart() {
-        const saved = localStorage.getItem('veganova-cart');
-        return saved ? JSON.parse(saved) : [];
+        try {
+            const saved = localStorage.getItem('veganova-cart');
+            return saved ? JSON.parse(saved) : [];
+        } catch (e) {
+            return [];
+        }
     }
 
     saveCart() {
@@ -36,36 +41,39 @@ class CartSystem {
     }
 
     addToCart(mealId, mealData) {
-        const existingItem = this.cart.find(item => item.id === mealId);
-        
+        const id = Number(mealId);
+        const existingItem = this.cart.find(item => item.id === id);
+
         if (existingItem) {
             existingItem.quantity += 1;
         } else {
             this.cart.push({
-                id: mealId,
+                id: id,
                 name: mealData.name,
-                price: mealData.price,
-                image: mealData.image,
+                price: parseFloat(mealData.price) || 0,
+                image: mealData.image || '',
                 quantity: 1,
-                kcal: mealData.kcal
+                kcal: mealData.kcal || 0
             });
         }
-        
+
         this.saveCart();
         this.showToast(`"${mealData.name}" added to cart!`);
     }
 
     removeFromCart(mealId) {
-        this.cart = this.cart.filter(item => item.id !== mealId);
+        const id = Number(mealId);
+        this.cart = this.cart.filter(item => item.id !== id);
         this.saveCart();
     }
 
     updateQuantity(mealId, delta) {
-        const item = this.cart.find(item => item.id === mealId);
+        const id = Number(mealId);
+        const item = this.cart.find(item => item.id === id);
         if (item) {
             item.quantity += delta;
             if (item.quantity <= 0) {
-                this.removeFromCart(mealId);
+                this.removeFromCart(id);
             } else {
                 this.saveCart();
             }
@@ -92,14 +100,13 @@ class CartSystem {
     updateCartBadge() {
         const badges = document.querySelectorAll('.cart-count-badge');
         const count = this.getCartCount();
-        
+
         badges.forEach(badge => {
             badge.textContent = count;
             if (count > 0) {
                 badge.classList.remove('hidden');
-                // Pulse effect
-                badge.classList.add('scale-125');
-                setTimeout(() => badge.classList.remove('scale-125'), 200);
+                badge.style.transform = 'scale(1.3)';
+                setTimeout(() => { badge.style.transform = ''; }, 200);
             } else {
                 badge.classList.add('hidden');
             }
@@ -107,34 +114,35 @@ class CartSystem {
     }
 
     showToast(message) {
-        // Create toast if it doesn't exist
+        // Clear any existing hide timer
+        if (this._toastTimer) {
+            clearTimeout(this._toastTimer);
+            this._toastTimer = null;
+        }
+
+        // Get or create the toast element
         let toast = document.getElementById('cart-toast');
         if (!toast) {
             toast = document.createElement('div');
             toast.id = 'cart-toast';
-            toast.className = 'fixed bottom-10 left-1/2 -translate-x-1/2 z-[1000] bg-slate-900 border border-slate-700 text-white px-8 py-4 rounded-3xl shadow-2xl transition-all opacity-0 translate-y-10 scale-90';
             document.body.appendChild(toast);
         }
-        
+
+        // Set content
         toast.innerHTML = `
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
-                    <i data-lucide="shopping-cart" class="w-4 h-4 text-white"></i>
-                </div>
-                <p class="font-bold text-sm">${message}</p>
-            </div>
+            <span class="cart-toast-icon">🛒</span>
+            <span class="cart-toast-msg">${message}</span>
         `;
-        
-        lucide.createIcons();
-        
-        // Show
-        setTimeout(() => {
-            toast.classList.remove('opacity-0', 'translate-y-10', 'scale-90');
-        }, 10);
-        
-        // Hide after 3s
-        setTimeout(() => {
-            toast.classList.add('opacity-0', 'translate-y-10', 'scale-90');
+
+        // Show: remove hidden, trigger visible state
+        toast.classList.remove('cart-toast--hidden');
+        toast.classList.add('cart-toast--visible');
+
+        // Auto-hide after 3s
+        this._toastTimer = setTimeout(() => {
+            toast.classList.remove('cart-toast--visible');
+            toast.classList.add('cart-toast--hidden');
+            this._toastTimer = null;
         }, 3000);
     }
 }
