@@ -36,16 +36,22 @@
 <body class="antialiased text-slate-900 transition-colors duration-300">
 
     <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
+    <header
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
         <div class="container flex items-center justify-between">
+            <!-- Logo -->
             <a href="index.html" class="flex items-center gap-2 group">
-                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform" alt="Veganova Icon">
-                <span class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
+                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform"
+                    alt="Veganova Icon">
+                <span
+                    class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
             </a>
 
+            <!-- Desktop Nav -->
             <nav class="hidden lg:flex items-center gap-10">
                 <div class="nav-item-dropdown">
-                    <a href="index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
+                    <a href="index.html"
+                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
                         Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
                     </a>
                     <div class="dropdown-menu">
@@ -53,8 +59,11 @@
                         <a href="home-2.html" class="dropdown-item">Home 2</a>
                     </div>
                 </div>
+                <a href="about.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
                 <div class="nav-item-dropdown">
-                    <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
+                    <a href="meals.html"
+                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
                         Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
                     </a>
                     <div class="dropdown-menu">
@@ -64,26 +73,35 @@
                         <a href="dinner.html" class="dropdown-item">Dinner</a>
                     </div>
                 </div>
-                <a href="pricing.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
-                <a href="dashboard/index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
-                <a href="blog.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
-                <a href="about.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
-                <a href="contact.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
+                <a href="pricing.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
+                <a href="dashboard/index.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
+                <a href="blog.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
+                <a href="contact.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
             </nav>
 
+            <!-- Buttons & Actions -->
             <div class="flex items-center gap-4">
                 <!-- Cart Icon -->
-                <a href="cart.html" class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
-                    <i data-lucide="shopping-cart" class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
-                    <span class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
+                <a href="cart.html"
+                    class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
+                    <i data-lucide="shopping-cart"
+                        class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
+                    <span
+                        class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
                 </a>
 
-                <button class="theme-toggle p-2 rounded-2xl hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
+                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
                     <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
                     <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
                 </button>
                 <div class="hidden md:flex items-center gap-4">
-                    <a href="auth/login.html" class="text-sm font-semibold hover:text-secondary dark:text-white transition-colors">Login</a>
+                    <a href="auth/login.html"
+                        class="text-sm font-semibold hover:text-secondary dark:text-white">Login</a>
                     <a href="auth/signup.html" class="btn-primary">Sign Up</a>
                 </div>
                 <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
@@ -94,40 +112,43 @@
     </header>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
         <div class="flex flex-col h-full p-8">
             <div class="flex items-center justify-between mb-12">
-                <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
-                <button id="mobile-menu-close" class="p-2 border rounded-2xl dark:border-white/20">
-                    <i data-lucide="x" class="dark:text-white"></i>
-                </button>
-            </div>
-            <nav class="flex flex-col gap-6">
-                <!-- Home Mobile Options -->
-                <div class="flex flex-col gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Homepage Options</span>
-                    <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 1</a>
+                <div class="flex items-center gap-2">
+                    <img src="assets/img/logo-icon.svg" class="w-8 h-8" alt="Logo">
+                    <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
                 </div>
-                <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
-                <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Pricing</a>
-                <a href="dashboard/index.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Dashboard</a>
-                <a href="blog.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Blog</a>
-                <a href="about.html" class="text-3xl font-bold hover:text-secondary dark:text-white">About</a>
-                <a href="contact.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Contact</a>
-            </nav>
-            <div class="mt-auto flex flex-col gap-4">
-                <a href="auth/login.html" class="text-center py-4 rounded-xl border font-bold dark:border-white/20 dark:text-white">Login</a>
-                <a href="auth/signup.html" class="btn-primary text-center py-4 rounded-xl">Get Started</a>
+                <div class="flex items-center gap-3">
+                    <button class="rtl-toggle p-2 rounded-full border dark:border-white/20 flex items-center justify-center min-w-[40px]">
+                        <span class="text-xs font-black dark:text-gray-300">RTL</span>
+                    </button>
+                    <button class="theme-toggle p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
+                        <i data-lucide="sun" class="sun-icon text-secondary hidden w-5 h-5"></i>
+                        <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary w-5 h-5"></i>
+                    </button>
+                    <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
+                        <i data-lucide="x" class="dark:text-white w-6 h-6"></i>
+                    </button>
+                </div>
             </div>
-        </div>
     </div>
 
-    <main class="pt-32 pb-24 px-6 overflow-hidden">
-        <div class="container">
-            <div class="text-center mb-16 reveal-on-scroll">
-                <h1 class="text-5xl md:text-7xl font-black font-heading mb-6 dark:text-white">Get in <span class="text-secondary">Touch</span></h1>
-                <p class="text-lg text-slate-700 dark:text-slate-300">Questions about our menu or delivery? Our team is live and ready to help.</p>
+    <main class="pb-24 overflow-hidden">
+        <!-- Page Hero Section -->
+        <section class="relative pt-40 pb-20 md:pt-48 md:pb-28 lg:pt-56 lg:pb-32 overflow-hidden mb-16 px-6 flex items-center justify-center min-h-[50vh]">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1528731708534-816fe59f90cb?w=1600&fit=crop" class="w-full h-full object-cover grayscale-[20%] brightness-[0.4] dark:brightness-[0.3]" alt="Contact Us Background">
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent dark:from-black/80"></div>
             </div>
+            <div class="container relative z-10 text-center reveal-on-scroll">
+                <h1 class="text-6xl md:text-8xl font-black font-heading mb-6 text-white drop-shadow-xl">Contact <span class="text-secondary">Us</span></h1>
+                <p class="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto font-medium drop-shadow-md">Questions about our menu or delivery? Our team is live and ready to help.</p>
+            </div>
+        </section>
+
+        <div class="container px-6">
 
             <!-- Modern 2-Column Split Layout -->
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-24 reveal-on-scroll">
@@ -290,3 +311,4 @@
     </script>
 </body>
 </html>
+

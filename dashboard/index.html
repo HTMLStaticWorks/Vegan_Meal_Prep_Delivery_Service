@@ -270,13 +270,19 @@
     <main class="main-content">
         <div class="container-fluid">
             <header class="top-navbar">
-                <div>
-                    <h1 class="mb-1">Dashboard</h1>
-                    <p class="text-muted small mb-0">Welcome back, Member!</p>
+                <div class="d-flex align-items-center gap-3">
+                    <button id="sidebar-toggle" class="btn btn-light d-lg-none bg-light-subtle dark:bg-slate-800 border-0 p-2 rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <div>
+                        <h1 class="mb-1">Dashboard</h1>
+                        <p class="text-muted small mb-0 d-none d-sm-block">Welcome back, Member!</p>
+                    </div>
                 </div>
                 
                 <div class="d-flex align-items-center gap-3">
-                    <button class="theme-toggle p-2 rounded-circle border-0 bg-light-subtle dark:bg-slate-800 transition-colors" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                    <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
+                <button class="theme-toggle p-2 rounded-circle border-0 bg-light-subtle dark:bg-slate-800 transition-colors" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
                         <i data-lucide="sun" class="sun-icon text-warning d-none"></i>
                         <i data-lucide="moon" class="moon-icon text-primary dark:text-warning"></i>
                     </button>
@@ -420,35 +426,90 @@
         lucide.createIcons();
 
         // Theme Toggle Logic for Dashboard
-        const themeBtn = document.querySelector('.theme-toggle');
-        const sunIcon = document.querySelector('.sun-icon');
-        const moonIcon = document.querySelector('.moon-icon');
-        const body = document.body;
+        const themeToggleBtns = document.querySelectorAll('.theme-toggle');
+        const sunIcons = document.querySelectorAll('.sun-icon');
+        const moonIcons = document.querySelectorAll('.moon-icon');
+        const html = document.documentElement;
 
-        // Load saved theme
+        const updateIcons = (isDark) => {
+            sunIcons.forEach(icon => {
+                if (isDark) icon.classList.remove('d-none');
+                else icon.classList.add('d-none');
+            });
+            moonIcons.forEach(icon => {
+                if (isDark) icon.classList.add('d-none');
+                else icon.classList.remove('d-none');
+            });
+        };
+
         const savedTheme = localStorage.getItem('v-prep-theme');
         if (savedTheme === 'dark') {
-            body.classList.add('dark');
-            sunIcon.classList.remove('d-none');
-            moonIcon.classList.add('d-none');
+            html.classList.add('dark');
+            updateIcons(true);
         }
 
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('dark');
-            const isDark = body.classList.contains('dark');
-            localStorage.setItem('v-prep-theme', isDark ? 'dark' : 'light');
-            
-            if (isDark) {
-                sunIcon.classList.remove('d-none');
-                moonIcon.classList.add('d-none');
-            } else {
-                sunIcon.classList.add('d-none');
-                moonIcon.classList.remove('d-none');
-            }
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                const isDark = html.classList.contains('dark');
+                localStorage.setItem('v-prep-theme', isDark ? 'dark' : 'light');
+                updateIcons(isDark);
+            });
         });
+
+        // RTL Toggle for Dashboard
+        const rtlBtns = document.querySelectorAll('.rtl-toggle');
+        const docHtml = document.documentElement;
+        
+        const savedRTL = localStorage.getItem('v-prep-rtl');
+        if (savedRTL === 'true') {
+            docHtml.setAttribute('dir', 'rtl');
+            rtlBtns.forEach(btn => {
+                const span = btn.querySelector('span');
+                if (span) span.textContent = 'LTR';
+            });
+        }
+    
+        rtlBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const isRTL = docHtml.getAttribute('dir') === 'rtl';
+                if (isRTL) {
+                    docHtml.removeAttribute('dir');
+                    localStorage.setItem('v-prep-rtl', 'false');
+                    rtlBtns.forEach(b => {
+                        const s = b.querySelector('span');
+                        if (s) s.textContent = 'RTL';
+                    });
+                } else {
+                    docHtml.setAttribute('dir', 'rtl');
+                    localStorage.setItem('v-prep-rtl', 'true');
+                    rtlBtns.forEach(b => {
+                        const s = b.querySelector('span');
+                        if (s) s.textContent = 'LTR';
+                    });
+                }
+            });
+        });
+
+        // Sidebar Toggle for Mobile
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        if(sidebarToggle && sidebar) {
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('show');
+            });
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992 && !sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    sidebar.classList.remove('show');
+                }
+            });
+        }
     </script>
 </body>
 </html>
+
 
 
 

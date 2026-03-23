@@ -9,43 +9,265 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        :root { --primary-bg: #f8fafc; --sidebar-bg: #ffffff; --accent-green: #14532d; --vibrant-lime: #84cc16; --text-main: #0f172a; --text-muted: #64748b; --card-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
-        body { font-family: 'Inter', sans-serif; background-color: var(--primary-bg); color: var(--text-main); display: flex; }
-        h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 800; }
-        .sidebar { width: 280px; height: 100vh; position: fixed; left: 0; top: 0; background-color: var(--sidebar-bg); border-right: 1px solid rgba(0,0,0,0.05); padding: 2rem; z-index: 1000; }
+        :root {
+            --primary-bg: #f8fafc;
+            --sidebar-bg: #ffffff;
+            --accent-green: #14532d;
+            --vibrant-lime: #84cc16;
+            --text-main: #0f172a;
+            --text-muted: #475569; /* Slate-600 for visibility */
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body.dark {
+            --primary-bg: #0f172a;
+            --sidebar-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #cbd5e1; /* Slate-300 for high contrast */
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+        }
+
+        /* Generic Overrides for Contrast */
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--accent-green) !important;
+        }
+
+        .text-success {
+            color: var(--accent-green) !important;
+        }
+
+        .dark .text-success {
+            color: var(--vibrant-lime) !important;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-main);
+            transition: var(--transition);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            left: 0; top: 0;
+            background-color: var(--sidebar-bg);
+            border-right: 1px solid rgba(0,0,0,0.05);
+            padding: 2rem;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .dark .sidebar {
+            border-right: 1px solid rgba(255,255,255,0.05);
+        }
+
         .sidebar-brand img {
             width: 32px;
             height: 32px;
             object-fit: contain;
         }
 
-        .sidebar-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 3rem; text-decoration: none; }
-        .brand-name { font-size: 1rem; font-weight: 700; color: var(--accent-green); text-transform: uppercase; }
-        .nav-menu { list-style: none; padding: 0; margin: 0; }
-        .nav-link { display: flex; align-items: center; gap: 12px; padding: 0.875rem 1.25rem; color: var(--text-muted); text-decoration: none; font-weight: 600; border-radius: 12px; transition: 0.3s; }
-        .nav-link:hover, .nav-link.active { background-color: rgba(132, 204, 22, 0.1); color: var(--vibrant-lime); }
-        .main-content { margin-left: 280px; flex-grow: 1; padding: 2rem 3rem; }
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 3rem;
+            text-decoration: none;
+        }
+
+        .brand-name {
+            font-size: 1.125rem;
+            font-weight: 800;
+            color: var(--accent-green);
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .dark .brand-name {
+            color: white;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.875rem 1.25rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(20, 83, 45, 0.05);
+            color: var(--accent-green);
+        }
+
+        .dark .nav-link:hover, .dark .nav-link.active {
+            background-color: rgba(132, 204, 22, 0.1);
+            color: var(--vibrant-lime);
+        }
+
+        .nav-link i {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 280px;
+            flex-grow: 1;
+            padding: 2rem 3rem;
+            transition: var(--transition);
+        }
+
+        .top-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 16px;
+            padding-right: 1.25rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .user-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        .dark .user-profile {
+            background: var(--sidebar-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
         .settings-card { background: white; border-radius: 32px; padding: 2.5rem; box-shadow: var(--card-shadow); }
-        @media (max-width: 992px) { .sidebar { transform: translateX(-100%); } .main-content { margin-left: 0; } }
+        .dark .settings-card { background: var(--sidebar-bg); border: 1px solid rgba(255,255,255,0.05); }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body class="light-mode">
-    <aside class="sidebar">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
         <a href="../index.html" class="sidebar-brand">
             <img src="../assets/img/logo-icon.svg" class="v-logo-img" style="width: 32px; height: 32px;" alt="Veganova Icon">
             <span class="brand-name">Veganova</span>
         </a>
+
         <ul class="nav-menu">
-            <li class="nav-item"><a href="../index.html" class="nav-link"><i data-lucide="layout-dashboard"></i> Overview</a></li>
-            <li class="nav-item"><a href="weekly-plan.html" class="nav-link"><i data-lucide="calendar"></i> Weekly Plan</a></li>
-            <li class="nav-item"><a href="deliveries.html" class="nav-link"><i data-lucide="truck"></i> Deliveries</a></li>
-            <li class="nav-item"><a href="favorites.html" class="nav-link"><i data-lucide="heart"></i> Saved Meals</a></li>
-            <li class="nav-item"><a href="preferences.html" class="nav-link active"><i data-lucide="settings"></i> Account Settings</a></li>
-             <li class="nav-item mt-5 pt-5 border-t"><a href="../index.html" class="nav-link text-danger"><i data-lucide="log-out"></i> Logout</a></li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">
+                    <i data-lucide="layout-dashboard"></i> Overview
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="weekly-plan.html" class="nav-link">
+                    <i data-lucide="calendar"></i> Weekly Plan
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="deliveries.html" class="nav-link">
+                    <i data-lucide="truck"></i> Deliveries
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="favorites.html" class="nav-link">
+                    <i data-lucide="heart"></i> Saved Meals
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="preferences.html" class="nav-link active">
+                    <i data-lucide="settings"></i> Account Settings
+                </a>
+            </li>
+            <li class="nav-item mt-5 pt-5 border-t">
+                <a href="../index.html" class="nav-link text-danger">
+                    <i data-lucide="log-out"></i> Logout
+                </a>
+            </li>
         </ul>
     </aside>
+
     <main class="main-content">
-        <h1 class="mb-5">Account Settings</h1>
+        <div class="container-fluid">
+            <header class="top-navbar">
+                <div class="d-flex align-items-center gap-3">
+                    <button id="sidebar-toggle" class="btn btn-light d-lg-none bg-light-subtle dark:bg-slate-800 border-0 p-2 rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="menu"></i>
+                    </button>
+                    <div>
+                        <h1 class="mb-1">Account Settings</h1>
+                        <p class="text-muted small mb-0 d-none d-sm-block">Update your dietary preferences and plan details.</p>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
+                    <button class="theme-toggle p-2 rounded-circle border-0 bg-light-subtle dark:bg-slate-800 transition-colors" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="sun" class="sun-icon text-warning d-none"></i>
+                        <i data-lucide="moon" class="moon-icon text-primary dark:text-warning"></i>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" class="user-avatar" alt="User">
+                        <div class="d-none d-md-block">
+                            <h6 class="mb-0 small font-bold">Member</h6>
+                            <span class="text-muted text-[10px] uppercase font-bold tracking-widest">Premium Plan</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
         <div class="settings-card">
             <div class="row g-4">
                 <div class="col-md-6 border-end">
@@ -77,40 +299,95 @@
             </div>
         </div>
     </main>
-    <script>lucide.createIcons();
+</div>
+    <script>
+        lucide.createIcons();
 
         // Theme Toggle Logic for Dashboard
-        const themeBtn = document.querySelector('.theme-toggle');
-        const sunIcon = document.querySelector('.sun-icon');
-        const moonIcon = document.querySelector('.moon-icon');
-        const body = document.body;
+        const themeToggleBtns = document.querySelectorAll('.theme-toggle');
+        const sunIcons = document.querySelectorAll('.sun-icon');
+        const moonIcons = document.querySelectorAll('.moon-icon');
+        const html = document.documentElement;
 
-        // Load saved theme
+        const updateIcons = (isDark) => {
+            sunIcons.forEach(icon => {
+                if (isDark) icon.classList.remove('d-none');
+                else icon.classList.add('d-none');
+            });
+            moonIcons.forEach(icon => {
+                if (isDark) icon.classList.add('d-none');
+                else icon.classList.remove('d-none');
+            });
+        };
+
         const savedTheme = localStorage.getItem('v-prep-theme');
         if (savedTheme === 'dark') {
-            body.classList.add('dark');
-            if(sunIcon) sunIcon.classList.remove('d-none');
-            if(moonIcon) moonIcon.classList.add('d-none');
+            html.classList.add('dark');
+            updateIcons(true);
         }
 
-        if(themeBtn) {
-            themeBtn.addEventListener('click', () => {
-                body.classList.toggle('dark');
-                const isDark = body.classList.contains('dark');
+        themeToggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                const isDark = html.classList.contains('dark');
                 localStorage.setItem('v-prep-theme', isDark ? 'dark' : 'light');
-                
-                if (isDark) {
-                    if(sunIcon) sunIcon.classList.remove('d-none');
-                    if(moonIcon) moonIcon.classList.add('d-none');
+                updateIcons(isDark);
+            });
+        });
+
+        // RTL Toggle for Dashboard
+        const rtlBtns = document.querySelectorAll('.rtl-toggle');
+        const docHtml = document.documentElement;
+        
+        const savedRTL = localStorage.getItem('v-prep-rtl');
+        if (savedRTL === 'true') {
+            docHtml.setAttribute('dir', 'rtl');
+            rtlBtns.forEach(btn => {
+                const span = btn.querySelector('span');
+                if (span) span.textContent = 'LTR';
+            });
+        }
+    
+        rtlBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const isRTL = docHtml.getAttribute('dir') === 'rtl';
+                if (isRTL) {
+                    docHtml.removeAttribute('dir');
+                    localStorage.setItem('v-prep-rtl', 'false');
+                    rtlBtns.forEach(b => {
+                        const s = b.querySelector('span');
+                        if (s) s.textContent = 'RTL';
+                    });
                 } else {
-                    if(sunIcon) sunIcon.classList.remove('d-none'); // wait, should add d-none
-                    if(sunIcon) sunIcon.classList.add('d-none');
-                    if(moonIcon) moonIcon.classList.remove('d-none');
+                    docHtml.setAttribute('dir', 'rtl');
+                    localStorage.setItem('v-prep-rtl', 'true');
+                    rtlBtns.forEach(b => {
+                        const s = b.querySelector('span');
+                        if (s) s.textContent = 'LTR';
+                    });
                 }
             });
-        }</script>
+        });
+
+        // Sidebar Toggle for Mobile
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        if(sidebarToggle && sidebar) {
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('show');
+            });
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992 && !sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                    sidebar.classList.remove('show');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
+
 
 
 

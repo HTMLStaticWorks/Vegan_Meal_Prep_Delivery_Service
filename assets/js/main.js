@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initRevealAnimations();
     initActiveLinks();
     initCartButtons();
+    initBackToTop();
+    initRTLToggle();
 });
 
 /* Global Add-to-Cart Button Handler (works on all pages) */
@@ -56,19 +58,19 @@ function initCartButtons() {
 /* Theme Management */
 function initTheme() {
     const themeToggleBtns = document.querySelectorAll('.theme-toggle');
-    const body = document.body;
+    const html = document.documentElement;
     
     // Check for saved theme
     const savedTheme = localStorage.getItem('v-prep-theme');
     if (savedTheme === 'dark') {
-        body.classList.add('dark');
+        html.classList.add('dark');
         updateThemeIcons('dark');
     }
 
     themeToggleBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            body.classList.toggle('dark');
-            const isDark = body.classList.contains('dark');
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
             localStorage.setItem('v-prep-theme', isDark ? 'dark' : 'light');
             updateThemeIcons(isDark ? 'dark' : 'light');
         });
@@ -211,6 +213,10 @@ function initRTLToggle() {
     const savedRTL = localStorage.getItem('v-prep-rtl');
     if (savedRTL === 'true') {
         html.setAttribute('dir', 'rtl');
+        rtlBtns.forEach(btn => {
+            const span = btn.querySelector('span');
+            if (span) span.textContent = 'LTR';
+        });
     }
 
     rtlBtns.forEach(btn => {
@@ -219,21 +225,20 @@ function initRTLToggle() {
             if (isRTL) {
                 html.removeAttribute('dir');
                 localStorage.setItem('v-prep-rtl', 'false');
+                rtlBtns.forEach(b => {
+                    const s = b.querySelector('span');
+                    if (s) s.textContent = 'RTL';
+                });
             } else {
                 html.setAttribute('dir', 'rtl');
                 localStorage.setItem('v-prep-rtl', 'true');
+                rtlBtns.forEach(b => {
+                    const s = b.querySelector('span');
+                    if (s) s.textContent = 'LTR';
+                });
             }
         });
     });
 }
 
-// Global initialization
-document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
-    initMobileMenu();
-    initScrollNavbar();
-    initScrollReveal();
-    initActiveLinks();
-    initBackToTop();
-    initRTLToggle();
-});
+

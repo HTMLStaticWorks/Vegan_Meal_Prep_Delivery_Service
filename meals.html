@@ -61,6 +61,8 @@
                         <a href="home-2.html" class="dropdown-item">Home 2</a>
                     </div>
                 </div>
+                <a href="about.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
                 <div class="nav-item-dropdown">
                     <a href="meals.html"
                         class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
@@ -79,8 +81,6 @@
                     class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
                 <a href="blog.html"
                     class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
-                <a href="about.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
                 <a href="contact.html"
                     class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
             </nav>
@@ -96,13 +96,14 @@
                         class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
                 </a>
 
+                <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
                 <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
                     <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
                     <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
                 </button>
                 <div class="hidden md:flex items-center gap-4">
                     <a href="auth/login.html"
-                        class="text-sm font-semibold hover:text-secondary dark:text-white transition-colors">Login</a>
+                        class="text-sm font-semibold hover:text-secondary dark:text-white">Login</a>
                     <a href="auth/signup.html" class="btn-primary">Sign Up</a>
                 </div>
                 <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
@@ -117,30 +118,23 @@
         class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
         <div class="flex flex-col h-full p-8">
             <div class="flex items-center justify-between mb-12">
-                <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
-                <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20">
-                    <i data-lucide="x" class="dark:text-white"></i>
-                </button>
-            </div>
-            <nav class="flex flex-col gap-6">
-                <!-- Home Mobile Options -->
-                <div class="flex flex-col gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Homepage Options</span>
-                    <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 1</a>
+                <div class="flex items-center gap-2">
+                    <img src="assets/img/logo-icon.svg" class="w-8 h-8" alt="Logo">
+                    <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
                 </div>
-                <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
-                <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Pricing</a>
-                <a href="dashboard/index.html"
-                    class="text-3xl font-bold hover:text-secondary dark:text-white">Dashboard</a>
-                <a href="about.html" class="text-3xl font-bold hover:text-secondary dark:text-white">About</a>
-                <a href="contact.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Contact</a>
-            </nav>
-            <div class="mt-auto flex flex-col gap-4">
-                <a href="auth/login.html"
-                    class="text-center py-4 rounded-xl border font-bold dark:border-white/20 dark:text-white">Login</a>
-                <a href="auth/signup.html" class="btn-primary text-center py-4 rounded-xl">Get Started</a>
+                <div class="flex items-center gap-3">
+                    <button class="rtl-toggle p-2 rounded-full border dark:border-white/20 flex items-center justify-center min-w-[40px]">
+                        <span class="text-xs font-black dark:text-gray-300">RTL</span>
+                    </button>
+                    <button class="theme-toggle p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
+                        <i data-lucide="sun" class="sun-icon text-secondary hidden w-5 h-5"></i>
+                        <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary w-5 h-5"></i>
+                    </button>
+                    <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
+                        <i data-lucide="x" class="dark:text-white w-6 h-6"></i>
+                    </button>
+                </div>
             </div>
-        </div>
     </div>
 
     <main class="pt-32 pb-24 px-6">
@@ -405,3 +399,4 @@
 </body>
 
 </html>
+

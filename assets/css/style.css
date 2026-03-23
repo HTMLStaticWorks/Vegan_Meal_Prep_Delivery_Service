@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Dark Mode */
-body.dark {
+html.dark body {
     color: var(--text-light);
     background-color: var(--bg-dark);
 }
@@ -181,7 +181,8 @@ body.dark {
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
 }
 
-.nav-item-dropdown:hover .dropdown-menu {
+.nav-item-dropdown:hover .dropdown-menu,
+.nav-item-dropdown:focus-within .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -406,4 +407,20 @@ body.dark {
 
 .dark .voice-card .author-role {
     color: #94a3b8; /* slate-400 */
+}
+
+/* RTL Support Overrides */
+html[dir="rtl"] {
+    text-align: right;
+}
+html[dir="rtl"] .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+html[dir="rtl"] .nav-link::after {
+    left: auto;
+    right: 0;
+}
+html[dir="rtl"] .nav-item-dropdown > a i {
+    transform: rotate(180deg);
 }
