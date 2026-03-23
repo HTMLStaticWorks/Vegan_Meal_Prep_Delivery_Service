@@ -1,0 +1,909 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Menu | Veganova Vegan Meal Service</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#14532d',
+                        secondary: '#84cc16',
+                        accent: '#f5f5f4',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="antialiased text-slate-900 transition-colors duration-300">
+
+    <!-- Navigation Header -->
+    <header
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
+        <div class="container flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 group">
+                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform"
+                    alt="Veganova Icon">
+                <span
+                    class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-10">
+                <div class="nav-item-dropdown">
+                    <a href="index.html"
+                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
+                        Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="index.html" class="dropdown-item">Home 1</a>
+                        <a href="home-2.html" class="dropdown-item">Home 2</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a href="meals.html"
+                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1 active">
+                        Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="meals.html" class="dropdown-item">All Meals</a>
+                        <a href="breakfast.html" class="dropdown-item">Breakfast</a>
+                        <a href="lunch.html" class="dropdown-item active">Lunch</a>
+                        <a href="dinner.html" class="dropdown-item">Dinner</a>
+                    </div>
+                </div>
+                <a href="pricing.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
+                <a href="dashboard/index.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
+                <a href="blog.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
+                <a href="about.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
+                <a href="contact.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
+            </nav>
+
+            <!-- Buttons & Actions -->
+            <div class="flex items-center gap-4">
+                <!-- Cart Icon -->
+                <a href="cart.html"
+                    class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
+                    <i data-lucide="shopping-cart"
+                        class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
+                    <span
+                        class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
+                </a>
+
+                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                    <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
+                    <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
+                </button>
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="auth/login.html"
+                        class="text-sm font-semibold hover:text-secondary dark:text-white transition-colors">Login</a>
+                    <a href="auth/signup.html" class="btn-primary">Sign Up</a>
+                </div>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
+        <div class="flex flex-col h-full p-8">
+            <div class="flex items-center justify-between mb-12">
+                <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
+                <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20">
+                    <i data-lucide="x" class="dark:text-white"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col gap-6">
+                <!-- Home Mobile Options -->
+                <div class="flex flex-col gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Homepage Options</span>
+                    <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 1</a>
+                </div>
+                <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
+                <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Pricing</a>
+                <a href="dashboard/index.html"
+                    class="text-3xl font-bold hover:text-secondary dark:text-white">Dashboard</a>
+                <a href="about.html" class="text-3xl font-bold hover:text-secondary dark:text-white">About</a>
+                <a href="contact.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Contact</a>
+            </nav>
+            <div class="mt-auto flex flex-col gap-4">
+                <a href="auth/login.html"
+                    class="text-center py-4 rounded-xl border font-bold dark:border-white/20 dark:text-white">Login</a>
+                <a href="auth/signup.html" class="btn-primary text-center py-4 rounded-xl">Get Started</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="pt-32 pb-24 px-6">
+        <div class="container">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 reveal-on-scroll">
+                <div>
+                    <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">Balanced
+                        Living</span>
+                    <h1 class="text-5xl md:text-7xl font-black font-heading dark:text-white italic">Lunch Menu</h1>
+                </div>
+                <p class="text-slate-700 dark:text-slate-300 max-w-md text-lg leading-relaxed">Delicious, filling, and
+                    nutritious vegan lunches designed to keep you powered through your afternoon.</p>
+            </div>
+
+            <!-- Dynamic Menu Category Filters & Search -->
+            <div
+                class="bg-white dark:bg-slate-800 p-6 md:p-8 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 mb-16 reveal-on-scroll">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
+                    <!-- Search Bar -->
+                    <div class="md:col-span-2 relative">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 block">Search
+                            Lunch</label>
+                        <div class="relative">
+                            <i data-lucide="search"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
+                            <input type="text" id="search-meals" placeholder="Search lunch meals..."
+                                class="w-full bg-slate-50 dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-700 rounded-2xl pl-12 pr-4 py-3.5 outline-none focus:border-secondary transition-all dark:text-white placeholder:text-slate-400">
+                        </div>
+                    </div>
+
+                    <!-- Meal Type Filter -->
+                    <div class="relative">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 block">Meal
+                            Type</label>
+                        <select id="tag-filter"
+                            class="w-full bg-slate-50 dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-700 rounded-2xl px-4 py-3.5 outline-none focus:border-secondary transition-all dark:text-white appearance-none cursor-pointer">
+                            <option value="all">All Types</option>
+                            <option value="high-protein">High Protein</option>
+                            <option value="detox">Detox</option>
+                            <option value="gluten-free">Gluten Free</option>
+                        </select>
+                        <i data-lucide="chevron-down"
+                            class="absolute right-4 top-[70%] -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                    </div>
+
+                    <!-- Calorie Filter -->
+                    <div class="relative">
+                        <label
+                            class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 block">Calories</label>
+                        <select id="calorie-filter"
+                            class="w-full bg-slate-50 dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-700 rounded-2xl px-4 py-3.5 outline-none focus:border-secondary transition-all dark:text-white appearance-none cursor-pointer">
+                            <option value="all">Any Calories</option>
+                            <option value="low">Low (< 350 kcal)</option>
+                            <option value="medium">Medium (350-450 kcal)</option>
+                            <option value="high">High (> 450 kcal)</option>
+                        </select>
+                        <i data-lucide="chevron-down"
+                            class="absolute right-4 top-[70%] -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none"></i>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-700 flex flex-wrap items-center justify-between gap-6">
+                    <!-- Category Pills -->
+                    <div class="grid grid-cols-2 md:flex items-center gap-3 w-full md:w-auto">
+                        <a href="meals.html"
+                            class="px-6 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 font-bold text-xs border-2 border-transparent hover:border-secondary transition-all text-center">All</a>
+                        <a href="breakfast.html"
+                            class="px-6 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 font-bold text-xs border-2 border-transparent hover:border-secondary transition-all text-center">Breakfast</a>
+                        <a href="lunch.html"
+                            class="px-6 py-2.5 rounded-xl bg-primary text-white font-bold text-xs shadow-lg shadow-primary/20 border-2 border-primary transition-all active text-center">Lunch</a>
+                        <a href="dinner.html"
+                            class="px-6 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 font-bold text-xs border-2 border-transparent hover:border-secondary transition-all text-center">Dinner</a>
+                    </div>
+
+                    <!-- Sort Filter -->
+                    <div class="flex items-center gap-3 ml-auto">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">Sort By:</span>
+                        <select id="sort-filter"
+                            class="bg-transparent font-bold text-sm dark:text-white outline-none cursor-pointer hover:text-secondary transition-colors">
+                            <option value="default">Newest First</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="kcal-low">Calories: Low to High</option>
+                            <option value="kcal-high">Calories: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meal Grid -->
+            <div id="meal-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Lunch Card 1 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="11" data-category="lunch" data-tag="high-protein" data-kcal="420" data-price="13.50"
+                    data-protein="24g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&fit=crop"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Buddha Bowl" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">high
+                                protein</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Quinoa Power
+                            Buddha Bowl</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Organic quinoa, roasted chickpeas, kale, and tahini dressing.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">420 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">24g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$13.50</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 2 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="12" data-category="lunch" data-tag="detox" data-kcal="310" data-price="12.00"
+                    data-protein="12g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800&fit=crop"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Green Bowl" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">detox</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Green Goddess
+                            Salad Bowl</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Mixed greens, avocado, cucumber, and pumpkin seeds.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">310 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">12g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$12.00</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 3 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="13" data-category="lunch" data-tag="gluten-free" data-kcal="380" data-price="14.50"
+                    data-protein="16g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.pexels.com/photos/14537699/pexels-photo-14537699.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Lentil Curry" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">gluten
+                                free</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Red Lentil &
+                            Spinach Curry</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Fragrant coconut curry with lentils and steamed brown rice.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">380 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">16g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$14.50</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 4 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="14" data-category="lunch" data-tag="high-protein" data-kcal="450" data-price="15.00"
+                    data-protein="28g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.pexels.com/photos/28992227/pexels-photo-28992227.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Falafel Plate" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">high
+                                protein</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Baked Falafel
+                            Platter</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Baked falafels with hummus, tabouli, and pickled cabbage.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">450 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">28g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$15.00</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 5 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="15" data-category="lunch" data-tag="detox" data-kcal="340" data-price="12.50"
+                    data-protein="14g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.pexels.com/photos/4617527/pexels-photo-4617527.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Sweet Potato Bowl" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">detox</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Roasted Sweet
+                            Potato Bowl</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Roasted sweet potato, black beans, corn, and avocado lime crema.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">340 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">14g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$12.50</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 6 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="16" data-category="lunch" data-tag="gluten-free" data-kcal="390" data-price="13.00"
+                    data-protein="18g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.pexels.com/photos/1484518/pexels-photo-1484518.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Sushi Bowl" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">gluten
+                                free</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Tofu Sushi Salad
+                            Bowl</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Marinated tofu, edamame, seaweed, and pickled ginger over rice.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">390 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">18g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$13.00</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 7 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="17" data-category="lunch" data-tag="gluten-free" data-kcal="390" data-price="10.00"
+                    data-protein="16g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.pexels.com/photos/14077456/pexels-photo-14077456.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Chickpea Wrap" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">gluten
+                                free</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Mediterranean
+                            Chickpea Wrap</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Spiced chickpeas, hummus, and cucumber in a spinach wrap.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">390 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">16g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$10.00</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 8 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="18" data-category="lunch" data-tag="high-protein" data-kcal="450" data-price="14.50"
+                    data-protein="26g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.pexels.com/photos/4551155/pexels-photo-4551155.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Banh Mi Bowl" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">high
+                                protein</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Tempeh Banh Mi
+                            Bowl</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Organic tempeh with pickled carrots and fresh cilantro over rice.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">450 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">26g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$14.50</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 9 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="19" data-category="lunch" data-tag="detox" data-kcal="310" data-price="12.00"
+                    data-protein="10g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.pexels.com/photos/33988118/pexels-photo-33988118.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Zoodles" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">detox</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Zucchini Pesto
+                            Zoodles</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Spiralized zucchini with basil pesto and sun-dried tomatoes.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">310 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">10g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$12.00</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 10 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="20" data-category="lunch" data-tag="gluten-free" data-kcal="380" data-price="13.50"
+                    data-protein="14g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.pexels.com/photos/772513/pexels-photo-772513.png"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Eggplant" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">gluten
+                                free</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Miso Glazed
+                            Eggplant Bowl</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Roasted baby eggplant with miso glaze over brown rice.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">380 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">14g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$13.50</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 11 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="21" data-category="lunch" data-tag="detox" data-kcal="340" data-price="11.00"
+                    data-protein="12g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.pexels.com/photos/5175603/pexels-photo-5175603.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Kale Salad" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">detox</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Rainbow Kale
+                            Salad</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Finely shredded kale with slaw and tahini-miso dressing.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">340 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">12g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$11.00</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lunch Card 12 -->
+                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
+                    data-id="22" data-category="lunch" data-tag="high-protein" data-kcal="410" data-price="12.50"
+                    data-protein="18g">
+                    <div class="relative h-64 overflow-hidden shrink-0">
+                        <img src="https://images.pexels.com/photos/3233282/pexels-photo-3233282.jpeg"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            alt="Sweet Potato" data-property="image">
+                        <div class="absolute top-6 right-6">
+                            <span
+                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">lunch</span>
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span
+                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">high
+                                protein</span>
+                        </div>
+                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Spiced Sweet
+                            Potato Salad</h3>
+                        <p
+                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
+                            Cumin-roasted sweet potato cubes mixed with black beans.</p>
+                        <div
+                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
+                                <span class="text-xs font-black dark:text-gray-300">410 <span
+                                        class="text-slate-400 font-medium">kcal</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
+                                <span class="text-xs font-black dark:text-gray-300 font-bold">18g <span
+                                        class="text-slate-400 font-medium">Prot.</span></span>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex flex-col">
+                                <span
+                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$12.50</span>
+                            </div>
+                            <button
+                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
+                                    data-lucide="plus" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white overflow-hidden">
+        <div class="container">
+            <div class="grid lg:grid-cols-4 gap-16 mb-20">
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-8">
+                        <img src="assets/img/logo-icon.svg" class="w-10 h-10" alt="Veganova Icon">
+                        <span class="text-2xl font-black font-heading tracking-tight uppercase">Veganova</span>
+                    </a>
+                    <p class="text-slate-400 text-lg max-w-md mb-10 leading-relaxed">
+                        Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat
+                        better every single day.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-bold font-heading mb-8">Quick Links</h5>
+                    <ul class="space-y-4">
+                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors">Weekly
+                                Menu</a></li>
+                        <li><a href="pricing.html"
+                                class="text-slate-400 hover:text-secondary transition-colors">Subscription Plans</a>
+                        </li>
+                        <li><a href="blog.html" class="text-slate-400 hover:text-secondary transition-colors">Healthy
+                                Blog</a></li>
+                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors">Our
+                                Mission</a></li>
+                        <li><a href="contact.html" class="text-slate-400 hover:text-secondary transition-colors">Contact
+                                Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-xl font-bold font-heading mb-8">Newsletter</h5>
+                    <p class="text-slate-400 text-sm mb-6">Stay updated with our weekly recipes and discounts.</p>
+                    <form action="#" class="relative">
+                        <input type="email" placeholder="Your email"
+                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-colors">
+                        <button
+                            class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-2xl font-bold">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-white/5 flex flex-col items-center gap-8 text-sm text-slate-400">
+                <p class="text-center">&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/cart-system.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/meals.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -15,25 +15,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Global Add-to-Cart Button Handler (works on all pages) */
 function initCartButtons() {
-    // Use event delegation so it works for both static and dynamically rendered cards
     document.addEventListener('click', (e) => {
         const btn = e.target.closest('.add-to-cart-btn');
         if (!btn) return;
 
+        let mealData = {};
         const rawData = btn.dataset.meal;
-        if (!rawData) return;
 
-        try {
-            const mealData = JSON.parse(rawData);
-            if (window.Cart) {
-                window.Cart.addToCart(mealData.id, mealData);
-
-                // Visual feedback: briefly animate the button
-                btn.classList.add('scale-90');
-                setTimeout(() => btn.classList.remove('scale-90'), 150);
+        if (rawData) {
+            try {
+                mealData = JSON.parse(rawData);
+            } catch (err) {
+                console.warn('Cart: Could not parse meal data', err);
             }
-        } catch (err) {
-            console.warn('Cart: Could not parse meal data', err);
+        } else {
+            // Fallback: Read from DOM attributes on parent card
+            const card = btn.closest('.meal-card');
+            if (card) {
+                const img = card.querySelector('img');
+                const title = card.querySelector('h3');
+                mealData = {
+                    id: card.dataset.id || Date.now(),
+                    name: card.dataset.name || (title ? title.textContent.trim() : 'Vegan Meal'),
+                    price: parseFloat(card.dataset.price) || 0,
+                    image: card.dataset.image || (img ? img.getAttribute('src') : ''),
+                    kcal: parseInt(card.dataset.kcal) || 0,
+                    protein: card.dataset.protein || ''
+                };
+            }
+        }
+
+        if (window.Cart && mealData.name) {
+            window.Cart.addToCart(mealData.id, mealData);
+            btn.classList.add('scale-90');
+            setTimeout(() => btn.classList.remove('scale-90'), 150);
         }
     });
 }
@@ -134,8 +149,6 @@ function initRevealAnimations() {
     });
 }
 
-/* Highlight Active Nav Link */
-/* Highlight Active Nav Link */
 function initActiveLinks() {
     const path = window.location.pathname;
     const page = path.split('/').pop() || 'index.html';
@@ -169,3 +182,33 @@ function initActiveLinks() {
         }
     });
 }
+
+function initBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Global initialization
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    initMobileMenu();
+    initScrollNavbar();
+    initScrollReveal();
+    initActiveLinks();
+    initBackToTop();
+});

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,7 +53,17 @@
                         <a href="home-2.html" class="dropdown-item">Home 2</a>
                     </div>
                 </div>
-                <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Meals</a>
+                <div class="nav-item-dropdown">
+                    <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
+                        Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="meals.html" class="dropdown-item">All Meals</a>
+                        <a href="breakfast.html" class="dropdown-item">Breakfast</a>
+                        <a href="lunch.html" class="dropdown-item">Lunch</a>
+                        <a href="dinner.html" class="dropdown-item">Dinner</a>
+                    </div>
+                </div>
                 <a href="pricing.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
                 <a href="dashboard/index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
                 <a href="blog.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
@@ -97,7 +107,6 @@
                 <div class="flex flex-col gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
                     <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Homepage Options</span>
                     <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 1</a>
-                    <a href="home-2.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 2</a>
                 </div>
                 <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
                 <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Pricing</a>
@@ -126,30 +135,36 @@
                             Veganova didn't just start in a kitchen; it started with a frustration. In 2024, our founders looked at the landscape of "healthy" convenience and saw a gap: meals were either truly healthy but required hours of prep, or convenient but filled with hidden preservatives and ethical compromises.
                         </p>
                         <p class="text-xl text-slate-700 dark:text-slate-300 mb-10 leading-relaxed">
-                            We believed that by 2026, the world deserved better. We set out to prove that plant-based eating could be a premium, effortless experience. Our journey is one of relentless pursuit—finding the perfect organic farms, mastering zero-waste packaging, and architecting a delivery system that brings chef-level nutrition to your door in record time.
+                            We believed that by 2026, the world deserved better. We set out to prove that plant-based eating could be a premium, effortless experience.
                         </p>
-                        <div class="flex flex-wrap gap-8">
-                            <div class="bg-secondary/10 p-6 rounded-3xl border border-secondary/20 min-w-[160px]">
-                                <span class="block text-3xl font-black text-primary dark:text-secondary">100%</span>
-                                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Ethical Vegan</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="bg-secondary/10 p-8 rounded-[40px] border border-secondary/20 flex flex-col justify-between h-full group hover:bg-secondary/20 transition-all duration-500">
+                                <i data-lucide="shield-check" class="w-10 h-10 text-secondary mb-6"></i>
+                                <div>
+                                    <span class="block text-4xl font-black text-primary dark:text-secondary mb-2">100%</span>
+                                    <span class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-tight">Strictly Ethical Vegan Standards</span>
+                                </div>
                             </div>
-                            <div class="bg-primary/10 p-6 rounded-3xl border border-primary/20 min-w-[160px]">
-                                <span class="block text-3xl font-black text-primary dark:text-secondary">Zero</span>
-                                <span class="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">Plastic Goal</span>
+                            <div class="bg-primary/10 p-8 rounded-[40px] border border-primary/20 flex flex-col justify-between h-full group hover:bg-primary/20 transition-all duration-500">
+                                <i data-lucide="recycle" class="w-10 h-10 text-primary dark:text-secondary mb-6"></i>
+                                <div>
+                                    <span class="block text-4xl font-black text-primary dark:text-secondary mb-2">Zero</span>
+                                    <span class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-tight">Plastic Packaging Commitment</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="relative reveal-on-scroll reveal-delay-2">
+                    <div class="relative reveal-on-scroll reveal-delay-2 lg:pl-10">
                         <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&fit=crop" class="rounded-[60px] shadow-2xl shadow-primary/20 skew-x-1" alt="Our Culinary Team" loading="lazy">
-                            <div class="absolute -bottom-10 -right-10 bg-white dark:bg-slate-800 p-8 rounded-[40px] shadow-2xl max-w-sm hidden md:block border border-slate-100 dark:border-slate-700">
-                                <div class="flex items-center gap-4 mb-4">
-                                    <div class="w-12 h-12 bg-secondary rounded-2xl flex items-center justify-center text-white">
-                                        <i data-lucide="award"></i>
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&fit=crop" class="rounded-[60px] shadow-2xl shadow-primary/20" alt="Our Culinary Team" loading="lazy">
+                            <div class="absolute -bottom-12 -left-12 bg-white dark:bg-slate-800 p-10 rounded-[50px] shadow-2xl max-w-sm hidden xl:block border border-slate-100 dark:border-slate-700 z-10">
+                                <div class="flex items-center gap-5 mb-6">
+                                    <div class="w-14 h-14 bg-secondary rounded-[20px] shadow-lg shadow-secondary/20 flex items-center justify-center text-white">
+                                        <i data-lucide="award" class="w-7 h-7"></i>
                                     </div>
-                                    <h4 class="font-black dark:text-white">Award Winning Chef Team</h4>
+                                    <h4 class="font-black text-xl dark:text-white leading-tight">Award Winning Culinary Team</h4>
                                 </div>
-                                <p class="text-sm text-slate-600 dark:text-slate-400 italic">"Sustainability isn't a feature; it's our foundation. Every ingredient tells a story of ethical sourcing."</p>
+                                <p class="text-base text-slate-600 dark:text-slate-400 italic leading-relaxed">"Sustainability isn't just a marketing feature; it's our absolute foundation. Every ingredient tells a story of ethical sourcing."</p>
                             </div>
                         </div>
                     </div>
@@ -195,26 +210,174 @@
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-12">
-                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll">
+                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll flex flex-col items-center text-center">
                         <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-10">
                             <i data-lucide="heart" class="w-8 h-8 text-primary dark:text-secondary"></i>
                         </div>
                         <h3 class="text-2xl font-black font-heading mb-6 dark:text-white">Compassion First</h3>
                         <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Our commitment to 100% plant-based ingredients is non-negotiable. We believe that gourmet dining shouldn't come at the cost of sentient lives.</p>
                     </div>
-                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-1">
+                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-1 flex flex-col items-center text-center">
                         <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-10">
                             <i data-lucide="leaf" class="w-8 h-8 text-primary dark:text-secondary"></i>
                         </div>
                         <h3 class="text-2xl font-black font-heading mb-6 dark:text-white">Earth Generosity</h3>
                         <p class="text-slate-600 dark:text-slate-400 leading-relaxed">From compostable packaging to optimizing delivery routes, we aim to give back more to the planet than we take.</p>
                     </div>
-                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-2">
+                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-2 flex flex-col items-center text-center">
                         <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-10">
                             <i data-lucide="sparkles" class="w-8 h-8 text-primary dark:text-secondary"></i>
                         </div>
                         <h3 class="text-2xl font-black font-heading mb-6 dark:text-white">Culinary Excellence</h3>
                         <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Healthy food doesn't have to be boring. Our chefs use modern techniques to maximize flavor and nutrients in every bite.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visionaries Section -->
+        <section class="py-32 px-6 bg-white dark:bg-slate-900">
+            <div class="container">
+                <div class="text-center mb-24 reveal-on-scroll">
+                    <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">Meet The Visionaries</span>
+                    <h2 class="text-5xl md:text-6xl font-black font-heading mb-6 dark:text-white">Leading The Revolution</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Leader 1 -->
+                    <div class="group reveal-on-scroll">
+                        <div class="relative rounded-[50px] overflow-hidden mb-8 h-[450px]">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Alex Sterling">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
+                                <p class="text-white text-sm font-medium leading-relaxed italic">"The future of food is the bridge between peak performance and ethical living."</p>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-black dark:text-white mb-2">Alex Sterling</h4>
+                        <p class="text-secondary font-bold uppercase tracking-widest text-xs">CEO & Founder</p>
+                    </div>
+                    <!-- Leader 2 -->
+                    <div class="group reveal-on-scroll reveal-delay-1">
+                        <div class="relative rounded-[50px] overflow-hidden mb-8 h-[450px]">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Sarah Chen">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
+                                <p class="text-white text-sm font-medium leading-relaxed italic">"Nutrition should be an ally, not a source of stress. We're simplifying longevity."</p>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-black dark:text-white mb-2">Dr. Sarah Chen</h4>
+                        <p class="text-secondary font-bold uppercase tracking-widest text-xs">Chief Nutritionist</p>
+                    </div>
+                    <!-- Leader 3 -->
+                    <div class="group reveal-on-scroll reveal-delay-2">
+                        <div class="relative rounded-[50px] overflow-hidden mb-8 h-[450px]">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Marcus Volt">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
+                                <p class="text-white text-sm font-medium leading-relaxed italic">"Our operations are a circular system. We give back more than we take from the earth."</p>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-black dark:text-white mb-2">Marcus Volt</h4>
+                        <p class="text-secondary font-bold uppercase tracking-widest text-xs">Sustainability Lead</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section class="py-32 bg-slate-50 dark:bg-slate-950 px-6">
+            <div class="container">
+                <div class="text-center mb-24 reveal-on-scroll">
+                    <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">Feedback</span>
+                    <h2 class="text-5xl md:text-6xl font-black font-heading mb-6 dark:text-white italic">What Our Community Said</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll">
+                        <div class="flex gap-1 mb-8">
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                        </div>
+                        <p class="text-xl text-slate-700 dark:text-slate-300 leading-relaxed italic mb-10">"The variety is unmatched. I've been vegan for 10 years and Veganova keeps surprising me with global flavors I've never tried before."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-slate-200 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <span class="block font-black dark:text-white">Elena Rodriguez</span>
+                                <span class="text-slate-500 text-xs">Marathon Runner</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-1">
+                        <div class="flex gap-1 mb-8">
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                        </div>
+                        <p class="text-xl text-slate-700 dark:text-slate-300 leading-relaxed italic mb-10">"As a busy tech lead, I used to skip meals. Now I look forward to my lunch every single day. The glassmorphism packaging is just the cherry on top."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-slate-200 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <span class="block font-black dark:text-white">David Kim</span>
+                                <span class="text-slate-500 text-xs">Software Architect</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-2">
+                        <div class="flex gap-1 mb-8">
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
+                        </div>
+                        <p class="text-xl text-slate-700 dark:text-slate-300 leading-relaxed italic mb-10">"The eco-commitment isn't just talk. Seeing my compostable trays return to the cycle via their pickup service is revolutionary."</p>
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-slate-200 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <span class="block font-black dark:text-white">Sophie Laurent</span>
+                                <span class="text-slate-500 text-xs">Environmental Scientist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Green Commitment -->
+        <section class="py-40 bg-primary text-white overflow-hidden relative px-6">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fee79a70?w=1600&fit=crop" class="w-full h-full object-cover opacity-20 grayscale brightness-50" alt="Sustainable Field">
+            </div>
+            <div class="container relative z-10 text-center max-w-4xl mx-auto">
+                <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-6 block">Future of Food</span>
+                <h2 class="text-6xl md:text-7xl font-black font-heading mb-10 italic">Our Green Commitment</h2>
+                <p class="text-2xl text-white/80 leading-relaxed mb-16">
+                    By the end of 2026, Veganova aims to be the first carbon-negative meal delivery service globally. We are investing in regenerative agriculture and vertical urban farms to ensure your food heals the planet.
+                </p>
+                <div class="grid md:grid-cols-2 gap-12 text-left">
+                    <div class="flex items-start gap-6 bg-white/5 p-10 rounded-[40px] border border-white/10 backdrop-blur-sm">
+                        <div class="w-14 h-14 bg-secondary rounded-[20px] shrink-0 flex items-center justify-center text-primary">
+                            <i data-lucide="map-pin" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-black mb-2">Local Sourcing</h4>
+                            <p class="text-white/60 text-sm">85% of our produce is sourced within 50 miles of our kitchen hubs.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-6 bg-white/5 p-10 rounded-[40px] border border-white/10 backdrop-blur-sm">
+                        <div class="w-14 h-14 bg-secondary rounded-[20px] shrink-0 flex items-center justify-center text-primary">
+                            <i data-lucide="wind" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-black mb-2">Clean Energy</h4>
+                            <p class="text-white/60 text-sm">Our kitchens run on 100% wind and solar-generated electricity.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -275,14 +438,14 @@
                         Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat better every single day.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                             <svg class="w-5 h-5 fill-current text-white x-icon" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/></svg>
                         </a>
                     </div>
                 </div>

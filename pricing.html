@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,7 +53,17 @@
                         <a href="home-2.html" class="dropdown-item">Home 2</a>
                     </div>
                 </div>
-                <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Meals</a>
+                <div class="nav-item-dropdown">
+                    <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
+                        Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="meals.html" class="dropdown-item">All Meals</a>
+                        <a href="breakfast.html" class="dropdown-item">Breakfast</a>
+                        <a href="lunch.html" class="dropdown-item">Lunch</a>
+                        <a href="dinner.html" class="dropdown-item">Dinner</a>
+                    </div>
+                </div>
                 <a href="pricing.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
                 <a href="dashboard/index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
                 <a href="blog.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
@@ -97,7 +107,6 @@
                 <div class="flex flex-col gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
                     <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Homepage Options</span>
                     <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 1</a>
-                    <a href="home-2.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 2</a>
                 </div>
                 <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
                 <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Pricing</a>
@@ -116,17 +125,17 @@
     <main class="pt-32 pb-24 px-6 overflow-hidden">
         <div class="container">
             <!-- Header Section -->
-            <div class="text-center mb-20 reveal-on-scroll">
+            <div class="text-center mb-32 reveal-on-scroll">
                 <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">Flexible Subscriptions</span>
                 <h1 class="text-5xl md:text-7xl font-black font-heading mb-6 dark:text-white">Choose Your <span class="text-secondary">Plan</span></h1>
                 <p class="text-lg text-slate-700 dark:text-slate-300 max-w-2xl mx-auto">No long-term contracts. Pause, skip, or cancel anytime from your dashboard.</p>
                 
-                <div class="mt-12 flex items-center justify-center gap-6 p-2 bg-slate-100 dark:bg-slate-800 rounded-2xl w-fit mx-auto">
-                    <span class="text-sm font-bold dark:text-white">Monthly</span>
-                    <button class="w-14 h-8 bg-primary rounded-full relative p-1">
-                        <div class="w-6 h-6 bg-white rounded-full absolute right-1 shadow-sm"></div>
+                <div class="mt-12 flex items-center justify-center gap-6 p-2 bg-slate-100 dark:bg-slate-800 rounded-2xl w-fit mx-auto border border-slate-200 dark:border-slate-700">
+                    <span class="text-sm font-bold dark:text-white px-4">Monthly</span>
+                    <button class="w-14 h-8 bg-primary rounded-full relative p-1 flex items-center transition-all">
+                        <div class="w-6 h-6 bg-white rounded-full absolute right-1 top-1 shadow-md"></div>
                     </button>
-                    <span class="text-sm font-bold text-slate-500 dark:text-slate-400">Yearly <span class="text-secondary ml-1 bg-secondary/10 px-2 py-0.5 rounded text-[10px]">SAVE 20%</span></span>
+                    <span class="text-sm font-bold text-slate-500 dark:text-slate-400 px-4">Yearly <span class="text-secondary ml-1 bg-secondary/10 px-2 py-1 rounded text-[10px]">SAVE 20%</span></span>
                 </div>
             </div>
 
@@ -136,28 +145,30 @@
                 <div class="bg-white dark:bg-slate-800 p-10 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll relative overflow-hidden group">
                     <div class="absolute -top-10 -right-10 w-40 h-40 bg-slate-50 dark:bg-slate-700 rounded-full transition-transform group-hover:scale-125 -z-0"></div>
                     <div class="relative z-10">
-                        <i data-lucide="calendar" class="w-12 h-12 text-slate-400 mb-8"></i>
-                        <h3 class="text-2xl font-black font-heading mb-2 dark:text-white">Weekly Plan</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm mb-8">Perfect for flexible eaters.</p>
-                        <div class="mb-10">
-                            <span class="text-4xl font-black dark:text-white">$79</span>
-                            <span class="text-slate-500 dark:text-slate-400 font-medium">/ week</span>
+                        <div class="flex flex-col items-center">
+                            <i data-lucide="zap" class="w-12 h-12 text-primary mb-8"></i>
+                            <h3 class="text-2xl font-black font-heading mb-2 dark:text-white">Weekly Plan</h3>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm mb-8">Perfect for flexible eaters.</p>
+                            <div class="mb-10 text-center">
+                                <span class="text-4xl font-black dark:text-white">$79</span>
+                                <span class="text-slate-500 dark:text-slate-400 font-medium">/ week</span>
+                            </div>
+                            <ul class="space-y-6 mb-12 w-full">
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">3 Meals / Day (M-F)</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">Flexible meal selection</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">Skip week option</span>
+                                </li>
+                            </ul>
+                            <a href="auth/signup.html" class="w-full flex items-center justify-center py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all dark:text-white">Start Weekly</a>
                         </div>
-                        <ul class="space-y-6 mb-12">
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                <span class="text-sm font-medium dark:text-gray-300">3 Meals / Day (M-F)</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                <span class="text-sm font-medium dark:text-gray-300">Flexible meal selection</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                <span class="text-sm font-medium dark:text-gray-300">Skip week option</span>
-                            </li>
-                        </ul>
-                        <a href="auth/signup.html" class="w-full flex items-center justify-center py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all dark:text-white">Start Weekly</a>
                     </div>
                 </div>
 
@@ -167,33 +178,35 @@
                     <div class="bg-white dark:bg-slate-800 p-10 rounded-[38px] h-full relative overflow-hidden group">
                          <div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/10 rounded-full transition-transform group-hover:scale-125 -z-0"></div>
                         <div class="relative z-10">
-                            <i data-lucide="award" class="w-12 h-12 text-secondary mb-8"></i>
-                            <h3 class="text-2xl font-black font-heading mb-2 dark:text-white">Monthly Plan</h3>
-                            <p class="text-slate-400 text-sm mb-8">Maximize savings and convenience.</p>
-                            <div class="mb-10">
-                                <span class="text-4xl font-black dark:text-white">$279</span>
-                                <span class="text-slate-400 font-medium">/ month</span>
-                                <div class="text-xs text-secondary mt-2 font-bold uppercase tracking-wider">Save 15% Monthly</div>
+                            <div class="flex flex-col items-center">
+                                <i data-lucide="award" class="w-12 h-12 text-secondary mb-8"></i>
+                                <h3 class="text-2xl font-black font-heading mb-2 dark:text-white">Monthly Plan</h3>
+                                <p class="text-slate-400 text-sm mb-8">Maximize savings and convenience.</p>
+                                <div class="mb-10 text-center">
+                                    <span class="text-4xl font-black dark:text-white">$279</span>
+                                    <span class="text-slate-400 font-medium">/ month</span>
+                                    <div class="text-xs text-secondary mt-2 font-bold uppercase tracking-wider">Save 15% Monthly</div>
+                                </div>
+                                <ul class="space-y-6 mb-12 w-full">
+                                    <li class="flex items-center gap-3">
+                                        <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                        <span class="text-sm font-medium dark:text-gray-300">Discounted pricing</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                        <span class="text-sm font-medium dark:text-gray-300">Priority delivery</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                        <span class="text-sm font-medium dark:text-gray-300">Custom meal planning</span>
+                                    </li>
+                                    <li class="flex items-center gap-3">
+                                        <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                        <span class="text-sm font-medium dark:text-gray-300">Personal Health Coach</span>
+                                    </li>
+                                </ul>
+                                <a href="auth/signup.html" class="w-full flex items-center justify-center py-4 rounded-2xl bg-primary text-white font-bold hover:bg-secondary hover:text-primary transition-all shadow-xl shadow-primary/20 scale-100 hover:scale-[1.02]">Go Monthly</a>
                             </div>
-                            <ul class="space-y-6 mb-12">
-                                <li class="flex items-center gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                    <span class="text-sm font-medium dark:text-gray-300">Discounted pricing</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                    <span class="text-sm font-medium dark:text-gray-300">Priority delivery</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                    <span class="text-sm font-medium dark:text-gray-300">Custom meal planning</span>
-                                </li>
-                                <li class="flex items-center gap-3">
-                                    <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                    <span class="text-sm font-medium dark:text-gray-300">Personal Health Coach</span>
-                                </li>
-                            </ul>
-                            <a href="auth/signup.html" class="w-full flex items-center justify-center py-4 rounded-2xl bg-primary text-white font-bold hover:bg-primary-light transition-all shadow-xl shadow-primary/20">Go Monthly</a>
                         </div>
                     </div>
                 </div>
@@ -202,32 +215,34 @@
                 <div class="bg-white dark:bg-slate-800 p-10 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-2 relative overflow-hidden group">
                     <div class="absolute -top-10 -right-10 w-40 h-40 bg-slate-50 dark:bg-slate-700 rounded-full transition-transform group-hover:scale-125 -z-0"></div>
                     <div class="relative z-10">
-                        <i data-lucide="crown" class="w-12 h-12 text-yellow-500 mb-8"></i>
-                        <h3 class="text-2xl font-black font-heading mb-2 dark:text-white">V-Life Lifestyle</h3>
-                        <p class="text-slate-400 text-sm mb-8">A complete lifestyle transformation.</p>
-                        <div class="mb-10">
-                            <span class="text-4xl font-black dark:text-white">$849</span>
-                            <span class="text-slate-400 font-medium">/ 3 months</span>
+                        <div class="flex flex-col items-center">
+                            <i data-lucide="crown" class="w-12 h-12 text-yellow-500 mb-8"></i>
+                            <h3 class="text-2xl font-black font-heading mb-2 dark:text-white">V-Life Lifestyle</h3>
+                            <p class="text-slate-400 text-sm mb-8">A complete lifestyle transformation.</p>
+                            <div class="mb-10 text-center">
+                                <span class="text-4xl font-black dark:text-white">$849</span>
+                                <span class="text-slate-400 font-medium">/ 3 months</span>
+                            </div>
+                            <ul class="space-y-6 mb-12 w-full">
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">21 Meals / week</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">Premium concierge service</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">Eco-Luxury packaging</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <i data-lucide="check" class="w-5 h-5 text-secondary shrink-0"></i>
+                                    <span class="text-sm font-medium dark:text-gray-300">Custom macro balance</span>
+                                </li>
+                            </ul>
+                            <a href="auth/signup.html" class="w-full flex items-center justify-center py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all dark:text-white">Go Elite</a>
                         </div>
-                        <ul class="space-y-6 mb-12">
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                <span class="text-sm font-medium dark:text-gray-300">21 Meals / week</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                <span class="text-sm font-medium dark:text-gray-300">Premium concierge service</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                <span class="text-sm font-medium dark:text-gray-300">Eco-Luxury packaging</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <i data-lucide="check" class="w-5 h-5 text-secondary"></i>
-                                <span class="text-sm font-medium dark:text-gray-300">Custom macro balance</span>
-                            </li>
-                        </ul>
-                        <a href="auth/signup.html" class="w-full flex items-center justify-center py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold hover:bg-slate-50 dark:hover:bg-slate-700 transition-all dark:text-white">Go Elite</a>
                     </div>
                 </div>
             </div>
@@ -292,12 +307,12 @@
 
             <!-- Payment Methods -->
             <div class="mt-24 text-center reveal-on-scroll">
-                <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-8">Secure Payment with</p>
-                <div class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-8" alt="PayPal">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" class="h-8" alt="Stripe">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" class="h-6" alt="Visa">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" class="h-10" alt="Mastercard">
+                <p class="text-sm font-black text-slate-400 uppercase tracking-widest mb-10">Secure Payment with</p>
+                <div class="flex flex-wrap justify-center items-center gap-16 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-10 opacity-70 hover:opacity-100 transition-opacity" alt="PayPal">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" class="h-10 opacity-70 hover:opacity-100 transition-opacity" alt="Stripe">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" class="h-8 opacity-70 hover:opacity-100 transition-opacity" alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" class="h-12 opacity-70 hover:opacity-100 transition-opacity" alt="Mastercard">
                 </div>
             </div>
         </div>
@@ -316,14 +331,14 @@
                         Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat better every single day.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                            <svg class="w-5 h-5 fill-current text-white x-icon" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/></svg>
                         </a>
                     </div>
                 </div>

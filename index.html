@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -63,16 +63,26 @@
                         <a href="home-2.html" class="dropdown-item">Home 2</a>
                     </div>
                 </div>
-                <a href="meals.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Meals</a>
+                <div class="nav-item-dropdown">
+                    <a href="meals.html"
+                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
+                        Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="meals.html" class="dropdown-item">All Meals</a>
+                        <a href="breakfast.html" class="dropdown-item">Breakfast</a>
+                        <a href="lunch.html" class="dropdown-item">Lunch</a>
+                        <a href="dinner.html" class="dropdown-item">Dinner</a>
+                    </div>
+                </div>
+                <a href="about.html"
+                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
                 <a href="pricing.html"
                     class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
                 <a href="dashboard/index.html"
                     class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
                 <a href="blog.html"
                     class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
-                <a href="about.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
                 <a href="contact.html"
                     class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
             </nav>
@@ -109,7 +119,10 @@
         class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
         <div class="flex flex-col h-full p-8">
             <div class="flex items-center justify-between mb-12">
-                <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
+                <div class="flex items-center gap-2">
+                    <img src="assets/img/logo-icon.svg" class="w-8 h-8" alt="Logo">
+                    <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
+                </div>
                 <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20">
                     <i data-lucide="x" class="dark:text-white"></i>
                 </button>
@@ -117,18 +130,22 @@
             <nav class="flex flex-col gap-6">
                 <!-- Home Mobile Options -->
                 <div class="flex flex-col gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
-                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Homepage Options</span>
-                    <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 1</a>
-                    <a href="home-2.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 2</a>
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Navigation</span>
+                    <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home</a>
+                    <a href="meals.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Meals</a>
+                    <a href="about.html" class="text-2xl font-bold hover:text-secondary dark:text-white">About</a>
+                    <a href="pricing.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Pricing</a>
+                    <a href="dashboard/index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Dashboard</a>
+                    <a href="contact.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Contact</a>
                 </div>
-                <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
-                <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Pricing</a>
-                <a href="dashboard/index.html"
-                    class="text-3xl font-bold hover:text-secondary dark:text-white">Dashboard</a>
-                <a href="blog.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Blog</a>
-                <a href="about.html" class="text-3xl font-bold hover:text-secondary dark:text-white">About</a>
-                <a href="contact.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Contact</a>
             </nav>
+            <div class="mt-8 flex gap-4">
+                <a href="#" class="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                <a href="#" class="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                <a href="#" class="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-white hover:text-primary transition-all">
+                    <svg class="w-5 h-5 fill-current x-icon" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/></svg>
+                </a>
+            </div>
             <div class="mt-auto flex flex-col gap-4">
                 <a href="auth/login.html"
                     class="text-center py-4 rounded-xl border font-bold dark:border-white/20 dark:text-white">Login</a>
@@ -234,36 +251,35 @@
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <!-- Meal Card 1 -->
-                    <div
-                        class="meal-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm reveal-on-scroll">
-                        <div class="relative h-72">
-                            <img src="https://media.istockphoto.com/id/1130996734/photo/bbq-pulled-jack-fruit-taco.jpg?b=1&s=612x612&w=0&k=20&c=fNQY62cm_Sc4kLOSHnbsJZBstKtNGqILlHyySvX9OQw="
+                    <div class="meal-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 reveal-on-scroll flex flex-col h-full">
+                        <div class="relative h-72 shrink-0">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&fit=crop"
                                 class="w-full h-full object-cover" alt="Jackfruit Tacos">
                             <div class="absolute top-6 right-6">
                                 <span
-                                    class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-bold shadow-sm">CHEF'S
+                                    class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-black shadow-lg">CHEF'S
                                     PICK</span>
                             </div>
                         </div>
-                        <div class="p-8">
+                        <div class="p-8 flex flex-col flex-grow">
                             <div class="flex items-center gap-2 mb-4">
                                 <span
                                     class="text-[10px] items-center gap-1 font-black bg-secondary/10 text-secondary px-2 py-1 rounded">SPICY</span>
                                 <span
-                                    class="text-[10px] items-center gap-1 font-black bg-orange-100 text-orange-600 px-2 py-1 rounded">FIBER
+                                    class="text-[10px] items-center gap-1 font-black bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 px-2 py-1 rounded">FIBER
                                     RICH</span>
                             </div>
                             <h3 class="text-2xl font-black font-heading mb-4 dark:text-white">Smokey Jackfruit Tacos
                             </h3>
                             <p class="text-slate-500 dark:text-slate-400 text-sm mb-8 line-clamp-2">Slow-cooked
                                 jackfruit carnitas served with pickled red onions and a lime-crema drizzle.</p>
-                            <div class="flex items-center justify-between pt-6 border-t dark:border-slate-700">
+                            <div class="mt-auto pt-6 border-t dark:border-slate-700 flex items-center justify-between">
                                 <div class="flex flex-col">
-                                    <span class="text-xs text-slate-600 font-bold uppercase tracking-wider">Starting
+                                    <span class="text-xs text-slate-500 dark:text-slate-500 font-bold uppercase tracking-wider">Starting
                                         at</span>
                                     <span class="text-xl font-black text-primary dark:text-secondary">$11.95</span>
                                 </div>
-                                <button class="btn-primary p-3 rounded-2xl add-to-cart-btn transition-transform"
+                                <button class="btn-primary p-3 rounded-2xl add-to-cart-btn transition-transform hover:scale-110 active:scale-95"
                                     data-meal='{"id": 11, "name": "Smokey Jackfruit Tacos", "price": 11.95, "kcal": 440, "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&fit=crop"}'>
                                     <i data-lucide="plus" class="w-6 h-6"></i>
                                 </button>
@@ -272,33 +288,32 @@
                     </div>
 
                     <!-- Meal Card 2 -->
-                    <div
-                        class="meal-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm reveal-on-scroll reveal-delay-1">
-                        <div class="relative h-72">
-                            <img src="https://images.pexels.com/photos/6216844/pexels-photo-6216844.jpeg"
+                    <div class="meal-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 reveal-on-scroll reveal-delay-1 flex flex-col h-full">
+                        <div class="relative h-72 shrink-0">
+                            <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800&fit=crop"
                                 class="w-full h-full object-cover" alt="Pumpkin Risotto">
                             <div class="absolute top-6 right-6">
                                 <span
-                                    class="bg-secondary text-primary px-4 py-1.5 rounded-full text-xs font-bold shadow-sm">SEASONAL</span>
+                                    class="bg-secondary text-primary px-4 py-1.5 rounded-full text-xs font-black shadow-lg">SEASONAL</span>
                             </div>
                         </div>
-                        <div class="p-8">
+                        <div class="p-8 flex flex-col flex-grow">
                             <div class="flex items-center gap-2 mb-4">
                                 <span
-                                    class="text-[10px] items-center gap-1 font-black bg-blue-100 text-blue-600 px-2 py-1 rounded">VITAMIN
+                                    class="text-[10px] items-center gap-1 font-black bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-2 py-1 rounded">VITAMIN
                                     A+</span>
                             </div>
                             <h3 class="text-2xl font-black font-heading mb-4 dark:text-white">Harvest Pumpkin Risotto
                             </h3>
-                            <p class="text-slate-600 dark:text-slate-600 text-sm mb-8 line-clamp-2">Creamy arborio rice
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-8 line-clamp-2">Creamy arborio rice
                                 with roasted butternut squash, toasted pine nuts, and sage-infused oil.</p>
-                            <div class="flex items-center justify-between pt-6 border-t dark:border-slate-700">
+                            <div class="mt-auto pt-6 border-t dark:border-slate-700 flex items-center justify-between">
                                 <div class="flex flex-col">
-                                    <span class="text-xs text-slate-600 font-bold uppercase tracking-wider">Starting
+                                    <span class="text-xs text-slate-500 dark:text-slate-500 font-bold uppercase tracking-wider">Starting
                                         at</span>
                                     <span class="text-xl font-black text-primary dark:text-secondary">$15.50</span>
                                 </div>
-                                <button class="btn-primary p-3 rounded-2xl add-to-cart-btn transition-transform"
+                                <button class="btn-primary p-3 rounded-2xl add-to-cart-btn transition-transform hover:scale-110 active:scale-95"
                                     data-meal='{"id": 101, "name": "Harvest Pumpkin Risotto", "price": 15.50, "kcal": 490, "image": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800&fit=crop"}'>
                                     <i data-lucide="plus" class="w-6 h-6"></i>
                                 </button>
@@ -307,28 +322,27 @@
                     </div>
 
                     <!-- Meal Card 3 -->
-                    <div
-                        class="meal-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm reveal-on-scroll reveal-delay-2">
-                        <div class="relative h-72">
-                            <img src="https://media.istockphoto.com/id/1267610826/photo/famous-internationally-renowned-thai-green-coconut-curry-gaeng-keow-wan-gai-with-chicken-in-a.jpg?b=1&s=612x612&w=0&k=20&c=xhSUHOwROVPGsGqdoMI3FBTB-Lb8U3vybuLtUElNn98="
-                                class="w-full h-full object-cover" alt="Green Curry">
+                    <div class="meal-card bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 reveal-on-scroll reveal-delay-2 flex flex-col h-full">
+                        <div class="relative h-72 shrink-0">
+                            <img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=800&fit=crop"
+                                class="w-full h-full object-cover" alt="Thai Green Curry Bowl">
                         </div>
-                        <div class="p-8">
+                        <div class="p-8 flex flex-col flex-grow">
                             <div class="flex items-center gap-2 mb-4">
                                 <span
-                                    class="text-[10px] items-center gap-1 font-black bg-green-100 text-green-600 px-2 py-1 rounded">IMMUNITY</span>
+                                    class="text-[10px] items-center gap-1 font-black bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400 px-2 py-1 rounded">IMMUNITY</span>
                             </div>
                             <h3 class="text-2xl font-black font-heading mb-4 dark:text-white">Thai Green Curry Bowl</h3>
-                            <p class="text-slate-600 dark:text-slate-600 text-sm mb-8 line-clamp-2">Aromatic green curry
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-8 line-clamp-2">Aromatic green curry
                                 with snap peas, bamboo shoots, and jasmine rice topped with fresh thai basil.</p>
-                            <div class="flex items-center justify-between pt-6 border-t dark:border-slate-700">
+                            <div class="mt-auto pt-6 border-t dark:border-slate-700 flex items-center justify-between">
                                 <div class="flex flex-col">
-                                    <span class="text-xs text-slate-600 font-bold uppercase tracking-wider">Starting
+                                    <span class="text-xs text-slate-500 dark:text-slate-500 font-bold uppercase tracking-wider">Starting
                                         at</span>
                                     <span class="text-xl font-black text-primary dark:text-secondary">$14.25</span>
                                 </div>
-                                <button class="btn-primary p-3 rounded-2xl add-to-cart-btn transition-transform"
-                                    data-meal='{"id": 15, "name": "Thai Green Curry Bowl", "price": 14.25, "kcal": 460, "image": "https://images.pexels.com/photos/4033633/pexels-photo-4033633.jpeg"}'>
+                                <button class="btn-primary p-3 rounded-2xl add-to-cart-btn transition-transform hover:scale-110 active:scale-95"
+                                    data-meal='{"id": 15, "name": "Thai Green Curry Bowl", "price": 14.25, "kcal": 460, "image": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?w=800&fit=crop"}'>
                                     <i data-lucide="plus" class="w-6 h-6"></i>
                                 </button>
                             </div>
@@ -339,40 +353,43 @@
         </section>
 
         <!-- Benefits Section -->
-        <section class="py-24 px-6">
-            <div class="container">
+        <section class="py-32 px-6 relative overflow-hidden group">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1600&fit=crop" class="w-full h-full object-cover opacity-[0.03] dark:opacity-[0.05] grayscale brightness-50 transition-transform duration-1000 group-hover:scale-110" alt="Background Deco">
+            </div>
+            <div class="container relative z-10">
                 <div class="grid lg:grid-cols-2 gap-20 items-center">
-                    <div class="grid grid-cols-2 gap-6 reveal-on-scroll">
-                        <div class="bg-secondary/5 p-8 rounded-[40px] mt-12">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-on-scroll">
+                        <div class="bg-secondary/5 p-8 rounded-[40px] border border-secondary/10 hover:bg-secondary/10 transition-colors flex flex-col h-full backdrop-blur-sm">
                             <div class="bg-secondary/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                                 <i data-lucide="shopping-bag" class="text-secondary w-8 h-8"></i>
                             </div>
-                            <h4 class="text-xl font-bold font-heading mb-3 dark:text-white">Zero Waste</h4>
+                            <h4 class="text-xl font-black font-heading mb-3 dark:text-white">Zero Waste</h4>
                             <p class="text-sm text-slate-600 dark:text-slate-400">Completely compostable or recyclable
                                 packaging designed for 2026.</p>
                         </div>
-                        <div class="bg-primary/5 p-8 rounded-[40px]">
+                        <div class="bg-primary/5 p-8 rounded-[40px] border border-primary/10 hover:bg-primary/10 transition-colors flex flex-col h-full backdrop-blur-sm">
                             <div class="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                                 <i data-lucide="zap" class="text-primary dark:text-secondary w-8 h-8"></i>
                             </div>
-                            <h4 class="text-xl font-bold font-heading mb-3 dark:text-white">30m Prep</h4>
+                            <h4 class="text-xl font-black font-heading mb-3 dark:text-white">3m Prep</h4>
                             <p class="text-sm text-slate-600 dark:text-slate-400">Our meals are ready to eat in under 3
                                 minutes. Zero cooking required.</p>
                         </div>
-                        <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-[40px] mt-12">
+                        <div class="bg-slate-100 dark:bg-slate-800 p-8 rounded-[40px] border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700/50 transition-colors flex flex-col h-full backdrop-blur-sm">
                             <div
                                 class="bg-slate-200 dark:bg-slate-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                                 <i data-lucide="shield-check" class="text-slate-600 dark:text-white w-8 h-8"></i>
                             </div>
-                            <h4 class="text-xl font-bold font-heading mb-3 dark:text-white">Clean Label</h4>
+                            <h4 class="text-xl font-black font-heading mb-3 dark:text-white">Clean Label</h4>
                             <p class="text-sm text-slate-600 dark:text-slate-400">100% organic ingredients. No GMOs, no
                                 soy, no artificial preservatives.</p>
                         </div>
-                        <div class="bg-secondary/10 p-8 rounded-[40px]">
+                        <div class="bg-secondary/10 p-8 rounded-[40px] border border-secondary/20 hover:bg-secondary/20 transition-colors flex flex-col h-full backdrop-blur-sm">
                             <div class="bg-secondary/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                                 <i data-lucide="truck" class="text-secondary w-8 h-8"></i>
                             </div>
-                            <h4 class="text-xl font-bold font-heading mb-3 dark:text-white">Smart Delivery</h4>
+                            <h4 class="text-xl font-black font-heading mb-3 dark:text-white">Smart Delivery</h4>
                             <p class="text-sm text-slate-600 dark:text-slate-400">Real-time GPS tracking for your fresh
                                 delivery every single morning.</p>
                         </div>
@@ -456,9 +473,8 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Testimonial 1 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-10 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll">
+                        class="bg-white dark:bg-slate-800 p-10 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll flex flex-col h-full hover:shadow-xl transition-all duration-500">
                         <div class="flex gap-1 mb-6">
                             <i data-lucide="star" class="w-5 h-5 fill-secondary text-secondary"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-secondary text-secondary"></i>
@@ -470,19 +486,19 @@
                             "The high-protein plans are a lifesaver for my training. No bloating, just pure fuel for my
                             early morning sessions. Simply the best!"
                         </p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop"
-                                class="w-14 h-14 rounded-full object-cover" alt="David C.">
-                            <div>
-                                <h5 class="font-bold dark:text-white">David Chen</h5>
-                                <span class="text-sm text-slate-400">Fitness Trainer</span>
+                        <div class="mt-auto flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                                class="w-14 h-14 rounded-2xl object-cover shadow-lg" alt="David C.">
+                             <div>
+                                <h5 class="font-black dark:text-white">David Chen</h5>
+                                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest leading-none">Fitness Trainer</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Testimonial 2 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-10 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-1">
+                        class="bg-white dark:bg-slate-800 p-10 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-1 flex flex-col h-full hover:shadow-xl transition-all duration-500">
                         <div class="flex gap-1 mb-6">
                             <i data-lucide="star" class="w-5 h-5 fill-secondary text-secondary"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-secondary text-secondary"></i>
@@ -494,19 +510,19 @@
                             "The eco-packaging was a major deciding factor. It's refreshing to see a brand that cares as
                             much about the ocean as the quality of the food."
                         </p>
-                        <div class="flex items-center gap-4">
-                            <img src="https://images.unsplash.com/photo-1531123897727-8f129e16fd3c?w=100&h=100&fit=crop"
-                                class="w-14 h-14 rounded-full object-cover" alt="Aisha K.">
-                            <div>
-                                <h5 class="font-bold dark:text-white">Aisha Khan</h5>
-                                <span class="text-sm text-slate-400">Creative Director</span>
+                        <div class="mt-auto flex items-center gap-4">
+                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+                                class="w-14 h-14 rounded-2xl object-cover shadow-lg" alt="Aisha K.">
+                             <div>
+                                <h5 class="font-black dark:text-white">Aisha Khan</h5>
+                                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest leading-none">Creative Director</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Testimonial 3 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-10 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-2">
+                        class="bg-white dark:bg-slate-800 p-10 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-2 flex flex-col h-full hover:shadow-xl transition-all duration-500">
                         <div class="flex gap-1 mb-6">
                             <i data-lucide="star" class="w-5 h-5 fill-secondary text-secondary"></i>
                             <i data-lucide="star" class="w-5 h-5 fill-secondary text-secondary"></i>
@@ -518,12 +534,12 @@
                             "Saves me over 10 hours of prep every single week. My kids actually look forward to the
                             vegan Buddha bowls now—it's a miracle!"
                         </p>
-                        <div class="flex items-center gap-4">
+                        <div class="mt-auto flex items-center gap-4">
                             <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop"
-                                class="w-14 h-14 rounded-full object-cover" alt="Liam O.">
-                            <div>
-                                <h5 class="font-bold dark:text-white">Liam O'Neill</h5>
-                                <span class="text-sm text-slate-400">Software Architect</span>
+                                class="w-14 h-14 rounded-2xl object-cover shadow-lg" alt="Liam O.">
+                             <div>
+                                <h5 class="font-black dark:text-white">Liam O'Neill</h5>
+                                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest leading-none">Software Architect</span>
                             </div>
                         </div>
                     </div>
@@ -546,17 +562,14 @@
                         better every single day.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#"
-                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
                         </a>
-                        <a href="#"
-                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
                         </a>
-                        <a href="#"
-                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                             <svg class="w-5 h-5 fill-current text-white x-icon" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/></svg>
                         </a>
                     </div>
                 </div>
@@ -584,8 +597,8 @@
                     <form action="#" class="relative">
                         <input type="email" placeholder="Your email"
                             class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-colors">
-                        <button
-                            class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-2xl font-bold">Join</button>
+                         <button
+                            class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-2xl font-bold hover:bg-primary hover:text-white transition-all shadow-lg hover:shadow-secondary/20">Join</button>
                     </form>
                 </div>
             </div>
@@ -595,6 +608,10 @@
             </div>
         </div>
     </footer>
+
+     <button id="back-to-top">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="assets/js/cart-system.js"></script>

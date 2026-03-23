@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,7 +53,17 @@
                         <a href="home-2.html" class="dropdown-item">Home 2</a>
                     </div>
                 </div>
-                <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Meals</a>
+                <div class="nav-item-dropdown">
+                    <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
+                        Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="meals.html" class="dropdown-item">All Meals</a>
+                        <a href="breakfast.html" class="dropdown-item">Breakfast</a>
+                        <a href="lunch.html" class="dropdown-item">Lunch</a>
+                        <a href="dinner.html" class="dropdown-item">Dinner</a>
+                    </div>
+                </div>
                 <a href="pricing.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
                 <a href="dashboard/index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
                 <a href="blog.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
@@ -97,7 +107,6 @@
                 <div class="flex flex-col gap-3 pb-4 border-b border-slate-100 dark:border-slate-800">
                     <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Homepage Options</span>
                     <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 1</a>
-                    <a href="home-2.html" class="text-2xl font-bold hover:text-secondary dark:text-white">Home 2</a>
                 </div>
                 <a href="meals.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Meals</a>
                 <a href="pricing.html" class="text-3xl font-bold hover:text-secondary dark:text-white">Pricing</a>
@@ -124,44 +133,50 @@
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-24 reveal-on-scroll">
                 
                 <!-- Left Side: Contact Details & Intro -->
-                <div class="space-y-10 lg:sticky lg:top-32">
+                <div class="space-y-12 lg:sticky lg:top-32">
                     <div>
-                        <h2 class="text-4xl font-black font-heading mb-6 dark:text-white leading-tight">Get in Touch with our <br><span class="text-secondary">Vegan Kitchen</span></h2>
+                        <h2 class="text-4xl font-black font-heading mb-8 dark:text-white leading-tight">Get in Touch with our <br><span class="text-secondary">Vegan Kitchen</span></h2>
+                        <div class="flex flex-wrap gap-4 mb-10">
+                            <button class="bg-primary text-white px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-all">General Inquiry</button>
+                            <button class="bg-white dark:bg-slate-800 text-slate-500 px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest border border-slate-100 dark:border-slate-700 hover:border-secondary hover:text-secondary hover:scale-105 transition-all">Support</button>
+                            <button class="bg-white dark:bg-slate-800 text-slate-500 px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest border border-slate-100 dark:border-slate-700 hover:border-secondary hover:text-secondary hover:scale-105 transition-all">Press Inquiry</button>
+                        </div>
                         <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
                             Have questions about our seasonal menu or subscription plans? Our team is live and ready to help you on your plant-based journey.
                         </p>
                     </div>
 
                     <div class="space-y-8">
-                        <!-- Address Card -->
-                        <div class="flex items-start gap-6 group hover:-translate-x-1 transition-transform">
-                            <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center shrink-0 border border-secondary/20">
-                                <i data-lucide="map-pin" class="text-secondary w-6 h-6"></i>
+                        <!-- Hotline Card -->
+                        <div class="flex items-start gap-6 group hover:translate-x-1 transition-transform">
+                            <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center shrink-0 border border-secondary/20 shadow-lg shadow-secondary/5">
+                                <i data-lucide="headset" class="text-primary dark:text-secondary w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold dark:text-white mb-1">Our Studio</h4>
-                                <p class="text-slate-500">123 Green Way, Silicon Valley, CA 94043</p>
+                                <h4 class="text-xl font-black dark:text-white mb-1">24/7 Hotline</h4>
+                                <p class="text-slate-500 font-medium">+1 (800) VEGA-NOVA</p>
+                                <span class="text-[10px] font-black uppercase tracking-widest text-secondary">Always Live</span>
                             </div>
                         </div>
 
-                        <!-- Phone Card -->
-                        <div class="flex items-start gap-6 group hover:-translate-x-1 transition-transform">
+                        <!-- Address Card -->
+                        <div class="flex items-start gap-6 group hover:translate-x-1 transition-transform">
                             <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0 border border-primary/20">
-                                <i data-lucide="phone" class="text-primary dark:text-secondary w-6 h-6"></i>
+                                <i data-lucide="map-pin" class="text-primary dark:text-secondary w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold dark:text-white mb-1">Call Us</h4>
-                                <a href="tel:+1234567890" class="text-slate-500 hover:text-secondary transition-colors font-medium">+1 (234) 567-890</a>
+                                <h4 class="text-xl font-black dark:text-white mb-1">Our Studio</h4>
+                                <p class="text-slate-500 font-medium">123 Green Way, Silicon Valley, CA 94043</p>
                             </div>
                         </div>
 
                         <!-- Email Card -->
-                        <div class="flex items-start gap-6 group hover:-translate-x-1 transition-transform">
+                        <div class="flex items-start gap-6 group hover:translate-x-1 transition-transform">
                             <div class="w-14 h-14 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
-                                <i data-lucide="mail" class="text-slate-600 w-6 h-6"></i>
+                                <i data-lucide="mail" class="text-slate-600 dark:text-slate-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold dark:text-white mb-1">Email Us</h4>
+                                <h4 class="text-xl font-black dark:text-white mb-1">Email Us</h4>
                                 <a href="mailto:hello@veganova.com" class="text-slate-500 hover:text-secondary transition-colors font-medium">hello@veganova.com</a>
                             </div>
                         </div>
@@ -228,14 +243,14 @@
                         Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat better every single day.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
                         </a>
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
+                             <svg class="w-5 h-5 fill-current text-white x-icon" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/></svg>
                         </a>
                     </div>
                 </div>

@@ -335,3 +335,75 @@ body.dark {
     white-space: nowrap;
 }
 
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--secondary);
+    color: var(--primary);
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--transition);
+    z-index: 999;
+    box-shadow: 0 10px 25px -5px rgba(132, 204, 22, 0.4);
+    border: none;
+    outline: none;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+/* Navbar active states */
+.dark .nav-link {
+    color: #cbd5e1; /* slate-300 */
+}
+
+.dark .nav-link:hover {
+    color: var(--secondary);
+}
+
+.dark .nav-link.active {
+    color: white !important;
+}
+
+/* X (Twitter) icon custom style */
+.x-icon {
+    font-style: normal;
+    font-weight: 800;
+    font-family: Arial, sans-serif;
+    line-height: 1;
+}
+
+/* Fix for card alignment in Voice of Veganova */
+.voice-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Fix for role contrast in light mode */
+.voice-card .author-role {
+    color: #64748b; /* slate-500 */
+}
+
+.dark .voice-card .author-role {
+    color: #94a3b8; /* slate-400 */
+}
