@@ -203,6 +203,30 @@ function initBackToTop() {
     });
 }
 
+/* RTL Toggle */
+function initRTLToggle() {
+    const rtlBtns = document.querySelectorAll('.rtl-toggle');
+    const html = document.documentElement;
+
+    const savedRTL = localStorage.getItem('v-prep-rtl');
+    if (savedRTL === 'true') {
+        html.setAttribute('dir', 'rtl');
+    }
+
+    rtlBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const isRTL = html.getAttribute('dir') === 'rtl';
+            if (isRTL) {
+                html.removeAttribute('dir');
+                localStorage.setItem('v-prep-rtl', 'false');
+            } else {
+                html.setAttribute('dir', 'rtl');
+                localStorage.setItem('v-prep-rtl', 'true');
+            }
+        });
+    });
+}
+
 // Global initialization
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
@@ -211,4 +235,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollReveal();
     initActiveLinks();
     initBackToTop();
+    initRTLToggle();
 });
