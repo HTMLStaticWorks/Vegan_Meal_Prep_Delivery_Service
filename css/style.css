@@ -267,8 +267,13 @@ button {
 .opacity-20 { opacity: 0.2; }
 .bg-light { background-color: var(--neutral-100); }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
     .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 > *:last-child:nth-child(odd) {
+        grid-column: span 2;
+        max-width: calc(50% - var(--spacing-sm));
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -301,10 +306,17 @@ button {
     color: white !important;
 }
 
-.btn-primary:hover, .btn-secondary:hover {
+.btn-primary:hover {
+    background-color: #059669; /* Darker emerald for distinct hover feedback */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    opacity: 1; /* Keep full opacity for better visibility */
+}
+
+.btn-secondary:hover {
+    opacity: 0.9;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
-    opacity: 0.9;
 }
 
 .btn-outline {
@@ -321,6 +333,16 @@ button {
     min-height: 40px;
     padding: 0.5rem 1.5rem;
     font-size: 0.875rem;
+}
+
+.btn-white {
+    border: 2px solid white;
+    color: white !important;
+}
+
+.btn-white:hover {
+    background-color: white;
+    color: var(--primary) !important;
 }
 
 .btn-lg {
@@ -512,7 +534,7 @@ header {
     content: "\f00d"; /* Font Awesome times icon */
 }
 
-@media (max-width: 1024px) { /* Trigger strictly for mobile and tablet views */
+@media (max-width: 1100px) { /* Trigger strictly for mobile and tablet views */
     .nav-links {
         display: none;
     }
@@ -639,6 +661,7 @@ header {
 .page-hero {
     position: relative;
     padding: var(--spacing-3xl) 0;
+    background-color: var(--neutral-300); /* Placeholder while image loads */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -649,6 +672,7 @@ header {
     text-align: center;
     color: #ffffff;
     margin-bottom: var(--spacing-3xl);
+    transition: background-image 0.5s ease-in-out;
 }
 
 .page-hero::before {
@@ -800,10 +824,16 @@ header {
     gap: var(--spacing-xl);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) { /* Trigger for tablets */
     .menu-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--spacing-sm); /* Tighten gap to fit 3 columns on small screens */
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 640px) { /* Trigger for mobile */
+    .menu-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -819,7 +849,7 @@ header {
 }
 
 .menu-item-image {
-    aspect-ratio: 1 / 1; /* Square aspect ratio is optimal for food bowls and plates */
+    aspect-ratio: 3 / 2; /* Proportional landscape ratio for better visual balance */
     width: 100%;
     overflow: hidden;
     background-color: var(--neutral-100);
@@ -900,7 +930,13 @@ header {
 }
 
 .sidebar-link:not(.active):hover {
-    background-color: var(--neutral-200);
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--primary);
+}
+
+[data-theme="dark"] .sidebar-link:not(.active):hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
 /* Footer */
@@ -941,8 +977,15 @@ footer {
 
 @media (max-width: 640px) {
     .footer-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
     }
+    .footer-info, 
+    .footer-links:last-child {
+        grid-column: span 2;
+        text-align: center;
+    }
+    .social-links { justify-content: center; }
 }
 
 .footer-logo {
@@ -1182,6 +1225,16 @@ footer .logo span, .footer-logo span {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    border: 1px solid transparent;
+}
+
+[data-theme="dark"] .text-neutral-500 {
+    color: var(--neutral-400) !important;
+}
+
+.badge-success, .bg-success.badge {
+    background-color: var(--primary) !important;
+    color: white !important;
 }
 
 [data-theme="dark"] .badge.bg-success,
@@ -1253,6 +1306,23 @@ footer .logo span, .footer-logo span {
 .faq-answer {
     padding: 0 var(--spacing-lg) var(--spacing-md);
     color: var(--neutral-600);
+    display: none; /* Hidden by default */
+    overflow: hidden;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(45deg);
+    color: var(--secondary);
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Team Section */
@@ -1493,3 +1563,62 @@ footer .logo span, .footer-logo span {
 @media (max-width: 768px) {
     .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
 }
+/* Blog Layout */
+.blog-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-3xl);
+}
+
+@media (max-width: 1100px) {
+    .blog-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+}
+
+.blog-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xl);
+}
+
+.blog-sidebar-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: var(--spacing-xs);
+    display: inline-block;
+}
+
+.category-list li {
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--neutral-100);
+}
+
+[data-theme="dark"] .category-list li {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.blog-posts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); }
+@media (max-width: 1100px) { .blog-layout, .blog-posts-grid, .featured-article { grid-template-columns: 1fr !important; } .featured-article-image { min-height: 300px; } }
+
+@media (max-width: 1100px) { .pricing-grid > *:last-child, .benefits-grid > *:last-child { grid-column: span 2; margin: 0 auto; max-width: 50%; justify-self: center; } }
+
+@media (max-width: 992px) { .dashboard-container { grid-template-columns: 1fr !important; gap: var(--spacing-lg); padding: var(--spacing-md) 0; } .dashboard-sidebar.responsive-sidebar { padding: var(--spacing-md); background: var(--surface); border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); margin-bottom: var(--spacing-xl); } .dashboard-nav { display: flex !important; overflow-x: auto !important; gap: var(--spacing-md) !important; padding-bottom: var(--spacing-sm); scrollbar-width: none; } .dashboard-nav hr { display: none; } .sidebar-link { flex: 0 0 auto; padding: var(--spacing-sm) var(--spacing-lg) !important; white-space: nowrap; border-radius: var(--radius-full); background: var(--neutral-100); border: 1px solid var(--neutral-200); } [data-theme='dark'] .sidebar-link { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.1); } .sidebar-link.active { background: var(--primary); color: white !important; } .user-profile { display: flex !important; align-items: center !important; text-align: left !important; gap: var(--spacing-md) !important; margin-bottom: var(--spacing-lg) !important; } .user-profile .avatar { width: 60px !important; height: 60px !important; margin: 0 !important; } .user-profile h3 { font-size: 1.1rem !important; margin: 0 !important; } }
+
+/* Auth Page Redesign (Mobile/Tablet) */
+body.auth-page .back-to-top { display: none !important; }
+@media (max-width: 992px) {
+    body.auth-page { padding: var(--spacing-xl) var(--spacing-md) !important; display: flex !important; align-items: center; justify-content: center; }
+    body.auth-page .auth-container { width: 100% !important; max-width: 500px !important; margin: 0 auto; }
+    body.auth-page .header-controls-floating { top: 10px; right: 10px; gap: var(--spacing-xs); }
+    body.auth-page .logo-container { margin-bottom: var(--spacing-lg); }
+    body.auth-page .form-grid { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 900px) { .dashboard-content .grid-4 { grid-template-columns: repeat(2, 1fr) !important; } }
+@media (max-width: 480px) { .dashboard-content .grid-4 { grid-template-columns: 1fr !important; } .dashboard-content .grid-2 { grid-template-columns: 1fr !important; } }
+body { overflow-x: hidden !important; width: 100%; position: relative; }

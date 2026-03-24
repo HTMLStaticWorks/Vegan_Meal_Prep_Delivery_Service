@@ -59,7 +59,14 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .logo-container img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
         }
 
         .form-group {
@@ -196,7 +203,7 @@
     </style>
 </head>
 
-<body>
+<body class="auth-page">
     <div class="header-controls-floating">
         <button id="rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
         <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
