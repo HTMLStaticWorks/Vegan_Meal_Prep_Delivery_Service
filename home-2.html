@@ -4,474 +4,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home 2 | Veganova - Premium Modern Layout</title>
-    <link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
-    <meta name="description" content="Experience the modern way of eating vegan with Veganova's premium meal delivery service. Healthy, plant-based, and eco-friendly.">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#14532d',
-                        secondary: '#84cc16',
-                        accent: '#f5f5f4',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>VeganBox | Fresh Healthy Meals - Home 2</title>
+    <meta name="description"
+        content="Alternative layout for VeganBox meal subscriptions. Healthy, convenient, and ethical eating.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
-<body class="antialiased text-slate-900 transition-colors duration-300">
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></a>
+            </div>
 
-    <!-- Navigation Header -->
-    <header
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
-        <div class="container flex items-center justify-between">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform"
-                    alt="Veganova Icon">
-                <span
-                    class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-10">
-                <div class="nav-item-dropdown">
-                    <a href="index.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-item">Home 1</a>
-                        <a href="home-2.html" class="dropdown-item">Home 2</a>
-                    </div>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="active">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-2.html">Home 2</a></li>
+                    </ul>
                 </div>
-                <a href="about.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
-                <div class="nav-item-dropdown">
-                    <a href="meals.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="meals.html" class="dropdown-item">All Meals</a>
-                        <a href="breakfast.html" class="dropdown-item">Breakfast</a>
-                        <a href="lunch.html" class="dropdown-item">Lunch</a>
-                        <a href="dinner.html" class="dropdown-item">Dinner</a>
-                    </div>
+                <a href="about.html">About</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Menu <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="breakfast.html">Breakfast</a></li>
+                        <li><a href="lunch.html">Lunch</a></li>
+                        <li><a href="dinner.html">Dinner</a></li>
+                    </ul>
                 </div>
-                <a href="pricing.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
-                <a href="dashboard/index.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
-                <a href="blog.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
-                <a href="contact.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
             </nav>
 
-            <!-- Buttons & Actions -->
-            <div class="flex items-center gap-4">
-                <!-- Cart Icon -->
-                <a href="cart.html"
-                    class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
-                    <i data-lucide="shopping-cart"
-                        class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
-                    <span
-                        class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
-                </a>
-
-                <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
-                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                    <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
-                    <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
-                </button>
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="auth/login.html"
-                        class="text-sm font-semibold hover:text-secondary dark:text-white">Login</a>
-                    <a href="auth/signup.html" class="btn-primary">Sign Up</a>
+            <div class="nav-right">
+                <div class="nav-actions">
+                    <button id="rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                    <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                            class="fas fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+                    <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                    <button id="hamburger" class="hamburger d-mobile-only" aria-label="Open Menu"><i
+                            class="fas fa-bars"></i></button>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
-                    <i data-lucide="menu"></i>
-                </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
-        <div class="flex flex-col h-full p-8">
-            <div class="flex items-center justify-between mb-12">
-                <div class="flex items-center gap-2">
-                    <img src="assets/img/logo-icon.svg" class="w-8 h-8" alt="Logo">
-                    <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase tracking-tight">Veganova</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <button class="rtl-toggle p-2 rounded-full border dark:border-white/20 flex items-center justify-center min-w-[40px]" title="Toggle RTL">
-                        <span class="text-xs font-black dark:text-gray-300">RTL</span>
-                    </button>
-                    <button class="theme-toggle p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10" title="Toggle Theme">
-                        <i data-lucide="sun" class="sun-icon text-secondary hidden w-5 h-5"></i>
-                        <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary w-5 h-5"></i>
-                    </button>
-                    <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10" title="Close Menu">
-                        <i data-lucide="x" class="dark:text-white w-6 h-6"></i>
-                    </button>
-                </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="d-flex justify-content-between align-items-center px-md py-sm border-bottom">
+            <div class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+            <div class="d-flex gap-sm">
+                <button id="mobile-rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                <button id="mobile-theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                        class="fas fa-moon"></i></button>
             </div>
-
-            <nav class="flex flex-col gap-6">
-                <div class="space-y-4">
-                    <p class="text-[10px] font-black uppercase tracking-widest text-slate-400">Main Menu</p>
-                    <a href="index.html" class="text-2xl font-bold hover:text-secondary dark:text-white transition-colors">Home</a>
-                    <a href="about.html" class="text-2xl font-bold hover:text-secondary dark:text-white transition-colors">About Us</a>
-                    <a href="meals.html" class="text-2xl font-bold hover:text-secondary dark:text-white transition-colors">Our Menu</a>
-                    <a href="pricing.html" class="text-2xl font-bold hover:text-secondary dark:text-white transition-colors">Pricing</a>
-                    <a href="dashboard/index.html" class="text-2xl font-bold hover:text-secondary dark:text-white transition-colors">Dashboard</a>
-                    <a href="blog.html" class="text-2xl font-bold hover:text-secondary dark:text-white transition-colors">Blog</a>
-                    <a href="contact.html" class="text-2xl font-bold hover:text-secondary dark:text-white transition-colors">Contact</a>
-                </div>
-
-                <div class="mt-8 pt-8 border-t border-slate-100 dark:border-white/10 space-y-4">
-                    <a href="auth/login.html" class="flex items-center justify-center w-full py-4 rounded-2xl font-bold border-2 border-slate-200 dark:border-white/20 dark:text-white">Login</a>
-                    <a href="auth/signup.html" class="btn-primary w-full text-center">Get Started</a>
-                </div>
-            </nav>
         </div>
+        <nav class="nav-links d-flex flex-column p-md">
+            <div class="dropdown mobile-dropdown">
+                <a href="javascript:void(0)" class="active">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="home-2.html">Home 2</a></li>
+                </ul>
+            </div>
+            <a href="about.html">About</a>
+            <a href="breakfast.html">Breakfast</a>
+            <a href="lunch.html">Lunch</a>
+            <a href="dinner.html">Dinner</a>
+            <a href="blog.html">Blog</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+            <hr class="my-md opacity-20">
+            <div class="d-flex flex-column gap-sm">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </nav>
     </div>
-    <main class="pt-24 overflow-hidden">
-        
-        <!-- 1. Hero Section (Split Layout) -->
-        <section class="relative min-h-[90vh] flex items-center py-20 bg-slate-50 dark:bg-slate-900/50">
-            <div class="container grid lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <span class="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-bold uppercase tracking-widest mb-6">Revolutionary Eating</span>
-                    <h1 class="text-5xl lg:text-7xl font-black font-heading text-slate-900 dark:text-white leading-[1.1] mb-8">
-                        Modern Vegan <br>
-                        <span class="text-secondary">Elevated Lifestyle</span>
-                    </h1>
-                    <p class="text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-lg">
-                        Think plant-based eating is hard? We're here to change that. Minimalist meal prep, maximalist flavor, delivered to your door.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="meals.html" class="btn-primary group">
-                            Explore Vegan Meals
-                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                        </a>
-                        <a href="pricing.html" class="px-8 py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-800 font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-center">
-                            View Plans
-                        </a>
-                    </div>
-                </div>
-                <div class="reveal relative">
-                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>
-                    <div class="absolute -bottom-10 -right-10 w-60 h-60 bg-primary/10 rounded-full blur-3xl"></div>
-                    <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800&q=80" 
-                         class="relative z-10 w-full aspect-square object-cover rounded-[3rem] shadow-2xl border-8 border-white dark:border-slate-800" 
-                         alt="Premium Vegan Dish">
+
+    <!-- Home 2 Hero: Full Width Overlay Style -->
+    <section class="hero-v2"
+        style="background-image: url('https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg');">
+        <div class="container">
+            <div class="hero-v2-card animate-fadeIn">
+                <span class="badge text-secondary mb-sm fw-bold">THE ETHICAL CHOICE</span>
+                <h1>Nourish Your <span class="text-primary">Body & Soul</span></h1>
+                <p class="text-lg my-md">Chef-crafted healthy meals delivered directly to your doorstep. Experience the
+                    peak of fresh, ethical, and delicious eating.</p>
+                <div class="d-flex gap-md justify-content-center">
+                    <a href="services.html" class="btn btn-primary">Get Started</a>
+                    <a href="about.html" class="btn btn-outline" style="border-color: white; color: white;">Our
+                        Story</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 2. How It Works -->
-        <section class="py-32 bg-white dark:bg-slate-900">
-            <div class="container">
-                <div class="text-center max-w-3xl mx-auto mb-20 reveal">
-                    <h2 class="text-4xl md:text-5xl font-black font-heading mb-6">Simple Steps to V-Life</h2>
-                    <p class="text-slate-600 dark:text-slate-400 text-lg">Achieving your health goals shouldn't be a part-time job. We handle the hard part.</p>
+    <!-- Content Section: Sustainability -->
+    <section class="section-padding" style="background: var(--neutral-100);">
+        <div class="container grid grid-2 align-items-center">
+            <div class="content-image">
+                <img src="https://images.pexels.com/photos/6970095/pexels-photo-6970095.jpeg"
+                    alt="Happy person eating healthy meal" class="img-fluid rounded-xl shadow-lg">
+            </div>
+            <div class="content-text p-xl">
+                <h2 class="text-3xl mb-md">Convenience Without <span class="text-primary">Compromise</span></h2>
+                <p class="mb-md">We know you're busy. We also know you care about what you eat. VeganBox brings you the
+                    best of both worlds: nutritionist-approved meals that take minutes to prepare, but satisfy your
+                    soul.</p>
+                <ul class="d-flex flex-column gap-sm mb-xl">
+                    <li><i class="fas fa-check-circle text-primary mr-sm"></i> Personalized meal plans</li>
+                    <li><i class="fas fa-check-circle text-primary mr-sm"></i> Zero-waste biodegradable packaging</li>
+                    <li><i class="fas fa-check-circle text-primary mr-sm"></i> Cancel or skip any week easily</li>
+                </ul>
+                <a href="services.html" class="btn btn-primary shadow-lg">Explore Plans</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="section-padding bg-primary text-white" style="background: var(--primary);">
+        <div class="container stats-grid">
+            <div class="stat-item animate-fadeIn">
+                <h3 class="text-white">100%</h3>
+                <p>Plant-Based Ingredients</p>
+            </div>
+            <div class="stat-item animate-fadeIn" style="animation-delay: 0.1s;">
+                <h3 class="text-white">Zero</h3>
+                <p>Plastic Packaging</p>
+            </div>
+            <div class="stat-item animate-fadeIn" style="animation-delay: 0.2s;">
+                <h3 class="text-white">Chef</h3>
+                <p>Developed Recipes</p>
+            </div>
+            <div class="stat-item animate-fadeIn" style="animation-delay: 0.3s;">
+                <h3 class="text-white">Free</h3>
+                <p>Shipping Nationwide</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How we prepare -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-xl">
+                <h2 class="text-3xl">Our Fresh <span class="text-primary">Process</span></h2>
+                <p class="text-neutral-500">From the farm to your table, we maintain the highest standards.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="my-sm">Local Harvest</h3>
+                    <p class="text-neutral-600">We source seasonal produce from independent, ethical farmers within 100
+                        miles of our kitchens.</p>
                 </div>
-                
-                <div class="grid md:grid-cols-3 gap-12">
-                    <div class="text-center reveal reveal-delay-1">
-                        <div class="w-24 h-24 bg-primary text-white rounded-3xl flex items-center justify-center mx-auto mb-8 text-3xl font-black shadow-xl">1</div>
-                        <h3 class="text-2xl font-bold mb-4">Choose Meals</h3>
-                        <p class="text-slate-500">Pick from our chef-curated menu of over 40+ seasonal dishes.</p>
-                    </div>
-                    <div class="text-center reveal reveal-delay-2">
-                        <div class="w-24 h-24 bg-secondary text-primary rounded-3xl flex items-center justify-center mx-auto mb-8 text-3xl font-black shadow-xl">2</div>
-                        <h3 class="text-2xl font-bold mb-4">Customize Plan</h3>
-                        <p class="text-slate-500">Select weekly or monthly cycles that fit your specific macros.</p>
-                    </div>
-                    <div class="text-center reveal reveal-delay-3">
-                        <div class="w-24 h-24 bg-primary text-secondary rounded-3xl flex items-center justify-center mx-auto mb-8 text-3xl font-black shadow-xl">3</div>
-                        <h3 class="text-2xl font-bold mb-4">Get Delivery</h3>
-                        <p class="text-slate-500">Receive your fresh, eco-packaged meals directly at your door.</p>
-                    </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="my-sm">Chef Preparation</h3>
+                    <p class="text-neutral-600">Our culinary team crafts each meal with precision, ensuring perfect
+                        flavor balance and nutritional density.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="my-sm">Cold Chain Delivery</h3>
+                    <p class="text-neutral-600">Delivered in 100% compostable boxes with plant-based coolants to ensure
+                        peak freshness at your doorstep.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 3. Featured Meals -->
-        <section class="py-32 bg-slate-50 dark:bg-slate-800/20">
-            <div class="container">
-                <div class="flex flex-col md:flex-row items-end justify-between mb-20 gap-8 reveal">
-                    <div>
-                        <h2 class="text-4xl md:text-5xl font-black font-heading mb-4">Chef's Signatures</h2>
-                        <p class="text-slate-600 dark:text-slate-400 max-w-xl">Every dish is a masterpiece of plant-based nutrition and culinary skill.</p>
-                    </div>
-                    <a href="meals.html" class="btn-primary">View Full Menu</a>
+    <!-- CTA & Trust -->
+    <section class="section-padding"
+        style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(16, 185, 129, 0.1) 100%);">
+        <div class="container text-center">
+            <h2 class="text-3xl mb-md">Eat Better, Live Fairer.</h2>
+            <p class="text-lg mb-xl max-w-600 mx-auto">Subscribe today and get 20% off your first month of chef-prepared
+                healthy meals.</p>
+            <div class="d-flex justify-content-center gap-md">
+                <a href="signup.html" class="btn btn-primary btn-lg">Join the Movement</a>
+                <a href="pricing.html" class="btn btn-outline btn-lg">View Plans</a>
+            </div>
+            <div class="trust-badges mt-xl">
+                <div class="trust-badge"><i class="fas fa-leaf"></i> 100% Vegan</div>
+                <div class="trust-badge"><i class="fas fa-recycle"></i> zero Waste</div>
+                <div class="trust-badge"><i class="fas fa-lock"></i> Secure SSL</div>
+                <div class="trust-badge"><i class="fas fa-certificate"></i> Certified Organic</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alternate FAQ -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-xl">
+                <h2 class="text-3xl">Common <span class="text-primary">Questions</span></h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">How does the subscription work? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">Select a meal plan, choose your preferred dishes every week, and get them
+                        delivered on your chosen day. You can pause or cancel anytime.</div>
                 </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Meal Card 1 -->
-                    <div class="meal-card group bg-white dark:bg-slate-800 p-4 rounded-[2rem] shadow-sm hover:shadow-xl reveal reveal-delay-1">
-                        <div class="relative overflow-hidden rounded-[1.5rem] mb-6 aspect-square">
-                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Buddha Bowl">
-                            <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-black text-primary">High Protein</div>
-                        </div>
-                        <h4 class="text-xl font-bold mb-2">Quinoa Buddha Bowl</h4>
-                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-6">
-                            <i data-lucide="zap" class="w-4 h-4 text-warning"></i> 450 kcal
-                        </div>
-                        <button class="w-full py-4 bg-slate-100 dark:bg-slate-700/50 rounded-2xl font-bold group-hover:bg-secondary group-hover:text-primary transition-colors add-to-cart-btn" 
-                                data-meal='{"id": 7, "name": "Quinoa Buddha Bowl", "price": 13.50, "kcal": 420, "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500"}'>
-                            Add to Cart
-                        </button>
+                <div class="faq-item">
+                    <div class="faq-question">What about dietary restrictions and allergies? <i class="fas fa-plus"></i>
                     </div>
-                    <!-- Meal Card 2 -->
-                    <div class="meal-card group bg-white dark:bg-slate-800 p-4 rounded-[2rem] shadow-sm hover:shadow-xl reveal reveal-delay-2">
-                        <div class="relative overflow-hidden rounded-[1.5rem] mb-6 aspect-square">
-                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Pasta">
-                            <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-black text-primary">Trending</div>
-                        </div>
-                        <h4 class="text-xl font-bold mb-2">Vegan Alfredo Pasta</h4>
-                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-6">
-                            <i data-lucide="zap" class="w-4 h-4 text-warning"></i> 520 kcal
-                        </div>
-                        <button class="w-full py-4 bg-slate-100 dark:bg-slate-700/50 rounded-2xl font-bold group-hover:bg-secondary group-hover:text-primary transition-colors add-to-cart-btn"
-                                data-meal='{"id": 17, "name": "Vegan Alfredo Pasta", "price": 16.00, "kcal": 540, "image": "https://images.unsplash.com/photo-1473093226795-af9932fe5856?w=500"}'>
-                            Add to Cart
-                        </button>
-                    </div>
-                    <!-- Meal Card 3 -->
-                    <div class="meal-card group bg-white dark:bg-slate-800 p-4 rounded-[2rem] shadow-sm hover:shadow-xl reveal reveal-delay-3">
-                        <div class="relative overflow-hidden rounded-[1.5rem] mb-6 aspect-square">
-                            <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Tofu">
-                            <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-black text-primary">Nut-Free</div>
-                        </div>
-                        <h4 class="text-xl font-bold mb-2">Smoked Tofu Salad</h4>
-                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-6">
-                            <i data-lucide="zap" class="w-4 h-4 text-warning"></i> 380 kcal
-                        </div>
-                        <button class="w-full py-4 bg-slate-100 dark:bg-slate-700/50 rounded-2xl font-bold group-hover:bg-secondary group-hover:text-primary transition-colors add-to-cart-btn"
-                                data-meal='{"id": 143, "name": "Grilled Tofu Salad", "price": 14.00, "kcal": 360, "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=500"}'>
-                            Add to Cart
-                        </button>
-                    </div>
-                    <!-- Meal Card 4 -->
-                    <div class="meal-card group bg-white dark:bg-slate-800 p-4 rounded-[2rem] shadow-sm hover:shadow-xl reveal reveal-delay-4">
-                        <div class="relative overflow-hidden rounded-[1.5rem] mb-6 aspect-square">
-                            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=500" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Curry">
-                            <div class="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-md rounded-full text-xs font-black text-primary">Spicy</div>
-                        </div>
-                        <h4 class="text-xl font-bold mb-2">Red Thai Chickpea Curry</h4>
-                        <div class="flex items-center gap-2 text-slate-500 text-sm mb-6">
-                            <i data-lucide="zap" class="w-4 h-4 text-warning"></i> 410 kcal
-                        </div>
-                        <button class="w-full py-4 bg-slate-100 dark:bg-slate-700/50 rounded-2xl font-bold group-hover:bg-secondary group-hover:text-primary transition-colors add-to-cart-btn"
-                                data-meal='{"id": 15, "name": "Vegan Chickpea Curry", "price": 14.50, "kcal": 480, "image": "https://images.pexels.com/photos/4033633/pexels-photo-4033633.jpeg?w=500"}'>
-                            Add to Cart
-                        </button>
-                    </div>
+                    <div class="faq-answer">Every meal is clearly labeled with ingredients. You can filter the menu by
+                        common allergens in your dashboard settings.</div>
                 </div>
             </div>
-        </section>
-
-        <!-- 4. Subscription Plans Preview -->
-        <section class="py-32 bg-white dark:bg-slate-900 overflow-hidden">
-            <div class="container relative">
-                <div class="grid lg:grid-cols-2 gap-20 items-center">
-                    <div class="reveal">
-                        <h2 class="text-4xl md:text-5xl font-black font-heading mb-8 leading-tight">Plans Built For Your <span class="text-secondary">Pace.</span></h2>
-                        <div class="space-y-8">
-                            <div class="flex gap-6 p-8 bg-slate-50 dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700">
-                                <div class="w-14 h-14 bg-secondary rounded-2xl flex items-center justify-center shrink-0">
-                                    <i data-lucide="calendar" class="text-primary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-bold mb-2">Weekly Subscription</h4>
-                                    <p class="text-slate-500 mb-4">Perfect for busy professionals. 3 meals/day, 7 days a week.</p>
-                                    <span class="text-2xl font-black text-primary dark:text-white">$149.00 <small class="text-sm text-slate-400 font-medium">/week</small></span>
-                                </div>
-                            </div>
-                            <div class="flex gap-6 p-8 bg-primary text-white rounded-3xl relative overflow-hidden">
-                                <div class="absolute top-0 right-0 px-6 py-2 bg-secondary text-primary font-black text-xs uppercase tracking-widest rounded-bl-2xl">Best Value</div>
-                                <div class="w-14 h-14 bg-secondary/20 rounded-2xl flex items-center justify-center shrink-0">
-                                    <i data-lucide="infinity" class="text-secondary"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-bold mb-2">Monthly Subscription</h4>
-                                    <p class="text-slate-200/60 mb-4">Total peace of mind. Includes priority delivery and custom macros.</p>
-                                    <span class="text-2xl font-black text-secondary">$549.00 <small class="text-sm text-slate-300 font-medium">/month</small></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-10">
-                            <a href="pricing.html" class="font-bold underline text-slate-500 hover:text-primary transition-colors">Compare all benefits</a>
-                        </div>
-                    </div>
-                    <div class="reveal relative">
-                        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800" class="w-full rounded-[3rem]" alt="Meal Prep">
-                        <div class="absolute -bottom-10 -left-10 p-8 bg-white dark:bg-slate-800 shadow-2xl rounded-3xl border border-slate-100 dark:border-slate-700 reveal reveal-delay-2">
-                             <div class="flex items-center gap-4">
-                                <div class="flex -space-x-3">
-                                    <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200"></div>
-                                    <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-300"></div>
-                                    <div class="w-10 h-10 rounded-full border-2 border-white bg-slate-400"></div>
-                                </div>
-                                <span class="font-bold">Over 2,500+ Active Subs</span>
-                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Customer Reviews -->
-        <section class="py-32 bg-slate-50 dark:bg-slate-800/10">
-            <div class="container">
-                <div class="text-center mb-20 reveal">
-                    <h2 class="text-4xl font-black font-heading mb-4">What V-Lifers Say</h2>
-                    <div class="flex justify-center gap-1 text-secondary">
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                        <i data-lucide="star" class="fill-current w-5 h-5"></i>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Review 1 -->
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-[2rem] shadow-sm hover:-translate-y-2 transition-transform reveal reveal-delay-1">
-                        <div class="flex items-center gap-4 mb-6">
-                            <img src="https://i.pravatar.cc/60?img=1" class="w-12 h-12 rounded-full" alt="User">
-                            <div>
-                                <h5 class="font-bold">Sarah Jenkins</h5>
-                                <span class="text-xs text-slate-400">Premium Member</span>
-                            </div>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-300 italic mb-0">"The quality of ingredients is unbelievable. It's like having a private chef who actually cares about my macros."</p>
-                    </div>
-                    <!-- Review 2 -->
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-[2rem] shadow-sm hover:-translate-y-2 transition-transform reveal reveal-delay-2">
-                        <div class="flex items-center gap-4 mb-6">
-                            <img src="https://i.pravatar.cc/60?img=5" class="w-12 h-12 rounded-full" alt="User">
-                            <div>
-                                <h5 class="font-bold">Marcus Thorne</h5>
-                                <span class="text-xs text-slate-400">Monthly Plan</span>
-                            </div>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-300 italic mb-0">"Saved me 10 hours of prep a week. The Thai Curry is life-changing. 10/10 recommendation!"</p>
-                    </div>
-                    <!-- Review 3 -->
-                    <div class="bg-white dark:bg-slate-800 p-8 rounded-[2rem] shadow-sm hover:-translate-y-2 transition-transform reveal reveal-delay-3">
-                        <div class="flex items-center gap-4 mb-6">
-                            <img src="https://i.pravatar.cc/60?img=3" class="w-12 h-12 rounded-full" alt="User">
-                            <div>
-                                <h5 class="font-bold">Emma Wilson</h5>
-                                <span class="text-xs text-slate-400">Weekly Plan</span>
-                            </div>
-                        </div>
-                        <p class="text-slate-600 dark:text-slate-300 italic mb-0">"Eco-friendly packaging was the winner for me. No plastic guilt, just incredible food."</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. Call to Action -->
-        <section class="py-32 relative">
-            <div class="container relative z-10">
-                <div class="bg-primary rounded-[4rem] p-12 md:p-24 text-center text-white overflow-hidden relative">
-                    <!-- Background Decor -->
-                    <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                        <div class="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl text-secondary"></div>
-                        <div class="absolute bottom-10 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
-                    </div>
-                    
-                    <div class="relative reveal">
-                        <h2 class="text-5xl md:text-7xl font-black font-heading mb-8 leading-tight">Ready to Start Your <br> <span class="text-secondary">Vegan Journey?</span></h2>
-                        <p class="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">Join the 10,000+ others who have transformed their lives with Veganova. No commitments, just healthy eating.</p>
-                        <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                            <a href="meals.html" class="btn-secondary px-12 py-5 text-xl">Order Your First Box</a>
-                            <a href="pricing.html" class="px-12 py-5 border-2 border-white/20 rounded-2xl font-bold hover:bg-white/10 transition-all text-xl">Browse All Plans</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 border-t border-white/5 pt-24 pb-12 text-white">
-        <div class="container">
-            <div class="grid md:grid-cols-4 gap-12 mb-20">
-                <div class="col-span-2">
-                    <a href="index.html" class="flex items-center gap-2 mb-8">
-                        <img src="assets/img/logo-icon.svg" class="w-12 h-12" alt="Veganova Icon">
-                        <span class="text-3xl font-black font-heading tracking-tight uppercase">Veganova</span>
-                    </a>
-                    <p class="text-slate-400 text-lg mb-8 max-w-md">Revolutionizing the way you eat with premium, plant-based nutrition delivered to your doorstep.</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="instagram" class="w-6 h-6"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="twitter" class="w-6 h-6"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h5 class="text-xl font-bold font-heading mb-8">Quick Links</h5>
-                    <ul class="space-y-4">
-                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors">Weekly Menu</a></li>
-                        <li><a href="pricing.html" class="text-slate-400 hover:text-secondary transition-colors">Subscription Plans</a></li>
-                        <li><a href="blog.html" class="text-slate-400 hover:text-secondary transition-colors">Healthy Blog</a></li>
-                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors">Our Mission</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5 class="text-xl font-bold font-heading mb-8">Newsletter</h5>
-                    <p class="text-slate-400 text-sm mb-6">Stay updated with our weekly recipes and discounts.</p>
-                    <form action="#" class="relative">
-                        <input type="email" placeholder="Your email" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-colors">
-                        <button class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-2xl font-bold text-primary">Join</button>
-                    </form>
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="footer-logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+                <p class="text-neutral-400">Making healthy eating easy and accessible for everyone. Sustainably sourced,
+                    chef-prepared, and nutritionist-approved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
                 </div>
             </div>
-
-            <div class="pt-12 border-t border-white/5 text-center text-sm text-slate-400">
-                <p>&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="breakfast.html">Breakfast</a></li>
+                    <li><a href="lunch.html">Lunch</a></li>
+                    <li><a href="dinner.html">Dinner</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li class="text-neutral-400"><i class="fas fa-map-marker-alt text-primary"></i> 123 Healthy Way, Green City</li>
+                    <li class="text-neutral-400"><i class="fas fa-phone text-primary"></i> +1 234 567 890</li>
+                    <li class="text-neutral-400"><i class="fas fa-envelope text-primary"></i> hello@veganbox.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 VeganBox. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/cart-system.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="js/main.js"></script>
 </body>
-</html>
 
+</html>

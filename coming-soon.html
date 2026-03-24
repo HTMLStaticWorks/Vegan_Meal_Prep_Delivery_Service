@@ -1,130 +1,64 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Launching Soon | Veganova Vegan Meal Service</title>
-    <link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#14532d',
-                        secondary: '#84cc16',
-                        accent: '#f5f5f4',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Coming Soon | VeganBox - Launching Freshness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body class="antialiased text-slate-900 transition-colors duration-300 bg-primary flex items-center justify-center min-h-screen p-6 relative overflow-hidden">
+<body style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/1435737/pexels-photo-1435737.jpeg'); background-size: cover; background-position: center; min-height: 100vh; color: white;">
 
-    <!-- Deco Circles -->
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] -z-0"></div>
-    <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-[120px] -z-0"></div>
+    <div class="coming-soon-container animate-fadeIn">
+        <div class="logo mb-xl" style="font-size: 3rem; color: white;">
+            <i class="fas fa-leaf"></i>
+            <span>VeganBox</span>
+        </div>
+        <h1 class="text-3xl mb-md">Something <span style="color: var(--secondary);">Vibrant</span> is Sprouting!</h1>
+        <p class="text-lg mb-xl max-w-600 mx-auto">We're getting our kitchen ready for the freshest meal subscription service in town. Launching in early Summer 2026.</p>
 
-    <div class="max-w-4xl w-full text-center relative z-10 px-8 py-20 bg-white/10 backdrop-blur-3xl rounded-[60px] border border-white/20 shadow-2xl">
-        <a href="index.html" class="flex items-center justify-center gap-2 mb-12">
-            <img src="assets/img/logo-icon.svg" class="w-10 h-10" alt="Veganova Icon">
-            <span class="text-2xl font-black font-heading tracking-tight text-white uppercase">Veganova</span>
-        </a>
-
-        <h1 class="text-4xl md:text-6xl font-black font-heading text-white mb-8 leading-tight">Something Fresh <br>is <span class="text-secondary italic underline decoration-4 underline-offset-8">Sprouting...</span></h1>
-        
-        <p class="text-white/70 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
-            We're harvesting our 2026 expansion. Join our early bird list and get <span class="text-secondary font-bold">50% OFF</span> your first week when we launch in your city.
-        </p>
-
-        <!-- Countdown Timer -->
-        <div class="flex flex-wrap justify-center gap-6 md:gap-12 mb-16">
-            <div class="flex flex-col items-center">
-                <span id="days" class="text-4xl md:text-6xl font-black font-heading text-white">12</span>
-                <span class="text-xs font-black uppercase tracking-widest text-secondary mt-2">Days</span>
+        <!-- Countdown Placeholder -->
+        <div class="grid grid-4 countdown-grid mb-xl mx-auto" style="max-width: 500px;">
+            <div class="countdown-item card bg-white-trans">
+                <span class="text-2xl fw-bold">45</span>
+                <p class="text-sm">Days</p>
             </div>
-            <div class="flex flex-col items-center">
-                <span id="hours" class="text-4xl md:text-6xl font-black font-heading text-white">04</span>
-                <span class="text-xs font-black uppercase tracking-widest text-secondary mt-2">Hours</span>
+            <div class="countdown-item card bg-white-trans">
+                <span class="text-2xl fw-bold">12</span>
+                <p class="text-sm">Hours</p>
             </div>
-            <div class="flex flex-col items-center">
-                <span id="minutes" class="text-4xl md:text-6xl font-black font-heading text-white">58</span>
-                <span class="text-xs font-black uppercase tracking-widest text-secondary mt-2">Minutes</span>
+            <div class="countdown-item card bg-white-trans">
+                <span class="text-2xl fw-bold">34</span>
+                <p class="text-sm">Mins</p>
             </div>
-            <div class="flex flex-col items-center">
-                <span id="seconds" class="text-4xl md:text-6xl font-black font-heading text-white">32</span>
-                <span class="text-xs font-black uppercase tracking-widest text-secondary mt-2">Seconds</span>
+            <div class="countdown-item card bg-white-trans">
+                <span class="text-2xl fw-bold">18</span>
+                <p class="text-sm">Secs</p>
             </div>
         </div>
 
-        <!-- Subscription Form -->
-        <form action="#" class="w-full max-w-lg mx-auto flex flex-col md:flex-row gap-4">
-             <input type="email" placeholder="Your early access email" class="flex-1 bg-white/10 border border-white/20 rounded-full px-8 py-5 outline-none focus:border-secondary transition-all text-white placeholder:text-white/40">
-             <button class="bg-secondary text-primary px-10 py-5 rounded-full font-black text-lg shadow-xl shadow-secondary/20 hover:scale-105 transition-all">Notify Me</button>
-        </form>
+        <div class="subscribe-form mx-auto" style="max-width: 450px;">
+            <p class="mb-md fw-semibold">Notify me when we launch:</p>
+            <form id="notify-form" class="d-flex gap-sm">
+                <input type="email" class="form-control" placeholder="Enter your email" required style="border-radius: var(--radius-full);">
+                <button type="submit" class="btn btn-secondary" style="background-color: var(--secondary);">Notify Me</button>
+            </form>
+        </div>
 
-        <div class="mt-16 flex items-center justify-center gap-8 text-white/40">
-            <a href="#" class="hover:text-secondary"><i data-lucide="instagram"></i></a>
-            <a href="#" class="hover:text-secondary"><i data-lucide="facebook"></i></a>
-            <a href="#" class="hover:text-secondary"><i data-lucide="twitter"></i></a>
+        <div class="social-links mt-xl">
+            <a href="#" class="btn-icon circle-outline" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn-icon circle-outline" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn-icon circle-outline" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
+    <script src="js/main.js"></script>
     <script>
-        lucide.createIcons();
-
-        // Simple Countdown Logic
-        function updateCountdown() {
-            const days = document.getElementById('days');
-            const hours = document.getElementById('hours');
-            const minutes = document.getElementById('minutes');
-            const seconds = document.getElementById('seconds');
-
-            const s = parseInt(seconds.innerText);
-            if (s > 0) {
-                seconds.innerText = (s - 1).toString().padStart(2, '0');
-            } else {
-                seconds.innerText = '59';
-                const m = parseInt(minutes.innerText);
-                if (m > 0) {
-                    minutes.innerText = (m - 1).toString().padStart(2, '0');
-                } else {
-                    minutes.innerText = '59';
-                    const h = parseInt(hours.innerText);
-                    if (h > 0) {
-                        hours.innerText = (h - 1).toString().padStart(2, '0');
-                    } else {
-                        hours.innerText = '23';
-                        const d = parseInt(days.innerText);
-                        if (d > 0) {
-                            days.innerText = (d - 1).toString().padStart(2, '0');
-                        }
-                    }
-                }
-            }
-        }
-        setInterval(updateCountdown, 1000);
+        document.getElementById('notify-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! We will notify you when we sprout.');
+        });
     </script>
 </body>
 </html>
-
-
-
-
-

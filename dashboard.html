@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | VeganBox - Manage Your Meals</title>
+    <meta name="description" content="Manage your meal subscription, update dietary preferences, and track your weekly deliveries.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></a>
+            </div>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-2.html">Home 2</a></li>
+                    </ul>
+                </div>
+                <a href="about.html">About</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Menu <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="breakfast.html">Breakfast</a></li>
+                        <li><a href="lunch.html">Lunch</a></li>
+                        <li><a href="dinner.html">Dinner</a></li>
+                    </ul>
+                </div>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+            </nav>
+            <div class="nav-right">
+                <div class="nav-actions">
+                    <button id="rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                    <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+                    <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                    <button id="hamburger" class="hamburger d-mobile-only" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="d-flex justify-content-between align-items-center px-md py-sm border-bottom">
+            <div class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+            <div class="d-flex gap-sm">
+                <button id="mobile-rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                <button id="mobile-theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+        <nav class="nav-links d-flex flex-column p-md">
+            <div class="dropdown mobile-dropdown">
+                <a href="javascript:void(0)">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="home-2.html">Home 2</a></li>
+                </ul>
+            </div>
+            <a href="about.html">About</a>
+            <a href="breakfast.html">Breakfast</a>
+            <a href="lunch.html">Lunch</a>
+            <a href="dinner.html">Dinner</a>
+            <a href="blog.html">Blog</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <hr class="my-md opacity-20">
+            <div class="d-flex flex-column gap-sm">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: url('https://images.pexels.com/photos/1640778/pexels-photo-1640778.jpeg'); min-height: 250px;">
+        <div class="container">
+            <h1 class="animate-fadeIn">Your Dashboard</h1>
+            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Manage your subscriptions, dietary preferences, and account settings in one place.</p>
+        </div>
+    </section>
+
+    <div class="container pt-0">
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="dashboard-sidebar">
+                <div class="user-profile mb-2xl text-center">
+                    <div class="avatar mx-auto mb-md" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--neutral-100); border-radius: 50%; color: var(--primary);">
+                        <i class="fas fa-user-circle" style="font-size: 4rem;"></i>
+                    </div>
+                    <h3 class="text-xl mb-xs">Alex Johnson</h3>
+                    <div class="badge badge-primary text-xs">Premium Member</div>
+                </div>
+                <nav class="dashboard-nav">
+                    <a href="javascript:void(0)" class="sidebar-link active"><i class="fas fa-columns"></i> Overview</a>
+                    <a href="javascript:void(0)" class="sidebar-link"><i class="fas fa-concierge-bell"></i> Weekly Meals</a>
+                    <a href="javascript:void(0)" class="sidebar-link"><i class="fas fa-calendar-alt"></i> Skip Weeks</a>
+                    <a href="javascript:void(0)" class="sidebar-link"><i class="fas fa-heartbeat"></i> Preferences</a>
+                    <a href="javascript:void(0)" class="sidebar-link"><i class="fas fa-credit-card"></i> Subscription</a>
+                    <a href="javascript:void(0)" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
+                    <hr class="my-md" style="border-color: var(--neutral-200);">
+                    <a href="index.html" class="sidebar-link text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="dashboard-content">
+                <div class="welcome-section mb-2xl">
+                    <h1 class="text-3xl mb-xs">Hello, Alex!</h1>
+                    <p class="text-lg text-neutral-600">Here's what's happening with your meal plan this week.</p>
+                </div>
+
+                <!-- Stats/Summary Grid -->
+                <div class="grid grid-4 gap-md mb-xl">
+                    <div class="card p-md text-center shadow-sm hover-up">
+                        <i class="fas fa-box text-primary mb-sm"></i>
+                        <h4 class="text-xs text-neutral-500 uppercase fw-bold mb-xs">Next Delivery</h4>
+                        <p class="text-lg fw-bold">March 28, 2026</p>
+                    </div>
+                    <div class="card p-md text-center shadow-sm hover-up">
+                        <i class="fas fa-utensils text-secondary mb-sm"></i>
+                        <h4 class="text-xs text-neutral-500 uppercase fw-bold mb-xs">Meals Left</h4>
+                        <p class="text-lg fw-bold">4 / 10</p>
+                    </div>
+                    <div class="card p-md text-center shadow-sm hover-up">
+                        <i class="fas fa-fire text-accent mb-sm"></i>
+                        <h4 class="text-xs text-neutral-500 uppercase fw-bold mb-xs">Avg. Calories</h4>
+                        <p class="text-lg fw-bold">540 kcal</p>
+                    </div>
+                    <div class="card p-md text-center shadow-sm hover-up">
+                        <i class="fas fa-check-circle text-success mb-sm"></i>
+                        <h4 class="text-xs text-neutral-500 uppercase fw-bold mb-xs">Account</h4>
+                        <p class="text-lg fw-bold text-success">Verified</p>
+                    </div>
+                </div>
+
+                <!-- Meal Progress Tracker -->
+                <section class="card mb-xl p-xl">
+                    <h2 class="text-xl mb-md">Meal Progress Tracker</h2>
+                    <div class="progress-container bg-neutral-100 rounded-full h-md mb-sm overflow-hidden" style="height: 12px; background: var(--neutral-200);">
+                        <div class="progress-bar bg-primary h-full" style="width: 60%; height: 100%; background: var(--primary);"></div>
+                    </div>
+                    <div class="d-flex justify-content-between text-xs text-neutral-500">
+                        <span>6 Meals Consumed</span>
+                        <span>4 Meals Remaining</span>
+                    </div>
+                </section>
+
+                <div class="card mb-xl p-xl">
+                    <h3 class="text-lg mb-lg">Nutrition & Sustainability Snapshot</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="text-3xl fw-bold text-primary block mb-xs">120g</span>
+                            <span class="text-xs text-neutral-500 uppercase fw-bold">Weekly Protein</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="text-3xl fw-bold text-secondary block mb-xs">45g</span>
+                            <span class="text-xs text-neutral-500 uppercase fw-bold">Average Fiber</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="text-3xl fw-bold text-accent block mb-xs">0%</span>
+                            <span class="text-xs text-neutral-500 uppercase fw-bold">GMO Content</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="text-3xl fw-bold text-primary block mb-xs">12</span>
+                            <span class="text-xs text-neutral-500 uppercase fw-bold">Plastic Avoided (lbs)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weekly Plan Section -->
+                <section class="card mb-xl p-xl">
+                    <div class="d-flex justify-content-between align-items-center mb-md">
+                        <h2 class="text-xl">Your Weekly Selection</h2>
+                        <button class="btn btn-outline btn-sm">Edit Plan</button>
+                    </div>
+                    <div class="grid grid-2 gap-md">
+                        <div class="selected-meal-item d-flex align-items-center gap-md p-sm border-rounded bg-light shadow-sm">
+                            <img src="images/breakfast.png" alt="Meal" style="width: 60px; height: 60px; border-radius: var(--radius-md); object-fit: cover;">
+                            <div class="flex-1">
+                                <h4 class="text-sm">Avocado Garden Toast</h4>
+                                <div class="d-flex gap-sm text-xs text-neutral-500">
+                                    <span>Protein: 12g</span>
+                                    <span>•</span>
+                                    <span>2 Servings</span>
+                                </div>
+                            </div>
+                            <span class="badge bg-success text-white text-xs">Delivered</span>
+                        </div>
+                        <div class="selected-meal-item d-flex align-items-center gap-md p-sm border-rounded bg-light shadow-sm">
+                            <img src="images/lunch.png" alt="Meal" style="width: 60px; height: 60px; border-radius: var(--radius-md); object-fit: cover;">
+                            <div class="flex-1">
+                                <h4 class="text-sm">Mediterranean Quinoa</h4>
+                                <div class="d-flex gap-sm text-xs text-neutral-500">
+                                    <span>Protein: 24g</span>
+                                    <span>•</span>
+                                    <span>4 Servings</span>
+                                </div>
+                            </div>
+                            <span class="badge bg-secondary text-white text-xs">In Transit</span>
+                        </div>
+                        <div class="selected-meal-item d-flex align-items-center gap-md p-sm border-rounded bg-light shadow-sm">
+                            <img src="images/dinner.png" alt="Meal" style="width: 60px; height: 60px; border-radius: var(--radius-md); object-fit: cover;">
+                            <div class="flex-1">
+                                <h4 class="text-sm">Braised Miso Tofu</h4>
+                                <div class="d-flex gap-sm text-xs text-neutral-500">
+                                    <span>Protein: 28g</span>
+                                    <span>•</span>
+                                    <span>4 Servings</span>
+                                </div>
+                            </div>
+                            <span class="badge bg-neutral-300 text-neutral-600 text-xs">Preparing</span>
+                        </div>
+                    </div>
+                    <div class="mt-xl text-center">
+                        <p class="text-sm text-neutral-500 mb-md">Need a break? You can skip next week's delivery before Thursday.</p>
+                        <button class="btn btn-danger btn-sm" onclick="showToast('Next week skipped!', 'warning')">Skip Next Week</button>
+                    </div>
+                </section>
+
+                <!-- Preferences Form -->
+                <section class="card p-xl">
+                    <h2 class="text-xl mb-md">Dietary Preferences & Allergies</h2>
+                    <form id="preferences-form">
+                        <div class="grid grid-2 gap-md">
+                            <div class="form-group">
+                                <label>Primary Diet</label>
+                                <select class="form-control">
+                                    <option>Vegan</option>
+                                    <option>Vegetarian</option>
+                                    <option>Pescatarian</option>
+                                    <option>Gluten-Free</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Allergies</label>
+                                <div class="d-flex flex-wrap gap-sm mt-sm">
+                                    <label class="checkbox-label"><input type="checkbox"> Nuts</label>
+                                    <label class="checkbox-label"><input type="checkbox"> Soy</label>
+                                    <label class="checkbox-label"><input type="checkbox" checked> Gluten</label>
+                                    <label class="checkbox-label"><input type="checkbox"> Dairy</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mt-md">
+                            <label for="dislikes">Food Dislikes</label>
+                            <textarea id="dislikes" class="form-control" rows="2" placeholder="e.g., mushrooms, olives..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-sm">Save Preferences</button>
+                    </form>
+                <!-- Subscription Details Section -->
+                <section class="card p-xl mt-xl">
+                    <h2 class="text-xl mb-md">Subscription Details</h2>
+                    <div class="grid grid-2">
+                        <div class="detail-item">
+                            <h4 class="text-sm text-neutral-500">Plan Type</h4>
+                            <p class="fw-bold">Active Vegan (10 Meals/Week)</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4 class="text-sm text-neutral-500">Next Billing Date</h4>
+                            <p class="fw-bold">April 1, 2026</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4 class="text-sm text-neutral-500">Payment Method</h4>
+                            <p class="fw-bold"><i class="fab fa-cc-visa"></i> Visa ending in 4242</p>
+                        </div>
+                        <div class="detail-item">
+                            <h4 class="text-sm text-neutral-500">Delivery Address</h4>
+                            <p class="fw-bold">123 Healthy Way, Green City</p>
+                        </div>
+                    </div>
+                    <div class="mt-md d-flex gap-sm">
+                        <button class="btn btn-outline btn-sm">Upgrade Plan</button>
+                        <button class="btn btn-outline btn-sm text-danger">Cancel Subscription</button>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="footer-logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+                <p class="text-neutral-400">Making healthy eating easy and accessible for everyone.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="footer-links"><h4>Menus</h4><ul><li><a href="breakfast.html">Breakfast</a></li><li><a href="lunch.html">Lunch</a></li><li><a href="dinner.html">Dinner</a></li><li><a href="dashboard.html" class="active">User Dashboard</a></li></ul></div>
+            <div class="footer-links">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li class="text-neutral-400"><i class="fas fa-map-marker-alt text-primary"></i> 123 Healthy Way, Green City</li>
+                    <li class="text-neutral-400"><i class="fas fa-phone text-primary"></i> +1 234 567 890</li>
+                    <li class="text-neutral-400"><i class="fas fa-envelope text-primary"></i> hello@veganbox.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 VeganBox Meal Subscriptions. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

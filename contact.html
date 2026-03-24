@@ -1,314 +1,273 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Veganova Vegan Meal Service</title>
-    <link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#14532d',
-                        secondary: '#84cc16',
-                        accent: '#f5f5f4',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Contact Us | VeganBox - Get in Touch</title>
+    <meta name="description" content="Have questions? Reach out to us. We're here to help you on your healthy meal subscription journey.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body class="antialiased text-slate-900 transition-colors duration-300">
-
-    <!-- Navigation Header -->
-    <header
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
-        <div class="container flex items-center justify-between">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform"
-                    alt="Veganova Icon">
-                <span
-                    class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-10">
-                <div class="nav-item-dropdown">
-                    <a href="index.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-item">Home 1</a>
-                        <a href="home-2.html" class="dropdown-item">Home 2</a>
-                    </div>
+<body>
+    <!-- Header (Same as Index) -->
+    <header>
+        <div class="container nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></a>
+            </div>
+            
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-2.html">Home 2</a></li>
+                    </ul>
                 </div>
-                <a href="about.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
-                <div class="nav-item-dropdown">
-                    <a href="meals.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="meals.html" class="dropdown-item">All Meals</a>
-                        <a href="breakfast.html" class="dropdown-item">Breakfast</a>
-                        <a href="lunch.html" class="dropdown-item">Lunch</a>
-                        <a href="dinner.html" class="dropdown-item">Dinner</a>
-                    </div>
+                <a href="about.html">About</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Menu <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="breakfast.html">Breakfast</a></li>
+                        <li><a href="lunch.html">Lunch</a></li>
+                        <li><a href="dinner.html">Dinner</a></li>
+                    </ul>
                 </div>
-                <a href="pricing.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
-                <a href="dashboard/index.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
-                <a href="blog.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
-                <a href="contact.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
             </nav>
-
-            <!-- Buttons & Actions -->
-            <div class="flex items-center gap-4">
-                <!-- Cart Icon -->
-                <a href="cart.html"
-                    class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
-                    <i data-lucide="shopping-cart"
-                        class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
-                    <span
-                        class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
-                </a>
-
-                <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
-                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                    <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
-                    <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
-                </button>
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="auth/login.html"
-                        class="text-sm font-semibold hover:text-secondary dark:text-white">Login</a>
-                    <a href="auth/signup.html" class="btn-primary">Sign Up</a>
+            
+            <div class="nav-right">
+                <div class="nav-actions">
+                    <button id="rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                    <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+                    <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                    <button id="hamburger" class="hamburger d-mobile-only" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
-                    <i data-lucide="menu"></i>
-                </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
-        <div class="flex flex-col h-full p-8">
-            <div class="flex items-center justify-between mb-12">
-                <div class="flex items-center gap-2">
-                    <img src="assets/img/logo-icon.svg" class="w-8 h-8" alt="Logo">
-                    <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <button class="rtl-toggle p-2 rounded-full border dark:border-white/20 flex items-center justify-center min-w-[40px]">
-                        <span class="text-xs font-black dark:text-gray-300">RTL</span>
-                    </button>
-                    <button class="theme-toggle p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
-                        <i data-lucide="sun" class="sun-icon text-secondary hidden w-5 h-5"></i>
-                        <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary w-5 h-5"></i>
-                    </button>
-                    <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
-                        <i data-lucide="x" class="dark:text-white w-6 h-6"></i>
-                    </button>
-                </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="d-flex justify-content-between align-items-center px-md py-sm border-bottom">
+            <div class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+            <div class="d-flex gap-sm">
+                <button id="mobile-rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                <button id="mobile-theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
             </div>
+        </div>
+        <nav class="nav-links d-flex flex-column p-md">
+            <div class="dropdown mobile-dropdown">
+                <a href="javascript:void(0)">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="home-2.html">Home 2</a></li>
+                </ul>
+            </div>
+            <a href="about.html">About</a>
+            <a href="breakfast.html">Breakfast</a>
+            <a href="lunch.html">Lunch</a>
+            <a href="dinner.html">Dinner</a>
+            <a href="blog.html">Blog</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+            <hr class="my-md opacity-20">
+            <div class="d-flex flex-column gap-sm">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </nav>
     </div>
 
-    <main class="pb-24 overflow-hidden">
-        <!-- Page Hero Section -->
-        <section class="relative pt-40 pb-20 md:pt-48 md:pb-28 lg:pt-56 lg:pb-32 overflow-hidden mb-16 px-6 flex items-center justify-center min-h-[50vh]">
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1528731708534-816fe59f90cb?w=1600&fit=crop" class="w-full h-full object-cover grayscale-[20%] brightness-[0.4] dark:brightness-[0.3]" alt="Contact Us Background">
-                <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent dark:from-black/80"></div>
-            </div>
-            <div class="container relative z-10 text-center reveal-on-scroll">
-                <h1 class="text-6xl md:text-8xl font-black font-heading mb-6 text-white drop-shadow-xl">Contact <span class="text-secondary">Us</span></h1>
-                <p class="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto font-medium drop-shadow-md">Questions about our menu or delivery? Our team is live and ready to help.</p>
-            </div>
-        </section>
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: url('https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg');">
+        <div class="container">
+            <h1 class="animate-fadeIn">Get in Touch</h1>
+            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Have questions about our meal plans or need support with your subscription? Our team is here to help.</p>
+        </div>
+    </section>
 
-        <div class="container px-6">
+    <section class="section-padding pt-0">
+        <div class="container">
 
-            <!-- Modern 2-Column Split Layout -->
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-24 reveal-on-scroll">
-                
-                <!-- Left Side: Contact Details & Intro -->
-                <div class="space-y-12 lg:sticky lg:top-32">
-                    <div>
-                        <h2 class="text-4xl font-black font-heading mb-8 dark:text-white leading-tight">Get in Touch with our <br><span class="text-secondary">Vegan Kitchen</span></h2>
-                        <div class="flex flex-wrap gap-4 mb-10">
-                            <button class="bg-primary text-white px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-all">General Inquiry</button>
-                            <button class="bg-white dark:bg-slate-800 text-slate-500 px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest border border-slate-100 dark:border-slate-700 hover:border-secondary hover:text-secondary hover:scale-105 transition-all">Support</button>
-                            <button class="bg-white dark:bg-slate-800 text-slate-500 px-6 py-3 rounded-2xl text-xs font-black uppercase tracking-widest border border-slate-100 dark:border-slate-700 hover:border-secondary hover:text-secondary hover:scale-105 transition-all">Press Inquiry</button>
+            <div class="grid grid-2 my-md align-items-start">
+                <!-- Contact Form -->
+                <div class="card p-xl">
+                    <h2 class="text-2xl mb-md">Send us a Message</h2>
+                    <form id="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
                         </div>
-                        <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
-                            Have questions about our seasonal menu or subscription plans? Our team is live and ready to help you on your plant-based journey.
-                        </p>
-                    </div>
-
-                    <div class="space-y-8">
-                        <!-- Hotline Card -->
-                        <div class="flex items-start gap-6 group hover:translate-x-1 transition-transform">
-                            <div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center shrink-0 border border-secondary/20 shadow-lg shadow-secondary/5">
-                                <i data-lucide="headset" class="text-primary dark:text-secondary w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-black dark:text-white mb-1">24/7 Hotline</h4>
-                                <p class="text-slate-500 font-medium">+1 (800) VEGA-NOVA</p>
-                                <span class="text-[10px] font-black uppercase tracking-widest text-secondary">Always Live</span>
-                            </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
                         </div>
-
-                        <!-- Address Card -->
-                        <div class="flex items-start gap-6 group hover:translate-x-1 transition-transform">
-                            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center shrink-0 border border-primary/20">
-                                <i data-lucide="map-pin" class="text-primary dark:text-secondary w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-black dark:text-white mb-1">Our Studio</h4>
-                                <p class="text-slate-500 font-medium">123 Green Way, Silicon Valley, CA 94043</p>
-                            </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" class="form-control">
+                                <option value="general">General Inquiry</option>
+                                <option value="subscription">Subscription Issues</option>
+                                <option value="dietary">Dietary Preferences</option>
+                                <option value="partnership">Partnership</option>
+                            </select>
                         </div>
-
-                        <!-- Email Card -->
-                        <div class="flex items-start gap-6 group hover:translate-x-1 transition-transform">
-                            <div class="w-14 h-14 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center shrink-0 border border-slate-200 dark:border-slate-700">
-                                <i data-lucide="mail" class="text-slate-600 dark:text-slate-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-black dark:text-white mb-1">Email Us</h4>
-                                <a href="mailto:hello@veganova.com" class="text-slate-500 hover:text-secondary transition-colors font-medium">hello@veganova.com</a>
-                            </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" placeholder="How can we help you?" required></textarea>
                         </div>
-                    </div>
-
-                    <div class="pt-8 border-t border-slate-100 dark:border-slate-800">
-                        <p class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-6">Connect with us</p>
-                        <div class="flex gap-4">
-                            <a href="#" class="w-12 h-12 bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 rounded-2xl flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                            <a href="#" class="w-12 h-12 bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 rounded-2xl flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                            <a href="#" class="w-12 h-12 bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 rounded-2xl flex items-center justify-center hover:bg-secondary hover:text-white transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Side: Compact Contact Form Card -->
-                <div class="bg-white dark:bg-slate-800 p-8 lg:p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal">
-                    <h3 class="text-3xl font-black font-heading mb-8 dark:text-white">Send a Message</h3>
-                    <form action="#" class="space-y-6">
-                        <div class="space-y-2">
-                            <label for="full-name" class="text-xs font-bold uppercase tracking-widest text-slate-500">Full Name</label>
-                            <input type="text" id="full-name" name="full-name" required placeholder="John Doe" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
-                        </div>
-                        <div class="space-y-2">
-                            <label for="email" class="text-xs font-bold uppercase tracking-widest text-slate-500">Email Address</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white">
-                        </div>
-                        <div class="space-y-2">
-                            <label for="message" class="text-xs font-bold uppercase tracking-widest text-slate-500">Your Message</label>
-                            <textarea id="message" name="message" required rows="5" placeholder="Tell us about your preferences..." class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-all dark:text-white resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary w-full py-5 text-xl rounded-3xl shadow-xl shadow-primary/20">Send Request</button>
+                        <button type="submit" class="btn btn-primary w-full">Send Message</button>
                     </form>
                 </div>
+
+                <!-- Contact Info & Map -->
+                <div class="contact-info-container">
+                    <div class="card mb-md p-xl">
+                        <h2 class="text-xl mb-md">Contact Information</h2>
+                        <ul class="text-neutral-600">
+                            <li class="mb-md d-flex align-items-center gap-md">
+                                <div class="btn-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <h4 class="text-neutral-900">Flagship Kitchen</h4>
+                                    <p class="text-sm">123 Healthy Way, Green City, GC 54321</p>
+                                </div>
+                            </li>
+                            <li class="mb-md d-flex align-items-center gap-md">
+                                <div class="btn-icon"><i class="fas fa-phone"></i></div>
+                                <div>
+                                    <h4 class="text-neutral-900">Direct Support Line</h4>
+                                    <p class="text-sm">+1 234 567 890 (Mon-Fri, 9am - 5pm)</p>
+                                </div>
+                            </li>
+                            <li class="mb-md d-flex align-items-center gap-md">
+                                <div class="btn-icon"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <h4 class="text-neutral-900">General & Partnerships</h4>
+                                    <p class="text-sm">hello@veganbox.com</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="card mb-md p-xl bg-light" style="border-left: 4px solid var(--primary);">
+                        <h2 class="text-xl mb-md"><i class="fas fa-clock text-primary"></i> Working Hours</h2>
+                        <ul class="text-sm text-neutral-600 d-flex flex-column gap-xs">
+                            <li class="d-flex justify-content-between"><span>Monday - Friday:</span> <span class="fw-bold">08:00 AM - 08:00 PM</span></li>
+                            <li class="d-flex justify-content-between"><span>Saturday:</span> <span class="fw-bold">09:00 AM - 04:00 PM</span></li>
+                            <li class="d-flex justify-content-between"><span>Sunday:</span> <span class="fw-bold text-secondary">Closed (Prep Day)</span></li>
+                        </ul>
+                        <p class="mt-md text-xs text-neutral-500 italic">Our digital support team responds to tickets within 24 hours including weekends.</p>
+                    </div>
+
+                    <!-- Regional Coverage -->
+                    <div class="card p-xl">
+                        <h2 class="text-xl mb-md">Regional Coverage</h2>
+                        <p class="text-sm text-neutral-600 mb-md">We currently deliver fresh to all zones within 50 miles of Green City center. Our eco-fleet operates 6 days a week.</p>
+                        <div class="grid grid-2 text-xs fw-bold text-primary">
+                            <span><i class="fas fa-map-pin"></i> North GC</span>
+                            <span><i class="fas fa-map-pin"></i> West Ridge</span>
+                            <span><i class="fas fa-map-pin"></i> East Harbor</span>
+                            <span><i class="fas fa-map-pin"></i> South Plains</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <!-- Full-Width Map Section Below -->
-            <div class="reveal-on-scroll">
-                <div class="w-full h-[500px] rounded-[60px] overflow-hidden shadow-2xl shadow-primary/5 border-8 border-white dark:border-slate-800">
+            <!-- Full Width Map Section -->
+            <div class="mt-2xl animate-fadeIn" style="animation-delay: 0.2s;">
+                <h2 class="text-xl text-center mb-md"><i class="fas fa-map-marked-alt text-primary"></i> Our Location</h2>
+                <div class="card p-0 overflow-hidden shadow-sm mx-auto" style="border: 1px solid var(--neutral-300); max-width: 1000px;">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.639290620162!2d-122.083746884692!3d37.421999879825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580af45ac5b3b%3A0x6e9a8f4c28c68c1e!2sGoogleplex!5e0!3m2!1sen!2sus!4v1647854652391!5m2!1sen!2sus" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280821873!2d-74.11976373946229!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1711259954321!5m2!1sen!2sin" 
                         width="100%" 
-                        height="100%" 
-                        style="border:0;" 
+                        height="400" 
+                        style="border:0; display: block;" 
                         allowfullscreen="" 
                         loading="lazy" 
-                        class="grayscale hover:grayscale-0 transition-all duration-700"
-                    ></iframe>
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Support FAQ -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-xl">
+                <h2 class="text-3xl">Support <span class="text-primary">Center FAQ</span></h2>
+                <p class="text-neutral-500">Quick answers to our most common support requests.</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">What is the cutoff for weekly modifications? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">All changes to your weekly menu or pause requests must be submitted by Thursday 11:59 PM for the following week's delivery.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer corporate or bulk discounts? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">Yes, we have specialized plans for offices and community centers. Please select 'Partnership' in the contact form for a custom quote.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">How do I report a missing item? <i class="fas fa-plus"></i></div>
+                    <div class="faq-answer">Please use the 'Subscription Issues' category in the form above. Include your Order ID and our team will issue a refund or replacement within 4 hours.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white overflow-hidden">
-        <div class="container">
-            <div class="grid lg:grid-cols-4 gap-16 mb-20">
-                <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center gap-2 mb-8">
-                        <img src="assets/img/logo-icon.svg" class="w-10 h-10" alt="Veganova Icon">
-                        <span class="text-2xl font-black font-heading tracking-tight uppercase">Veganova</span>
-                    </a>
-                    <p class="text-slate-400 text-lg max-w-md mb-10 leading-relaxed">
-                        Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat better every single day.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
-                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
-                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
-                             <svg class="w-5 h-5 fill-current text-white x-icon" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h5 class="text-xl font-bold font-heading mb-8">Quick Links</h5>
-                    <ul class="space-y-4">
-                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors">Weekly Menu</a></li>
-                        <li><a href="pricing.html" class="text-slate-400 hover:text-secondary transition-colors">Subscription Plans</a></li>
-                        <li><a href="blog.html" class="text-slate-400 hover:text-secondary transition-colors">Healthy Blog</a></li>
-                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors">Our Mission</a></li>
-                        <li><a href="contact.html" class="text-slate-400 hover:text-secondary transition-colors">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5 class="text-xl font-bold font-heading mb-8">Newsletter</h5>
-                    <p class="text-slate-400 text-sm mb-6">Stay updated with our weekly recipes and discounts.</p>
-                    <form action="#" class="relative">
-                        <input type="email" placeholder="Your email" class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-colors">
-                        <button class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-2xl font-bold">Join</button>
-                    </form>
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="footer-logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+                <p class="text-neutral-400">Making healthy eating easy and accessible for everyone. Sustainably sourced, chef-prepared, and nutritionist-approved meals delivered directly to your door.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
                 </div>
             </div>
-
-            <div class="pt-12 border-t border-white/5 flex flex-col items-center gap-8 text-sm text-slate-400">
-                <p class="text-center">&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </div>
+            <div class="footer-links">
+                <h4>Menus</h4>
+                <ul>
+                    <li><a href="breakfast.html">Breakfast</a></li>
+                    <li><a href="lunch.html">Lunch</a></li>
+                    <li><a href="dinner.html">Dinner</a></li>
+                    <li><a href="dashboard.html">User Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li class="text-neutral-400"><i class="fas fa-map-marker-alt text-primary"></i> 123 Healthy Way, Green City</li>
+                    <li class="text-neutral-400"><i class="fas fa-phone text-primary"></i> +1 234 567 890</li>
+                    <li class="text-neutral-400"><i class="fas fa-envelope text-primary"></i> hello@veganbox.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container"><p>&copy; 2026 VeganBox Meal Subscriptions. All Rights Reserved.</p></div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/cart-system.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
-

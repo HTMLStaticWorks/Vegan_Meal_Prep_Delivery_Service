@@ -1,661 +1,291 @@
-﻿<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Green Pulse | Veganova Vegan Meal Service</title>
-    <link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
-
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#14532d',
-                        secondary: '#84cc16',
-                        accent: '#f5f5f4',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Blog | VeganBox - Tips for Healthy Eating</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
-<body class="antialiased text-slate-900 transition-colors duration-300 bg-slate-50 dark:bg-slate-950">
-
-    <!-- Navigation Header -->
-    <header
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
-        <div class="container flex items-center justify-between">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform"
-                    alt="Veganova Icon">
-                <span
-                    class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-10">
-                <div class="nav-item-dropdown">
-                    <a href="index.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-item">Home 1</a>
-                        <a href="home-2.html" class="dropdown-item">Home 2</a>
-                    </div>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></a>
+            </div>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-2.html">Home 2</a></li>
+                    </ul>
                 </div>
-                <a href="about.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
-                <div class="nav-item-dropdown">
-                    <a href="meals.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="meals.html" class="dropdown-item">All Meals</a>
-                        <a href="breakfast.html" class="dropdown-item">Breakfast</a>
-                        <a href="lunch.html" class="dropdown-item">Lunch</a>
-                        <a href="dinner.html" class="dropdown-item">Dinner</a>
-                    </div>
+                <a href="about.html">About</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Menu <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="breakfast.html">Breakfast</a></li>
+                        <li><a href="lunch.html">Lunch</a></li>
+                        <li><a href="dinner.html">Dinner</a></li>
+                    </ul>
                 </div>
-                <a href="pricing.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
-                <a href="dashboard/index.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
-                <a href="blog.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
-                <a href="contact.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
             </nav>
-
-            <!-- Buttons & Actions -->
-            <div class="flex items-center gap-4">
-                <!-- Cart Icon -->
-                <a href="cart.html"
-                    class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
-                    <i data-lucide="shopping-cart"
-                        class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
-                    <span
-                        class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
-                </a>
-
-                <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
-                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                    <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
-                    <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
-                </button>
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="auth/login.html"
-                        class="text-sm font-semibold hover:text-secondary dark:text-white">Login</a>
-                    <a href="auth/signup.html" class="btn-primary">Sign Up</a>
+            <div class="nav-right">
+                <div class="nav-actions">
+                    <button id="rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                    <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                            class="fas fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+                    <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                    <button id="hamburger" class="hamburger d-mobile-only" aria-label="Open Menu"><i
+                            class="fas fa-bars"></i></button>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
-                    <i data-lucide="menu"></i>
-                </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
-        <div class="flex flex-col h-full p-8">
-            <div class="flex items-center justify-between mb-12">
-                <div class="flex items-center gap-2">
-                    <img src="assets/img/logo-icon.svg" class="w-8 h-8" alt="Logo">
-                    <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
+    <!-- Page Hero -->
+    <section class="page-hero"
+        style="background-image: url('https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg');">
+        <div class="container">
+            <h1 class="animate-fadeIn">Wellness <span class="text-primary">& Nutrition</span> Blog</h1>
+            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Expert tips, plant-based recipes, and
+                sustainability guides for a vibrant, healthy life.</p>
+        </div>
+    </section>
+
+    <main class="section-padding pt-0">
+        <div class="container">
+
+            <!-- Featured Article -->
+            <article class="featured-article animate-fadeIn">
+                <div class="featured-article-image">
+                    <img src="https://images.pexels.com/photos/4803677/pexels-photo-4803677.jpeg" alt="Featured Post"
+                        class="w-full h-full object-cover">
                 </div>
-                <div class="flex items-center gap-3">
-                    <button class="rtl-toggle p-2 rounded-full border dark:border-white/20 flex items-center justify-center min-w-[40px]">
-                        <span class="text-xs font-black dark:text-gray-300">RTL</span>
-                    </button>
-                    <button class="theme-toggle p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
-                        <i data-lucide="sun" class="sun-icon text-secondary hidden w-5 h-5"></i>
-                        <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary w-5 h-5"></i>
-                    </button>
-                    <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
-                        <i data-lucide="x" class="dark:text-white w-6 h-6"></i>
-                    </button>
+                <div class="featured-article-content">
+                    <span class="badge badge-primary mb-md">HEALTH & WELLNESS</span>
+                    <h2 class="text-3xl mb-md">The Science of Plant-Based Recovery: How to Fuel Post-Workout</h2>
+                    <p class="text-neutral-600 mb-xl">Discover why world-class athletes are switching to plant-based
+                        diets for faster recovery times and reduced inflammation. We break down the essential macro
+                        combinations for peak performance.</p>
+                    <div class="d-flex align-items-center gap-md">
+                        <div class="testimonial-avatar" style="width: 44px; height: 44px;"><img src="images/user5.png"
+                                alt="Dr. Sarah Vance"></div>
+                        <div>
+                            <span class="fw-bold block">Dr. Sarah Vance</span>
+                            <span class="text-xs text-neutral-500">March 15, 2026 • 8 min read</span>
+                        </div>
+                    </div>
                 </div>
+            </article>
+
+            <div class="grid grid-2" style="grid-template-columns: 2fr 1fr;">
+                <!-- Blog Grid -->
+                <div class="blog-posts grid grid-2 gap-lg">
+                    <!-- Post 1 -->
+                    <div class="card p-md shadow-sm text-center">
+                        <img src="images/breakfast.png" alt="Blog" class="img-fluid rounded mb-md"
+                            style="height: 200px; width: 100%; object-fit: cover;">
+                        <span class="text-xs text-primary fw-bold uppercase">Nutrition</span>
+                        <h3 class="mb-sm text-lg">5 Superfoods for Boundless Energy</h3>
+                        <p class="text-sm text-neutral-500 mb-md">Boost your morning routine with these high-nutrient
+                            ingredients that provide sustained focus.</p>
+                        <a href="#" class="text-primary fw-bold text-sm mx-auto d-flex justify-content-center">Read Article <i
+                                class="fas fa-arrow-right text-xs ml-xs"></i></a>
+                    </div>
+                    <!-- Post 2 -->
+                    <div class="card p-md shadow-sm text-center">
+                        <img src="https://images.pexels.com/photos/7262998/pexels-photo-7262998.jpeg" alt="Blog"
+                            class="img-fluid rounded mb-md" style="height: 200px; width: 100%; object-fit: cover;">
+                        <span class="text-xs text-secondary fw-bold uppercase">Lifestyle</span>
+                        <h3 class="mb-sm text-lg">The Ethical Eater's Weekly Guide</h3>
+                        <p class="text-sm text-neutral-500 mb-md">Understanding labels and sourcing for a more
+                            sustainable, transparent lifestyle in 2026.</p>
+                        <a href="#" class="text-primary fw-bold text-sm mx-auto d-flex justify-content-center">Read Article <i
+                                class="fas fa-arrow-right text-xs ml-xs"></i></a>
+                    </div>
+                    <!-- Post 3 -->
+                    <div class="card p-md shadow-sm text-center">
+                        <img src="images/dinner.png" alt="Blog" class="img-fluid rounded mb-md"
+                            style="height: 200px; width: 100%; object-fit: cover;">
+                        <span class="text-xs text-accent fw-bold uppercase">Productivity</span>
+                        <h3 class="mb-sm text-lg">Meal Prep Like a Pro Chef</h3>
+                        <p class="text-sm text-neutral-500 mb-md">How to save over 10 hours a week and reduce food waste
+                            with effective planning strategies.</p>
+                        <a href="#" class="text-primary fw-bold text-sm mx-auto d-flex justify-content-center">Read Article <i
+                                class="fas fa-arrow-right text-xs ml-xs"></i></a>
+                    </div>
+                    <!-- Post 4 -->
+                    <div class="card p-md shadow-sm text-center">
+                        <img src="https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg" alt="Blog"
+                            class="img-fluid rounded mb-md" style="height: 200px; width: 100%; object-fit: cover;">
+                        <span class="text-xs text-primary fw-bold uppercase">Environment</span>
+                        <h3 class="mb-sm text-lg">Regenerative Farming Explained</h3>
+                        <p class="text-sm text-neutral-500 mb-md">Why your choice of broccoli matters for the global
+                            soil health and carbon sequestration.</p>
+                        <a href="#" class="text-primary fw-bold text-sm mx-auto d-flex justify-content-center">Read Article <i
+                                class="fas fa-arrow-right text-xs ml-xs"></i></a>
+                    </div>
+                    <!-- Post 5 -->
+                    <div class="card p-md shadow-sm text-center">
+                        <img src="https://images.pexels.com/photos/1435901/pexels-photo-1435901.jpeg" alt="Blog"
+                            class="img-fluid rounded mb-md" style="height: 200px; width: 100%; object-fit: cover;">
+                        <span class="text-xs text-secondary fw-bold uppercase">Recipes</span>
+                        <h3 class="mb-sm text-lg">3-Ingredient Vegan Sauces</h3>
+                        <p class="text-sm text-neutral-500 mb-md">Level up any bowl with these quick,
+                            nutritionist-approved dressing recipes you can make in seconds.</p>
+                        <a href="#" class="text-primary fw-bold text-sm mx-auto d-flex justify-content-center">Read Article <i
+                                class="fas fa-arrow-right text-xs ml-xs"></i></a>
+                    </div>
+                    <!-- Post 6 -->
+                    <div class="card p-md shadow-sm text-center">
+                        <img src="https://images.pexels.com/photos/5672007/pexels-photo-5672007.jpeg" alt="Blog"
+                            class="img-fluid rounded mb-md" style="height: 200px; width: 100%; object-fit: cover;">
+                        <span class="text-xs text-accent fw-bold uppercase">Community</span>
+                        <h3 class="mb-sm text-lg">The Future of Urban Food Systems</h3>
+                        <p class="text-sm text-neutral-500 mb-md">How community-supported agriculture is rebuilding the
+                            connection between cities and farms.</p>
+                        <a href="#" class="text-primary fw-bold text-sm mx-auto d-flex justify-content-center">Read Article <i
+                                class="fas fa-arrow-right text-xs ml-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="blog-sidebar">
+                    <div class="sidebar-section mb-3xl">
+                        <h4 class="blog-sidebar-title text-primary">Categories</h4>
+                        <ul class="category-list">
+                            <li class="d-flex align-items-center gap-sm"><span>Nutrition</span> <span
+                                    class="badge bg-light text-primary">12</span></li>
+                            <li class="d-flex align-items-center gap-sm"><span>Sustainability</span> <span
+                                    class="badge bg-light text-primary">8</span></li>
+                            <li class="d-flex align-items-center gap-sm"><span>Recipes</span> <span
+                                    class="badge bg-light text-primary">24</span></li>
+                            <li class="d-flex align-items-center gap-sm"><span>Athlete Spotlights</span> <span
+                                    class="badge bg-light text-primary">5</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-section mb-3xl">
+                        <h4 class="blog-sidebar-title text-primary">Daily Vitality Tips</h4>
+                        <div class="bg-light p-md rounded mb-md border-left-primary"
+                            style="border-left: 4px solid var(--primary);">
+                            <p class="text-xs text-neutral-600">"Drink 500ml of water immediately upon waking to
+                                kickstart your metabolic enzymes after sleep."</p>
+                        </div>
+                        <div class="bg-light p-md rounded mb-md border-left-secondary"
+                            style="border-left: 4px solid var(--secondary);">
+                            <p class="text-xs text-neutral-600">"Incorporate fermented foods like kimchi or sauerkraut
+                                daily to support 70% of your immune system located in the gut."</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <div class="card bg-primary text-white p-xl text-center" style="background: var(--primary);">
+                            <h4 class="text-white mb-sm">Join Our Newsletter</h4>
+                            <p class="text-xs mb-md">Get exclusive recipes and nutrition guides directly in your inbox.
+                            </p>
+                            <input type="text" placeholder="Email Address" class="form-control mb-sm"
+                                style="font-size: 0.8rem;">
+                            <button class="btn btn-outline w-full btn-sm"
+                                style="border-color: white; color: white;">Subscribe</button>
+                        </div>
+                    </div>
+                </aside>
             </div>
+        </div>
+    </main>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="d-flex justify-content-between align-items-center px-md py-sm border-bottom">
+            <div class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+            <div class="d-flex gap-sm">
+                <button id="mobile-rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                <button id="mobile-theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                        class="fas fa-moon"></i></button>
+            </div>
+        </div>
+        <nav class="nav-links d-flex flex-column p-md">
+            <div class="dropdown mobile-dropdown">
+                <a href="javascript:void(0)">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="home-2.html">Home 2</a></li>
+                </ul>
+            </div>
+            <a href="about.html">About</a>
+            <a href="breakfast.html">Breakfast</a>
+            <a href="lunch.html">Lunch</a>
+            <a href="dinner.html">Dinner</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+            <hr class="my-md opacity-20">
+            <div class="d-flex flex-column gap-sm">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </nav>
     </div>
 
-    <!-- Page Hero Section -->
-    <section class="relative pt-40 pb-20 md:pt-48 md:pb-28 lg:pt-56 lg:pb-32 overflow-hidden mb-16 px-6 flex items-center justify-center min-h-[50vh]">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&fit=crop" class="w-full h-full object-cover grayscale-[20%] brightness-[0.4] dark:brightness-[0.3]" alt="Blog Background">
-            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent dark:from-black/80"></div>
-        </div>
-        <div class="container relative z-10 text-center reveal-on-scroll">
-            <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block drop-shadow-md">Health & Nutrition Ideas</span>
-            <h1 class="text-6xl md:text-8xl font-black font-heading mb-6 text-white drop-shadow-xl">Our <span class="text-secondary">Blog</span></h1>
-            <p class="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto font-medium drop-shadow-md">Insights, recipes, and vegan lifestyle tips straight from our kitchen.</p>
-        </div>
-    </section>
-
-    <!-- Featured Section -->
-    <section class="pb-16 px-6 text-center">
-        <div class="container max-w-5xl">
-            <div
-                class="group rounded-[3rem] overflow-hidden shadow-2xl bg-slate-900 dark:bg-slate-800 reveal-on-scroll p-12 lg:p-24 flex flex-col items-center">
-                <!-- Content Section -->
-                <div class="max-w-4xl mx-auto">
-                    <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
-                        <span
-                            class="bg-secondary text-primary px-5 py-2 rounded-2xl text-xs font-black uppercase tracking-widest shadow-lg">Featured
-                            Story</span>
-                        <span
-                            class="text-white/60 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><i
-                                data-lucide="calendar" class="w-4 h-4"></i> March 19, 2026</span>
-                        <span
-                            class="text-white/60 text-sm font-bold uppercase tracking-widest flex items-center gap-2"><i
-                                data-lucide="clock" class="w-4 h-4"></i> 12 Min Read</span>
-                    </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-black font-heading text-white mb-8 leading-[1.1]">
-                        The 2026 Vegan <span
-                            class="text-secondary underline decoration-8 underline-offset-8">Superfood</span> Revolution
-                    </h1>
-                    <p class="text-white/80 text-xl md:text-2xl mb-12 leading-relaxed font-medium">Discover how ancient
-                        grains, sea-inspired proteins, and vertical farming are redefining the plant-based plate this
-                        year.</p>
-                    <div class="flex flex-wrap justify-center gap-6">
-                        <a href="#single-preview"
-                            class="bg-white text-primary px-8 py-4 rounded-2xl font-bold text-base hover:bg-secondary hover:text-primary transition-all shadow-xl inline-flex items-center gap-3 active:scale-95 group/btn">
-                            Read Full Article <i data-lucide="arrow-right"
-                                class="w-5 h-5 group-hover/btn:translate-x-2 transition-transform"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content Grid -->
-    <section class="pb-24 px-6">
-        <div class="container flex flex-col lg:flex-row gap-16">
-
-            <!-- Blog Posts (Left) -->
-            <div class="lg:w-2/3">
-                <div class="flex items-center justify-between mb-12 pb-6 border-b dark:border-slate-800">
-                    <h2 class="text-3xl font-black font-heading dark:text-white">Latest <span
-                            class="text-secondary">Insights</span></h2>
-                    <div class="flex gap-2">
-                        <button
-                            class="p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:bg-secondary hover:text-primary transition-all"><i
-                                data-lucide="layout-grid" class="w-5 h-5"></i></button>
-                        <button
-                            class="p-3 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:bg-secondary hover:text-primary transition-all"><i
-                                data-lucide="list" class="w-5 h-5"></i></button>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-10">
-                    <!-- Post 1 -->
-                    <article class="group reveal-on-scroll bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-100 dark:border-slate-700 flex flex-col h-full">
-                        <div class="relative rounded-t-[40px] overflow-hidden mb-0 shadow-none shrink-0">
-                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&fit=crop"
-                                class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                                alt="Blog 1">
-                            <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Nutrition</span>
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex items-center gap-4 mb-4 text-slate-500 text-[10px] font-black uppercase tracking-widest">
-                                <span>By Dr. Sarah Chen</span>
-                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                                <span>Mar 18, 2026</span>
-                            </div>
-                            <h3 class="text-xl font-black font-heading mb-3 dark:text-white group-hover:text-secondary transition-colors leading-snug">
-                                Why Gut Health is the Secret to Longevity</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">The science behind the microbiome is clearer than ever. Learn how plant-based fermentation can transform your health...</p>
-                            <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                                <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more hover:gap-4 transition-all w-fit">
-                                    Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-1 transition-transform"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Post 2 -->
-                    <article class="group reveal-on-scroll reveal-delay-1 bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-100 dark:border-slate-700 flex flex-col h-full">
-                        <div class="relative rounded-t-[40px] overflow-hidden mb-0 shadow-none shrink-0">
-                            <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&fit=crop"
-                                class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                                alt="Blog 2">
-                            <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Recipes</span>
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex items-center gap-4 mb-4 text-slate-500 text-[10px] font-black uppercase tracking-widest">
-                                <span>By Chef Marco</span>
-                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                                <span>Mar 15, 2026</span>
-                            </div>
-                            <h3 class="text-xl font-black font-heading mb-3 dark:text-white group-hover:text-secondary transition-colors leading-snug">
-                                The Ultimate 5-Minute Vegan Pesto</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">A quick and flavorful pesto recipe that works with almost any meal. No cheese, no fuss â€” just pure plant energy using cashews and nutritional yeast...</p>
-                            <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                                <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more hover:gap-4 transition-all w-fit">
-                                    Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-1 transition-transform"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Post 3 -->
-                    <article class="group reveal-on-scroll bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-100 dark:border-slate-700 flex flex-col h-full">
-                        <div class="relative rounded-t-[40px] overflow-hidden mb-0 shadow-none shrink-0">
-                            <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?w=800&fit=crop"
-                                class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                                alt="Blog 3">
-                            <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Sustainability</span>
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex items-center gap-4 mb-4 text-slate-500 text-[10px] font-black uppercase tracking-widest">
-                                <span>By Maya Sterling</span>
-                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                                <span>Mar 12, 2026</span>
-                            </div>
-                            <h3 class="text-xl font-black font-heading mb-3 dark:text-white group-hover:text-secondary transition-colors leading-snug">
-                                Sustainable Eating: Reducing Footprints</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">How Veganova is pioneering a circular food economy with compostable packaging and hyper-local sourcing...</p>
-                            <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                                <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more hover:gap-4 transition-all w-fit">
-                                    Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-1 transition-transform"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Post 4 -->
-                    <article class="group reveal-on-scroll reveal-delay-1 bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-100 dark:border-slate-700 flex flex-col h-full">
-                        <div class="relative rounded-t-[40px] overflow-hidden mb-0 shadow-none shrink-0">
-                            <img src="https://images.pexels.com/photos/36518821/pexels-photo-36518821.jpeg"
-                                class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                                alt="Blog 4">
-                            <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Fitness</span>
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex items-center gap-4 mb-4 text-slate-500 text-[10px] font-black uppercase tracking-widest">
-                                <span>By Coach Jax</span>
-                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                                <span>Mar 10, 2026</span>
-                            </div>
-                            <h3 class="text-xl font-black font-heading mb-3 dark:text-white group-hover:text-secondary transition-colors leading-snug">
-                                5 Plant Proteins for Elite Athletes</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">Breaking the muscle myth. From pea isolates to hemp hearts, these proteins are fueling the world's top performers...</p>
-                            <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                                <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more hover:gap-4 transition-all w-fit">
-                                    Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-1 transition-transform"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Post 5 -->
-                    <article class="group reveal-on-scroll bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-100 dark:border-slate-700 flex flex-col h-full">
-                        <div class="relative rounded-t-[40px] overflow-hidden mb-0 shadow-none shrink-0">
-                            <img src="https://images.pexels.com/photos/3850993/pexels-photo-3850993.jpeg"
-                                class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                                alt="Blog 5">
-                            <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Meal Prep</span>
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex items-center gap-4 mb-4 text-slate-500 text-[10px] font-black uppercase tracking-widest">
-                                <span>By Elena Vance</span>
-                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                                <span>Mar 08, 2026</span>
-                            </div>
-                            <h3 class="text-xl font-black font-heading mb-3 dark:text-white group-hover:text-secondary transition-colors leading-snug">
-                                The Ultimate Sunday Prep Guide</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">Reclaim your weekdays. A step-by-step masterclass on bulk cooking, storage hacks, and making vegan meals easy all week long...</p>
-                            <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                                <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more hover:gap-4 transition-all w-fit">
-                                    Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-1 transition-transform"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Post 6 -->
-                    <article class="group reveal-on-scroll reveal-delay-1 bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-100 dark:border-slate-700 flex flex-col h-full">
-                        <div class="relative rounded-t-[40px] overflow-hidden mb-0 shadow-none shrink-0">
-                            <img src="https://images.pexels.com/photos/6740518/pexels-photo-6740518.jpeg"
-                                class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                                alt="Blog 6">
-                            <span class="absolute top-6 left-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-widest text-primary dark:text-secondary">Lifestyle</span>
-                        </div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex items-center gap-4 mb-4 text-slate-500 text-[10px] font-black uppercase tracking-widest">
-                                <span>By Liam Thorne</span>
-                                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                                <span>Mar 05, 2026</span>
-                            </div>
-                            <h3 class="text-xl font-black font-heading mb-3 dark:text-white group-hover:text-secondary transition-colors leading-snug">
-                                Mindful Eating in the Modern World</h3>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">How to reconnect with the physical signals of hunger and fullness in a world of distraction and ultra-processing...</p>
-                            <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                                <a href="#" class="text-primary dark:text-secondary font-black uppercase text-[10px] tracking-widest flex items-center gap-2 group/more hover:gap-4 transition-all w-fit">
-                                    Keep Reading <i data-lucide="arrow-right" class="w-4 h-4 group-hover/more:translate-x-1 transition-transform"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <!-- Load More -->
-                <div class="mt-20 flex justify-center reveal-on-scroll">
-                    <button
-                        class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-12 py-5 rounded-[2rem] font-black text-sm uppercase tracking-[0.2em] shadow-xl hover:shadow-secondary/20 hover:border-secondary transition-all active:scale-95">Load
-                        More Stories</button>
-                </div>
-            </div>
-
-            <!-- Sidebar (Right) -->
-            <aside class="lg:w-1/3">
-                <div class="sticky top-32 flex flex-col gap-16">
-
-                    <!-- Search -->
-                    <div
-                        class="bg-white dark:bg-slate-900 p-10 rounded-[40px] shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-50 dark:border-slate-800">
-                        <h4 class="text-xl font-black font-heading mb-8 dark:text-white">Search <span
-                                class="text-secondary">Knowledge</span></h4>
-                        <div class="relative">
-                            <i data-lucide="search"
-                                class="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
-                            <input type="text" placeholder="Topics, recipes..."
-                                class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl pl-16 pr-6 py-5 outline-none focus:border-secondary transition-all dark:text-white">
-                        </div>
-                    </div>
-
-                    <!-- Recent Posts -->
-                    <div
-                        class="bg-white dark:bg-slate-900 p-10 rounded-[40px] shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-50 dark:border-slate-800">
-                        <h4 class="text-xl font-black font-heading mb-8 dark:text-white">Recent <span
-                                class="text-secondary">Posts</span></h4>
-                        <div class="flex flex-col gap-8">
-                            <div class="flex gap-6 group cursor-pointer">
-                                <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=200&h=200&fit=crop"
-                                    class="w-20 h-20 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all shadow-md">
-                                <div>
-                                    <h5
-                                        class="text-sm font-black font-heading line-clamp-2 dark:text-white group-hover:text-secondary transition-colors leading-tight mb-2">
-                                        The Rise of Fermented Foods in 2026</h5>
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">3 Days
-                                        Ago</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-6 group cursor-pointer">
-                                <img src="https://images.unsplash.com/photo-1540713434306-58505cf1b6fc?w=200&h=200&fit=crop"
-                                    class="w-20 h-20 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all shadow-md">
-                                <div>
-                                    <h5
-                                        class="text-sm font-black font-heading line-clamp-2 dark:text-white group-hover:text-secondary transition-colors leading-tight mb-2">
-                                        Sustainable Packaging: A Deep Dive</h5>
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">5 Days
-                                        Ago</span>
-                                </div>
-                            </div>
-                            <div class="flex gap-6 group cursor-pointer">
-                                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=200&h=200&fit=crop"
-                                    class="w-20 h-20 rounded-2xl object-cover grayscale group-hover:grayscale-0 transition-all shadow-md">
-                                <div>
-                                    <h5
-                                        class="text-sm font-black font-heading line-clamp-2 dark:text-white group-hover:text-secondary transition-colors leading-tight mb-2">
-                                        Why Iron Matters More on Plant Diets</h5>
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">1 Week
-                                        Ago</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Categories -->
-                    <div
-                        class="bg-white dark:bg-slate-900 p-10 rounded-[40px] shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-50 dark:border-slate-800">
-                        <h4 class="text-xl font-black font-heading mb-8 dark:text-white">Categories</h4>
-                        <div class="flex flex-col gap-4">
-                            <a href="#" class="flex justify-between items-center group">
-                                <span
-                                    class="text-sm font-bold text-slate-500 group-hover:text-secondary transition-colors">Recipes</span>
-                                <span
-                                    class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-primary transition-all">24</span>
-                            </a>
-                            <a href="#" class="flex justify-between items-center group">
-                                <span
-                                    class="text-sm font-bold text-slate-500 group-hover:text-secondary transition-colors">Nutrition</span>
-                                <span
-                                    class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-primary transition-all">18</span>
-                            </a>
-                            <a href="#" class="flex justify-between items-center group">
-                                <span
-                                    class="text-sm font-bold text-slate-500 group-hover:text-secondary transition-colors">Fitness</span>
-                                <span
-                                    class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-primary transition-all">12</span>
-                            </a>
-                            <a href="#" class="flex justify-between items-center group">
-                                <span
-                                    class="text-sm font-bold text-slate-500 group-hover:text-secondary transition-colors">Lifestyle</span>
-                                <span
-                                    class="bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg text-[10px] font-black text-slate-400 group-hover:bg-secondary group-hover:text-primary transition-all">31</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Newsletter Sidebar -->
-                    <div class="bg-primary p-12 rounded-[50px] shadow-2xl relative overflow-hidden text-white">
-                        <i data-lucide="leaf"
-                            class="absolute -bottom-10 -right-10 w-48 h-48 text-white/5 rotate-12"></i>
-                        <h4 class="text-2xl font-black font-heading mb-6 leading-tight">Join the V-Letter</h4>
-                        <p class="text-white/70 text-sm mb-8">Exclusive 2026 health insights and meal prep hacks.</p>
-                        <form class="flex flex-col gap-4">
-                            <input type="email" placeholder="Email address"
-                                class="w-full bg-white/10 border border-white/20 rounded-2xl px-6 py-4 outline-none focus:border-white transition-all text-white placeholder-white/40">
-                            <button
-                                class="bg-secondary text-primary py-4 rounded-2xl font-black text-sm uppercase tracking-widest shadow-lg shadow-black/20 hover:scale-105 transition-transform active:scale-95">Subscribe</button>
-                        </form>
-                    </div>
-
-                    <!-- Popular Tags -->
-                    <div
-                        class="bg-white dark:bg-slate-900 p-10 rounded-[40px] shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-50 dark:border-slate-800">
-                        <h4 class="text-xl font-black font-heading mb-8 dark:text-white">Popular Tags</h4>
-                        <div class="flex flex-wrap gap-3">
-                            <a href="#"
-                                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">#GlutenFree</a>
-                            <a href="#"
-                                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">#HighProtein</a>
-                            <a href="#"
-                                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">#SundayPrep</a>
-                            <a href="#"
-                                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">#ZeroWaste</a>
-                            <a href="#"
-                                class="px-4 py-2 bg-slate-100 dark:bg-slate-800 dark:text-slate-400 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-secondary hover:text-primary transition-all">#VeganAthlete</a>
-                        </div>
-                    </div>
-
-                </div>
-            </aside>
-        </div>
-    </section>
-
-    <!-- Single Blog Preview Sample -->
-    <section id="single-preview" class="py-24 bg-white dark:bg-slate-900 px-6 border-t dark:border-slate-800">
-        <div class="max-w-4xl mx-auto">
-            <span
-                class="text-secondary font-black uppercase text-xs tracking-[0.2em] mb-8 block reveal-on-scroll">Featured
-                Deep Dive</span>
-            <h2
-                class="text-4xl md:text-5xl lg:text-6xl font-black font-heading dark:text-white mb-16 leading-tight reveal-on-scroll">
-                The 2026 Vegan Superfood Revolution: Why Seaweed and Fungi are the Future</h2>
-
-            <div
-                class="prose prose-lg dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 leading-loose space-y-12 font-medium">
-                <p class="text-2xl font-bold text-slate-900 dark:text-white leading-relaxed reveal-on-scroll">The
-                    architectural shift in plant-based nutrition hasn't just arrived; it's being reinvented. In 2026,
-                    we're seeing a return to the rootsâ€”literallyâ€”and a voyage into the depths of the ocean.</p>
-
-                <p class="reveal-on-scroll">As we navigate the complexities of global food security and environmental
-                    sustainability, the emphasis has moved away from "processed substitutes" toward nutrient-dense,
-                    bio-available whole foods. Vertical farming and precision fermentation are leading this charge, but
-                    the stars of the show are the ones we've known all along.</p>
-
-                <div
-                    class="bg-slate-50 dark:bg-slate-800 p-12 rounded-[3rem] border-l-[12px] border-secondary reveal-on-scroll">
-                    <p class="text-3xl font-black font-heading text-primary dark:text-white leading-tight mb-6">"True
-                        sustainability isn't just about what we take away from our diet; it's about the regenerative
-                        power of what we include."</p>
-                    <cite class="text-sm font-bold uppercase tracking-widest text-slate-400">â€” Elara Vance, Chief
-                        Visionary at Veganova</cite>
-                </div>
-
-                <div class="reveal-on-scroll">
-                    <h3 class="text-3xl font-black font-heading text-slate-900 dark:text-white mb-8">3 Core Shifts in
-                        2026 Nutrition</h3>
-                    <ul class="space-y-6 list-none pl-0">
-                        <li class="flex items-start gap-6 group">
-                            <span
-                                class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-black shrink-0 group-hover:bg-secondary group-hover:text-primary transition-all">1</span>
-                            <div>
-                                <strong class="text-slate-900 dark:text-white text-xl block mb-2">Mycelium-Based
-                                    Proteins</strong>
-                                <p>Fungal networks are providing the texture and nutrient profile that lab-grown
-                                    alternatives still struggle to match.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-6 group">
-                            <span
-                                class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-black shrink-0 group-hover:bg-secondary group-hover:text-primary transition-all">2</span>
-                            <div>
-                                <strong class="text-slate-900 dark:text-white text-xl block mb-2">Macro-Algae
-                                    Integration</strong>
-                                <p>Seaweed isn't just for nori. Kelp powders and dulse flakes are becoming the backbone
-                                    of mineral-rich vegan diets.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-6 group">
-                            <span
-                                class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary font-black shrink-0 group-hover:bg-secondary group-hover:text-primary transition-all">3</span>
-                            <div>
-                                <strong class="text-slate-900 dark:text-white text-xl block mb-2">Ancient Grain
-                                    Resurgence</strong>
-                                <p>Teff, Kamut, and Amaranth are replacing modern wheat for their superior protein
-                                    bioavailability and resilience.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <p class="reveal-on-scroll">Ultimately, the 2026 revolution is about empowerment through knowledge. By
-                    understanding the bio-synergy of these foods, Veganova customers aren't just eating for
-                    todayâ€”they're investing in a thriving tomorrow.</p>
-            </div>
-
-            <!-- CTA Under Preview -->
-            <div class="mt-24 p-12 lg:p-20 bg-secondary rounded-[4rem] text-center text-white reveal-on-scroll">
-                <h3 class="text-3xl md:text-5xl font-black font-heading mb-8">Start Your Healthy Journey with Veganova
-                </h3>
-                <p class="text-white/80 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-medium">Choose your personalized
-                    meal plan today and join the superfood revolution. We handle the science, you enjoy the results.</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="meals.html"
-                        class="bg-white text-primary px-12 py-5 rounded-[2rem] font-black text-lg hover:bg-primary hover:text-white transition-all shadow-2xl active:scale-95">Explore
-                        Weekly Menu</a>
-                    <a href="pricing.html"
-                        class="bg-primary text-white border-2 border-primary border-white/20 px-12 py-5 rounded-[2rem] font-black text-lg hover:bg-white hover:text-primary transition-all active:scale-95 shadow-xl">Subscription
-                        Plans</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white overflow-hidden">
-        <div class="container">
-            <div class="grid lg:grid-cols-4 gap-16 mb-20">
-                <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center gap-2 mb-8">
-                        <img src="assets/img/logo-icon.svg" class="w-10 h-10" alt="Veganova Icon">
-                        <span class="text-2xl font-black font-heading tracking-tight uppercase">Veganova</span>
-                    </a>
-                    <p class="text-slate-400 text-lg max-w-md mb-10 leading-relaxed">
-                        Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat
-                        better every single day.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
-                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
-                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
-                            <svg class="w-5 h-5 fill-current text-white x-icon" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h5 class="text-xl font-bold font-heading mb-8">Quick Links</h5>
-                    <ul class="space-y-4">
-                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors">Weekly
-                                Menu</a></li>
-                        <li><a href="pricing.html"
-                                class="text-slate-400 hover:text-secondary transition-colors">Subscription Plans</a>
-                        </li>
-                        <li><a href="blog.html" class="text-slate-400 hover:text-secondary transition-colors">Healthy
-                                Blog</a></li>
-                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors">Our
-                                Mission</a></li>
-                        <li><a href="contact.html" class="text-slate-400 hover:text-secondary transition-colors">Contact
-                                Us</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5 class="text-xl font-bold font-heading mb-8">Newsletter</h5>
-                    <p class="text-slate-400 text-sm mb-6">Stay updated with our weekly recipes and discounts.</p>
-                    <form action="#" class="relative">
-                        <input type="email" placeholder="Your email"
-                            class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 outline-none focus:border-secondary transition-colors">
-                        <button
-                            class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-full font-bold">Join</button>
-                    </form>
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="footer-logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+                <p class="text-neutral-400">Making healthy eating easy and accessible for everyone.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
                 </div>
             </div>
-
-            <div class="pt-12 border-t border-white/5 flex flex-col items-center gap-8 text-sm text-slate-400">
-                <p class="text-center">&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="breakfast.html">Breakfast</a></li>
+                    <li><a href="lunch.html">Lunch</a></li>
+                    <li><a href="dinner.html">Dinner</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 VeganBox. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="assets/js/cart-system.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
-

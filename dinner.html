@@ -1,903 +1,328 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinner Menu | Veganova Vegan Meal Service</title>
-    <link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#14532d',
-                        secondary: '#84cc16',
-                        accent: '#f5f5f4',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>Dinner Menu | VeganBox - Healthy Evening Dining</title>
+    <meta name="description"
+        content="Explore our satisfying vegan dinner menu. From glazed tofu steaks to hearty mushroom risotto, end your day with a nutritious, plant-based, chef-prepared meal.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
-<body class="antialiased text-slate-900 transition-colors duration-300">
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></a>
+            </div>
 
-    <!-- Navigation Header -->
-    <header
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
-        <div class="container flex items-center justify-between">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform"
-                    alt="Veganova Icon">
-                <span
-                    class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-10">
-                <div class="nav-item-dropdown">
-                    <a href="index.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-item">Home 1</a>
-                        <a href="home-2.html" class="dropdown-item">Home 2</a>
-                    </div>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-2.html">Home 2</a></li>
+                    </ul>
                 </div>
-                <a href="about.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
-                <div class="nav-item-dropdown">
-                    <a href="meals.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="meals.html" class="dropdown-item">All Meals</a>
-                        <a href="breakfast.html" class="dropdown-item">Breakfast</a>
-                        <a href="lunch.html" class="dropdown-item">Lunch</a>
-                        <a href="dinner.html" class="dropdown-item">Dinner</a>
-                    </div>
+                <a href="about.html">About</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="active">Menu <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="breakfast.html">Breakfast</a></li>
+                        <li><a href="lunch.html">Lunch</a></li>
+                        <li><a href="dinner.html" class="active">Dinner</a></li>
+                    </ul>
                 </div>
-                <a href="pricing.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
-                <a href="dashboard/index.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
-                <a href="blog.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
-                <a href="contact.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
             </nav>
 
-            <!-- Buttons & Actions -->
-            <div class="flex items-center gap-4">
-                <!-- Cart Icon -->
-                <a href="cart.html"
-                    class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
-                    <i data-lucide="shopping-cart"
-                        class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
-                    <span
-                        class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
-                </a>
-
-                <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
-                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                    <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
-                    <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
-                </button>
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="auth/login.html"
-                        class="text-sm font-semibold hover:text-secondary dark:text-white">Login</a>
-                    <a href="auth/signup.html" class="btn-primary">Sign Up</a>
+            <div class="nav-right">
+                <div class="nav-actions">
+                    <button id="rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                    <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                            class="fas fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+                    <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                    <button id="hamburger" class="hamburger d-mobile-only" aria-label="Open Menu"><i
+                            class="fas fa-bars"></i></button>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
-                    <i data-lucide="menu"></i>
-                </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
-        <div class="flex flex-col h-full p-8">
-            <div class="flex items-center justify-between mb-12">
-                <div class="flex items-center gap-2">
-                    <img src="assets/img/logo-icon.svg" class="w-8 h-8" alt="Logo">
-                    <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <button class="rtl-toggle p-2 rounded-full border dark:border-white/20 flex items-center justify-center min-w-[40px]">
-                        <span class="text-xs font-black dark:text-gray-300">RTL</span>
-                    </button>
-                    <button class="theme-toggle p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
-                        <i data-lucide="sun" class="sun-icon text-secondary hidden w-5 h-5"></i>
-                        <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary w-5 h-5"></i>
-                    </button>
-                    <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
-                        <i data-lucide="x" class="dark:text-white w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-    </div>
-
-    <main class="pt-32 pb-24 px-6">
-        <div class="container">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 reveal-on-scroll">
-                <div>
-                    <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">End Your Day
-                        Right</span>
-                    <h1 class="text-5xl md:text-7xl font-black font-heading dark:text-white italic">Dinner Menu</h1>
-                </div>
-                <p class="text-slate-700 dark:text-slate-300 max-w-md text-lg leading-relaxed">Relax and refuel with our
-                    carefully crafted plant-based dinners, designed for restorative nutrition and great taste.</p>
-            </div>
-
-            <!-- Dynamic Menu Category Filters & Search -->
-            <div
-                class="bg-white dark:bg-slate-800 p-6 md:p-8 rounded-[40px] shadow-sm border border-slate-100 dark:border-slate-700 mb-16 reveal-on-scroll">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
-                    <!-- Search Bar -->
-                    <div class="md:col-span-2 relative">
-                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 block">Search
-                            Dinner</label>
-                        <div class="relative">
-                            <i data-lucide="search"
-                                class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
-                            <input type="text" id="search-meals" placeholder="Search dinner meals..."
-                                class="w-full bg-slate-50 dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-700 rounded-2xl pl-12 pr-4 py-3.5 outline-none focus:border-secondary transition-all dark:text-white placeholder:text-slate-400">
-                        </div>
-                    </div>
-
-                    <!-- Meal Type Filter -->
-                    <div class="relative">
-                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 block">Meal
-                            Type</label>
-                        <select id="tag-filter"
-                            class="w-full bg-slate-50 dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-700 rounded-2xl px-4 py-3.5 outline-none focus:border-secondary transition-all dark:text-white appearance-none cursor-pointer">
-                            <option value="all">All Types</option>
-                            <option value="high-protein">High Protein</option>
-                            <option value="detox">Detox</option>
-                            <option value="gluten-free">Gluten Free</option>
-                        </select>
-                        <i data-lucide="chevron-down"
-                            class="absolute right-4 top-[70%] -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none"></i>
-                    </div>
-
-                    <!-- Calorie Filter -->
-                    <div class="relative">
-                        <label
-                            class="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2 block">Calories</label>
-                        <select id="calorie-filter"
-                            class="w-full bg-slate-50 dark:bg-slate-900 border-2 border-slate-100 dark:border-slate-700 rounded-2xl px-4 py-3.5 outline-none focus:border-secondary transition-all dark:text-white appearance-none cursor-pointer">
-                            <option value="all">Any Calories</option>
-                            <option value="low">Low (< 450 kcal)</option>
-                            <option value="medium">Medium (450-550 kcal)</option>
-                            <option value="high">High (> 550 kcal)</option>
-                        </select>
-                        <i data-lucide="chevron-down"
-                            class="absolute right-4 top-[70%] -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none"></i>
-                    </div>
-                </div>
-
-                <div
-                    class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-700 flex flex-wrap items-center justify-between gap-6">
-                    <!-- Category Pills -->
-                    <div class="grid grid-cols-2 md:flex items-center gap-3 w-full md:w-auto">
-                        <a href="meals.html"
-                            class="px-6 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 font-bold text-xs border-2 border-transparent hover:border-secondary transition-all text-center">All</a>
-                        <a href="breakfast.html"
-                            class="px-6 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 font-bold text-xs border-2 border-transparent hover:border-secondary transition-all text-center">Breakfast</a>
-                        <a href="lunch.html"
-                            class="px-6 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-300 font-bold text-xs border-2 border-transparent hover:border-secondary transition-all text-center">Lunch</a>
-                        <a href="dinner.html"
-                            class="px-6 py-2.5 rounded-xl bg-primary text-white font-bold text-xs shadow-lg shadow-primary/20 border-2 border-primary transition-all active text-center">Dinner</a>
-                    </div>
-
-                    <!-- Sort Filter -->
-                    <div class="flex items-center gap-3 ml-auto">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-slate-400">Sort By:</span>
-                        <select id="sort-filter"
-                            class="bg-transparent font-bold text-sm dark:text-white outline-none cursor-pointer hover:text-secondary transition-colors">
-                            <option value="default">Newest First</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="kcal-low">Calories: Low to High</option>
-                            <option value="kcal-high">Calories: High to Low</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Meal Grid -->
-            <div id="meal-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Dinner Card 1 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="23" data-category="dinner" data-tag="high-protein" data-kcal="520" data-price="16.50"
-                    data-protein="32g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.pexels.com/photos/36183179/pexels-photo-36183179.jpeg"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Mushroom Risotto" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">high
-                                protein</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Wild Mushroom &
-                            Truffle Risotto</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Creamy arborio rice with wild mushrooms and a hint of truffle oil.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">520 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">32g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$16.50</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 2 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="24" data-category="dinner" data-tag="detox" data-kcal="410" data-price="14.00"
-                    data-protein="18g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&fit=crop"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Lentil Pasta" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">detox</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Red Lentil
-                            Bolognese</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Hearty lentil ragu served over gluten-free brown rice pasta.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">410 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">18g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$14.00</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 3 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="25" data-category="dinner" data-tag="gluten-free" data-kcal="480" data-price="15.50"
-                    data-protein="22g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=800&fit=crop"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Tofu Stir-fry" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">gluten
-                                free</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Sesame Ginger
-                            Tofu Stir-fry</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Crispy tofu with garden vegetables in a sesame ginger glaze.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">480 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">22g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$15.50</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 4 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="26" data-category="dinner" data-tag="high-protein" data-kcal="550" data-price="17.00"
-                    data-protein="35g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800&fit=crop"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Vegan Steak" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">high
-                                protein</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Seitan Steak with
-                            Peppercorn Sauce</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            House-made seitan steak with a creamy peppercorn sauce and mash.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">550 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">35g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$17.00</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 5 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="27" data-category="dinner" data-tag="detox" data-kcal="430" data-price="15.00"
-                    data-protein="20g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.pexels.com/photos/30615721/pexels-photo-30615721.jpeg"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Cauliflower Roast" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">detox</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Harissa Roasted
-                            Cauliflower</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Whole roasted cauliflower with harissa, tahini, and pomegranate.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">430 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">20g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$15.00</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 6 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="28" data-category="dinner" data-tag="gluten-free" data-kcal="490" data-price="14.50"
-                    data-protein="24g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.pexels.com/photos/31029754/pexels-photo-31029754.jpeg"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Thai Curry" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">gluten
-                                free</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Thai Green
-                            Vegetable Curry</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Authentic green curry with coconut milk, bamboo shoots, and basil.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">490 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">24g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$14.50</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 7 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="29" data-category="dinner" data-tag="high-protein" data-kcal="510" data-price="15.50"
-                    data-protein="28g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.pexels.com/photos/11316282/pexels-photo-11316282.jpeg"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Lentil Shepherd's Pie" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">high
-                                protein</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Lentil & Sweet
-                            Potato Shepherd's Pie</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Savory lentil filling topped with creamy mashed sweet potatoes.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">510 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">28g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$15.50</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 8 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="30" data-category="dinner" data-tag="detox" data-kcal="440" data-price="14.00"
-                    data-protein="16g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.pexels.com/photos/23359716/pexels-photo-23359716.jpeg"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Eggplant Parmesan" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">detox</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Baked Eggplant
-                            Parmesan</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Slices of baked eggplant with tomato sauce and almond parmesan.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">440 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">16g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$14.00</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 9 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="31" data-category="dinner" data-tag="gluten-free" data-kcal="470" data-price="16.00"
-                    data-protein="22g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.pexels.com/photos/23025171/pexels-photo-23025171.jpeg"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Moroccan Tagine" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">gluten
-                                free</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Moroccan
-                            Vegetable Tagine</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Slow-cooked root vegetables with apricots and Moroccan spices.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">470 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">22g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$16.00</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 10 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="32" data-category="dinner" data-tag="high-protein" data-kcal="530" data-price="17.50"
-                    data-protein="30g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.pexels.com/photos/6546431/pexels-photo-6546431.jpeg"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Seitan Roast" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">high
-                                protein</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Slow-Roasted
-                            Seitan Joint</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Savory seitan roast with herbs, red wine jus, and roasted roots.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">530 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">30g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$17.50</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 11 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="33" data-category="dinner" data-tag="detox" data-kcal="420" data-price="13.50"
-                    data-protein="15g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.pexels.com/photos/15747862/pexels-photo-15747862.jpeg"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Stuffed Peppers" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">detox</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Quinoa Stuffed
-                            Bell Peppers</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Bell peppers stuffed with organic quinoa, corn, and black beans.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">420 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">15g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$13.50</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dinner Card 12 -->
-                <div class="meal-card group bg-white dark:bg-slate-800 rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 reveal-on-scroll border border-slate-100 dark:border-slate-700 flex flex-col h-full"
-                    data-id="34" data-category="dinner" data-tag="gluten-free" data-kcal="460" data-price="15.00"
-                    data-protein="20g">
-                    <div class="relative h-64 overflow-hidden shrink-0">
-                        <img src="https://images.pexels.com/photos/10976453/pexels-photo-10976453.jpeg"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            alt="Lentil Soup" data-property="image">
-                        <div class="absolute top-6 right-6">
-                            <span
-                                class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-4 py-2 rounded-2xl text-[10px] font-black uppercase text-primary dark:text-secondary shadow-lg tracking-widest">dinner</span>
-                        </div>
-                    </div>
-                    <div class="p-8 flex flex-col flex-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <span
-                                class="text-[10px] font-black bg-secondary/10 text-secondary px-3 py-1 rounded-lg tracking-widest uppercase">gluten
-                                free</span>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-3 dark:text-white line-clamp-1">Classic Red
-                            Lentil Soup</h3>
-                        <p
-                            class="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 leading-relaxed min-h-[2.5rem]">
-                            Hearty and warming red lentil soup with garden herbs and spices.</p>
-                        <div
-                            class="flex items-center gap-6 mb-8 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl mt-auto">
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="flame" class="w-4 h-4 text-orange-500"></i>
-                                <span class="text-xs font-black dark:text-gray-300">460 <span
-                                        class="text-slate-400 font-medium">kcal</span></span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i data-lucide="dumbbell" class="w-4 h-4 text-secondary"></i>
-                                <span class="text-xs font-black dark:text-gray-300 font-bold">20g <span
-                                        class="text-slate-400 font-medium">Prot.</span></span>
-                            </div>
-                        </div>
-                        <div
-                            class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-2xl font-black text-primary dark:text-secondary meal-price">$15.00</span>
-                            </div>
-                            <button
-                                class="btn-primary shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 add-to-cart-btn px-4 py-2"><i
-                                    data-lucide="plus" class="w-4 h-4"></i></button>
-                        </div>
-                    </div>
-                </div>
-
+    <!-- Mobile Nav -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="d-flex justify-content-between align-items-center px-md py-sm border-bottom">
+            <div class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+            <div class="d-flex gap-sm">
+                <button id="mobile-rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                <button id="mobile-theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                        class="fas fa-moon"></i></button>
             </div>
         </div>
-    </main>
+        <nav class="nav-links d-flex flex-column p-md">
+            <div class="dropdown mobile-dropdown">
+                <a href="javascript:void(0)">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="home-2.html">Home 2</a></li>
+                </ul>
+            </div>
+            <a href="about.html">About</a>
+            <a href="breakfast.html">Breakfast</a>
+            <a href="lunch.html">Lunch</a>
+            <a href="dinner.html" class="active">Dinner</a>
+            <a href="blog.html">Blog</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+            <hr class="my-md opacity-20">
+            <div class="d-flex flex-column gap-sm">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </nav>
+    </div>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white overflow-hidden">
+    <!-- Page Hero -->
+    <section class="page-hero"
+        style="background-image: url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg');">
         <div class="container">
-            <div class="grid lg:grid-cols-4 gap-16 mb-20">
-                <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center gap-2 mb-8">
-                        <img src="assets/img/logo-icon.svg" class="w-10 h-10" alt="Veganova Icon">
-                        <span class="text-2xl font-black font-heading tracking-tight uppercase">Veganova</span>
-                    </a>
-                    <p class="text-slate-400 text-lg max-w-md mb-10 leading-relaxed">
-                        Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat
-                        better every single day.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#"
-                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#"
-                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#"
-                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-secondary transition-colors">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
+            <h1 class="animate-fadeIn">Dinner <span class="text-secondary">Menu</span></h1>
+            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Savor the evening with chef-prepared, nutritious
+                meals designed for wellness and satisfaction.</p>
+        </div>
+    </section>
 
-                <div>
-                    <h5 class="text-xl font-bold font-heading mb-8">Quick Links</h5>
-                    <ul class="space-y-4">
-                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors">Weekly
-                                Menu</a></li>
-                        <li><a href="pricing.html"
-                                class="text-slate-400 hover:text-secondary transition-colors">Subscription Plans</a>
-                        </li>
-                        <li><a href="blog.html" class="text-slate-400 hover:text-secondary transition-colors">Healthy
-                                Blog</a></li>
-                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors">Our
-                                Mission</a></li>
-                        <li><a href="contact.html" class="text-slate-400 hover:text-secondary transition-colors">Contact
-                                Us</a></li>
-                    </ul>
-                </div>
+    <section class="section-padding pt-0">
+        <div class="container">
 
-                <div>
-                    <h5 class="text-xl font-bold font-heading mb-8">Newsletter</h5>
-                    <p class="text-slate-400 text-sm mb-6">Stay updated with our weekly recipes and discounts.</p>
-                    <form action="#" class="relative">
-                        <input type="email" placeholder="Your email"
-                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-secondary transition-colors">
-                        <button
-                            class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-2xl font-bold">Join</button>
-                    </form>
+            <!-- Nutritional Overview -->
+            <div class="grid grid-3 gap-lg mb-3xl">
+                <div class="card p-lg text-center bg-light shadow-sm">
+                    <i class="fas fa-bed text-secondary text-2xl mb-sm"></i>
+                    <h4 class="mb-xs">Easy Digestion</h4>
+                    <p class="text-xs text-neutral-600">Specifically formulated with fermented foods and enzymes to
+                        ensure light digestion before sleep.</p>
+                </div>
+                <div class="card p-lg text-center bg-light shadow-sm">
+                    <i class="fas fa-heart text-primary text-2xl mb-sm"></i>
+                    <h4 class="mb-xs">Restorative Nutrients</h4>
+                    <p class="text-xs text-neutral-600">Rich in magnesium-packed greens and dark legumes to aid muscle
+                        recovery and relaxation.</p>
+                </div>
+                <div class="card p-lg text-center bg-light shadow-sm">
+                    <i class="fas fa-moon text-accent text-2xl mb-sm"></i>
+                    <h4 class="mb-xs">Natural Sleep Aid</h4>
+                    <p class="text-xs text-neutral-600">Complex tryptophan sources from nuts and grains to naturally
+                        support your circadian rhythm.</p>
                 </div>
             </div>
 
-            <div class="pt-12 border-t border-white/5 flex flex-col items-center gap-8 text-sm text-slate-400">
-                <p class="text-center">&copy; 2026 Veganova Vegan Service. All rights reserved.</p>
+            <div class="menu-grid animate-fadeIn">
+                <!-- Item 1 -->
+                <div class="menu-item card">
+                    <div class="menu-item-image"><img src="images/maple_tofu.png" alt="Maple-Glazed Tofu"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="text-lg">Maple-Glazed Tofu Steaks</h3><span
+                                class="text-primary fw-bold">$16.50</span>
+                        </div>
+                        <p class="text-sm text-neutral-600 mb-md">Pan-seared organic tofu with a maple-soy glaze and
+                            roasted asparagus.</p>
+                        <button class="btn btn-outline btn-sm w-full">Add to Weekly Box</button>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="menu-item card">
+                    <div class="menu-item-image"><img
+                            src="images/mushroom_risotto.png"
+                            alt="Mushroom Risotto"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="text-lg">Wild Mushroom Risotto</h3><span
+                                class="text-primary fw-bold">$18.50</span>
+                        </div>
+                        <p class="text-sm text-neutral-600 mb-md">Creamy arborio rice with earthy porcini mushrooms,
+                            fresh thyme, and truffle oil.</p>
+                        <button class="btn btn-outline btn-sm w-full">Add to Weekly Box</button>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="menu-item card">
+                    <div class="menu-item-image"><img
+                            src="images/lentil_bolognese.png"
+                            alt="Lentil Bolognese"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="text-lg">Hearty Lentil Bolognese</h3><span
+                                class="text-primary fw-bold">$16.50</span>
+                        </div>
+                        <p class="text-sm text-neutral-600 mb-md">Slow-cooked lentil and vegetable ragu over whole grain
+                            pasta with fresh basil leaf.</p>
+                        <button class="btn btn-outline btn-sm w-full">Add to Weekly Box</button>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="menu-item card">
+                    <div class="menu-item-image"><img src="images/spiced_cauliflower.png" alt="Spiced Cauliflower">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="text-lg">Spiced Cauliflower Steaks</h3><span
+                                class="text-primary fw-bold">$15.50</span>
+                        </div>
+                        <p class="text-sm text-neutral-600 mb-md">Thick-cut roasted cauliflower with apple chutney and
+                            roasted balsamic Brussels sprouts.</p>
+                        <button class="btn btn-outline btn-sm w-full">Add to Weekly Box</button>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="menu-item card">
+                    <div class="menu-item-image"><img
+                            src="images/stuffed_peppers.png"
+                            alt="Stuffed Peppers"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="text-lg">Quinoa Stuffed Peppers</h3><span
+                                class="text-primary fw-bold">$15.50</span>
+                        </div>
+                        <p class="text-sm text-neutral-600 mb-md">Bell peppers stuffed with black beans, corn, quinoa,
+                            and topped with smooth avocado cream swirl.</p>
+                        <button class="btn btn-outline btn-sm w-full">Add to Weekly Box</button>
+                    </div>
+                </div>
+                <!-- Item 6 -->
+                <div class="menu-item card">
+                    <div class="menu-item-image"><img
+                            src="https://images.pexels.com/photos/35779075/pexels-photo-35779075.jpeg"
+                            alt="Tempeh Stir-fry"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="text-lg">Ginger-Soy Tempeh Stir-fry</h3><span
+                                class="text-primary fw-bold">$17.50</span>
+                        </div>
+                        <p class="text-sm text-neutral-600 mb-md">Organic tempeh strips with broccoli, snap peas, and
+                            sesame over cauliflower rice.</p>
+                        <button class="btn btn-outline btn-sm w-full">Add to Weekly Box</button>
+                    </div>
+                </div>
+                <!-- Item 7 -->
+                <div class="menu-item card">
+                    <div class="menu-item-image"><img
+                            src="https://images.pexels.com/photos/772513/pexels-photo-772513.png"
+                            alt="Eggplant Parmesan"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="text-lg">Baked Eggplant Parm</h3><span class="text-primary fw-bold">$17.50</span>
+                        </div>
+                        <p class="text-sm text-neutral-600 mb-md">Layers of roasted eggplant, rich marinara, and
+                            almond-based parmesan cheese.</p>
+                        <button class="btn btn-outline btn-sm w-full">Add to Weekly Box</button>
+                    </div>
+                </div>
+                <!-- Item 8 -->
+                <div class="menu-item card">
+                    <div class="menu-item-image"><img src="images/chickpea_curry.png" alt="Chickpea Curry"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="text-lg">Coconut Lime Chickpea Curry</h3><span
+                                class="text-primary fw-bold">$16.50</span>
+                        </div>
+                        <p class="text-sm text-neutral-600 mb-md">Hearty chickpeas in a creamy coconut lime curry with
+                            sweet potato and kale.</p>
+                        <button class="btn btn-outline btn-sm w-full">Add to Weekly Box</button>
+                    </div>
+                </div>
+                <!-- Item 9 -->
+                <div class="menu-item card">
+                    <div class="menu-item-image"><img
+                            src="https://images.pexels.com/photos/31779545/pexels-photo-31779545.jpeg"
+                            alt="Vegetable Lasagna"></div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3 class="text-lg">Rainbow Veggie Lasagna</h3><span
+                                class="text-primary fw-bold">$18.00</span>
+                        </div>
+                        <p class="text-sm text-neutral-600 mb-md">Zucchini and spinach layers with cashew ricotta and
+                            roasted red pepper sauce.</p>
+                        <button class="btn btn-outline btn-sm w-full">Add to Weekly Box</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lower Section -->
+        <div class="section-padding mt-xl bg-light" style="border-radius: var(--radius-xl);">
+            <div class="container text-center" style="max-width: 800px;">
+                <h2 class="text-2xl text-primary mb-md">Evening <span class="text-secondary">Recovery</span> & Flavor</h2>
+                <p class="mb-lg">Dinner at VeganBox is a ritual of restoration. We understand that your evening meal
+                    is not just about fuel—it's about winding down and preparing your body for a restorative night's
+                    rest. Our evening menu avoid heavy starches, focusing instead on protein-rich legumes and
+                    antioxidant-dense vegetables.</p>
+                <ul class="d-flex flex-column align-items-center gap-sm list-none p-0">
+                    <li><i class="fas fa-check text-primary mr-sm"></i> Perfect portion control for evening metabolism</li>
+                    <li><i class="fas fa-check text-primary mr-sm"></i> Sourced from 100% sustainable, ethical farms</li>
+                    <li><i class="fas fa-check text-primary mr-sm"></i> Prepared using heart-healthy cooking methods</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="footer-logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+                <p class="text-neutral-400">Making healthy eating easy and accessible for everyone. Sustainably sourced,
+                    chef-prepared, and nutritionist-approved meals delivered directly to your door.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Menus</h4>
+                <ul>
+                    <li><a href="breakfast.html">Breakfast</a></li>
+                    <li><a href="lunch.html">Lunch</a></li>
+                    <li><a href="dinner.html">Dinner</a></li>
+                    <li><a href="dashboard.html">User Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li class="text-neutral-400"><i class="fas fa-map-marker-alt text-primary"></i> 123 Healthy Way, Green City</li>
+                    <li class="text-neutral-400"><i class="fas fa-phone text-primary"></i> +1 234 567 890</li>
+                    <li class="text-neutral-400"><i class="fas fa-envelope text-primary"></i> hello@veganbox.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 VeganBox Meal Subscriptions. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/cart-system.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/meals.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>

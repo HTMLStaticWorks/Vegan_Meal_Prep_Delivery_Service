@@ -1,514 +1,304 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Mission & Story | Veganova Vegan Meal Service</title>
-    <link rel="icon" type="image/svg+xml" href="assets/img/logo-icon.svg">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#14532d',
-                        secondary: '#84cc16',
-                        accent: '#f5f5f4',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>About Us | VeganBox - Ethical & Healthy Meal Plans</title>
+    <meta name="description"
+        content="Our Story and Mission - Learn how VeganBox is transforming the way you eat with chef-prepared, ethical, and delicious healthy meal subscriptions.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body class="antialiased text-slate-900 transition-colors duration-300">
 
-    <!-- Navigation Header -->
-    <header
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
-        <div class="container flex items-center justify-between">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform"
-                    alt="Veganova Icon">
-                <span
-                    class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
-            </a>
+<body>
+    <!-- Header (Same as Index) -->
+    <header>
+        <div class="container nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></a>
+            </div>
 
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-10">
-                <div class="nav-item-dropdown">
-                    <a href="index.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-item">Home 1</a>
-                        <a href="home-2.html" class="dropdown-item">Home 2</a>
-                    </div>
+            <nav class="nav-links">
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-2.html">Home 2</a></li>
+                    </ul>
                 </div>
-                <a href="about.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
-                <div class="nav-item-dropdown">
-                    <a href="meals.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="meals.html" class="dropdown-item">All Meals</a>
-                        <a href="breakfast.html" class="dropdown-item">Breakfast</a>
-                        <a href="lunch.html" class="dropdown-item">Lunch</a>
-                        <a href="dinner.html" class="dropdown-item">Dinner</a>
-                    </div>
+                <a href="about.html" class="active">About</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)">Menu <i class="fas fa-chevron-down text-sm"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="breakfast.html">Breakfast</a></li>
+                        <li><a href="lunch.html">Lunch</a></li>
+                        <li><a href="dinner.html">Dinner</a></li>
+                    </ul>
                 </div>
-                <a href="pricing.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
-                <a href="dashboard/index.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
-                <a href="blog.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
-                <a href="contact.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html">Dashboard</a>
             </nav>
 
-            <!-- Buttons & Actions -->
-            <div class="flex items-center gap-4">
-                <!-- Cart Icon -->
-                <a href="cart.html"
-                    class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
-                    <i data-lucide="shopping-cart"
-                        class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
-                    <span
-                        class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
-                </a>
-
-                <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
-                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
-                    <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
-                    <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
-                </button>
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="auth/login.html"
-                        class="text-sm font-semibold hover:text-secondary dark:text-white">Login</a>
-                    <a href="auth/signup.html" class="btn-primary">Sign Up</a>
+            <div class="nav-right">
+                <div class="nav-actions">
+                    <button id="rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                    <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                            class="fas fa-moon"></i></button>
+                    <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+                    <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+                    <button id="hamburger" class="hamburger d-mobile-only" aria-label="Open Menu"><i
+                            class="fas fa-bars"></i></button>
                 </div>
-                <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
-                    <i data-lucide="menu"></i>
-                </button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
-        <div class="flex flex-col h-full p-8">
-            <div class="flex items-center justify-between mb-12">
-                <div class="flex items-center gap-2">
-                    <img src="assets/img/logo-icon.svg" class="w-8 h-8" alt="Logo">
-                    <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
-                </div>
-                <div class="flex items-center gap-3">
-                    <button class="rtl-toggle p-2 rounded-full border dark:border-white/20 flex items-center justify-center min-w-[40px]">
-                        <span class="text-xs font-black dark:text-gray-300">RTL</span>
-                    </button>
-                    <button class="theme-toggle p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
-                        <i data-lucide="sun" class="sun-icon text-secondary hidden w-5 h-5"></i>
-                        <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary w-5 h-5"></i>
-                    </button>
-                    <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
-                        <i data-lucide="x" class="dark:text-white w-6 h-6"></i>
-                    </button>
-                </div>
+    <!-- Mobile Nav -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="d-flex justify-content-between align-items-center px-md py-sm border-bottom">
+            <div class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+            <div class="d-flex gap-sm">
+                <button id="mobile-rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                <button id="mobile-theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                        class="fas fa-moon"></i></button>
             </div>
+        </div>
+        <nav class="nav-links d-flex flex-column p-md">
+            <div class="dropdown mobile-dropdown">
+                <a href="javascript:void(0)">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="home-2.html">Home 2</a></li>
+                </ul>
+            </div>
+            <a href="about.html" class="active">About</a>
+            <a href="breakfast.html">Breakfast</a>
+            <a href="lunch.html">Lunch</a>
+            <a href="dinner.html">Dinner</a>
+            <a href="blog.html">Blog</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+            <hr class="my-md opacity-20">
+            <div class="d-flex flex-column gap-sm">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </nav>
     </div>
 
-    <!-- Main Content -->
-    <main class="overflow-hidden">
-        <!-- Page Hero Section -->
-        <section class="relative pt-40 pb-20 md:pt-48 md:pb-28 lg:pt-56 lg:pb-32 overflow-hidden mb-16 px-6 flex items-center justify-center min-h-[50vh]">
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=1600&fit=crop" class="w-full h-full object-cover grayscale-[20%] brightness-[0.4] dark:brightness-[0.3]" alt="About Us Background">
-                <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent dark:from-black/80"></div>
-            </div>
-            <div class="container relative z-10 text-center reveal-on-scroll">
-                <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block drop-shadow-md">Our Mission</span>
-                <h1 class="text-6xl md:text-8xl font-black font-heading mb-6 text-white drop-shadow-xl">About <span class="text-secondary">Us</span></h1>
-                <p class="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto font-medium drop-shadow-md">We believe that doing what's best for your body should also be best for the planet.</p>
-            </div>
-        </section>
-
-        <!-- Story Section -->
-        <section class="pt-16 pb-24 px-6 relative">
-            <div class="container">
-                <div class="grid lg:grid-cols-2 gap-20 items-center">
-                    <div class="reveal-on-scroll">
-                        <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">Our Journey</span>
-                        <h2 class="text-5xl md:text-7xl font-black font-heading mb-8 dark:text-white leading-tight">Born from a <span class="text-secondary underline decoration-secondary/30">Vision.</span></h2>
-                        <p class="text-xl text-slate-700 dark:text-slate-300 mb-8 leading-relaxed">
-                            Veganova didn't just start in a kitchen; it started with a frustration. In 2024, our founders looked at the landscape of "healthy" convenience and saw a gap: meals were either truly healthy but required hours of prep, or convenient but filled with hidden preservatives and ethical compromises.
-                        </p>
-                        <p class="text-xl text-slate-700 dark:text-slate-300 mb-10 leading-relaxed">
-                            We believed that by 2026, the world deserved better. We set out to prove that plant-based eating could be a premium, effortless experience.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div class="bg-secondary/10 p-8 rounded-[40px] border border-secondary/20 flex flex-col justify-between h-full group hover:bg-secondary/20 transition-all duration-500">
-                                <i data-lucide="shield-check" class="w-10 h-10 text-secondary mb-6"></i>
-                                <div>
-                                    <span class="block text-4xl font-black text-primary dark:text-secondary mb-2">100%</span>
-                                    <span class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-tight">Strictly Ethical Vegan Standards</span>
-                                </div>
-                            </div>
-                            <div class="bg-primary/10 p-8 rounded-[40px] border border-primary/20 flex flex-col justify-between h-full group hover:bg-primary/20 transition-all duration-500">
-                                <i data-lucide="recycle" class="w-10 h-10 text-primary dark:text-secondary mb-6"></i>
-                                <div>
-                                    <span class="block text-4xl font-black text-primary dark:text-secondary mb-2">Zero</span>
-                                    <span class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-tight">Plastic Packaging Commitment</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative reveal-on-scroll reveal-delay-2 lg:pl-10">
-                        <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1200&fit=crop" class="rounded-[60px] shadow-2xl shadow-primary/20" alt="Our Culinary Team" loading="lazy">
-                            <div class="absolute -bottom-12 -left-12 bg-white dark:bg-slate-800 p-10 rounded-[50px] shadow-2xl max-w-sm hidden xl:block border border-slate-100 dark:border-slate-700 z-10">
-                                <div class="flex items-center gap-5 mb-6">
-                                    <div class="w-14 h-14 bg-secondary rounded-[20px] shadow-lg shadow-secondary/20 flex items-center justify-center text-white">
-                                        <i data-lucide="award" class="w-7 h-7"></i>
-                                    </div>
-                                    <h4 class="font-black text-xl dark:text-white leading-tight">Award Winning Culinary Team</h4>
-                                </div>
-                                <p class="text-base text-slate-600 dark:text-slate-400 italic leading-relaxed">"Sustainability isn't just a marketing feature; it's our absolute foundation. Every ingredient tells a story of ethical sourcing."</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mission & Vision Section -->
-        <section class="py-32 bg-primary text-white overflow-hidden relative px-6">
-            <div class="absolute top-0 right-0 w-1/2 h-full bg-black/20 z-0">
-                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&fit=crop" class="w-full h-full object-cover opacity-30 mix-blend-overlay" alt="Eco Lifestyle" loading="lazy">
-            </div>
-            <div class="container relative z-10">
-                <div class="grid md:grid-cols-2 gap-24">
-                    <div class="reveal-on-scroll">
-                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8">
-                            <i data-lucide="target" class="w-8 h-8 text-secondary"></i>
-                        </div>
-                        <h2 class="text-4xl md:text-5xl font-black font-heading mb-8">Our Mission</h2>
-                        <p class="text-xl text-white/80 leading-relaxed">
-                            To revolutionize the modern diet by providing chef-curated, nutrient-dense, and 100% plant-based meal solutions that empower busy individuals to live healthier, kinder, and more sustainable lives without sacrificing flavor or time.
-                        </p>
-                    </div>
-                    <div class="reveal-on-scroll reveal-delay-1">
-                        <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8">
-                            <i data-lucide="eye" class="w-8 h-8 text-secondary"></i>
-                        </div>
-                        <h2 class="text-4xl md:text-5xl font-black font-heading mb-8">Our Vision</h2>
-                        <p class="text-xl text-white/80 leading-relaxed">
-                            To become the ultimate global benchmark for the future of foodâ€”a world where every meal plate supports ecological restoration, animal welfare, and peak human performance through the power of plants.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Values Grid -->
-        <section class="py-32 bg-slate-50 dark:bg-slate-900/50 px-6">
-            <div class="container">
-                <div class="text-center mb-24 reveal-on-scroll">
-                    <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">How We Work</span>
-                    <h2 class="text-5xl md:text-6xl font-black font-heading mb-6 dark:text-white italic">The Veganova Principles</h2>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-12">
-                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll flex flex-col items-center text-center">
-                        <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-10">
-                            <i data-lucide="heart" class="w-8 h-8 text-primary dark:text-secondary"></i>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-6 dark:text-white">Compassion First</h3>
-                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Our commitment to 100% plant-based ingredients is non-negotiable. We believe that gourmet dining shouldn't come at the cost of sentient lives.</p>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-1 flex flex-col items-center text-center">
-                        <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-10">
-                            <i data-lucide="leaf" class="w-8 h-8 text-primary dark:text-secondary"></i>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-6 dark:text-white">Earth Generosity</h3>
-                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">From compostable packaging to optimizing delivery routes, we aim to give back more to the planet than we take.</p>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-2 flex flex-col items-center text-center">
-                        <div class="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-10">
-                            <i data-lucide="sparkles" class="w-8 h-8 text-primary dark:text-secondary"></i>
-                        </div>
-                        <h3 class="text-2xl font-black font-heading mb-6 dark:text-white">Culinary Excellence</h3>
-                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed">Healthy food doesn't have to be boring. Our chefs use modern techniques to maximize flavor and nutrients in every bite.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Visionaries Section -->
-        <section class="py-32 px-6 bg-white dark:bg-slate-900">
-            <div class="container">
-                <div class="text-center mb-24 reveal-on-scroll">
-                    <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">Meet The Visionaries</span>
-                    <h2 class="text-5xl md:text-6xl font-black font-heading mb-6 dark:text-white">Leading The Revolution</h2>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <!-- Leader 1 -->
-                    <div class="group reveal-on-scroll">
-                        <div class="relative rounded-[50px] overflow-hidden mb-8 h-[450px]">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Alex Sterling">
-                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
-                                <p class="text-white text-sm font-medium leading-relaxed italic">"The future of food is the bridge between peak performance and ethical living."</p>
-                            </div>
-                        </div>
-                        <h4 class="text-2xl font-black dark:text-white mb-2">Alex Sterling</h4>
-                        <p class="text-secondary font-bold uppercase tracking-widest text-xs">CEO & Founder</p>
-                    </div>
-                    <!-- Leader 2 -->
-                    <div class="group reveal-on-scroll reveal-delay-1">
-                        <div class="relative rounded-[50px] overflow-hidden mb-8 h-[450px]">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Sarah Chen">
-                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
-                                <p class="text-white text-sm font-medium leading-relaxed italic">"Nutrition should be an ally, not a source of stress. We're simplifying longevity."</p>
-                            </div>
-                        </div>
-                        <h4 class="text-2xl font-black dark:text-white mb-2">Dr. Sarah Chen</h4>
-                        <p class="text-secondary font-bold uppercase tracking-widest text-xs">Chief Nutritionist</p>
-                    </div>
-                    <!-- Leader 3 -->
-                    <div class="group reveal-on-scroll reveal-delay-2">
-                        <div class="relative rounded-[50px] overflow-hidden mb-8 h-[450px]">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Marcus Volt">
-                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-10 flex flex-col justify-end">
-                                <p class="text-white text-sm font-medium leading-relaxed italic">"Our operations are a circular system. We give back more than we take from the earth."</p>
-                            </div>
-                        </div>
-                        <h4 class="text-2xl font-black dark:text-white mb-2">Marcus Volt</h4>
-                        <p class="text-secondary font-bold uppercase tracking-widest text-xs">Sustainability Lead</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Community Section -->
-        <section class="py-32 bg-slate-50 dark:bg-slate-950 px-6">
-            <div class="container">
-                <div class="text-center mb-24 reveal-on-scroll">
-                    <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">Feedback</span>
-                    <h2 class="text-5xl md:text-6xl font-black font-heading mb-6 dark:text-white italic">What Our Community Said</h2>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll">
-                        <div class="flex gap-1 mb-8">
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                        </div>
-                        <p class="text-xl text-slate-700 dark:text-slate-300 leading-relaxed italic mb-10">"The variety is unmatched. I've been vegan for 10 years and Veganova keeps surprising me with global flavors I've never tried before."</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-full bg-slate-200 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <span class="block font-black dark:text-white">Elena Rodriguez</span>
-                                <span class="text-slate-500 text-xs">Marathon Runner</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-1">
-                        <div class="flex gap-1 mb-8">
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                        </div>
-                        <p class="text-xl text-slate-700 dark:text-slate-300 leading-relaxed italic mb-10">"As a busy tech lead, I used to skip meals. Now I look forward to my lunch every single day. The glassmorphism packaging is just the cherry on top."</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-full bg-slate-200 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <span class="block font-black dark:text-white">David Kim</span>
-                                <span class="text-slate-500 text-xs">Software Architect</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white dark:bg-slate-800 p-12 rounded-[50px] shadow-sm border border-slate-100 dark:border-slate-700 reveal-on-scroll reveal-delay-2">
-                        <div class="flex gap-1 mb-8">
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                            <i data-lucide="star" class="w-6 h-6 fill-yellow-400 text-yellow-400"></i>
-                        </div>
-                        <p class="text-xl text-slate-700 dark:text-slate-300 leading-relaxed italic mb-10">"The eco-commitment isn't just talk. Seeing my compostable trays return to the cycle via their pickup service is revolutionary."</p>
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-full bg-slate-200 overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <span class="block font-black dark:text-white">Sophie Laurent</span>
-                                <span class="text-slate-500 text-xs">Environmental Scientist</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Green Commitment -->
-        <section class="py-40 bg-primary text-white overflow-hidden relative px-6">
-            <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fee79a70?w=1600&fit=crop" class="w-full h-full object-cover opacity-20 grayscale brightness-50" alt="Sustainable Field">
-            </div>
-            <div class="container relative z-10 text-center max-w-4xl mx-auto">
-                <span class="text-secondary font-bold uppercase tracking-widest text-sm mb-6 block">Future of Food</span>
-                <h2 class="text-6xl md:text-7xl font-black font-heading mb-10 italic">Our Green Commitment</h2>
-                <p class="text-2xl text-white/80 leading-relaxed mb-16">
-                    By the end of 2026, Veganova aims to be the first carbon-negative meal delivery service globally. We are investing in regenerative agriculture and vertical urban farms to ensure your food heals the planet.
-                </p>
-                <div class="grid md:grid-cols-2 gap-12 text-left">
-                    <div class="flex items-start gap-6 bg-white/5 p-10 rounded-[40px] border border-white/10 backdrop-blur-sm">
-                        <div class="w-14 h-14 bg-secondary rounded-[20px] shrink-0 flex items-center justify-center text-primary">
-                            <i data-lucide="map-pin" class="w-7 h-7"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-black mb-2">Local Sourcing</h4>
-                            <p class="text-white/60 text-sm">85% of our produce is sourced within 50 miles of our kitchen hubs.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-6 bg-white/5 p-10 rounded-[40px] border border-white/10 backdrop-blur-sm">
-                        <div class="w-14 h-14 bg-secondary rounded-[20px] shrink-0 flex items-center justify-center text-primary">
-                            <i data-lucide="wind" class="w-7 h-7"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-black mb-2">Clean Energy</h4>
-                            <p class="text-white/60 text-sm">Our kitchens run on 100% wind and solar-generated electricity.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Section -->
-        <section class="py-24 border-y dark:border-slate-800 bg-white dark:bg-slate-900">
-            <div class="container">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-                    <div class="reveal-on-scroll">
-                        <span class="block text-5xl font-black text-primary dark:text-white mb-2">500k+</span>
-                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Meals Delivered</span>
-                    </div>
-                    <div class="reveal-on-scroll reveal-delay-1">
-                        <span class="block text-5xl font-black text-primary dark:text-white mb-2">2026</span>
-                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Vision Realized</span>
-                    </div>
-                    <div class="reveal-on-scroll reveal-delay-2">
-                        <span class="block text-5xl font-black text-primary dark:text-white mb-2">12</span>
-                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Awarded Chefs</span>
-                    </div>
-                    <div class="reveal-on-scroll reveal-delay-3">
-                        <span class="block text-5xl font-black text-primary dark:text-white mb-2">100%</span>
-                        <span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Sustainable</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team Quote -->
-        <section class="py-32 px-6">
-            <div class="container text-center max-w-4xl mx-auto">
-                <i data-lucide="quote" class="w-16 h-16 text-secondary/20 mx-auto mb-12"></i>
-                <h2 class="text-4xl md:text-5xl font-black font-heading dark:text-white leading-tight mb-12 reveal-on-scroll">
-                    "We are not just a meal delivery service. We are a community of people who believe that the future of food is plant-based, planet-positive, and incredibly delicious."
-                </h2>
-                <div class="flex items-center justify-center gap-4 reveal-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop" class="w-16 h-16 rounded-2xl object-cover shadow-lg" alt="Founder">
-                    <div class="text-left">
-                        <span class="block font-black dark:text-white">Alex Sterling</span>
-                        <span class="text-slate-500 text-sm">Co-founder & CEO</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 pt-24 pb-12 px-6 text-white overflow-hidden">
+    <!-- Page Hero -->
+    <section class="page-hero"
+        style="background-image: url('https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg');">
         <div class="container">
-            <div class="grid lg:grid-cols-4 gap-16 mb-20">
-                <div class="lg:col-span-2">
-                    <a href="index.html" class="flex items-center gap-2 mb-8">
-                        <img src="assets/img/logo-icon.svg" class="w-10 h-10" alt="Veganova Icon">
-                        <span class="text-2xl font-black font-heading tracking-tight uppercase">Veganova</span>
-                    </a>
-                    <p class="text-slate-400 text-lg max-w-md mb-10 leading-relaxed">
-                        Redefining plant-based nutrition for the modern era. Join the 2026 vegan revolution and eat better every single day.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
-                            <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
-                            <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center hover:bg-secondary transition-all hover:-translate-y-1">
-                             <svg class="w-5 h-5 fill-current text-white x-icon" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"/></svg>
-                        </a>
+            <h1 class="animate-fadeIn">Our Story & Mission</h1>
+            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Discover the passion behind VeganBox and how we're
+                making sustainable, healthy eating accessible to everyone.</p>
+        </div>
+    </section>
+
+    <section class="section-padding pt-0">
+        <div class="container">
+
+            <div class="hero-grid my-md">
+                <div class="about-content animate-fadeIn">
+                    <h2 class="text-2xl text-secondary mb-md">It Started with a Seed...</h2>
+                    <p class="mb-md">VeganBox was born out of a simple observation: modern life makes healthy eating a
+                        chore. In 2024, our founders, a professional chef and a clinical nutritionist, noticed that even
+                        the most health-conscious people were struggling to find the time to source and prepare
+                        high-quality, plant-based meals.</p>
+                    <p class="mb-md">We set out to create more than just a delivery service. We wanted to build a bridge
+                        between sustainable organic farming and the urban kitchen. Every dish we deliver represents a
+                        commitment to environmental stewardship and personal vitality. We believe that when you eat
+                        better, you live better—not just for yourself, but for the world.</p>
+                    <div class="d-flex flex-column gap-sm my-md fw-semibold text-primary">
+                        <span><i class="fas fa-check-circle mr-sm"></i> 100% Ethical Sourcing & Fair Trade</span>
+                        <span><i class="fas fa-check-circle mr-sm"></i> Zero-Waste Compostable Packaging</span>
+                        <span><i class="fas fa-check-circle mr-sm"></i> Personalized Nutri-Profiling</span>
                     </div>
                 </div>
-
-                <div>
-                    <h5 class="text-xl font-bold font-heading mb-8">Quick Links</h5>
-                    <ul class="space-y-4">
-                        <li><a href="meals.html" class="text-slate-400 hover:text-secondary transition-colors">Weekly Menu</a></li>
-                        <li><a href="pricing.html" class="text-slate-400 hover:text-secondary transition-colors">Subscription Plans</a></li>
-                        <li><a href="blog.html" class="text-slate-400 hover:text-secondary transition-colors">Healthy Blog</a></li>
-                        <li><a href="about.html" class="text-slate-400 hover:text-secondary transition-colors">Our Mission</a></li>
-                        <li><a href="contact.html" class="text-slate-400 hover:text-secondary transition-colors">Contact Us</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5 class="text-xl font-bold font-heading mb-8">Newsletter</h5>
-                    <p class="text-slate-400 text-sm mb-6">Stay updated with our weekly recipes and discounts.</p>
-                    <form action="#" class="relative">
-                        <input type="email" placeholder="Your email" class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-4 outline-none focus:border-secondary transition-colors">
-                        <button class="absolute right-2 top-2 bottom-2 bg-secondary px-6 rounded-full font-bold">Join</button>
-                    </form>
+                <div class="about-image animate-fadeIn" style="animation-delay: 0.2s;">
+                    <img src="https://images.pexels.com/photos/277253/pexels-photo-277253.jpeg"
+                        alt="Our organic kitchen"
+                        style="border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); width: 100%;">
                 </div>
             </div>
 
-            <div class="pt-12 border-t border-white/5 flex flex-col items-center gap-8 text-sm text-slate-400">
-                <p class="text-center">&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
+            <!-- Vision & Mission -->
+            <div class="grid grid-2 my-3xl gap-xl">
+                <div class="card p-xl bg-primary text-white" style="background: var(--primary);">
+                    <h2 class="text-white mb-md"><i class="fas fa-eye"></i> Our Vision</h2>
+                    <p>To lead the global transition toward sustainable, plant-based living by making ethical choices
+                        the easiest and most delicious ones available to everyone, regardless of their schedule.</p>
+                </div>
+                <div class="card p-xl bg-secondary text-white" style="background: var(--secondary);">
+                    <h2 class="text-white mb-md"><i class="fas fa-bullseye"></i> Our Mission</h2>
+                    <p>To deliver nutritionally complete, chef-prepared organic meals while eliminating food waste and
+                        supporting regenerative agricultural practices across the country.</p>
+                </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="section-padding">
+                <div class="text-center mb-xl">
+                    <h2 class="text-3xl mb-md">Our Core <span class="text-primary">Values</span></h2>
+                </div>
+                <div class="grid grid-3 gap-lg">
+                    <div class="card text-center p-xl shadow-sm">
+                        <div class="step-number mb-md bg-secondary" style="background: var(--secondary);"><i
+                                class="fas fa-leaf"></i></div>
+                        <h3 class="mb-sm">Integrity</h3>
+                        <p class="text-neutral-600 text-sm">We are transparent about every ingredient we source and
+                            every farmer we partner with. If it's not ethical, it's not in the box.</p>
+                    </div>
+                    <div class="card text-center p-xl shadow-sm">
+                        <div class="step-number mb-md"><i class="fas fa-vial"></i></div>
+                        <h3 class="mb-sm">Innovation</h3>
+                        <p class="text-neutral-600 text-sm">We constantly push the boundaries of plant-based culinary
+                            art, using science and creativity to ensure maximum flavor and nutrition.</p>
+                    </div>
+                    <div class="card text-center p-xl shadow-sm">
+                        <div class="step-number mb-md bg-accent" style="background: var(--accent);"><i
+                                class="fas fa-hand-holding-heart"></i></div>
+                        <h3 class="mb-sm">Empathy</h3>
+                        <p class="text-neutral-600 text-sm">We listen to our community, tailoring our service to meet
+                            the evolving needs of busy families and health-conscious individuals.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meet the Team -->
+            <div class="section-padding bg-light" style="border-radius: var(--radius-xl);">
+                <div class="text-center mb-3xl">
+                    <h2 class="text-3xl mb-md">Meet the <span class="text-primary">Visionaries</span></h2>
+                    <p class="max-w-600 mx-auto">A diverse group of culinary experts, nutritionists, and environmental
+                        advocates.</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="images/julianne.png" alt="Dr. Julianne Rivers" class="team-image">
+                        <h4 class="mb-xs">Dr. Julianne Rivers</h4>
+                        <p class="text-primary text-sm fw-bold">Founder & CEO</p>
+                        <p class="text-xs text-neutral-500 mt-xs">A clinical nutritionist with 15 years of passion for
+                            food justice.</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="images/marco.png" alt="Chef Marco Vance" class="team-image">
+                        <h4 class="mb-xs">Chef Marco Vance</h4>
+                        <p class="text-secondary text-sm fw-bold">Executive Chef</p>
+                        <p class="text-xs text-neutral-500 mt-xs">Former Michelin-starred chef turned plant-based
+                            pioneer.</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="images/sana.png" alt="Sana K. Thompson" class="team-image">
+                        <h4 class="mb-xs">Sana K. Thompson</h4>
+                        <p class="text-accent text-sm fw-bold">Sustainability Director</p>
+                        <p class="text-xs text-neutral-500 mt-xs">Expert in regenerative agriculture and zero-waste
+                            logistics.</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="images/david.png" alt="David Chen" class="team-image">
+                        <h4 class="mb-xs">David Chen</h4>
+                        <p class="text-primary text-sm fw-bold">CMO</p>
+                        <p class="text-xs text-neutral-500 mt-xs">Connecting healthy eaters with ethical choices
+                            nationwide.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preperation & Quality -->
+            <div class="section-padding">
+                <div class="text-center mb-xl">
+                    <h2 class="text-3xl mb-md">Professional <span class="text-primary">Preparation</span></h2>
+                    <p class="max-w-600 mx-auto">Every meal undergoes a rigorous quality control process to ensure
+                        safety and peak flavor.</p>
+                </div>
+                <div class="grid grid-2 gap-2xl align-items-center">
+                    <div class="prep-image p-md">
+                        <img src="https://images.pexels.com/photos/4252153/pexels-photo-4252153.jpeg"
+                            alt="Chef preparing meal" class="w-full rounded-xl shadow-lg">
+                    </div>
+                    <div class="prep-content">
+                        <div class="mb-2xl">
+                            <h3 class="mb-sm text-secondary"><i class="fas fa-temperature-high"></i> Precision Cooking
+                            </h3>
+                            <p class="text-neutral-600">We use sous-vide and slow-cooking techniques to preserve the
+                                maximum amount of nutrients and natural enzymes in our vegetables.</p>
+                        </div>
+                        <div class="mb-2xl">
+                            <h3 class="mb-sm text-primary"><i class="fas fa-microscope"></i> Lab Testing</h3>
+                            <p class="text-neutral-600">Our in-house lab tests every batch for freshness and ensures all
+                                dietary claims (organic, gluten-free, etc.) are 100% accurate.</p>
+                        </div>
+                        <div class="mb-2xl">
+                            <h3 class="mb-sm text-accent"><i class="fas fa-shipping-fast"></i> Rapid Delivery</h3>
+                            <p class="text-neutral-600">From our kitchen to your door in under 12 hours. We maintain a
+                                strict cold chain to ensure your meals arrive exactly as the chef intended.</p>
+                        </div>
+                        <div class="mb-0">
+                            <h3 class="mb-sm text-success"><i class="fas fa-apple-alt"></i> Nutritional Excellence</h3>
+                            <p class="text-neutral-600">Every recipe is audited by our board-certified nutritionists to ensure an optimal macro-nutrient profile and maximum bio-availability of essential vitamins.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Index) -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="footer-logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+                <p class="text-neutral-400">Making healthy eating easy and accessible for everyone. Sustainably sourced,
+                    chef-prepared, and nutritionist-approved meals delivered directly to your door.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Menus</h4>
+                <ul>
+                    <li><a href="breakfast.html">Breakfast</a></li>
+                    <li><a href="lunch.html">Lunch</a></li>
+                    <li><a href="dinner.html">Dinner</a></li>
+                    <li><a href="dashboard.html">User Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li class="text-neutral-400"><i class="fas fa-map-marker-alt text-primary"></i> 123 Healthy Way,
+                        Green City</li>
+                    <li class="text-neutral-400"><i class="fas fa-phone text-primary"></i> +1 234 567 890</li>
+                    <li class="text-neutral-400"><i class="fas fa-envelope text-primary"></i> hello@veganbox.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 VeganBox Meal Subscriptions. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/cart-system.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+    <script src="js/main.js"></script>
 </body>
-</html>
 
+</html>
