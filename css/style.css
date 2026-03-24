@@ -1622,3 +1622,36 @@ body.auth-page .back-to-top { display: none !important; }
 @media (max-width: 900px) { .dashboard-content .grid-4 { grid-template-columns: repeat(2, 1fr) !important; } }
 @media (max-width: 480px) { .dashboard-content .grid-4 { grid-template-columns: 1fr !important; } .dashboard-content .grid-2 { grid-template-columns: 1fr !important; } }
 body { overflow-x: hidden !important; width: 100%; position: relative; }
+
+/* Feature Card Custom Backgrounds */
+.feature-card { position: relative; overflow: hidden; }
+.feature-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-size: cover; background-position: center; filter: blur(4px) brightness(0.4); z-index: 1; transition: transform 0.8s ease; }
+.feature-card:hover::before { transform: scale(1.1); }
+.feature-card > * { position: relative; z-index: 2; }
+.card-bg-organic::before { background-image: url('https://images.pexels.com/photos/1114897/pexels-photo-1114897.jpeg'); }
+.card-bg-delivery::before { background-image: url('https://images.pexels.com/photos/4392873/pexels-photo-4392873.jpeg'); }
+.card-bg-nutrition::before { background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg'); }
+
+
+.feature-card { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.feature-card:hover::before, .feature-card:active::before { transform: scale(1.12); }
+
+
+.faq-item { border: 1px solid var(--neutral-200) !important; transition: all 0.3s ease; }
+.faq-question { color: var(--neutral-800) !important; }
+[data-theme='dark'] .faq-question:hover { background: rgba(255, 255, 255, 0.05) !important; }
+
+
+/* Process Step Custom Backgrounds */
+.process-step { position: relative; overflow: hidden; }
+.process-step::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-size: cover; background-position: center; filter: blur(5px) brightness(0.3); z-index: 1; transition: transform 1s ease; }
+.process-step:hover::before { transform: scale(1.15); }
+.process-step > * { position: relative; z-index: 2; }
+.process-bg-harvest::before { background-image: url('https://images.pexels.com/photos/2255459/pexels-photo-2255459.jpeg'); }
+.process-bg-chef::before { background-image: url('https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg'); }
+.process-bg-delivery::before { background-image: url('https://images.pexels.com/photos/4392813/pexels-photo-4392813.jpeg'); }
+
+
+.text-white { color: white !important; }
+.text-neutral-200 { color: var(--neutral-200) !important; }
+
