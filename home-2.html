@@ -92,19 +92,22 @@
         </nav>
     </div>
 
-    <!-- Home 2 Hero: Full Width Overlay Style -->
-    <section class="hero-v2"
-        style="background-image: url('https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg');">
+    <!-- Hero Section: Centered Style (Matching About Page Layout) -->
+    <section class="page-hero" style="background-image: url('https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg');">
         <div class="container">
-            <div class="hero-v2-card animate-fadeIn">
-                <span class="badge text-secondary mb-sm fw-bold">THE ETHICAL CHOICE</span>
-                <h1>Nourish Your <span class="text-primary">Body & Soul</span></h1>
-                <p class="text-lg my-md">Chef-crafted healthy meals delivered directly to your doorstep. Experience the
-                    peak of fresh, ethical, and delicious eating.</p>
+            <div class="animate-fadeIn">
+                <span class="badge text-primary mb-sm fw-bold" style="background: rgba(16, 185, 129, 0.2);">CHEF PREPARED</span>
+                <h1 class="mb-md">The Ethical Choice for <span class="text-secondary">Healthy Eating</span></h1>
+                <p class="text-xl mb-xl mx-auto" style="max-width: 700px;">Experience the peak of fresh, ethical, and delicious eating with our chef-crafted meal plans. Delivered daily, loved by thousands.</p>
                 <div class="d-flex gap-md justify-content-center">
-                    <a href="services.html" class="btn btn-primary">Get Started</a>
-                    <a href="about.html" class="btn btn-outline" style="border-color: white; color: white;">Our
-                        Story</a>
+                    <a href="signup.html" class="btn btn-primary">Join the Movement</a>
+                    <a href="pricing.html" class="btn btn-outline" style="border-color: white; color: white;">View Plans</a>
+                </div>
+                <div class="hero-v2-trust mt-xl justify-content-center" style="color: white; opacity: 0.9;">
+                    <div class="d-flex gap-xs mr-sm">
+                        <i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i><i class="fas fa-star text-secondary"></i>
+                    </div>
+                    <span>Trusted by 10,000+ Happy Eaters</span>
                 </div>
             </div>
         </div>
@@ -112,22 +115,21 @@
 
     <!-- Content Section: Sustainability -->
     <section class="section-padding" style="background: var(--neutral-100);">
-        <div class="container grid grid-2 align-items-center">
-            <div class="content-image">
-                <img src="https://images.pexels.com/photos/6970095/pexels-photo-6970095.jpeg"
-                    alt="Happy person eating healthy meal" class="img-fluid rounded-xl shadow-lg">
+        <div class="container grid grid-2 align-items-stretch">
+            <div class="content-image animate-fadeIn">
+                <img src="https://images.pexels.com/photos/6970095/pexels-photo-6970095.jpeg" alt="Happy person eating healthy meal" class="shadow-lg">
             </div>
-            <div class="content-text p-xl">
+            <div class="content-text p-xl animate-fadeIn" style="animation-delay: 0.1s;">
                 <h2 class="text-3xl mb-md">Convenience Without <span class="text-primary">Compromise</span></h2>
-                <p class="mb-md">We know you're busy. We also know you care about what you eat. VeganBox brings you the
-                    best of both worlds: nutritionist-approved meals that take minutes to prepare, but satisfy your
-                    soul.</p>
-                <ul class="d-flex flex-column gap-sm mb-xl">
-                    <li><i class="fas fa-check-circle text-primary mr-sm"></i> Personalized meal plans</li>
-                    <li><i class="fas fa-check-circle text-primary mr-sm"></i> Zero-waste biodegradable packaging</li>
-                    <li><i class="fas fa-check-circle text-primary mr-sm"></i> Cancel or skip any week easily</li>
-                </ul>
-                <a href="services.html" class="btn btn-primary shadow-lg">Explore Plans</a>
+                <p class="mb-md">We know you're busy. We also know you care about what you eat. VeganBox brings you the best of both worlds: nutritionist-approved meals that take minutes to prepare, but satisfy your soul.</p>
+                <div class="d-flex flex-column gap-sm mb-xl">
+                    <span class="d-flex align-items-center gap-xs"><i class="fas fa-check-circle text-primary"></i> Personalized meal plans</span>
+                    <span class="d-flex align-items-center gap-xs"><i class="fas fa-check-circle text-primary"></i> Zero-waste biodegradable packaging</span>
+                    <span class="d-flex align-items-center gap-xs"><i class="fas fa-check-circle text-primary"></i> Cancel or skip any week easily</span>
+                </div>
+                <div>
+                    <a href="services.html" class="btn btn-primary shadow-lg">Explore Plans</a>
+                </div>
             </div>
         </div>
     </section>
