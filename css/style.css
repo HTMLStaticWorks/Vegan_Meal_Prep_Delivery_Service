@@ -145,6 +145,19 @@ button {
 .text-danger { color: var(--danger); }
 .text-success { color: var(--success); }
 .text-warning { color: var(--warning); }
+.text-neutral-500 { color: var(--neutral-500) !important; }
+.text-neutral-600 { color: var(--neutral-600) !important; }
+
+/* Background Utilities */
+.bg-primary { background-color: var(--primary) !important; }
+.bg-secondary { background-color: var(--secondary) !important; }
+.bg-accent { background-color: var(--accent) !important; }
+.bg-success { background-color: var(--success) !important; }
+.bg-warning { background-color: var(--warning) !important; }
+.bg-danger { background-color: var(--danger) !important; }
+.bg-light { background-color: var(--neutral-100) !important; }
+.bg-neutral-200 { background-color: var(--neutral-200) !important; }
+.bg-neutral-300 { background-color: var(--neutral-300) !important; }
 .text-center { text-align: center; }
 .text-sm { font-size: 0.875rem; }
 .text-lg { font-size: 1.125rem; }
@@ -890,7 +903,7 @@ header {
 /* Dashboard Styles */
 .dashboard-container {
     display: grid;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 300px 1fr;
     gap: var(--spacing-xl); /* Balanced gap */
     padding: var(--spacing-xl) 0;
     align-items: start;
@@ -1654,4 +1667,41 @@ body { overflow-x: hidden !important; width: 100%; position: relative; }
 
 .text-white { color: white !important; }
 .text-neutral-200 { color: var(--neutral-200) !important; }
+
+
+/* About Page Value Card Custom Backgrounds */
+.value-bg-integrity::before { background-image: url('https://images.pexels.com/photos/2255459/pexels-photo-2255459.jpeg'); }
+.value-bg-innovation::before { background-image: url('https://images.pexels.com/photos/256381/pexels-photo-256381.jpeg'); }
+.value-bg-empathy::before { background-image: url('https://images.pexels.com/photos/45842/human-hand-shaking-hands-trust-solidarity-45842.jpeg'); }
+
+.value-bg-integrity, .value-bg-innovation, .value-bg-empathy { position: relative; overflow: hidden; }
+.value-bg-integrity::before, .value-bg-innovation::before, .value-bg-empathy::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-size: cover; background-position: center; filter: blur(5px) brightness(0.3); z-index: 1; transition: transform 0.8s ease; }
+.value-bg-integrity:hover::before, .value-bg-innovation:hover::before, .value-bg-empathy:hover::before { transform: scale(1.1); }
+.value-bg-integrity > *, .value-bg-innovation > *, .value-bg-empathy > * { position: relative; z-index: 2; }
+
+
+/* Fix Value Card Consistency */
+.value-bg-integrity p, .value-bg-innovation p, .value-bg-empathy p { color: #E2E8F0 !important; }
+.value-bg-empathy::before { background-image: url('https://images.pexels.com/photos/463684/pexels-photo-463684.jpeg') !important; }
+
+
+/* Fix Landing page feature card contrast */
+.feature-card p { color: #E2E8F0 !important; }
+
+
+/* Dashboard Mobile Spacing Fixes */
+@media (max-width: 768px) {
+    .dashboard-container { padding: var(--spacing-md) 0 !important; }
+    .dashboard-sidebar.responsive-sidebar { margin-bottom: var(--spacing-md) !important; padding: var(--spacing-sm) !important; }
+    .dashboard-content .mb-xl { margin-bottom: var(--spacing-lg) !important; }
+    .dashboard-content .grid-4 { gap: var(--spacing-sm) !important; }
+    .dashboard-content .card { padding: var(--spacing-md) !important; }
+    .dashboard-content section.card { padding: var(--spacing-md) !important; }
+    .dashboard-content .grid-2 { gap: var(--spacing-sm) !important; }
+}
+
+/* Fix Dashboard Contrast in Dark Mode */
+[data-theme="dark"] .text-neutral-500 { color: var(--neutral-500) !important; }
+[data-theme="dark"] .selected-meal-item.bg-light { background-color: var(--neutral-200) !important; }
+[data-theme="dark"] .card { border: 1px solid rgba(255, 255, 255, 0.05); }
 
