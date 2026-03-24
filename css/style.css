@@ -391,7 +391,7 @@ header {
 .logo span {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--neutral-900);
+    color: var(--primary);
 }
 
 .nav-links {
@@ -901,13 +901,13 @@ footer p {
 }
 
 footer .logo span, .footer-logo span {
-    color: var(--neutral-900);
+    color: var(--primary);
     font-size: 1.5rem;
     font-weight: 800;
 }
 
 [data-theme="dark"] footer .logo span, [data-theme="dark"] .footer-logo span {
-    color: #FFFFFF;
+    color: var(--primary);
 }
 
 .footer-links h4 {
