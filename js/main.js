@@ -84,21 +84,40 @@ document.addEventListener('DOMContentLoaded', () => {
     /*                               Hamburger Menu                               */
     /* -------------------------------------------------------------------------- */
     const hamburger = document.getElementById('hamburger');
+    const dashboardHamburger = document.getElementById('dashboard-hamburger');
     const mobileNav = document.getElementById('mobile-nav');
+    const dashboardSidebar = document.querySelector('.dashboard-sidebar');
     const mobileOverlay = document.getElementById('mobile-overlay');
+    const dashboardOverlay = document.getElementById('dashboard-overlay');
     const closeMenu = document.getElementById('close-menu');
 
+    // Site Hamburger
     if (hamburger && mobileNav && mobileOverlay) {
         const toggleMenu = () => {
             mobileNav.classList.toggle('active');
             mobileOverlay.classList.toggle('active');
             hamburger.classList.toggle('active');
+            document.body.classList.toggle('menu-open', mobileNav.classList.contains('active'));
             document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
         };
 
         hamburger.addEventListener('click', toggleMenu);
         mobileOverlay.addEventListener('click', toggleMenu);
         if (closeMenu) closeMenu.addEventListener('click', toggleMenu);
+    }
+
+    // Dashboard Hamburger
+    if (dashboardHamburger && dashboardSidebar && (dashboardOverlay || mobileOverlay)) {
+        const overlay = dashboardOverlay || mobileOverlay;
+        const toggleDashboardSidebar = () => {
+            dashboardSidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            dashboardHamburger.classList.toggle('active');
+            document.body.style.overflow = dashboardSidebar.classList.contains('active') ? 'hidden' : '';
+        };
+
+        dashboardHamburger.addEventListener('click', toggleDashboardSidebar);
+        overlay.addEventListener('click', toggleDashboardSidebar);
     }
 
     // Dropdown Toggle for Mobile
