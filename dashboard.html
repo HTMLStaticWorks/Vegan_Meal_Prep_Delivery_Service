@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | VeganBox - Manage Your Meals</title>
-    <meta name="description" content="Manage your meal subscription, update dietary preferences, and track your weekly deliveries.">
+    <meta name="description"
+        content="Manage your meal subscription, update dietary preferences, and track your weekly deliveries.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
+
 <body>
-    
+
     <!-- Dashboard Top Header (Replacing Global Header) -->
     <header class="dashboard-header border-bottom">
         <div class="container d-flex justify-content-between align-items-center py-sm">
-            <a href="index.html" class="logo"><img src="favicon.png" alt="VeganBox" onerror="this.src='favicon.png'"> <span>VeganBox</span></a>
-            <div class="d-flex align-items-center gap-md">
-                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
-                <button id="dashboard-hamburger" class="hamburger d-none d-tablet-only" aria-label="Open Sidebar"><i class="fas fa-bars"></i></button>
+            <a href="index.html" class="logo"><img src="favicon.png" alt="VeganBox" onerror="this.src='favicon.png'">
+                <span>VeganBox</span></a>
+            <div class="nav-actions align-items-center">
+                <button id="rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                        class="fas fa-moon"></i></button>
+                <button id="dashboard-hamburger" class="hamburger" aria-label="Open Sidebar"><i
+                        class="fas fa-bars"></i></button>
             </div>
         </div>
     </header>
-    
+
     <div class="mobile-overlay" id="dashboard-overlay"></div>
-
-
-    
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="d-flex justify-content-between align-items-center px-md py-sm border-bottom">
+            
+            <div class="d-flex gap-sm">
+                <button id="mobile-rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
+                <button id="mobile-theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                        class="fas fa-moon"></i></button>
+                <button id="close-menu" class="btn-icon" aria-label="Close Menu"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <nav class="nav-links d-flex flex-column p-md">
+            <div class="dropdown mobile-dropdown">
+                <a href="javascript:void(0)" class="active">Home <i class="fas fa-chevron-down text-sm"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="index.html">Home 1</a></li>
+                    <li><a href="home-2.html">Home 2</a></li>
+                </ul>
+            </div>
             <a href="about.html">About</a>
             <a href="breakfast.html">Breakfast</a>
             <a href="lunch.html">Lunch</a>
@@ -43,19 +65,25 @@
     </div>
 
     <!-- Page Hero -->
-    <section class="page-hero" style="background-image: url('https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg'); min-height: 250px;">
+    <section class="page-hero"
+        style="background-image: url('https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg'); min-height: 250px;">
         <div class="container">
             <h1 class="animate-fadeIn">Your Dashboard</h1>
-            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Manage your subscriptions, dietary preferences, and account settings in one place.</p>
+            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Manage your subscriptions, dietary preferences, and
+                account settings in one place.</p>
         </div>
     </section>
 
-    <div class="container pt-0">
+    <div class="container-fluid pt-0 px-md px-lg-xl">
         <div class="dashboard-container">
             <!-- Sidebar -->
             <aside class="dashboard-sidebar responsive-sidebar">
+                <div class="mb-xl">
+                    <div class="logo-placeholder" style="width: 32px; height: 32px;"></div>
+                </div>
                 <div class="user-profile mb-2xl text-center">
-                    <div class="avatar mx-auto mb-md" style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--neutral-100); border-radius: 50%; color: var(--primary);">
+                    <div class="avatar mx-auto mb-md"
+                        style="width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; background: var(--neutral-100); border-radius: 50%; color: var(--primary);">
                         <i class="fas fa-user-circle" style="font-size: 4rem;"></i>
                     </div>
                     <h3 class="text-xl mb-xs">Alex Johnson</h3>
@@ -65,9 +93,18 @@
                     <a href="javascript:void(0)" class="sidebar-link active"><i class="fas fa-columns"></i> Overview</a>
                     <a href="javascript:void(0)" class="sidebar-link"><i class="fas fa-concierge-bell"></i> Weekly Meals</a>
                     <a href="javascript:void(0)" class="sidebar-link"><i class="fas fa-calendar-alt"></i> Skip Weeks</a>
-                    <a href="javascript:void(0)" class="sidebar-link"><i class="fas fa-heartbeat"></i> Preferences</a>
+                    <a href="#preferences" class="sidebar-link"><i class="fas fa-heartbeat"></i> Preferences</a>
                     <a href="javascript:void(0)" class="sidebar-link"><i class="fas fa-credit-card"></i> Subscription</a>
                     <a href="javascript:void(0)" class="sidebar-link"><i class="fas fa-cog"></i> Settings</a>
+                    <hr class="my-md" style="border-color: var(--neutral-200);">
+                    <a href="index.html" class="sidebar-link"><i class="fas fa-home"></i> Home</a>
+                    <a href="about.html" class="sidebar-link"><i class="fas fa-info-circle"></i> About</a>
+                    <a href="breakfast.html" class="sidebar-link"><i class="fas fa-coffee"></i> Breakfast</a>
+                    <a href="lunch.html" class="sidebar-link"><i class="fas fa-utensils"></i> Lunch</a>
+                    <a href="dinner.html" class="sidebar-link"><i class="fas fa-moon"></i> Dinner</a>
+                    <a href="blog.html" class="sidebar-link"><i class="fas fa-book-open"></i> Blog</a>
+                    <a href="pricing.html" class="sidebar-link"><i class="fas fa-dollar-sign"></i> Pricing</a>
+                    <a href="contact.html" class="sidebar-link"><i class="fas fa-envelope"></i> Contact</a>
                     <hr class="my-md" style="border-color: var(--neutral-200);">
                     <a href="index.html" class="sidebar-link text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </nav>
@@ -107,8 +144,10 @@
                 <!-- Meal Progress Tracker -->
                 <section class="card mb-xl p-xl">
                     <h2 class="text-xl mb-md">Meal Progress Tracker</h2>
-                    <div class="progress-container bg-neutral-100 rounded-full h-md mb-sm overflow-hidden" style="height: 12px; background: var(--neutral-200);">
-                        <div class="progress-bar bg-primary h-full" style="width: 60%; height: 100%; background: var(--primary);"></div>
+                    <div class="progress-container bg-neutral-100 rounded-full h-md mb-sm overflow-hidden"
+                        style="height: 12px; background: var(--neutral-200);">
+                        <div class="progress-bar bg-primary h-full"
+                            style="width: 60%; height: 100%; background: var(--primary);"></div>
                     </div>
                     <div class="d-flex justify-content-between text-xs text-neutral-500">
                         <span>6 Meals Consumed</span>
@@ -145,8 +184,10 @@
                         <button class="btn btn-outline btn-sm">Edit Plan</button>
                     </div>
                     <div class="grid grid-2 gap-md">
-                        <div class="selected-meal-item d-flex align-items-center gap-md p-sm border-rounded bg-light shadow-sm">
-                            <img src="images/breakfast.png" alt="Meal" style="width: 60px; height: 60px; border-radius: var(--radius-md); object-fit: cover;">
+                        <div
+                            class="selected-meal-item d-flex align-items-center gap-md p-sm border-rounded bg-light shadow-sm">
+                            <img src="images/breakfast.png" alt="Meal"
+                                style="width: 60px; height: 60px; border-radius: var(--radius-md); object-fit: cover;">
                             <div class="flex-1">
                                 <h4 class="text-sm">Avocado Garden Toast</h4>
                                 <div class="d-flex gap-sm text-xs text-neutral-500">
@@ -157,8 +198,10 @@
                             </div>
                             <span class="badge bg-success text-white text-xs">Delivered</span>
                         </div>
-                        <div class="selected-meal-item d-flex align-items-center gap-md p-sm border-rounded bg-light shadow-sm">
-                            <img src="images/lunch.png" alt="Meal" style="width: 60px; height: 60px; border-radius: var(--radius-md); object-fit: cover;">
+                        <div
+                            class="selected-meal-item d-flex align-items-center gap-md p-sm border-rounded bg-light shadow-sm">
+                            <img src="images/lunch.png" alt="Meal"
+                                style="width: 60px; height: 60px; border-radius: var(--radius-md); object-fit: cover;">
                             <div class="flex-1">
                                 <h4 class="text-sm">Mediterranean Quinoa</h4>
                                 <div class="d-flex gap-sm text-xs text-neutral-500">
@@ -169,8 +212,10 @@
                             </div>
                             <span class="badge bg-secondary text-white text-xs">In Transit</span>
                         </div>
-                        <div class="selected-meal-item d-flex align-items-center gap-md p-sm border-rounded bg-light shadow-sm">
-                            <img src="images/dinner.png" alt="Meal" style="width: 60px; height: 60px; border-radius: var(--radius-md); object-fit: cover;">
+                        <div
+                            class="selected-meal-item d-flex align-items-center gap-md p-sm border-rounded bg-light shadow-sm">
+                            <img src="images/dinner.png" alt="Meal"
+                                style="width: 60px; height: 60px; border-radius: var(--radius-md); object-fit: cover;">
                             <div class="flex-1">
                                 <h4 class="text-sm">Braised Miso Tofu</h4>
                                 <div class="d-flex gap-sm text-xs text-neutral-500">
@@ -183,8 +228,10 @@
                         </div>
                     </div>
                     <div class="mt-xl text-center">
-                        <p class="text-sm text-neutral-500 mb-md">Need a break? You can skip next week's delivery before Thursday.</p>
-                        <button class="btn btn-danger btn-sm" onclick="showToast('Next week skipped!', 'warning')">Skip Next Week</button>
+                        <p class="text-sm text-neutral-500 mb-md">Need a break? You can skip next week's delivery before
+                            Thursday.</p>
+                        <button class="btn btn-danger btn-sm" onclick="showToast('Next week skipped!', 'warning')">Skip
+                            Next Week</button>
                     </div>
                 </section>
 
@@ -214,42 +261,43 @@
                         </div>
                         <div class="form-group mt-md">
                             <label for="dislikes">Food Dislikes</label>
-                            <textarea id="dislikes" class="form-control" rows="2" placeholder="e.g., mushrooms, olives..."></textarea>
+                            <textarea id="dislikes" class="form-control" rows="2"
+                                placeholder="e.g., mushrooms, olives..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm">Save Preferences</button>
                     </form>
-                <!-- Subscription Details Section -->
-                <section class="card p-xl mt-xl">
-                    <h2 class="text-xl mb-md">Subscription Details</h2>
-                    <div class="grid grid-2">
-                        <div class="detail-item">
-                            <h4 class="text-sm text-neutral-500">Plan Type</h4>
-                            <p class="fw-bold">Active Vegan (10 Meals/Week)</p>
+                    <!-- Subscription Details Section -->
+                    <section class="card p-xl mt-xl">
+                        <h2 class="text-xl mb-md">Subscription Details</h2>
+                        <div class="grid grid-2">
+                            <div class="detail-item">
+                                <h4 class="text-sm text-neutral-500">Plan Type</h4>
+                                <p class="fw-bold">Active Vegan (10 Meals/Week)</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4 class="text-sm text-neutral-500">Next Billing Date</h4>
+                                <p class="fw-bold">April 1, 2026</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4 class="text-sm text-neutral-500">Payment Method</h4>
+                                <p class="fw-bold"><i class="fab fa-cc-visa"></i> Visa ending in 4242</p>
+                            </div>
+                            <div class="detail-item">
+                                <h4 class="text-sm text-neutral-500">Delivery Address</h4>
+                                <p class="fw-bold">123 Healthy Way, Green City</p>
+                            </div>
                         </div>
-                        <div class="detail-item">
-                            <h4 class="text-sm text-neutral-500">Next Billing Date</h4>
-                            <p class="fw-bold">April 1, 2026</p>
+                        <div class="mt-md d-flex gap-sm">
+                            <button class="btn btn-outline btn-sm">Upgrade Plan</button>
+                            <button class="btn btn-outline btn-sm text-danger">Cancel Subscription</button>
                         </div>
-                        <div class="detail-item">
-                            <h4 class="text-sm text-neutral-500">Payment Method</h4>
-                            <p class="fw-bold"><i class="fab fa-cc-visa"></i> Visa ending in 4242</p>
-                        </div>
-                        <div class="detail-item">
-                            <h4 class="text-sm text-neutral-500">Delivery Address</h4>
-                            <p class="fw-bold">123 Healthy Way, Green City</p>
-                        </div>
-                    </div>
-                    <div class="mt-md d-flex gap-sm">
-                        <button class="btn btn-outline btn-sm">Upgrade Plan</button>
-                        <button class="btn btn-outline btn-sm text-danger">Cancel Subscription</button>
-                    </div>
-                </section>
+                    </section>
             </main>
         </div>
     </div>
 
     <!-- Footer -->
-    
+
     <footer class="py-md border-top">
         <div class="container text-center">
             <p class="text-xs text-neutral-500">&copy; 2026 VeganBox Dashboard. All Rights Reserved.</p>
@@ -258,4 +306,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>

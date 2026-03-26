@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | VeganBox - Get in Touch</title>
-    <meta name="description" content="Have questions? Reach out to us. We're here to help you on your healthy meal subscription journey.">
+    <meta name="description"
+        content="Have questions? Reach out to us. We're here to help you on your healthy meal subscription journey.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
+
 <body>
     <!-- Header (Same as Index) -->
     <header>
@@ -16,7 +19,7 @@
             <div class="nav-left">
                 <a href="index.html" class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></a>
             </div>
-            
+
             <nav class="nav-links">
                 <div class="dropdown">
                     <a href="javascript:void(0)">Home 1 <i class="fas fa-chevron-down text-sm"></i></a>
@@ -38,14 +41,16 @@
                 <a href="contact.html" class="active">Contact</a>
                 <a href="dashboard.html">Dashboard</a>
             </nav>
-            
+
             <div class="nav-right">
                 <div class="nav-actions">
                     <button id="rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
-                    <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+                    <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                            class="fas fa-moon"></i></button>
                     <a href="login.html" class="btn btn-outline btn-sm">Login</a>
                     <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
-                    <button id="hamburger" class="hamburger d-mobile-only" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+                    <button id="hamburger" class="hamburger d-mobile-only" aria-label="Open Menu"><i
+                            class="fas fa-bars"></i></button>
                 </div>
             </div>
         </div>
@@ -55,10 +60,12 @@
     <div class="mobile-overlay" id="mobile-overlay"></div>
     <div class="mobile-nav" id="mobile-nav">
         <div class="d-flex justify-content-between align-items-center px-md py-sm border-bottom">
-            <div class="logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
+            
             <div class="d-flex gap-sm">
                 <button id="mobile-rtl-toggle" class="btn-icon fw-bold text-xs" aria-label="Toggle RTL">RTL</button>
-                <button id="mobile-theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i class="fas fa-moon"></i></button>
+                <button id="mobile-theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i
+                        class="fas fa-moon"></i></button>
+                <button id="close-menu" class="btn-icon" aria-label="Close Menu"><i class="fas fa-times"></i></button>
             </div>
         </div>
         <nav class="nav-links d-flex flex-column p-md">
@@ -85,10 +92,12 @@
     </div>
 
     <!-- Page Hero -->
-    <section class="page-hero" style="background-image: url('https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg');">
+    <section class="page-hero"
+        style="background-image: url('https://images.pexels.com/photos/1640776/pexels-photo-1640776.jpeg');">
         <div class="container">
             <h1 class="animate-fadeIn">Get in Touch</h1>
-            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Have questions about our meal plans or need support with your subscription? Our team is here to help.</p>
+            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Have questions about our meal plans or need support
+                with your subscription? Our team is here to help.</p>
         </div>
     </section>
 
@@ -102,11 +111,13 @@
                     <form id="contact-form" action="https://formspree.io/f/placeholder" method="POST">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="John Doe"
+                                required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="john@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
@@ -119,11 +130,12 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea id="message" name="message" class="form-control" rows="10" placeholder="How can we help you?" required></textarea>
+                            <textarea id="message" name="message" class="form-control" rows="10"
+                                placeholder="How can we help you?" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-full">Send Message</button>
                         <p class="text-xs text-neutral-500 mt-md text-center">
-                            <i class="fas fa-shield-halved text-primary mr-xs"></i> 
+                            <i class="fas fa-shield-halved text-primary mr-xs"></i>
                             Your information is 100% secure. We never share your details with third parties.
                         </p>
                     </form>
@@ -162,17 +174,22 @@
                     <div class="card mb-md p-xl bg-light" style="border-left: 4px solid var(--primary);">
                         <h2 class="text-xl mb-md"><i class="fas fa-clock text-primary"></i> Working Hours</h2>
                         <ul class="text-sm text-neutral-600 d-flex flex-column gap-xs">
-                            <li class="d-flex justify-content-between"><span>Monday - Friday:</span> <span class="fw-bold">08:00 AM - 08:00 PM</span></li>
-                            <li class="d-flex justify-content-between"><span>Saturday:</span> <span class="fw-bold">09:00 AM - 04:00 PM</span></li>
-                            <li class="d-flex justify-content-between"><span>Sunday:</span> <span class="fw-bold text-secondary">Closed (Prep Day)</span></li>
+                            <li class="d-flex justify-content-between"><span>Monday - Friday:</span> <span
+                                    class="fw-bold">08:00 AM - 08:00 PM</span></li>
+                            <li class="d-flex justify-content-between"><span>Saturday:</span> <span
+                                    class="fw-bold">09:00 AM - 04:00 PM</span></li>
+                            <li class="d-flex justify-content-between"><span>Sunday:</span> <span
+                                    class="fw-bold text-secondary">Closed (Prep Day)</span></li>
                         </ul>
-                        <p class="mt-md text-xs text-neutral-500 italic">Our digital support team responds to tickets within 24 hours including weekends.</p>
+                        <p class="mt-md text-xs text-neutral-500 italic">Our digital support team responds to tickets
+                            within 24 hours including weekends.</p>
                     </div>
 
                     <!-- Regional Coverage -->
                     <div class="card p-xl">
                         <h2 class="text-xl mb-md">Regional Coverage</h2>
-                        <p class="text-sm text-neutral-600 mb-md">We currently deliver fresh to all zones within 50 miles of Green City center. Our eco-fleet operates 6 days a week.</p>
+                        <p class="text-sm text-neutral-600 mb-md">We currently deliver fresh to all zones within 50
+                            miles of Green City center. Our eco-fleet operates 6 days a week.</p>
                         <div class="grid grid-2 text-xs fw-bold text-primary">
                             <span><i class="fas fa-map-pin"></i> North GC</span>
                             <span><i class="fas fa-map-pin"></i> West Ridge</span>
@@ -186,15 +203,13 @@
 
             <!-- Full Width Map Section -->
             <div class="mt-2xl animate-fadeIn" style="animation-delay: 0.2s;">
-                <h2 class="text-xl text-center mb-md"><i class="fas fa-map-marked-alt text-primary"></i> Our Location</h2>
-                <div class="card p-0 overflow-hidden shadow-sm mx-auto" style="border: 1px solid var(--neutral-300); max-width: 1000px;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280821873!2d-74.11976373946229!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1711259954321!5m2!1sen!2sin" 
-                        width="100%" 
-                        height="400" 
-                        style="border:0; display: block;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
+                <h2 class="text-xl text-center mb-md"><i class="fas fa-map-marked-alt text-primary"></i> Our Location
+                </h2>
+                <div class="card p-0 overflow-hidden shadow-sm mx-auto"
+                    style="border: 1px solid var(--neutral-300); max-width: 1000px;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280821873!2d-74.11976373946229!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1711259954321!5m2!1sen!2sin"
+                        width="100%" height="400" style="border:0; display: block;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
@@ -211,16 +226,21 @@
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">What is the cutoff for weekly modifications? <i class="fas fa-plus"></i></div>
-                    <div class="faq-answer">All changes to your weekly menu or pause requests must be submitted by Thursday 11:59 PM for the following week's delivery.</div>
+                    <div class="faq-question">What is the cutoff for weekly modifications? <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">All changes to your weekly menu or pause requests must be submitted by
+                        Thursday 11:59 PM for the following week's delivery.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Do you offer corporate or bulk discounts? <i class="fas fa-plus"></i></div>
-                    <div class="faq-answer">Yes, we have specialized plans for offices and community centers. Please select 'Partnership' in the contact form for a custom quote.</div>
+                    <div class="faq-question">Do you offer corporate or bulk discounts? <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">Yes, we have specialized plans for offices and community centers. Please
+                        select 'Partnership' in the contact form for a custom quote.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">How do I report a missing item? <i class="fas fa-plus"></i></div>
-                    <div class="faq-answer">Please use the 'Subscription Issues' category in the form above. Include your Order ID and our team will issue a refund or replacement within 4 hours.</div>
+                    <div class="faq-answer">Please use the 'Subscription Issues' category in the form above. Include
+                        your Order ID and our team will issue a refund or replacement within 4 hours.</div>
                 </div>
             </div>
         </div>
@@ -231,7 +251,8 @@
         <div class="container footer-grid">
             <div class="footer-info">
                 <div class="footer-logo"><img src="favicon.png" alt="VeganBox"> <span>VeganBox</span></div>
-                <p class="text-neutral-400">Making healthy eating easy and accessible for everyone. Sustainably sourced, chef-prepared, and nutritionist-approved meals delivered directly to your door.</p>
+                <p class="text-neutral-400">Making healthy eating easy and accessible for everyone. Sustainably sourced,
+                    chef-prepared, and nutritionist-approved meals delivered directly to your door.</p>
                 <div class="social-links">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -259,17 +280,21 @@
             <div class="footer-links">
                 <h4>Contact Info</h4>
                 <ul>
-                    <li class="text-neutral-400"><i class="fas fa-map-marker-alt text-primary"></i> 123 Healthy Way, Green City</li>
+                    <li class="text-neutral-400"><i class="fas fa-map-marker-alt text-primary"></i> 123 Healthy Way,
+                        Green City</li>
                     <li class="text-neutral-400"><i class="fas fa-phone text-primary"></i> +1 234 567 890</li>
                     <li class="text-neutral-400"><i class="fas fa-envelope text-primary"></i> hello@veganbox.com</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="container"><p>&copy; 2026 VeganBox Meal Subscriptions. All Rights Reserved.</p></div>
+            <div class="container">
+                <p>&copy; 2026 VeganBox Meal Subscriptions. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
