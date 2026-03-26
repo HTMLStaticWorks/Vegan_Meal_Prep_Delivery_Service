@@ -108,6 +108,7 @@ body {
     color: var(--neutral-800);
     transition: var(--transition-normal);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 h1,
@@ -908,7 +909,7 @@ header {
 }
 
 .hamburger {
-    display: none;
+    display: flex !important;
     font-size: 1.5rem;
     color: var(--neutral-800);
     width: 44px;
@@ -1044,7 +1045,8 @@ header {
 .mobile-nav {
     position: fixed;
     top: 0;
-    right: -100%;
+    left: -100%;
+    right: auto;
     width: 80%;
     max-width: 300px;
     height: 100%;
@@ -1056,13 +1058,18 @@ header {
 }
 
 .mobile-nav.active {
-    right: 0;
+    left: 0;
 }
 
 .mobile-nav .nav-links {
     display: flex;
     flex-direction: column;
     gap: 0;
+    align-items: stretch; /* Correctly align all items to full width */
+}
+
+.mobile-nav .btn {
+    width: 100%;
 }
 
 .mobile-nav .nav-links>a,
@@ -1114,12 +1121,12 @@ header {
 
 /* RTL Support */
 [dir="rtl"] .mobile-nav {
-    right: auto;
-    left: -100%;
+    right: -100%;
+    left: auto;
 }
 
 [dir="rtl"] .mobile-nav.active {
-    left: 0;
+    right: 0;
 }
 
 [dir="rtl"] p,
@@ -1414,11 +1421,27 @@ header {
 /* Dashboard Styles */
 .dashboard-container {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-xl);
     /* Balanced gap */
     padding: var(--spacing-xl) 0;
     align-items: start;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: var(--spacing-md);
+    scrollbar-width: thin;
+}
+
+.table-responsive table {
+    width: 100%;
+    min-width: 600px; /* Force scroll on mobile */
+    margin-bottom: 0;
 }
 
 @media (max-width: 992px) {
@@ -3040,6 +3063,68 @@ body {
     border-radius: var(--radius-full);
 }
 
+/* Dashboard Forced Drawer Layout (Always Hamburger Enabled) */
+.dashboard-sidebar {
+    position: fixed !important;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100vh !important;
+    background: var(--surface);
+    z-index: 4000 !important;
+    transition: all 0.4s ease;
+    padding: var(--spacing-xl) !important;
+    box-shadow: var(--shadow-2xl) !important;
+    visibility: hidden;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: left !important;
+}
+
+.dashboard-sidebar.active {
+    left: 0 !important;
+    visibility: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.dashboard-sidebar .dashboard-nav {
+     display: flex !important;
+     flex-direction: column !important;
+     gap: 0.25rem !important;
+     overflow-x: visible !important;
+     overflow-y: visible !important;
+     padding-left: 0 !important;
+     width: 100% !important;
+}
+
+.dashboard-sidebar .sidebar-link,
+.dashboard-sidebar .user-profile,
+.dashboard-sidebar .sidebar-actions {
+     visibility: visible !important;
+     opacity: 1 !important;
+     display: flex !important;
+}
+
+.dashboard-sidebar .sidebar-link {
+     width: 100% !important;
+     border-radius: var(--radius-md) !important;
+     background: transparent !important;
+     border: none !important;
+     align-items: center !important;
+     gap: var(--spacing-md) !important;
+     color: var(--neutral-600) !important;
+     text-align: left !important;
+     padding: 0.75rem 1rem !important;
+     text-decoration: none !important;
+}
+
+.dashboard-sidebar .logo span {
+    font-weight: 700 !important;
+    color: var(--primary) !important;
+    font-size: 1.25rem !important;
+}
+
 @media (max-width: 1100px) {
     .dashboard-container {
         display: block !important;
@@ -3053,10 +3138,6 @@ body {
     .d-flex:not(.nav-actions) {
         flex-wrap: wrap !important;
         gap: var(--spacing-sm) !important;
-    }
-
-    .dashboard-sidebar.responsive-sidebar {
-        display: none !important;
     }
 
     .dashboard-content {
@@ -3085,27 +3166,6 @@ body {
             width: 100% !important;
             margin-bottom: var(--spacing-xs);
         }
-    }
-
-    .dashboard-sidebar {
-        position: fixed !important;
-        top: 0;
-        left: -300px;
-        width: 280px;
-        height: 100vh !important;
-        background: var(--surface);
-        z-index: 4000 !important;
-        transition: all 0.4s ease;
-        padding: var(--spacing-xl) !important;
-        box-shadow: var(--shadow-2xl) !important;
-        visibility: hidden;
-        display: block !important;
-        text-align: left !important;
-    }
-
-    .dashboard-sidebar.active {
-        left: 0 !important;
-        visibility: visible !important;
     }
 
     .welcome-section {

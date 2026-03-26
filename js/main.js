@@ -129,6 +129,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         dashboardHamburger.addEventListener('click', toggleDashboardSidebar);
         overlay.addEventListener('click', toggleDashboardSidebar);
+        
+        const closeSidebarBtn = dashboardSidebar.querySelector('.dashboard-close-sidebar');
+        if (closeSidebarBtn) {
+            closeSidebarBtn.addEventListener('click', toggleDashboardSidebar);
+        }
     }
 
     // Close menu when a standard link is clicked (Mobile Nav)

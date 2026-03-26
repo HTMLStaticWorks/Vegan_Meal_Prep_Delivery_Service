@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deliveries | Veganova Vegan Meal Service</title>
+    <title>Deliveries | VeganBox Vegan Meal Service</title>
     <link rel="icon" type="image/svg+xml" href="../assets/img/logo-icon.svg">
     
     <!-- Bootstrap 5 CSS -->
@@ -12,6 +12,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -69,7 +72,7 @@
         }
 
         /* Sidebar Styles */
-        .sidebar {
+        .sidebar { transform: translateX(-100%); z-index: 5000;  z-index: 5000; overflow-y: auto; 
             width: 280px;
             height: 100vh;
             position: fixed;
@@ -82,7 +85,7 @@
             transition: var(--transition);
         }
 
-        .dark .sidebar {
+        .dark .sidebar { transform: translateX(-100%); z-index: 5000;  z-index: 5000; overflow-y: auto; 
             border-right: 1px solid rgba(255,255,255,0.05);
         }
 
@@ -112,7 +115,7 @@
             color: white;
         }
 
-        .nav-menu {
+        .nav-menu { margin-top: 1.5rem; 
             list-style: none;
             padding: 0;
             margin: 0;
@@ -152,7 +155,7 @@
 
         /* Main Content */
         .main-content {
-            margin-left: 280px;
+            margin-left: 0 !important;
             flex-grow: 1;
             padding: 2rem 3rem;
             transition: var(--transition);
@@ -190,7 +193,7 @@
 
         /* Responsive */
         @media (max-width: 992px) {
-            .sidebar {
+            .sidebar { transform: translateX(-100%); z-index: 5000;  z-index: 5000; overflow-y: auto; 
                 transform: translateX(-100%);
             }
             .sidebar.show {
@@ -201,31 +204,35 @@
                 padding: 1.5rem;
             }
         }
-    </style>
+    
+        .table-responsive th { 
+            white-space: nowrap; min-width: 100px; 
+            font-size: 10px; 
+            padding-right: 1rem !important;
+        }
+        @media (max-width: 768px) {
+            .top-navbar {
+                position: sticky;
+                top: 0;
+                background: var(--primary-bg);
+                z-index: 1001;
+                margin-bottom: 2rem;
+                padding: 1rem 0;
+            }
+        }
+            </style>
 </head>
 <body class="light-mode">
 
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
-        <a href="../index.html" class="sidebar-brand">
-            <img src="../assets/img/logo-icon.svg" class="v-logo-img" style="width: 32px; height: 32px;" alt="Veganova Icon">
-            <span class="brand-name">Veganova</span>
-        </a>
+        <div class="sidebar-header d-flex justify-content-end align-items-center mb-4">
+            <button class="btn btn-light  bg-light-subtle close-sidebar p-2 rounded-circle" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
 
         <ul class="nav-menu">
-            <li class="nav-item">
-                <a href="../index.html" class="nav-link"><i data-lucide="home"></i> Home 1</a>
-            </li>
-            <li class="nav-item">
-                <a href="../home-2.html" class="nav-link"><i data-lucide="layout"></i> Home 2</a>
-            </li>
-            <li class="nav-item mt-3 px-3">
-                <a href="../login.html" class="btn btn-outline w-100 py-2 text-sm justify-content-center">Login</a>
-            </li>
-            <li class="nav-item mt-2 px-3">
-                <a href="../signup.html" class="btn btn-primary w-100 py-2 text-sm justify-content-center">Sign Up</a>
-            </li>
-            <li class="nav-item"><hr class="my-3 opacity-10"></li>
             <li class="nav-item">
                 <a href="index.html" class="nav-link">
                     <i data-lucide="layout-dashboard"></i> Overview
@@ -233,14 +240,10 @@
             </li>
             <li class="nav-item">
                 <a href="weekly-plan.html" class="nav-link">
-                    <i data-lucide="calendar"></i> Weekly Plan
+                    <i data-lucide="calendar"></i> Weekly Meals
                 </a>
             </li>
-            <li class="nav-item">
-                <a href="deliveries.html" class="nav-link active">
-                    <i data-lucide="truck"></i> Deliveries
-                </a>
-            </li>
+            
             <li class="nav-item">
                 <a href="favorites.html" class="nav-link">
                     <i data-lucide="heart"></i> Saved Meals
@@ -248,13 +251,21 @@
             </li>
             <li class="nav-item">
                 <a href="preferences.html" class="nav-link">
-                    <i data-lucide="settings"></i> Account Settings
+                    <i data-lucide="settings"></i> Preferences
                 </a>
             </li>
             <li class="nav-item mt-5 pt-5 border-t">
                 <a href="../index.html" class="nav-link text-danger">
                     <i data-lucide="log-out"></i> Logout
                 </a>
+            </li>
+            <li class="nav-item"><hr class="my-3 opacity-10"></li>
+            <li class="nav-item d-flex gap-2 px-3 mt-3">
+                <button class="rtl-toggle btn btn-light flex-1 py-2 text-xs font-bold" title="Toggle RTL"><span>RTL</span></button>
+                <button class="theme-toggle btn btn-light flex-1 py-2" title="Toggle Theme">
+                    <i data-lucide="sun" class="sun-icon text-warning d-none"></i>
+                    <i data-lucide="moon" class="moon-icon text-primary"></i>
+                </button>
             </li>
         </ul>
     </aside>
@@ -263,7 +274,7 @@
         <div class="container-fluid">
             <header class="top-navbar">
                 <div class="d-flex align-items-center gap-3">
-                    <button id="sidebar-toggle" class="btn btn-light d-lg-none bg-light-subtle dark:bg-slate-800 border-0 p-2 rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                    <button id="sidebar-toggle" class="btn btn-light  bg-light-subtle dark:bg-slate-800 border-0 p-2 rounded-circle" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
                         <i data-lucide="menu"></i>
                     </button>
                     <div>
@@ -272,11 +283,7 @@
                     </div>
                 </div>
                 
-                <div class="nav-actions align-items-center"><button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
-                    <button class="theme-toggle p-2 rounded-circle border-0 bg-light-subtle dark:bg-slate-800 transition-colors" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
-                        <i data-lucide="sun" class="sun-icon text-warning d-none"></i>
-                        <i data-lucide="moon" class="moon-icon text-primary dark:text-warning"></i>
-                    </button>
+                <div class="nav-actions align-items-center">
                     <div class="user-profile">
                         <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop" class="user-avatar" alt="User">
                         <div class="d-none d-md-block">
@@ -292,8 +299,8 @@
                 <i data-lucide="truck" class="w-24 h-24 text-secondary mb-4 opacity-50"></i>
                 <h2>Fresh Meals are on the way</h2>
                 <p class="text-muted mb-5">Your next sustainable feast is arriving on Mar 23rd.</p>
-                <div class="max-w-md mx-auto bg-primary/5 rounded-3xl p-4 flex items-center justify-between">
-                    <span class="font-bold text-success">Status: Out for delivery</span>
+                <div class="max-w-md mx-auto bg-primary/5 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+                    <span class="font-bold text-success text-center sm:text-left">Status: Out for delivery</span>
                     <span class="text-xs font-black uppercase tracking-widest text-muted">Awaiting Arrival</span>
                 </div>
             </div>
@@ -301,7 +308,7 @@
 
         <div class="row">
             <div class="col-12">
-                <div class="p-5 bg-white rounded-[32px] shadow-sm overflow-x-auto">
+                <div class="p-5 bg-white rounded-[32px] shadow-sm table-responsive">
                     <h5 class="mb-4">Recent History</h5>
                     <table class="table table-borderless align-middle mb-0">
                         <thead class="text-muted text-[10px] font-black uppercase tracking-widest border-b">
@@ -333,10 +340,10 @@
                 </div>
             </div>
         </div>
+        </div>
     </main>
-</div>
 
-    <script>
+        <script>
         lucide.createIcons();
 
         // Theme Toggle Logic for Dashboard
@@ -405,7 +412,7 @@
             });
         });
 
-        // Sidebar Toggle for Mobile
+        // Sidebar Toggle - Drawer mode
         const sidebarToggle = document.getElementById('sidebar-toggle');
         const sidebar = document.getElementById('sidebar');
         if(sidebarToggle && sidebar) {
@@ -413,9 +420,16 @@
                 sidebar.classList.toggle('show');
             });
 
-            // Close sidebar when clicking outside on mobile
+            const closeBtn = sidebar.querySelector('.close-sidebar');
+            if(closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    sidebar.classList.remove('show');
+                });
+            }
+
+            // Close sidebar when clicking outside
             document.addEventListener('click', (e) => {
-                if (window.innerWidth <= 992 && !sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
                     sidebar.classList.remove('show');
                 }
             });
