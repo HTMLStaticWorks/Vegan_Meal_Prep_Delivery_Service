@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | VeganMeal Prep & Delivery</title>
-    <meta name="description" content="Manage your meal subscription, update dietary preferences, and track your weekly deliveries.">
+    <title>Weekly Meals | VeganMeal Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -29,8 +28,8 @@
     <section class="page-hero"
         style="background-image: url('https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg'); min-height: 250px;">
         <div class="container">
-            <h1 class="animate-fadeIn">Your Dashboard</h1>
-            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Manage your subscriptions, dietary preferences, and account settings in one place.</p>
+            <h1 class="animate-fadeIn">Weekly Meals</h1>
+            <p class="animate-fadeIn" style="animation-delay: 0.1s;">Review and manage your chef-prepared meals for the upcoming week.</p>
         </div>
     </section>
 
@@ -61,8 +60,8 @@
                 </div>
 
                 <nav class="dashboard-nav d-flex flex-column h-100">
-                    <a href="dashboard.html" class="sidebar-link active"><i class="fas fa-columns"></i> Overview</a>
-                    <a href="dashboard-meals.html" class="sidebar-link"><i class="fas fa-concierge-bell"></i> Weekly Meals</a>
+                    <a href="dashboard.html" class="sidebar-link"><i class="fas fa-columns"></i> Overview</a>
+                    <a href="dashboard-meals.html" class="sidebar-link active"><i class="fas fa-concierge-bell"></i> Weekly Meals</a>
                     <a href="dashboard-saved.html" class="sidebar-link"><i class="fas fa-heart"></i> Saved Meals</a>
                     <a href="dashboard-preferences.html" class="sidebar-link"><i class="fas fa-cog"></i> Preferences</a>
                     <a href="index.html" class="sidebar-link text-danger mt-auto"><i class="fas fa-sign-out-alt"></i> Logout</a>
@@ -72,97 +71,68 @@
             <!-- Main Content -->
             <main class="dashboard-content">
                 <div class="welcome-section mb-2xl">
-                    <h1 class="text-3xl mb-xs fw-bold">Hello, Alex!</h1>
-                    <p class="text-lg text-neutral-600">Your next batch of organic goodness arrives in <span class="text-primary fw-bold">4 days</span>.</p>
+                    <h2 class="text-3xl mb-xs fw-bold">Your Selection for Next Week</h2>
+                    <p class="text-lg text-neutral-600">Arriving on Monday, March 28th.</p>
                 </div>
 
-                <!-- Summary Cards Section -->
+                <!-- Weekly Selection Section -->
                 <section class="mb-2xl">
-                    <div class="grid grid-4">
-                        <div class="stat-item shadow-sm">
-                            <i class="fas fa-box text-primary mb-sm fa-2x"></i>
-                            <h4 class="text-xs text-neutral-500 uppercase fw-bold mb-xs">Next Delivery</h4>
-                            <p class="text-lg fw-bold">March 28, 2026</p>
-                        </div>
-                        <div class="stat-item shadow-sm">
-                            <i class="fas fa-utensils text-secondary mb-sm fa-2x"></i>
-                            <h4 class="text-xs text-neutral-500 uppercase fw-bold mb-xs">Meals Remaining</h4>
-                            <p class="text-lg fw-bold">4 / 10</p>
-                        </div>
-                        <div class="stat-item shadow-sm">
-                            <i class="fas fa-bolt text-accent mb-sm fa-2x"></i>
-                            <h4 class="text-xs text-neutral-500 uppercase fw-bold mb-xs">Avg. Calories</h4>
-                            <p class="text-lg fw-bold">540 kcal</p>
-                        </div>
-                        <div class="stat-item shadow-sm">
-                            <i class="fas fa-leaf text-success mb-sm fa-2x"></i>
-                            <h4 class="text-xs text-neutral-500 uppercase fw-bold mb-xs">Sustainability</h4>
-                            <p class="text-lg fw-bold text-success">Elite Tier</p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Progress & Stats Section -->
-                <section class="mb-2xl">
-                    <div class="card p-xl">
-                        <div class="d-flex justify-content-between align-items-center mb-xl">
-                            <h2 class="text-xl">Weekly Nutrition Snapshot</h2>
-                            <button class="btn btn-outline btn-sm">Full Report</button>
-                        </div>
-                        
-                        <div class="stats-grid mb-2xl">
-                            <div class="stat-group">
-                                <div class="d-flex justify-content-between mb-xs">
-                                    <span class="text-sm fw-semibold">Daily Calories</span>
-                                    <span class="text-sm text-neutral-500">2,100 / 2,400</span>
-                                </div>
-                                <div class="progress-container"><div class="progress-bar" style="width: 85%"></div></div>
-                            </div>
-                            <div class="stat-group">
-                                <div class="d-flex justify-content-between mb-xs">
-                                    <span class="text-sm fw-semibold">Protein Intake</span>
-                                    <span class="text-sm text-neutral-500">62g / 80g</span>
-                                </div>
-                                <div class="progress-container"><div class="progress-bar bg-secondary" style="width: 77%"></div></div>
-                            </div>
-                            <div class="stat-group">
-                                <div class="d-flex justify-content-between mb-xs">
-                                    <span class="text-sm fw-semibold">Dietary Fiber</span>
-                                    <span class="text-sm text-neutral-500">35g / 40g</span>
-                                </div>
-                                <div class="progress-container"><div class="progress-bar bg-accent" style="width: 88%"></div></div>
-                            </div>
-                            <div class="stat-group">
-                                <div class="d-flex justify-content-between mb-xs">
-                                    <span class="text-sm fw-semibold">Vegan Streak</span>
-                                    <span class="text-sm text-neutral-500">12 Days</span>
-                                </div>
-                                <div class="progress-container"><div class="progress-bar bg-warning" style="width: 100%"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Weekly Selection Snapshot -->
-                <section class="mb-2xl">
-                    <div class="d-flex justify-content-between align-items-center mb-xl">
-                        <h2 class="text-xl">Upcoming Meals</h2>
-                        <a href="dashboard-meals.html" class="btn btn-outline btn-sm">View All</a>
-                    </div>
                     <div class="grid grid-2">
                         <div class="selected-meal-item shadow-sm">
                             <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Meal">
                             <div class="flex-1">
                                 <h4 class="fw-bold">Spicy Tofu Buddha Bowl</h4>
-                                <p class="text-xs text-neutral-500">Monday Lunch</p>
+                                <p class="text-xs text-neutral-500 mb-sm">Scheduled: Monday Lunch</p>
+                                <div class="d-flex gap-xs">
+                                    <span class="badge badge-secondary">High Protein</span>
+                                    <span class="badge bg-neutral-200 text-neutral-600">340 kcal</span>
+                                </div>
                             </div>
+                            <span class="meal-badge bg-success text-white">Delivered</span>
                         </div>
                         <div class="selected-meal-item shadow-sm">
                             <img src="https://images.pexels.com/photos/1148086/pexels-photo-1148086.jpeg" alt="Meal">
                             <div class="flex-1">
                                 <h4 class="fw-bold">Creamy Mushroom Risotto</h4>
-                                <p class="text-xs text-neutral-500">Tuesday Dinner</p>
+                                <p class="text-xs text-neutral-500 mb-sm">Scheduled: Tuesday Dinner</p>
+                                <div class="d-flex gap-xs">
+                                    <span class="badge badge-secondary">Gluten Free</span>
+                                    <span class="badge bg-neutral-200 text-neutral-600">420 kcal</span>
+                                </div>
                             </div>
+                            <span class="meal-badge bg-secondary text-white">In Transit</span>
+                        </div>
+                        <div class="selected-meal-item shadow-sm">
+                            <img src="https://images.pexels.com/photos/1273765/pexels-photo-1273765.jpeg" alt="Meal">
+                            <div class="flex-1">
+                                <h4 class="fw-bold">Zucchini Noodle Pesto</h4>
+                                <p class="text-xs text-neutral-500 mb-sm">Scheduled: Wednesday Lunch</p>
+                                <div class="d-flex gap-xs">
+                                    <span class="badge badge-secondary">Low Carb</span>
+                                    <span class="badge bg-neutral-200 text-neutral-600">280 kcal</span>
+                                </div>
+                            </div>
+                            <span class="meal-badge bg-info text-white">Confimed</span>
+                        </div>
+                        <div class="selected-meal-item shadow-sm">
+                            <img src="https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg" alt="Meal">
+                            <div class="flex-1">
+                                <h4 class="fw-bold">Lentil & Sweet Potato Curry</h4>
+                                <p class="text-xs text-neutral-500 mb-sm">Scheduled: Thursday Dinner</p>
+                                <div class="d-flex gap-xs">
+                                    <span class="badge badge-secondary">Fiber Rich</span>
+                                    <span class="badge bg-neutral-200 text-neutral-600">410 kcal</span>
+                                </div>
+                            </div>
+                            <span class="meal-badge bg-info text-white">Confirmed</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-xl text-center bg-light p-lg rounded-xl">
+                        <p class="text-sm text-neutral-500 mb-md">Need to change your upcoming delivery? You have until Thursday 11:59 PM.</p>
+                        <div class="d-flex justify-content-center gap-md">
+                            <button class="btn btn-outline btn-sm">Skip Next Week</button>
+                            <button class="btn btn-primary btn-sm">Change Selection</button>
                         </div>
                     </div>
                 </section>
