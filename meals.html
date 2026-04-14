@@ -37,35 +37,22 @@
 
 <body class="antialiased text-slate-900 transition-colors duration-300">
 
-    <!-- Navigation Header -->
-    <header
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-sm">
-        <div class="container flex items-center justify-between">
+    <!-- Header (Synced across all pages) -->
+    <header class="fixed top-0 left-0 right-0 z-[100] bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-100 dark:border-white/10 transition-all duration-300">
+        <div class="container mx-auto px-6 h-24 flex items-center justify-between">
             <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2 group">
-                <img src="assets/img/logo-icon.svg" class="w-10 h-10 group-hover:rotate-12 transition-transform"
-                    alt="Veganova Icon">
-                <span
-                    class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">Veganova</span>
-            </a>
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <img src="favicon.png" class="w-10 h-10 group-hover:rotate-12 transition-transform" alt="Logo">
+                    <span class="text-2xl font-black font-heading tracking-tight text-primary dark:text-white uppercase">VeganBox</span>
+                </a>
+            </div>
 
             <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center gap-10">
-                <div class="nav-item-dropdown">
-                    <a href="index.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
-                        Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a href="index.html" class="dropdown-item">Home 1</a>
-                        <a href="home-2.html" class="dropdown-item">Home 2</a>
-                    </div>
-                </div>
-                <a href="about.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">About</a>
-                <div class="nav-item-dropdown">
-                    <a href="meals.html"
-                        class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1">
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Home</a>
+                <div class="relative group">
+                    <a href="meals.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300 flex items-center gap-1 active">
                         Meals <i data-lucide="chevron-down" class="w-4 h-4"></i>
                     </a>
                     <div class="dropdown-menu">
@@ -75,37 +62,29 @@
                         <a href="dinner.html" class="dropdown-item">Dinner</a>
                     </div>
                 </div>
-                <a href="pricing.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
-                <a href="dashboard/index.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
-                <a href="blog.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
-                <a href="contact.html"
-                    class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
+                <a href="pricing.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Pricing</a>
+                <a href="dashboard.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Dashboard</a>
+                <a href="blog.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Blog</a>
+                <a href="contact.html" class="nav-link text-sm font-medium hover:text-secondary dark:text-gray-300">Contact</a>
             </nav>
 
-            <!-- Buttons & Actions -->
+            <!-- Actions -->
             <div class="flex items-center gap-4">
-                <!-- Cart Icon -->
-                <a href="cart.html"
-                    class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
-                    <i data-lucide="shopping-cart"
-                        class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary transition-colors"></i>
-                    <span
-                        class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-primary text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full shadow-lg border-2 border-white dark:border-slate-900 hidden transition-transform duration-200">0</span>
+                <a href="cart.html" class="relative p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all group">
+                    <i data-lucide="shopping-cart" class="w-6 h-6 text-slate-700 dark:text-gray-300 group-hover:text-secondary"></i>
+                    <span class="cart-count-badge absolute -top-1 -right-1 bg-secondary text-white text-[10px] font-black w-5 h-5 flex items-center justify-center rounded-full hidden">0</span>
                 </a>
 
-                <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
-                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                <button class="rtl-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10" title="Toggle RTL"><span class="text-xs font-black dark:text-gray-300">RTL</span></button>
+                <button class="theme-toggle p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10" id="theme-toggle">
                     <i data-lucide="sun" class="sun-icon text-secondary hidden"></i>
                     <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary"></i>
                 </button>
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="auth/login.html"
-                        class="text-sm font-semibold hover:text-secondary dark:text-white">Login</a>
-                    <a href="auth/signup.html" class="btn-primary">Sign Up</a>
+                
+                <div class="hidden md:flex items-center ml-2">
+                    <a href="login.html" class="btn btn-outline btn-sm">Login</a>
                 </div>
+
                 <button id="mobile-menu-btn" class="lg:hidden p-2 dark:text-white">
                     <i data-lucide="menu"></i>
                 </button>
@@ -113,28 +92,35 @@
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu"
-        class="fixed inset-0 bg-white dark:bg-slate-900 z-[100] transform translate-x-full transition-transform duration-500 lg:hidden">
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white dark:bg-slate-900 z-[1000] transform translate-x-full transition-transform duration-500 lg:hidden overflow-y-auto">
         <div class="flex flex-col h-full p-8">
             <div class="flex items-center justify-between mb-12">
                 <div class="flex items-center gap-2">
-                    <img src="assets/img/logo-icon.svg" class="w-8 h-8" alt="Logo">
-                    <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">Veganova</span>
+                    <img src="favicon.png" class="w-8 h-8" alt="Logo">
+                    <span class="text-2xl font-black font-heading text-primary dark:text-white uppercase">VeganBox</span>
                 </div>
-                <div class="flex items-center gap-3">
-                    <button class="rtl-toggle p-2 rounded-full border dark:border-white/20 flex items-center justify-center min-w-[40px]">
-                        <span class="text-xs font-black dark:text-gray-300">RTL</span>
-                    </button>
-                    <button class="theme-toggle p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
-                        <i data-lucide="sun" class="sun-icon text-secondary hidden w-5 h-5"></i>
-                        <i data-lucide="moon" class="moon-icon text-primary dark:text-secondary w-5 h-5"></i>
-                    </button>
-                    <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20 flex items-center justify-center w-10 h-10">
-                        <i data-lucide="x" class="dark:text-white w-6 h-6"></i>
-                    </button>
+                <button id="mobile-menu-close" class="p-2 border rounded-full dark:border-white/20">
+                    <i data-lucide="x" class="w-6 h-6 dark:text-white"></i>
+                </button>
+            </div>
+
+            <nav class="flex flex-col gap-6 mb-12">
+                <a href="index.html" class="text-xl font-bold dark:text-white">Home</a>
+                <a href="meals.html" class="text-xl font-bold text-secondary">Our Meals</a>
+                <a href="pricing.html" class="text-xl font-bold dark:text-white">Pricing</a>
+                <a href="dashboard.html" class="text-xl font-bold dark:text-white">Dashboard</a>
+                <a href="blog.html" class="text-xl font-bold dark:text-white">Blog</a>
+                <a href="contact.html" class="text-xl font-bold dark:text-white">Contact</a>
+            </nav>
+
+            <div class="mt-auto flex flex-col gap-4">
+                <a href="login.html" class="btn btn-primary w-full">Login</a>
+                <div class="flex items-center justify-center gap-6 mt-8">
+                    <button class="rtl-toggle font-bold text-xs dark:text-white">RTL VIEW</button>
                 </div>
             </div>
+        </div>
     </div>
 
     <main class="pt-32 pb-24 px-6">
@@ -383,6 +369,9 @@
                 </div>
             </div>
 
+            <div class="mt-auto pt-8 border-t border-slate-100 dark:border-white/10">
+                <a href="login.html" class="btn btn-primary w-full">Login</a>
+            </div>
             <div class="pt-12 border-t border-slate-100 dark:border-white/5 flex flex-col items-center gap-8 text-sm text-slate-500 dark:text-slate-400">
                 <p class="text-center">&copy; 2026 Veganova Vegan Meal Service. All rights reserved.</p>
             </div>
