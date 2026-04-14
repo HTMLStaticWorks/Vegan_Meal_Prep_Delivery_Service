@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -215,7 +215,7 @@
 
     <div class="auth-container animate-fadeIn">
         <div class="logo-container">
-            <a href="index.html"><img src="favicon.png" alt="VeganMeal"> <span>VeganMeal</span></a>
+            <a href="index.html"><i class="fas fa-leaf logo-icon"></i> <span>VeganMeal</span></a>
         </div>
 
         <div class="text-center mb-xl">
@@ -226,22 +226,32 @@
         <form id="signup-form">
             <div class="form-group">
                 <label for="name">Full Name</label>
-                <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                <input type="text" id="name" class="form-control"  required>
             </div>
 
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" class="form-control" placeholder="name@example.com" required>
+                <input type="email" id="email" class="form-control"  required>
             </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                <div class="password-wrapper">
+                    <input type="password" id="password" class="form-control"  required>
+                    <button type="button" class="password-toggle" aria-label="Toggle Password Visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="form-group">
                 <label id="confirm-label" for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" class="form-control" placeholder="••••••••" required>
+                <div class="password-wrapper">
+                    <input type="password" id="confirm-password" class="form-control"  required>
+                    <button type="button" class="password-toggle" aria-label="Toggle Password Visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="form-group d-flex align-items-center gap-sm mt-md">

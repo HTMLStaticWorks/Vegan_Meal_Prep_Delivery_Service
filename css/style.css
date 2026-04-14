@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
     /* Color Palette */
@@ -109,6 +109,7 @@ body {
     transition: var(--transition-normal);
     min-height: 100vh;
     overflow-x: hidden;
+    padding-top: 80px;
 }
 
 h1,
@@ -439,6 +440,10 @@ button {
     flex-wrap: wrap;
 }
 
+.gap-xs {
+    gap: var(--spacing-xs);
+}
+
 .gap-sm {
     gap: var(--spacing-sm);
 }
@@ -757,7 +762,9 @@ button {
 
 /* Navigation Styles */
 header {
-    position: sticky;
+    position: fixed;
+    left: 0;
+    width: 100%;
     top: 0;
     z-index: 1000;
     background-color: var(--surface);
@@ -3237,7 +3244,9 @@ body {
 
 .dashboard-header {
     background: var(--surface);
-    position: sticky;
+    position: fixed;
+    left: 0;
+    width: 100%;
     top: 0;
     z-index: 1000;
 }
@@ -3332,9 +3341,18 @@ body {
         padding: 30px 20px !important;
         border-radius: 18px !important;
         background: var(--surface) !important;
+        color: var(--neutral-800) !important;
         box-shadow: 0 4px 12px rgba(0,0,0,0.03) !important;
         border: 1px solid rgba(0,0,0,0.03) !important;
         transition: transform 0.3s ease !important;
+    }
+
+    .stat-item h3, .stat-item h4 {
+        color: var(--neutral-900) !important;
+    }
+
+    .stat-item p {
+        color: var(--neutral-600) !important;
     }
 
     .stat-item:hover { transform: translateY(-5px) !important; }
@@ -3500,3 +3518,202 @@ body {
 .dashboard-section.active { display: block; animation: dashboardFadeIn 0.3s ease-out; }
 @keyframes dashboardFadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .sidebar-link { cursor: pointer; }
+
+
+/* Password Toggle */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--neutral-400);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+}
+
+.password-toggle:hover {
+    color: var(--primary);
+}
+
+/* Header Mobile Padding Fix */
+@media (max-width: 350px) {
+    .header .container,
+    .main-header .container,
+    .dashboard-header .container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+}
+
+/* Fix Hero v2 Trust Wrapping */
+.hero-v2-trust {
+    white-space: nowrap !important;
+    flex-wrap: nowrap !important;
+}
+
+@media (max-width: 480px) {
+    .hero-v2-trust {
+        font-size: 0.75rem !important;
+        gap: 8px !important;
+    }
+}
+
+/* Permanent Sticky Navigation Fix */
+header, .dashboard-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 5000 !important;
+    background-color: var(--surface) !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Ensure content doesn't get hidden behind the fixed header */
+body {
+    padding-top: 80px !important;
+}
+
+@media (max-width: 1100px) {
+    body {
+        padding-top: 70px !important;
+    }
+    header, .dashboard-header {
+        height: 70px !important;
+    }
+}
+
+
+
+/* Pricing Page Layout Optimization for Tablet and 1024px */
+@media (max-width: 991px) {
+    .pricing-grid .card {
+        text-align: center !important;
+        align-items: center !important;
+    }
+    
+    .pricing-grid .card ul {
+        align-items: flex-start !important;
+        margin: 0 auto var(--spacing-xl) auto !important;
+        width: fit-content;
+        text-align: left !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: var(--spacing-sm) !important;
+    }
+    
+    .pricing-grid .card {
+        padding: var(--spacing-lg) !important;
+    }
+}
+
+/* Dashboard Mobile Fixes: 2 Cards Row and Name Single Line */
+@media (max-width: 768px) {
+    .dashboard-content .grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .stat-item {
+        padding: var(--spacing-md) !important;
+    }
+    
+    .welcome-section h1 {
+        white-space: nowrap !important;
+        font-size: 1.75rem !important;
+    }
+    
+    .user-info-text h3 {
+        white-space: nowrap !important;
+        font-size: 1.25rem !important;
+    }
+}
+
+/* Dashboard Mobile Grid: 2 columns for all grids in dashboard */
+@media (max-width: 768px) {
+    .dashboard-content .grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .selected-meal-item {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: var(--spacing-sm) !important;
+    }
+    
+    .selected-meal-item img {
+        width: 100% !important;
+        height: 100px !important;
+        margin: 0 0 var(--spacing-sm) 0 !important;
+    }
+    
+    .selected-meal-item h4 {
+        font-size: 0.875rem !important;
+    }
+    
+    .selected-meal-item .badge {
+        font-size: 0.65rem !important;
+    }
+}
+
+/* Transparent Logo Icon Fix */
+.logo i, .logo-icon {
+    background: transparent !important;
+    color: var(--primary) !important;
+    text-shadow: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Dashboard 320px Centering Fix */
+@media (max-width: 480px) {
+    .dashboard-content .welcome-section,
+    .dashboard-content .welcome-section h1,
+    .dashboard-content .welcome-section h2,
+    .dashboard-content .welcome-section p {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .dashboard-content .grid-4,
+    .dashboard-content .grid-2 {
+        justify-items: center !important;
+    }
+}
+
+/* Auth Page Floating Controls - Forced Horizontal Layout */
+.auth-controls-floating {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+}
+
+@media (max-width: 480px) {
+    .auth-controls-floating {
+        top: 10px !important;
+        right: 10px !important;
+        gap: 8px !important;
+    }
+}
+

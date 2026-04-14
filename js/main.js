@@ -386,6 +386,25 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+    /* -------------------------------------------------------------------------- */
+    /*                            Password Toggle Logic                           */
+    /* -------------------------------------------------------------------------- */
+    const togglePasswordButtons = document.querySelectorAll('.password-toggle');
+    togglePasswordButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const input = button.parentElement.querySelector('input');
+            const icon = button.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        });
+    });
 });
 
 // Added to style sheet dynamically for toast
